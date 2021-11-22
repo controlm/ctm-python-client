@@ -1,0 +1,10 @@
+**.pyc
+**cache*
+**/.secrets**
+venv
+**jobs.json**
+.coverage
+**.ipynb_checkpoints
+**.DS_Store
+**/.scannerwork
+.mywork/
