@@ -36,6 +36,11 @@ We recommend that you set up a virtual environment before installing:
 python -m venv venv
 source venv/bin/activate
 ```
+In Windows:
+```
+python -m venv venv
+venv\Scripts\activate
+```
 
 ### Installing via pip
 
@@ -47,12 +52,14 @@ pip install git+https://github.com/controlm/ctm-python-client.git
 
 ```
 git clone https://github.com/controlm/ctm-python-client.git
-cd ctm_python_client
-pip install -r requirements.txt
-python setup.py install
+pip install ctm-python-client
 ```
 
-Note: You can use the library without installing, but be sure to add the root path in your python path.
+Note: You can use the library without installing, be sure to add the src folder in the python path:
+```python
+import sys
+sys.path.insert(0,"<path-to-repo>/src")
+```
 
 ## Creating a flow with Control-M Python Client
 
