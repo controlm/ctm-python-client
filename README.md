@@ -36,6 +36,11 @@ We recommend that you set up a virtual environment before installing:
 python -m venv venv
 source venv/bin/activate
 ```
+In Windows:
+```
+python -m venv venv
+venv\Scripts\activate
+```
 
 ### Installing via pip
 
@@ -47,12 +52,14 @@ pip install git+https://github.com/controlm/ctm-python-client.git
 
 ```
 git clone https://github.com/controlm/ctm-python-client.git
-cd ctm_python_client
-pip install -r requirements.txt
-python setup.py install
+pip install ctm-python-client
 ```
 
-Note: You can use the library without installing, but be sure to add the root path in your python path.
+Note: You can use the library without installing, be sure to add the src folder in the python path:
+```python
+import sys
+sys.path.insert(0,"<path-to-repo>/src")
+```
 
 ## Creating a flow with Control-M Python Client
 
@@ -125,8 +132,6 @@ f1 = t1_flow.create_folder(name="HelloWorld")
 ```
 
 To create a task, you will need to import the corresponding job type. Check what are the [supported types](https://github.com/controlm/ctm-python-client/blob/main/SupportedJobs.txt)
-
-Although lots of job types exists, we recommend to start with CommandJob (which performs an os command) and DummyJob (does nothing, and is great for testing a flow). For more advanced users, check also the AI Job support in [this example](https://github.com/controlm/ctm-python-client/blob/main/examples/python_notebooks/Demo%2004%20-%20Smart%20Buildings%20with%20Azure%20and%20Control-M.ipynb).
 
 Let's create some dummy jobs to test the flow.
 First we import:
