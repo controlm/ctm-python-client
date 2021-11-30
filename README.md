@@ -1,6 +1,6 @@
 # Control-M Python Client
 
-Control-M Python Client is a python library to programmatically design, schedule, run, and monitor your Control-M workflows. The design of the Control-M Python Client is oriented towards data scientists who prefer a more programmatic approach and does not require advanced knowledge in Control-M.
+Control-M Python Client is a python library to programmatically design, schedule, run, and monitor your Control-M workflows. The design of the Control-M Python Client is oriented towards data scientists and developers who prefer a more programmatic approach to workflow orchestration.
 
 ## Getting Started
 
@@ -10,11 +10,19 @@ You do not need to have an in-depth knowledge of Control-M, but some familiarity
 
 ### Control-M Environment
 
-Control-M Python Client requires an operating Control-M. **We recommend first trying it out in a sandbox environment!** To be able to run a workflow, you will also need an available agent. 
+To deploy jobs with Control-M Python client you will require:
 
-In addition, ensure that you have the required authorizations to use Control-M Automation API. These authorizations are based on API keys (for Helix Control-M) or users. Check with your system administrator if you have a user or api key that can use Control-M Automation API.
+- An accessible Control-M environment<sup>1</sup>
+- Authorization to use Automation-API<sup>2</sup>
+- An available Control-M Agent (required only to run jobs)
 
-Note: Control-M Python Client does **not** require use of the Automation API ctm cli.
+<sup>1</sup> We recommend first trying it out in a sandbox environment
+
+<sup>2</sup> Authorizations are based roles assigned to API Keys or Users
+
+Check with your system administrator if you have the required environment to use Control-M Python Client
+
+Note: Control-M Python Client does not require use of the Automation API ctm cli.
 
 ### IDE
 
@@ -32,11 +40,13 @@ For a quick way to create an api key with a specified lifetime, check our **crea
 
 We recommend that you set up a virtual environment before installing:
 
+For Linux:
 ```
 python -m venv venv
 source venv/bin/activate
 ```
-In Windows:
+
+For Windows:
 ```
 python -m venv venv
 venv\Scripts\activate
@@ -96,7 +106,6 @@ or for Control-M:
 session = Session(endpoint=ctm_uri, username="myuser", password="my password")
 ```
 
-Note: This is the only place you will need to distinguish between Helix Control-M and the traditional Control-M.
 
 **IMPORTANT: Passwords and API Keys are sensitive information! Please handle as such. Never commit code with these!**
 
@@ -208,6 +217,7 @@ Please note that the folders `ctm_api_client` and `ctm_saas_client` only contain
 - [Helix Control-M Documentation](https://documents.bmc.com/supportu/controlm-saas/en-US/Documentation/home.htm)
 - [Automation API Documentation](https://docs.bmc.com/docs/display/public/workloadautomation/Control-M+Automation+API+-+Getting+Started+Guide)
 - [Automation API with Helix Control-M Documentation](https://docs.bmc.com/docs/display/ctmSaaSAPI/Control-M+SaaS+Automation+API+Home)
+- [Provisioning an agent with Automation API](https://docs.bmc.com/docs/automation-api/monthly/provision-service-1040174602.html#Provisionservice-provisionFresh)
 
 ## License
 
