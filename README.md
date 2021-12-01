@@ -1,6 +1,6 @@
 # Control-M Python Client
 
-Control-M Python Client is a python library to programmatically design, schedule, run, and monitor your Control-M workflows. The design of the Control-M Python Client is oriented towards data scientists and developers who prefer a more programmatic approach to workflow orchestration.
+Control-M Python Client is a python library to programmatically design, schedule and run your Control-M workflows. The design of the Control-M Python Client is oriented towards data scientists and developers who prefer a more programmatic approach to workflow orchestration.
 
 ## Getting Started
 
@@ -34,7 +34,7 @@ Control-M Python Client uses Control-M Automation API and requires the same auth
 
 Note that Automation API allows you to programmatically create and delete authorization roles. Work with your system administrator to decide on the best way to provide authorizations for developers while satisfying your security needs.
 
-For a quick way to create an api key with a specified lifetime, check our **create_key** tool in the **tools** folder.
+For an example on how to create an api key with a specified lifetime, check the [create_key](https://github.com/controlm/ctm-python-client/blob/main/tools/create_key.py) tool
 
 ## Installation
 
@@ -113,13 +113,13 @@ session = Session(endpoint=ctm_uri, username="myuser", password="my password")
 
 You created a flow! Now you need to define where it will run. Define the host (agent) where the flow will run and the user under which it will run.
 
-Note: username is not necessarily your username. Rather, it is the user under which the agent is installed.
+Note: username is not necessarily your username. Rather, it is the user under which the agent is installed or the run_as user defined for the agent.
 
 ```python
 t1_flow.set_run_as(username="user", host="myagent")
 ```
 
-To define when to run, you need to specify the schedule
+To define when the workflow should run, you need to specify the schedule. Note that workflows can be run anytime if the function .run() is called
 
 ```python
 # Define the schedule
@@ -195,7 +195,7 @@ t1_flow.run()
 ```
 ### Next Steps
 
-Once you have successfully completed the Hello World example,take a look int he BMC Demos, they cover more advanced flows with multiple job types and Application Integrator Job types.
+Once you have successfully completed the Hello World example,take a look in the BMC Demos, they cover more advanced flows with multiple job types and Application Integrator Job types.
 ## Contributing
 
 See [Contributing](https://github.com/controlm/ctm-python-client/blob/main/CONTRIBUTING.md)
