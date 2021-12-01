@@ -18,7 +18,7 @@ To deploy jobs with Control-M Python client you will require:
 
 <sup>1</sup> We recommend first trying it out in a sandbox environment
 
-<sup>2</sup> Authorizations are based roles assigned to API Keys or Users
+<sup>2</sup> Authorizations are based on roles assigned to API Keys or Users
 
 Check with your system administrator if you have the required environment to use Control-M Python Client
 
