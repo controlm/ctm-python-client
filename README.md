@@ -4,7 +4,7 @@ Control-M Python Client is a python library to programmatically design, schedule
 
 ## Getting Started
 
-The best way to get familiar is to check the [notebooks examples](https://github.com/controlm/ctm-python-client/tree/main/examples/python_notebooks). Start with [Hello world](https://github.com/controlm/ctm-python-client/blob/main/examples/python_notebooks/Demo%2001%20-%20HelloWorld.ipynb) to get familiar with the syntax.
+The best way to get familiar is to check the [notebooks examples](https://github.com/controlm/ctm-python-client/tree/main/examples/python_notebooks). Start with [Hello world](https://github.com/controlm/ctm-python-client/blob/main/examples/101-HelloWorld/HelloWorld.ipynb) to get familiar with the syntax.
 
 You do not need to have an in-depth knowledge of Control-M, but some familiarity with Control-M will help you understand the different job types and syntax offered by Control-M Python Client.
 
@@ -195,7 +195,7 @@ t1_flow.run()
 ```
 ### Next Steps
 
-Once you have successfully completed the Hello World Program, try out the other examples! The examples cover more advanced flows with multiple job types and also with Application Integrator Job types.
+Once you have successfully completed the Hello World example,take a look int he BMC Demos, they cover more advanced flows with multiple job types and Application Integrator Job types.
 ## Contributing
 
 Control-M Python Client welcomes contribution, to do so, please open a pull request.
@@ -218,6 +218,7 @@ Please note that the folders `ctm_api_client` and `ctm_saas_client` only contain
 - [Automation API Documentation](https://docs.bmc.com/docs/display/public/workloadautomation/Control-M+Automation+API+-+Getting+Started+Guide)
 - [Automation API with Helix Control-M Documentation](https://docs.bmc.com/docs/display/ctmSaaSAPI/Control-M+SaaS+Automation+API+Home)
 - [Provisioning an agent with Automation API](https://docs.bmc.com/docs/automation-api/monthly/provision-service-1040174602.html#Provisionservice-provisionFresh)
+- [Application Integrator](https://documents.bmc.com/supportu/9.0.20/etc/ai/help/en-US/Web_Help/index.htm#69319.htm)
 
 ## License
 
