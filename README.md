@@ -198,18 +198,7 @@ t1_flow.run()
 Once you have successfully completed the Hello World example,take a look int he BMC Demos, they cover more advanced flows with multiple job types and Application Integrator Job types.
 ## Contributing
 
-Control-M Python Client welcomes contribution, to do so, please open a pull request.
-To set up a development environment, use the requirements_dev.txt :
-
-```
-$ git clone https://github.com/controlm/ctm-python-client.git
-$ cd ctm_python_client
-$ python -m venv venv
-$ source venv/bin/activate
-$ pip install -r requirements_dev.txt
-```
-
-Please note that the folders `ctm_api_client` and `ctm_saas_client` only contains generated code. Check `ctm_python_client` for the interesting stuff ;)
+See [Contributing](https://github.com/controlm/ctm-python-client/blob/main/CONTIBUTING.md)
 
 ## Links
 
