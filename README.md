@@ -4,7 +4,7 @@ Control-M Python Client is a python library to programmatically design, schedule
 
 ## Getting Started
 
-The best way to get familiar is to check the [notebooks examples](https://github.com/controlm/ctm-python-client/tree/main/examples/python_notebooks). Start with [Hello world](https://github.com/controlm/ctm-python-client/blob/main/examples/101-HelloWorld/HelloWorld.ipynb) to get familiar with the syntax.
+The best way to get familiar is to check the [notebooks examples](https://github.com/controlm/ctm-python-client/tree/main/examples/). Start with [Hello world](https://github.com/controlm/ctm-python-client/blob/main/examples/101-HelloWorld/HelloWorld.ipynb) to get familiar with the syntax.
 
 You do not need to have an in-depth knowledge of Control-M, but some familiarity with Control-M will help you understand the different job types and syntax offered by Control-M Python Client.
 
