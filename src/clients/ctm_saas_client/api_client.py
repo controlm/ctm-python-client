@@ -26,6 +26,7 @@ from six.moves.urllib.parse import quote
 from clients.ctm_saas_client.configuration import Configuration
 import clients.ctm_saas_client.models
 from clients.ctm_saas_client import rest
+import clients
 
 
 class ApiClient(object):

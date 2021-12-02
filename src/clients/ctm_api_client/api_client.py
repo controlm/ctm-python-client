@@ -26,7 +26,7 @@ from six.moves.urllib.parse import quote
 from clients.ctm_api_client.configuration import Configuration
 import clients.ctm_api_client as ctm_api_client
 from clients.ctm_api_client import rest
-
+import clients
 
 class ApiClient(object):
     """Generic API client for Swagger client library builds.
