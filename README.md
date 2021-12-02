@@ -53,7 +53,7 @@ venv\Scripts\activate
 ```
 
 ### Installing via pip
-
+You will need pip and git installed on your system before you run this command.
 ```
 pip install git+https://github.com/controlm/ctm-python-client.git
 ```
