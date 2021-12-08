@@ -1,9 +1,5 @@
 # How to contribute to Control-M Python Client
 
-## Reporting bugs and opening issues
-
-If you have found any bug, check if there is not already an [issue opened](https://github.com/controlm/ctm-python-client/issues) on it. If none are opened on the subject, you can create a new one
-
 
 ## Contributions
 
