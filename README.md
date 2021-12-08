@@ -209,6 +209,9 @@ See [Contributing](https://github.com/controlm/ctm-python-client/blob/main/CONTR
 - [Provisioning an agent with Automation API](https://docs.bmc.com/docs/automation-api/monthly/provision-service-1040174602.html#Provisionservice-provisionFresh)
 - [Application Integrator](https://documents.bmc.com/supportu/9.0.20/etc/ai/help/en-US/Web_Help/index.htm#69319.htm)
 
+## Support
+Found a bug in the Python Client? Looking to get a new feature implemented? Open an Issue [here](https://github.com/controlm/ctm-python-client/issues) on GitHub, together with the community we will make an effort to prioritize and resolve relevant bugs and features.
+
 ## License
 
 See [License](https://github.com/controlm/ctm-python-client/blob/main/LICENSE)
