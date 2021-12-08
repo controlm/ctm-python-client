@@ -210,7 +210,7 @@ See [Contributing](https://github.com/controlm/ctm-python-client/blob/main/CONTR
 - [Application Integrator](https://documents.bmc.com/supportu/9.0.20/etc/ai/help/en-US/Web_Help/index.htm#69319.htm)
 
 ## Support
-Found a bug in the Python Client? Looking to get a new feature implemented? Open an Issue [here](https://github.com/controlm/ctm-python-client/issues) on GitHub, together with the community we will make an effort to prioritize and resolve relevant bugs and features.
+Found a bug in the Python Client? Looking to get a new feature implemented? Check if we have an open issue [here](https://github.com/controlm/ctm-python-client/issues). If we don't, go ahead and open an Issue. Together with the community we will make an effort to prioritize and resolve all relevant bugs and features.
 
 ## License
 
