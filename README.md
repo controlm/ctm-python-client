@@ -196,7 +196,7 @@ t1_flow.run()
 ### Next Steps
 
 Once you have successfully completed the Hello World example,take a look in the BMC Demos, they cover more advanced flows with multiple job types and Application Integrator Job types.
-## Contributing
+## Support and Contributing
 
 See [Contributing](https://github.com/controlm/ctm-python-client/blob/main/CONTRIBUTING.md)
 
@@ -208,9 +208,6 @@ See [Contributing](https://github.com/controlm/ctm-python-client/blob/main/CONTR
 - [Automation API with Helix Control-M Documentation](https://docs.bmc.com/docs/display/ctmSaaSAPI/Control-M+SaaS+Automation+API+Home)
 - [Provisioning an agent with Automation API](https://docs.bmc.com/docs/automation-api/monthly/provision-service-1040174602.html#Provisionservice-provisionFresh)
 - [Application Integrator](https://documents.bmc.com/supportu/9.0.20/etc/ai/help/en-US/Web_Help/index.htm#69319.htm)
-
-## Support
-Found a bug in the Python Client? Looking to get a new feature implemented? Check if we have an open issue [here](https://github.com/controlm/ctm-python-client/issues). If we don't, go ahead and open an Issue. Together with the community we will make an effort to prioritize and resolve all relevant bugs and features.
 
 ## License
 
