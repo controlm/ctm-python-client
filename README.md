@@ -196,7 +196,7 @@ t1_flow.run()
 ### Next Steps
 
 Once you have successfully completed the Hello World example,take a look in the BMC Demos, they cover more advanced flows with multiple job types and Application Integrator Job types.
-## Contributing
+## Contributing and Support
 
 See [Contributing](https://github.com/controlm/ctm-python-client/blob/main/CONTRIBUTING.md)
 
