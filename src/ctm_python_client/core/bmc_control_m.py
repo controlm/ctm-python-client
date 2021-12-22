@@ -72,7 +72,7 @@ class CmJobFlow:
         return node_id
 
     # sets up the default user to run the jobs (can be overridden at the job level)
-    def set_run_as(self, username, host, ctm_server=None, site_standard=None):
+    def set_run_as(self, username, host, ctm_server=None, site_standard=None, business_fields=None):
         self.run_as_set = True
         self.username = username
         self.host = host
@@ -82,6 +82,8 @@ class CmJobFlow:
             self.json["Defaults"]["ControlmServer"] = ctm_server
         if site_standard is not None:
             self.json["Defaults"]["SiteStandard"] = site_standard
+        if business_fields is not None:
+            self.json["Defaults"]["BusinessFields"] = business_fields
 
     # sets up the default user to run the jobs (can be overridden at the job level)
     def set_schedule(
