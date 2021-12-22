@@ -9,7 +9,7 @@ class LambdaJob(BaseJob):
         connection_profile,
         function_name,
         version="$LATEST",
-        payload=,
+        payload,
         append_log="True",
         host=None,
         run_as=None,
