@@ -1842,7 +1842,7 @@ class RunApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json", "text/plain"]
+            ["application/text", "text/plain"]
         )  # noqa: E501
 
         # Authentication setting
