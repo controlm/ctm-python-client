@@ -22,11 +22,3 @@ $ source venv/bin/activate
 $ pip install -r requirements_dev.txt
 
 ```
-
-### Guidelines
-
-Examples ares structured in folders with relevant files and data in it. If your example uses scripts or other resources, add it in the folder. Do not store any real data or sensitive information! If you contribute with notebooks, clean the output before committing
-
-Example `101-HelloWorld` should always be first in the list
-
-Note: The folders `ctm_api_client` and `ctm_saas_client` only contains generated code and should not be modified. Check `ctm_python_client` for the interesting stuff

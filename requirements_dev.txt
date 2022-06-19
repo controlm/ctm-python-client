@@ -1,9 +1,11 @@
 -r requirements.txt
 autopep8
+ipykernel
 pytest
-requests_mock
-git-pylint-commit-hook
-black[jupyter]
-coverage
-pytest-cov
-nbmake
+keyring
+graphviz
+
+sphinx
+nbsphinx
+myst-parser
+furo

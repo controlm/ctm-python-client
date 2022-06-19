@@ -1,5 +1,7 @@
 **.pyc
 **cache*
+__pycache__/
+**/*.egg-info
 **/.secrets**
 venv
 **jobs.json**
@@ -8,3 +10,4 @@ venv
 **.DS_Store
 **/.scannerwork
 .mywork/
+build/
