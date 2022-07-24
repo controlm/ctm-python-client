@@ -129,6 +129,86 @@ class RunMonitor:
                 raise Exception(f'Cannot confirm {job_name}')
             raise e
 
+    def hold_job(self, job_name: str) -> str:
+        '''
+        Holds a job        
+        '''
+        job_id = self.get_jobid(job_name)
+
+        try:
+            res = self.aapiclient.run_api.hold_job(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot hold {job_name}')
+            raise e            
+
+    def release_job(self, job_name: str) -> str:
+        '''
+        Releases a held job
+        '''
+        job_id = self.get_jobid(job_name)
+
+        try:
+            res = self.aapiclient.run_api.free_job(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot release {job_name}')
+            raise e            
+
+    def kill_job(self, job_name: str) -> str:
+        '''
+        Kills a job
+        '''
+        job_id = self.get_jobid(job_name)
+
+        try:
+            res = self.aapiclient.run_api.kill_job(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot kill {job_name}')
+            raise e            
+
+
+    def delete_job(self, job_name: str) -> str:
+        '''
+        Deletes a job
+        '''
+        job_id = self.get_jobid(job_name)
+
+        try:
+            res = self.aapiclient.run_api.delete_job(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot delete {job_name}')
+            raise e            
+
+    def rerun_job(self, job_name: str) -> str:
+        '''
+        Reruns a job
+        '''
+        job_id = self.get_jobid(job_name)
+
+        try:
+            res = self.aapiclient.run_api.rerun_job(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot rerun {job_name}')
+            raise e            
+
+    def set_to_ok(self, job_name: str) -> str:
+        '''
+        Set a job to OK
+        '''
+        job_id = self.get_jobid(job_name)
+
+        try:
+            res = self.aapiclient.run_api.set_to_ok(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot Set {job_name} to OK')
+            raise e            
+
+
     def get_jobid(self, job_name: str) -> str:
         '''
         Get the job id from a job_name. 
