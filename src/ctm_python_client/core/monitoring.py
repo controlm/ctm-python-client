@@ -1,13 +1,45 @@
+import typing
 from clients import ctm_api_client
-from ctm_python_client.core.comm import AbstractAAPIClient, OnPremAAPIClient
+from ctm_python_client.core.comm import AbstractAAPIClient, OnPremAAPIClient, SaasAAPIClient
 
 import webbrowser
 
 
 __all__ = ['RunMonitor']
 
+class Monitor:
+    
+    def __init__(self, aapiclient : typing.Union[OnPremAAPIClient, SaasAAPIClient]):
+        self.aapiclient = aapiclient
 
-class RunMonitor:
+    def get_statuses(self, run_id: str = None, filter: typing.Dict[str, typing.Any] = None):
+        if not run_id and filter is None:
+            raise Exception('Cannot get status without run_id or filter defined. To get all stautses, give an empty dictionary in filter (filter = {})')
+        try:
+            if filter is None:                
+                res = self.aapiclient.run_api.get_jobs_status(run_id)
+            else:
+                res = self.aapiclient.run_api.get_jobs_status_by_filter(**filter)
+
+            return res            
+
+        except Exception as e:
+            raise e
+
+    def get_output(self, job_id: str):
+        try:
+            res = self.aapiclient.run_api.get_job_output(job_id=job_id)
+            return res
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot get output for {job_id}')
+            elif 'OUTPUT DOES NOT EXIST FOR THIS JOB' in e.body:
+                # If no output exists return None instead of raising an exception
+                return None
+            raise e
+        
+
+class RunMonitor(Monitor):
     '''
     Class RunMonitor
 
@@ -17,17 +49,14 @@ class RunMonitor:
     def __init__(self, run_id: str, aapiclient: OnPremAAPIClient, monitor_page_uri: str = None) -> None:
         self.run_id = run_id
         self.monitor_page_uri = monitor_page_uri
-        self.aapiclient = aapiclient
+        # self.aapiclient = aapiclient
+        super().__init__(aapiclient=aapiclient)
 
     def get_statuses(self):
         '''
         Get the status of the run and all its jobs
         '''
-        try:
-            res = self.aapiclient.run_api.get_jobs_status(self.run_id)
-            return res.statuses
-        except Exception as e:
-            raise e
+        return super().get_statuses(self.run_id).statuses
 
     @staticmethod
     def _pretty_print_statuses(statuses):
@@ -81,15 +110,7 @@ class RunMonitor:
 
         job_id = self.get_jobid(job_name)
 
-        try:
-            res = self.aapiclient.run_api.get_job_output(job_id=job_id)
-            return res
-        except Exception as e:
-            if isinstance(e, IndexError):
-                raise Exception(f'Cannot get output for {job_name}')
-            elif 'OUTPUT DOES NOT EXIST FOR THIS JOB' in e.body:
-                return None
-            raise e
+        return super().get_output(job_id=job_id)        
 
     def print_output(self, job_name: str):
         '''
