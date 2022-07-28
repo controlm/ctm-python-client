@@ -46,7 +46,7 @@ class RunMonitor(Monitor):
     Allows basic monitoring functions in a similar way that found in the Control-M Web interface
     '''
 
-    def __init__(self, run_id: str, aapiclient: OnPremAAPIClient, monitor_page_uri: str = None) -> None:
+    def __init__(self, run_id: str, aapiclient: typing.Union[OnPremAAPIClient, SaasAAPIClient], monitor_page_uri: str = None) -> None:
         self.run_id = run_id
         self.monitor_page_uri = monitor_page_uri
         # self.aapiclient = aapiclient
