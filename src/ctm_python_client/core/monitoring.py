@@ -1,11 +1,10 @@
 import typing
-from clients import ctm_api_client
-from ctm_python_client.core.comm import AbstractAAPIClient, OnPremAAPIClient, SaasAAPIClient
+from ctm_python_client.core.comm import OnPremAAPIClient, SaasAAPIClient
 
 import webbrowser
 
 
-__all__ = ['RunMonitor']
+__all__ = ['RunMonitor', 'Monitor']
 
 class Monitor:
     
