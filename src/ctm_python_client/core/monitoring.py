@@ -37,7 +37,109 @@ class Monitor:
                 # If no output exists return None instead of raising an exception
                 return None
             raise e
-        
+
+    def get_log(self, job_id: str) -> str:
+        '''
+        Get the log of a job describing all actions regarding the job execution.            
+        '''
+
+        try:
+            res = self.aapiclient.run_api.get_job_log(job_id=job_id)
+            return res
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot get log for {job_id}')
+            raise e
+
+    def confirm_job(self, job_id: str) -> str:
+        '''
+        Confirms a job. This only applies to jobs which where defined with `confirm=True`.
+        Trying to confirm a job which can't be confirmed or was already confirmed will result in error
+        '''
+
+        try:
+            res = self.aapiclient.run_api.confirm_job(job_id=job_id)
+            if 'confirmed' in res.message:
+                return f'Job ({job_id}) confirmed by user'
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot confirm {job_id}')
+            raise e
+
+    def hold_job(self, job_id: str) -> str:
+        '''
+        Holds a job        
+        '''
+
+        try:
+            res = self.aapiclient.run_api.hold_job(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot hold {job_id}')
+            raise e            
+
+    def release_job(self, job_id: str) -> str:
+        '''
+        Releases a held job
+        '''
+
+        try:
+            res = self.aapiclient.run_api.free_job(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot release {job_id}')
+            raise e            
+
+    def kill_job(self, job_id: str) -> str:
+        '''
+        Kills a job
+        '''
+
+        try:
+            res = self.aapiclient.run_api.kill_job(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot kill {job_id}')
+            raise e            
+
+
+    def delete_job(self, job_id: str) -> str:
+        '''
+        Deletes a job
+        '''
+
+        try:
+            res = self.aapiclient.run_api.delete_job(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot delete {job_id}')
+            raise e            
+
+    def rerun_job(self, job_id: str) -> str:
+        '''
+        Reruns a job
+        '''
+
+        try:
+            res = self.aapiclient.run_api.rerun_job(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot rerun {job_id}')
+            raise e            
+
+    def set_to_ok(self, job_id: str) -> str:
+        '''
+        Set a job to OK
+        '''
+
+        try:
+            res = self.aapiclient.run_api.set_to_ok(job_id=job_id)
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot Set {job_id} to OK')
+            raise e            
+
+
 
 class RunMonitor(Monitor):
     '''
@@ -110,7 +212,16 @@ class RunMonitor(Monitor):
 
         job_id = self.get_jobid(job_name)
 
-        return super().get_output(job_id=job_id)        
+        try:
+            res = super().get_output(job_id=job_id)
+            return res
+        except Exception as e:
+            if isinstance(e, IndexError):
+                raise Exception(f'Cannot get output for {job_name}')
+            elif 'OUTPUT DOES NOT EXIST FOR THIS JOB' in e.body:
+                # If no output exists return None instead of raising an exception
+                return None
+            raise e        
 
     def print_output(self, job_name: str):
         '''
@@ -127,7 +238,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = self.aapiclient.run_api.get_job_log(job_id=job_id)
+            res = super().get_job_log(job_id=job_id)
             return res
         except Exception as e:
             if isinstance(e, IndexError):
@@ -142,7 +253,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = self.aapiclient.run_api.confirm_job(job_id=job_id)
+            res = super().confirm_job(job_id=job_id)
             if 'confirmed' in res.message:
                 return f'Job {job_name} ({job_id}) confirmed by user'
         except Exception as e:
@@ -157,7 +268,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = self.aapiclient.run_api.hold_job(job_id=job_id)
+            res = super().hold_job(job_id=job_id)
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot hold {job_name}')
@@ -170,7 +281,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = self.aapiclient.run_api.free_job(job_id=job_id)
+            res = super().free_job(job_id=job_id)
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot release {job_name}')
@@ -183,7 +294,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = self.aapiclient.run_api.kill_job(job_id=job_id)
+            res = super().kill_job(job_id=job_id)
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot kill {job_name}')
@@ -197,7 +308,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = self.aapiclient.run_api.delete_job(job_id=job_id)
+            res = super().delete_job(job_id=job_id)
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot delete {job_name}')
@@ -210,7 +321,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = self.aapiclient.run_api.rerun_job(job_id=job_id)
+            res = super().rerun_job(job_id=job_id)
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot rerun {job_name}')
@@ -223,7 +334,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = self.aapiclient.run_api.set_to_ok(job_id=job_id)
+            res = super().set_to_ok(job_id=job_id)
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot Set {job_name} to OK')
