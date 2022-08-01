@@ -75,18 +75,15 @@ class _AAPIParser:
 
         for k, v in obj.items():
             if k in cls_dct['fields']:
-                # print(f'Found field {k}')
                 if isinstance(v, dict):
                     if k in cls_dct['classes']:
                         val = self.parse_object(v, cls_dct['classes'][k])
                 elif isinstance(v, list):
                     tp_ = cls_dct['fields'][k].type.split('[')[1].split(']')[0]
-                    print('Found list of', tp_)
                     if tp_ == 'typing.Dict' or tp_ == 'str':
                         val = v
 
                     else:
-                        print('List', k, 'Getting Type:', tp_)
                         val = self.parse_list_object(v, self.DCT_CLASS[tp_])
                 else:
                     if cls_dct['fields'][k].type in cls_dct['enums']:
@@ -101,17 +98,15 @@ class _AAPIParser:
                 if isinstance(v, dict):
                     if 'Type' in v:
                         o = self.parse_typed_object(k, v)
-                        # print(o.object_name, type(o))
+
                         # check if object type is from a container
-                        # print('Chekcing if', type(o),'is a container')
                         for container, cv in cls_dct['containers'].items():
                             if isinstance(o, container):
-                                # print('Found that',k,'is an instance of', container)
                                 kwargs[cv.name].append(o)
                     else:
-                        print('UNKNOWN object', v)
+                        pass
                 else:
-                    print(f'UNKOWN field {k}')
+                    pass
 
         if additional_kwargs:
             kwargs.update(additional_kwargs)

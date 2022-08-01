@@ -146,9 +146,9 @@ class Folder(SimpleFolder, AAPIJob):
         @attrs.define
         class RuleBasedCalendars(AAPIObject):
 
-            included: typing.List[TagGlobal] = attrs.field(
+            included: typing.List[str] = attrs.field(
                 kw_only=True, default=None, metadata={'_aapi_repr_': 'Included'})
-            excluded: typing.List[TagGlobal] = attrs.field(
+            excluded: typing.List[str] = attrs.field(
                 kw_only=True, default=None, metadata={'_aapi_repr_': 'Excluded'})
             calendar_rule_based_list: typing.List[CalendarRuleBased] = attrs.field(
                 kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})

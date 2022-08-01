@@ -149,9 +149,9 @@ class SubFolder(FolderJobBase, AAPIJob):
 
             relationship: Relationship = attrs.field(kw_only=True, default=None, metadata={
                                                      '_aapi_repr_': 'Relationship'})
-            included: typing.List[JobTag] = attrs.field(
+            included: typing.List[str] = attrs.field(
                 kw_only=True, default=None, metadata={'_aapi_repr_': 'Included'})
-            excluded: typing.List[JobTag] = attrs.field(
+            excluded: typing.List[str] = attrs.field(
                 kw_only=True, default=None, metadata={'_aapi_repr_': 'Excluded'})
 
         class DaysRelation(enum.Enum):
