@@ -9,3 +9,5 @@ sphinx
 nbsphinx
 myst-parser
 furo
+
+tox

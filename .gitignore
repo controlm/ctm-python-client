@@ -12,3 +12,4 @@ venv
 **/.scannerwork
 .mywork/
 build/
+.tox/
