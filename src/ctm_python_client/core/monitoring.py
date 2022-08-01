@@ -1,5 +1,6 @@
 import typing
-from ctm_python_client.core.comm import OnPremAAPIClient, SaasAAPIClient
+from clients import ctm_api_client
+from ctm_python_client.core.comm import AbstractAAPIClient, OnPremAAPIClient, SaasAAPIClient
 
 import webbrowser
 
@@ -252,7 +253,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = super().confirm_job(job_id=job_id)
+            res = self.aapiclient.run_api.confirm_job(job_id=job_id)
             if 'confirmed' in res.message:
                 return f'Job {job_name} ({job_id}) confirmed by user'
         except Exception as e:
@@ -280,7 +281,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = super().free_job(job_id=job_id)
+            res = super().release_job(job_id=job_id)
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot release {job_name}')
