@@ -7,8 +7,10 @@ import random
 import tempfile
 import collections
 import copy
+import ast
 
 from aapi import *
+from aapi.parser import AAPIParser
 from ctm_python_client.core.comm import AAPIClientResponse, AbstractAAPIClient, Environment, EnvironmentMode, OnPremAAPIClient, SaasAAPIClient, sanitize_output
 from ctm_python_client.core.monitoring import RunMonitor
 
@@ -137,7 +139,8 @@ class BaseWorkflow(AbstractWorkflow):
                         folder.sub_folder_list.append(obj)
                 else:
                     # Folder does not exist, create folder
-                    folder, parent_folder = self.create_folder_hierarchy(inpath)
+                    folder, parent_folder = self.create_folder_hierarchy(
+                        inpath)
                     self._apply_defaults_for_folder(folder)
                     if isinstance(obj, Job):
                         parent_folder.job_list.append(obj)
@@ -288,22 +291,20 @@ class BaseWorkflow(AbstractWorkflow):
             except:
                 return default
 
-
-
-    def create_folder_hierarchy(self, path : str):
+    def create_folder_hierarchy(self, path: str):
         parts = path.split('/')
-        folder = self.get(parts[0], default = Folder(parts[0]))
+        folder = self.get(parts[0], default=Folder(parts[0]))
         parent = folder
-        for i,o in enumerate(parts[1:]):
+        for i, o in enumerate(parts[1:]):
             try:
-                subfolder = [sf for sf in parent.sub_folder_list if sf.object_name == o][0]
+                subfolder = [
+                    sf for sf in parent.sub_folder_list if sf.object_name == o][0]
             except IndexError:
                 subfolder = SubFolder(o)
                 parent.sub_folder_list.append(subfolder)
             parent = subfolder
 
-        return folder,parent
-
+        return folder, parent
 
     def dumps_json(self, indent=None):
         return json.dumps({k: v.as_aapi_dict() for (k, v) in self._definitions.items()}, indent=indent)
@@ -316,11 +317,10 @@ class BaseWorkflow(AbstractWorkflow):
         self._connections = copy.deepcopy(workflow._connections)
 
 
-
 class Workflow(BaseWorkflow):
 
     @staticmethod
-    def workbench(host : str = 'localhost', port : str = '8443'):
+    def workbench(host: str = 'localhost', port: str = '8443'):
         return Workflow(Environment.create_workbench(host, port), WorkflowDefaults(run_as='workbench'))
 
     def __init__(self, environment: Environment, defaults: WorkflowDefaults = None, skip_initial_authentication: bool = False) -> None:
@@ -328,7 +328,7 @@ class Workflow(BaseWorkflow):
 
         self.environment = environment
 
-        self.aapiclient: AbstractAAPIClient = None
+        self.aapiclient: typing.Union[OnPremAAPIClient, SaasAAPIClient] = None
         if self.environment.mode == EnvironmentMode.SAAS:
             self.aapiclient = SaasAAPIClient(
                 environment.endpoint, environment.credentials)
@@ -402,8 +402,9 @@ class Workflow(BaseWorkflow):
         try:
             res = self.aapiclient.run_api.run_jobs(fpath.resolve())
             # return res
-            run_ =  RunMonitor(res.run_id, self.aapiclient, monitor_page_uri= res.monitor_page_uri)
-            if open_in_browser:                
+            run_ = RunMonitor(res.run_id, self.aapiclient,
+                              monitor_page_uri=res.monitor_page_uri)
+            if open_in_browser:
                 run_.open_in_browser()
             return run_
         except Exception as e:
@@ -411,3 +412,13 @@ class Workflow(BaseWorkflow):
         finally:
             if delete_afterwards:
                 fpath.unlink()
+
+    def import_from_controlm(self, server: str = '*', folder: str = '*'):
+        self.aapiclient.authenticate()
+        r: typing.Dict[str, typing.Any] = ast.literal_eval(
+            self.aapiclient.deploy_api.get_deployed_folders_new(server=server, folder=folder))
+        res = {}
+        for k, v in r.items():
+            res[k] = AAPIParser.parse_typed_object(k, v)
+
+        return res
