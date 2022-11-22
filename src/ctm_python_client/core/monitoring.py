@@ -238,7 +238,7 @@ class RunMonitor(Monitor):
         job_id = self.get_jobid(job_name)
 
         try:
-            res = super().get_job_log(job_id=job_id)
+            res = super().get_log(job_id=job_id)
             return res
         except Exception as e:
             if isinstance(e, IndexError):
