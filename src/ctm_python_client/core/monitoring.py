@@ -26,9 +26,13 @@ class Monitor:
         except Exception as e:
             raise e
 
-    def get_output(self, job_id: str):
+    # Daniel Companeetz. Added run_no to get specific output, or last if None.
+    def get_output(self, job_id: str, run_no=None):
         try:
-            res = self.aapiclient.run_api.get_job_output(job_id=job_id)
+            if run_no == None :
+                res = self.aapiclient.run_api.get_job_output(job_id=job_id)
+            else:
+                res = self.aapiclient.run_api.get_job_output(job_id=job_id, run_no=run_no)
             return res
         except Exception as e:
             if isinstance(e, IndexError):
