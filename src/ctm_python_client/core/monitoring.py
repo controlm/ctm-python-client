@@ -7,28 +7,33 @@ import webbrowser
 
 __all__ = ['RunMonitor', 'Monitor']
 
+
 class Monitor:
-    
-    def __init__(self, aapiclient : typing.Union[OnPremAAPIClient, SaasAAPIClient]):
+
+    def __init__(self, aapiclient: typing.Union[OnPremAAPIClient, SaasAAPIClient]):
         self.aapiclient = aapiclient
 
     def get_statuses(self, run_id: str = None, filter: typing.Dict[str, typing.Any] = None):
         if not run_id and filter is None:
-            raise Exception('Cannot get status without run_id or filter defined. To get all stautses, give an empty dictionary in filter (filter = {})')
+            raise Exception(
+                'Cannot get status without run_id or filter defined. To get all stautses, give an empty dictionary in filter (filter = {})')
         try:
-            if filter is None:                
+            if filter is None:
                 res = self.aapiclient.run_api.get_jobs_status(run_id)
             else:
-                res = self.aapiclient.run_api.get_jobs_status_by_filter(**filter)
+                res = self.aapiclient.run_api.get_jobs_status_by_filter(
+                    **filter)
 
-            return res            
+            return res
 
         except Exception as e:
             raise e
 
-    def get_output(self, job_id: str):
+    def get_output(self, job_id: str, run_number: int = 0):
         try:
-            res = self.aapiclient.run_api.get_job_output(job_id=job_id)
+
+            res = self.aapiclient.run_api.get_job_output(
+                job_id=job_id, run_no=run_number)
             return res
         except Exception as e:
             if isinstance(e, IndexError):
@@ -76,7 +81,7 @@ class Monitor:
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot hold {job_id}')
-            raise e            
+            raise e
 
     def release_job(self, job_id: str) -> str:
         '''
@@ -88,7 +93,7 @@ class Monitor:
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot release {job_id}')
-            raise e            
+            raise e
 
     def kill_job(self, job_id: str) -> str:
         '''
@@ -100,8 +105,7 @@ class Monitor:
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot kill {job_id}')
-            raise e            
-
+            raise e
 
     def delete_job(self, job_id: str) -> str:
         '''
@@ -113,7 +117,7 @@ class Monitor:
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot delete {job_id}')
-            raise e            
+            raise e
 
     def rerun_job(self, job_id: str) -> str:
         '''
@@ -125,7 +129,7 @@ class Monitor:
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot rerun {job_id}')
-            raise e            
+            raise e
 
     def set_to_ok(self, job_id: str) -> str:
         '''
@@ -137,8 +141,7 @@ class Monitor:
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot Set {job_id} to OK')
-            raise e            
-
+            raise e
 
 
 class RunMonitor(Monitor):
@@ -204,16 +207,16 @@ class RunMonitor(Monitor):
                     f'Cannot get status for {job_name}')
             raise e
 
-    def get_output(self, job_name: str) -> str:
+    def get_output(self, job_name: str, run_number: int = 0) -> str:
         '''
         Get the output of a job describing all actions regarding the job execution.
-        If not applicable, it returns None.        
+        If not applicable, it returns None.               
         '''
 
         job_id = self.get_jobid(job_name)
 
         try:
-            res = super().get_output(job_id=job_id)
+            res = super().get_output(job_id=job_id, run_number=run_number)
             return res
         except Exception as e:
             if isinstance(e, IndexError):
@@ -221,14 +224,14 @@ class RunMonitor(Monitor):
             elif 'OUTPUT DOES NOT EXIST FOR THIS JOB' in e.body:
                 # If no output exists return None instead of raising an exception
                 return None
-            raise e        
+            raise e
 
-    def print_output(self, job_name: str):
+    def print_output(self, job_name: str, run_number: int = 0):
         '''
         Print the output of a job describing all actions regarding the job execution.
 
         '''
-        print(self.get_output(job_name))
+        print(self.get_output(job_name, run_number=run_number))
 
     def get_log(self, job_name: str) -> str:
         '''
@@ -272,7 +275,7 @@ class RunMonitor(Monitor):
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot hold {job_name}')
-            raise e            
+            raise e
 
     def release_job(self, job_name: str) -> str:
         '''
@@ -285,7 +288,7 @@ class RunMonitor(Monitor):
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot release {job_name}')
-            raise e            
+            raise e
 
     def kill_job(self, job_name: str) -> str:
         '''
@@ -298,8 +301,7 @@ class RunMonitor(Monitor):
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot kill {job_name}')
-            raise e            
-
+            raise e
 
     def delete_job(self, job_name: str) -> str:
         '''
@@ -312,7 +314,7 @@ class RunMonitor(Monitor):
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot delete {job_name}')
-            raise e            
+            raise e
 
     def rerun_job(self, job_name: str) -> str:
         '''
@@ -325,7 +327,7 @@ class RunMonitor(Monitor):
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot rerun {job_name}')
-            raise e            
+            raise e
 
     def set_to_ok(self, job_name: str) -> str:
         '''
@@ -338,8 +340,7 @@ class RunMonitor(Monitor):
         except Exception as e:
             if isinstance(e, IndexError):
                 raise Exception(f'Cannot Set {job_name} to OK')
-            raise e            
-
+            raise e
 
     def get_jobid(self, job_name: str) -> str:
         '''
