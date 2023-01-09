@@ -1,5 +1,5 @@
 from aapi.bases import AAPIObject, AAPIJob
-from aapi.ai import AIJob
+from aapi.ai import AIJob, AIConnectionProfile
 
 from aapi.action import Action, ActionRerun, ActionSetToOK, ActionSetToNotOK, ActionStopCyclicRun
 from aapi.addevents import AddEvents
