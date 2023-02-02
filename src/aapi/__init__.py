@@ -1,5 +1,7 @@
 from aapi.bases import AAPIObject, AAPIJob
-from aapi.ai import AIJob
+from aapi.ai import AIJob, AIConnectionProfile
+
+
 
 from aapi.action import Action, ActionRerun, ActionSetToOK, ActionSetToNotOK, ActionStopCyclicRun
 from aapi.addevents import AddEvents
@@ -71,3 +73,7 @@ from aapi.steprange import StepRange
 from aapi.ctbruledata import ActionControlMAnalyzerRule
 from aapi.ifrerun import ActionRestart
 from aapi.ifcollection import IfCollection, IfCollectionZOS
+
+
+from aapi.integration_factory.jobs import *
+from aapi.integration_factory.connection_profiles import *
