@@ -10,5 +10,5 @@ setup(
     author="BMC Software",
     license="BSD 3-Clause",
     install_requires=["requests>=2.23.0",
-                      "urllib3", "six", "attrs", "certifi"],
+                      "urllib3", "six", "attrs", "certifi", "jinja2"],
 )
