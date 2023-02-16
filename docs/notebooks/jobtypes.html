@@ -2,13 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Job and Folder Properties" href="jobproperties.html" /><link rel="prev" title="Folders" href="folders.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.04.1"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Job types - Control-M Python Client documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -152,7 +152,7 @@
   <span class="sidebar-brand-text">Control-M Python Client  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -165,6 +165,7 @@
 <li class="toctree-l2"><a class="reference internal" href="monitoring.html">Monitoring Flows with Control-M Python Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ai.html">Working with Application Integrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autogen.html">Autogeneration of AI plugins with Control-M Workbench</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="folders.html">Folders</a></li>
@@ -175,7 +176,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">References:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aapi.html">aapi</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../aapi.html">aapi package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../aapi.integration_factory.html">aapi.integration_factory package</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../ctm_python_client.core.html">ctm_python_client.core package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ctm_python_client.ext.html">ctm_python_client.ext package</a></li>
 </ul>
@@ -197,7 +201,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -321,10 +326,11 @@ div.nboutput.container div.prompt > div {
     }
 }
 
-/* disable scrollbars on prompts */
+/* disable scrollbars and line breaks on prompts */
 div.nbinput.container div.prompt pre,
 div.nboutput.container div.prompt pre {
     overflow: hidden;
+    white-space: pre;
 }
 
 /* input/output area */
@@ -1384,7 +1390,7 @@ div.rendered_html tbody tr:hover {
                          <span class="p">}</span>
                      <span class="p">],</span>
                      <span class="n">soap_request</span><span class="o">=</span><span class="p">[</span>
-                         <span class="sd">&#39;&#39;&#39;&lt;soapenv:Envelope xmlns:soapenv=http://schemas.xmlsoap.org/soap/envelope/ xmlns:tem=http://tempuri.org/&gt;</span>
+<span class="w">                         </span><span class="sd">&#39;&#39;&#39;&lt;soapenv:Envelope xmlns:soapenv=http://schemas.xmlsoap.org/soap/envelope/ xmlns:tem=http://tempuri.org/&gt;</span>
 <span class="sd">                                &lt;soapenv:Header/&gt;</span>
 <span class="sd">                                &lt;soapenv:Body&gt;</span>
 <span class="sd">                                    &lt;tem:Add&gt;</span>
@@ -1435,10 +1441,10 @@ div.rendered_html tbody tr:hover {
                 </div>
                 <div class="title">Job and Folder Properties</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="folders.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -1460,9 +1466,7 @@ div.rendered_html tbody tr:hover {
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -1474,7 +1478,7 @@ div.rendered_html tbody tr:hover {
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1531,6 +1535,7 @@ div.rendered_html tbody tr:hover {
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>

@@ -1,0 +1,7 @@
+aapi
+====
+
+.. toctree::
+   :maxdepth: 4
+
+   aapi
