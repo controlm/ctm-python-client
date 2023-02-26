@@ -2,13 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-5.0.2, furo 2022.06.04.1"/>
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>ctm_python_client package - Control-M Python Client documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -152,7 +152,7 @@
   <span class="sidebar-brand-text">Control-M Python Client  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -165,6 +165,7 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/monitoring.html">Monitoring Flows with Control-M Python Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/authentication.html">Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/ai.html">Working with Application Integrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/autogen.html">Auto generation of AI Plugins with Control-M Workbench</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/folders.html">Folders</a></li>
@@ -175,7 +176,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">References:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aapi.html">aapi</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="aapi.html">aapi package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="aapi.integration_factory.html">aapi.integration_factory package</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ctm_python_client.core.html">ctm_python_client.core package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ctm_python_client.ext.html">ctm_python_client.ext package</a></li>
 </ul>
@@ -197,7 +201,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -219,17 +224,150 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ctm_python_client.core.html">ctm_python_client.core package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ctm_python_client.core.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.core.html#module-ctm_python_client.core.comm">ctm_python_client.core.comm module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.core.html#module-ctm_python_client.core.credential">ctm_python_client.core.credential module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.core.html#module-ctm_python_client.core.monitoring">ctm_python_client.core.monitoring module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.core.html#module-ctm_python_client.core.workflow">ctm_python_client.core.workflow module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.core.html#module-ctm_python_client.core.comm">ctm_python_client.core.comm module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.AAPIClientResponse"><code class="docutils literal notranslate"><span class="pre">AAPIClientResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.AAPIClientResponse.is_ok"><code class="docutils literal notranslate"><span class="pre">AAPIClientResponse.is_ok()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.AbstractAAPIClient"><code class="docutils literal notranslate"><span class="pre">AbstractAAPIClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.AbstractAAPIClient.authenticate"><code class="docutils literal notranslate"><span class="pre">AbstractAAPIClient.authenticate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.Environment"><code class="docutils literal notranslate"><span class="pre">Environment</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.Environment.create_onprem"><code class="docutils literal notranslate"><span class="pre">Environment.create_onprem()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.Environment.create_saas"><code class="docutils literal notranslate"><span class="pre">Environment.create_saas()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.Environment.create_workbench"><code class="docutils literal notranslate"><span class="pre">Environment.create_workbench()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.EnvironmentMode"><code class="docutils literal notranslate"><span class="pre">EnvironmentMode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.EnvironmentMode.ONPREM"><code class="docutils literal notranslate"><span class="pre">EnvironmentMode.ONPREM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.EnvironmentMode.SAAS"><code class="docutils literal notranslate"><span class="pre">EnvironmentMode.SAAS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.EnvironmentMode.WORKBENCH"><code class="docutils literal notranslate"><span class="pre">EnvironmentMode.WORKBENCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.OnPremAAPIClient"><code class="docutils literal notranslate"><span class="pre">OnPremAAPIClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.OnPremAAPIClient.authenticate"><code class="docutils literal notranslate"><span class="pre">OnPremAAPIClient.authenticate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.SaasAAPIClient"><code class="docutils literal notranslate"><span class="pre">SaasAAPIClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.comm.SaasAAPIClient.authenticate"><code class="docutils literal notranslate"><span class="pre">SaasAAPIClient.authenticate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.core.html#module-ctm_python_client.core.credential">ctm_python_client.core.credential module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.credential.AbstractCredentials"><code class="docutils literal notranslate"><span class="pre">AbstractCredentials</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.credential.AbstractCredentials.get_password"><code class="docutils literal notranslate"><span class="pre">AbstractCredentials.get_password()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.credential.AbstractCredentials.get_username"><code class="docutils literal notranslate"><span class="pre">AbstractCredentials.get_username()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.credential.InputPasswordCredentials"><code class="docutils literal notranslate"><span class="pre">InputPasswordCredentials</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.credential.InputPasswordCredentials.get_password"><code class="docutils literal notranslate"><span class="pre">InputPasswordCredentials.get_password()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.credential.InputPasswordCredentials.get_username"><code class="docutils literal notranslate"><span class="pre">InputPasswordCredentials.get_username()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.credential.SimpleCredentials"><code class="docutils literal notranslate"><span class="pre">SimpleCredentials</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.credential.SimpleCredentials.get_password"><code class="docutils literal notranslate"><span class="pre">SimpleCredentials.get_password()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.credential.SimpleCredentials.get_username"><code class="docutils literal notranslate"><span class="pre">SimpleCredentials.get_username()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.core.html#module-ctm_python_client.core.monitoring">ctm_python_client.core.monitoring module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor"><code class="docutils literal notranslate"><span class="pre">Monitor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.confirm_job"><code class="docutils literal notranslate"><span class="pre">Monitor.confirm_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.delete_job"><code class="docutils literal notranslate"><span class="pre">Monitor.delete_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.get_log"><code class="docutils literal notranslate"><span class="pre">Monitor.get_log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.get_output"><code class="docutils literal notranslate"><span class="pre">Monitor.get_output()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.get_statuses"><code class="docutils literal notranslate"><span class="pre">Monitor.get_statuses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.hold_job"><code class="docutils literal notranslate"><span class="pre">Monitor.hold_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.kill_job"><code class="docutils literal notranslate"><span class="pre">Monitor.kill_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.release_job"><code class="docutils literal notranslate"><span class="pre">Monitor.release_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.rerun_job"><code class="docutils literal notranslate"><span class="pre">Monitor.rerun_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.set_to_ok"><code class="docutils literal notranslate"><span class="pre">Monitor.set_to_ok()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor"><code class="docutils literal notranslate"><span class="pre">RunMonitor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.confirm_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.confirm_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.delete_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.delete_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.get_jobid"><code class="docutils literal notranslate"><span class="pre">RunMonitor.get_jobid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.get_log"><code class="docutils literal notranslate"><span class="pre">RunMonitor.get_log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.get_output"><code class="docutils literal notranslate"><span class="pre">RunMonitor.get_output()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.get_status"><code class="docutils literal notranslate"><span class="pre">RunMonitor.get_status()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.get_statuses"><code class="docutils literal notranslate"><span class="pre">RunMonitor.get_statuses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.hold_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.hold_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.kill_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.kill_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.open_in_browser"><code class="docutils literal notranslate"><span class="pre">RunMonitor.open_in_browser()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.print_output"><code class="docutils literal notranslate"><span class="pre">RunMonitor.print_output()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.print_statuses"><code class="docutils literal notranslate"><span class="pre">RunMonitor.print_statuses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.release_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.release_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.rerun_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.rerun_job()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.set_to_ok"><code class="docutils literal notranslate"><span class="pre">RunMonitor.set_to_ok()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.core.html#module-ctm_python_client.core.workflow">ctm_python_client.core.workflow module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.AbstractWorkflow"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.AbstractWorkflow.add"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.AbstractWorkflow.chain"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.chain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.AbstractWorkflow.connect"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.AbstractWorkflow.dump_json"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.dump_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.AbstractWorkflow.dumps_json"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.dumps_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.AbstractWorkflow.get"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.AbstractWorkflow.get_objects"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.get_objects()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.add"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.chain"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.chain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.clear_all"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.clear_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.connect"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.copy_from"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.copy_from()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.create_folder_hierarchy"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.create_folder_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.dump_json"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.dump_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.dumps_json"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.dumps_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.get"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.get_objects"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.get_objects()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow"><code class="docutils literal notranslate"><span class="pre">Workflow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow.authenticate"><code class="docutils literal notranslate"><span class="pre">Workflow.authenticate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow.build"><code class="docutils literal notranslate"><span class="pre">Workflow.build()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow.deploy"><code class="docutils literal notranslate"><span class="pre">Workflow.deploy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow.run"><code class="docutils literal notranslate"><span class="pre">Workflow.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow.workbench"><code class="docutils literal notranslate"><span class="pre">Workflow.workbench()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.WorkflowDefaults"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.WorkflowDefaults.application"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.application</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.WorkflowDefaults.controlm_server"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.controlm_server</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.WorkflowDefaults.host"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.host</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.WorkflowDefaults.run_as"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.run_as</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.WorkflowDefaults.sub_application"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.sub_application</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.core.html#ctm_python_client.core.workflow.WorkflowDefaults.when"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.when</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="ctm_python_client.core.html#module-ctm_python_client.core">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ctm_python_client.ext.html">ctm_python_client.ext package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ctm_python_client.ext.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.ext.html#module-ctm_python_client.ext.credential">ctm_python_client.ext.credential module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.ext.html#module-ctm_python_client.ext.viz">ctm_python_client.ext.viz module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.ext.html#module-ctm_python_client.ext.credential">ctm_python_client.ext.credential module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.ext.html#ctm_python_client.ext.credential.KeyringCredentials"><code class="docutils literal notranslate"><span class="pre">KeyringCredentials</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.ext.html#ctm_python_client.ext.credential.KeyringCredentials.get_password"><code class="docutils literal notranslate"><span class="pre">KeyringCredentials.get_password()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctm_python_client.ext.html#ctm_python_client.ext.credential.KeyringCredentials.get_username"><code class="docutils literal notranslate"><span class="pre">KeyringCredentials.get_username()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ctm_python_client.ext.html#module-ctm_python_client.ext.viz">ctm_python_client.ext.viz module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.ext.html#ctm_python_client.ext.viz.get_graph"><code class="docutils literal notranslate"><span class="pre">get_graph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ctm_python_client.ext.html#ctm_python_client.ext.viz.get_subgraph"><code class="docutils literal notranslate"><span class="pre">get_subgraph()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="ctm_python_client.ext.html#module-ctm_python_client.ext">Module contents</a></li>
 </ul>
 </li>
@@ -260,9 +398,7 @@
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -274,7 +410,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -299,6 +435,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>

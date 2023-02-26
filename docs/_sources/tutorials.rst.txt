@@ -9,3 +9,4 @@ Tutorials
    notebooks/monitoring
    notebooks/authentication
    notebooks/ai
+   notebooks/autogen
