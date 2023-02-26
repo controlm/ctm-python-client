@@ -5,9 +5,9 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# Autogeneration of AI plugins with Control-M Workbench\n",
+    "# Auto generation of AI Plugins with Control-M Workbench\n",
     "\n",
-    "Control-M Workbench version 9.21.100 or above allows users to auto generate their AI plugins python code. We will use the `ext.autogen` module from the Control-M Python Client to generate all classes of Jobs and ConnectionProfiles of all plugins in a workbench environment.\n",
+    "Control-M Workbench version 9.21.100 or above allows users to auto generate python code for their AI plugins. We will use the `ext.autogen` module from the Control-M Python Client to generate all classes of Jobs and ConnectionProfiles of all plugins in a workbench environment.\n",
     "\n",
     "If you want to follow along, import the [Example Plugin file](EXAMPLEPG.ctmai) into your workbench."
    ]
@@ -29,7 +29,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "After calling `generate_ai_plugins_classes`, a new python file will be generated"
+    "After calling `generate_ai_plugins_classes`, a new python file is generated"
    ]
   },
   {
@@ -86,7 +86,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "We can now import all objects from this file (Jobs and Connection profiles)"
+    "We can now import all objects from this file (Jobs and Connection Profiles):"
    ]
   },
   {
@@ -103,7 +103,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "With the new classes for Jobs and Connection Profiles, we can create flows with our Application Integrator Plugins"
+    "With the new classes for Jobs and Connection Profiles, we can create flows with our Application Integrator Plugins:"
    ]
   },
   {
