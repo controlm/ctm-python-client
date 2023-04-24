@@ -1,5 +1,13 @@
-aapi
-====
+aapi package
+============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   aapi.integration_factory
 
 Submodules
 ----------

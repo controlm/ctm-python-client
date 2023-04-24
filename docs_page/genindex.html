@@ -163,6 +163,7 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/monitoring.html">Monitoring Flows with Control-M Python Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/authentication.html">Authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/ai.html">Working with Application Integrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/autogen.html">Auto generation of AI Plugins with Control-M Workbench</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/folders.html">Folders</a></li>
@@ -173,7 +174,10 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">References:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aapi.html">aapi</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="aapi.html">aapi package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="aapi.integration_factory.html">aapi.integration_factory package</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ctm_python_client.core.html">ctm_python_client.core package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ctm_python_client.ext.html">ctm_python_client.ext package</a></li>
 </ul>
@@ -477,6 +481,27 @@
 </li>
         </ul></li>
         <li>
+    aapi.integration_factory
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#module-aapi.integration_factory">module</a>
+</li>
+        </ul></li>
+        <li>
+    aapi.integration_factory.connection_profiles
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#module-aapi.integration_factory.connection_profiles">module</a>
+</li>
+        </ul></li>
+        <li>
+    aapi.integration_factory.jobs
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#module-aapi.integration_factory.jobs">module</a>
+</li>
+        </ul></li>
+        <li>
     aapi.internalrule
 
         <ul>
@@ -755,6 +780,12 @@
           <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferS3.access_key">(aapi.connectionprofile.ConnectionProfileFileTransferS3 attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere.account_id">account_id (aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake.account_identifier">account_identifier (aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataproc.account_region">account_region (aapi.integration_factory.jobs.JobGCPDataproc attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.PostCommandDest.action">action (aapi.filetransfer.FileTransfer.PostCommandDest attribute)</a>
 
         <ul>
@@ -763,6 +794,8 @@
           <li><a href="aapi.html#aapi.filetransfer.FileTransfer.PreCommandDest.action">(aapi.filetransfer.FileTransfer.PreCommandDest attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.filetransfer.FileTransfer.PreCommandSrc.action">(aapi.filetransfer.FileTransfer.PreCommandSrc attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.action">(aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.job.JobOS400FullRestrictedStateAction.action">(aapi.job.JobOS400FullRestrictedStateAction attribute)</a>
 </li>
@@ -791,8 +824,6 @@
 </li>
         <li><a href="aapi.html#aapi.ctbruledata.ActionControlMAnalyzerRule">ActionControlMAnalyzerRule (class in aapi.ctbruledata)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.mail.ActionMail">ActionMail (class in aapi.mail)</a>
 </li>
         <li><a href="aapi.html#aapi.mail.ActionMail.Urgency">ActionMail.Urgency (class in aapi.mail)</a>
@@ -845,6 +876,8 @@
           <li><a href="aapi.html#aapi.sitestandardpolicy.SiteStandardPolicy.Status.Active">(aapi.sitestandardpolicy.SiteStandardPolicy.Status attribute)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAzure.active_directory_domain_name">active_directory_domain_name (aapi.connectionprofile.ConnectionProfileAzure attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.tag.TagFolder.active_from">active_from (aapi.tag.TagFolder attribute)</a>
@@ -869,12 +902,16 @@
 </li>
         <li><a href="aapi.html#aapi.propertycondition.PropertyCondition.Property.ActivePeriod">ActivePeriod (aapi.propertycondition.PropertyCondition.Property attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.activity_options">activity_options (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.AbstractWorkflow.add">add() (ctm_python_client.core.workflow.AbstractWorkflow class method)</a>
 
         <ul>
           <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.add">(ctm_python_client.core.workflow.BaseWorkflow method)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.add_condition">add_condition (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.basefolder.Folder.add_events_list">add_events_list (aapi.basefolder.Folder attribute)</a>
 
         <ul>
@@ -1007,6 +1044,30 @@
           <li><a href="aapi.html#aapi.event.Event.Date.AnyDate">(aapi.event.Event.Date attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud.api_key">api_key (aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere.api_token">api_token (aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI.api_url">api_url (aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileTalendDataManagement.api_url">(aapi.integration_factory.connection_profiles.ConnectionProfileTalendDataManagement attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere.api_username">api_username (aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.app_id">app_id (aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.app_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileUIPath.app_id">(aapi.integration_factory.connection_profiles.ConnectionProfileUIPath attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobQlikCloud.app_id">(aapi.integration_factory.jobs.JobQlikCloud attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileUIPath.app_secret">app_secret (aapi.integration_factory.connection_profiles.ConnectionProfileUIPath attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileSAP.app_version">app_version (aapi.connectionprofile.ConnectionProfileSAP attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobAWS.append_log">append_log (aapi.job.JobAWS attribute)</a>
@@ -1015,6 +1076,8 @@
           <li><a href="aapi.html#aapi.job.JobAzure.append_log">(aapi.job.JobAzure attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.append_log_to_output">append_log_to_output (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobPeopleSoft.append_to_output">append_to_output (aapi.job.JobPeopleSoft attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.basefolder.Folder.application">application (aapi.basefolder.Folder attribute)</a>
@@ -1030,7 +1093,21 @@
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAzure.application_id">application_id (aapi.connectionprofile.ConnectionProfileAzure attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks.application_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks attribute)</a>
 </li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.application_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions.application_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.application_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.application_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI.application_id">(aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileSAP.application_server_logon">application_server_logon (aapi.connectionprofile.ConnectionProfileSAP attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfilePeopleSoft.application_servers">application_servers (aapi.connectionprofile.ConnectionProfilePeopleSoft attribute)</a>
@@ -1073,9 +1150,11 @@
           <li><a href="aapi.html#aapi.filetransfer.FileTransfer.PreCommandSrc.arg2">(aapi.filetransfer.FileTransfer.PreCommandSrc attribute)</a>
 </li>
         </ul></li>
-        <li><a href="aapi.html#aapi.job.JobHadoopMapReduce.arguments">arguments (aapi.job.JobHadoopMapReduce attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlue.arguments">arguments (aapi.integration_factory.jobs.JobAwsGlue attribute)</a>
 
         <ul>
+          <li><a href="aapi.html#aapi.job.JobHadoopMapReduce.arguments">(aapi.job.JobHadoopMapReduce attribute)</a>
+</li>
           <li><a href="aapi.html#aapi.job.JobHadoopSpark.arguments">(aapi.job.JobHadoopSpark attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.job.JobHadoopTajo.arguments">(aapi.job.JobHadoopTajo attribute)</a>
@@ -1121,6 +1200,8 @@
           <li><a href="aapi.html#aapi.job.Job.RerunSpecificTimes.at">(aapi.job.Job.RerunSpecificTimes attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobBoomiAtomsphere.atom_name">atom_name (aapi.integration_factory.jobs.JobBoomiAtomsphere attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.mail.ActionMail.attach_output">attach_output (aapi.mail.ActionMail attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.year.Year.aug">aug (aapi.year.Year attribute)</a>
@@ -1135,6 +1216,26 @@
           <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow.authenticate">(ctm_python_client.core.workflow.Workflow method)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2.authentication">authentication (aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2 attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR.authentication">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue.authentication">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew.authentication">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.authentication_method">authentication_method (aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.authentication_method">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.authentication_method">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.authentication_method">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileDatabaseMSSql.authentication_type">authentication_type (aapi.connectionprofile.ConnectionProfileDatabaseMSSql attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobZOS.Archiving.auto_archive">auto_archive (aapi.job.JobZOS.Archiving attribute)</a>
@@ -1143,11 +1244,47 @@
 </li>
         <li><a href="aapi.html#aapi.basefolder.SimpleFolder.OrderMethod.Automatic">Automatic (aapi.basefolder.SimpleFolder.OrderMethod attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAutomationAnywhere.automation_type">automation_type (aapi.integration_factory.jobs.JobAutomationAnywhere attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobSLAManagement.AverageRunTimeTolerance.average_run_time">average_run_time (aapi.job.JobSLAManagement.AverageRunTimeTolerance attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobSLAManagement.average_run_time_tolerance">average_run_time_tolerance (aapi.job.JobSLAManagement attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew.aws_access_key">aws_access_key (aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2.aws_access_key_id">aws_access_key_id (aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2 attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR.aws_access_key_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue.aws_access_key_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew.aws_api_base_url">aws_api_base_url (aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR.aws_base_url">aws_base_url (aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobAWSBatch.aws_job_type">aws_job_type (aapi.job.JobAWSBatch attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew.aws_logs_url">aws_logs_url (aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR.aws_region">aws_region (aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue.aws_region">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew.aws_region">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2.aws_secret">aws_secret (aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2 attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue.aws_secret">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew.aws_secret">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR.aws_secret_access_key">aws_secret_access_key (aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAzureSharedKey.azure_account_access_key">azure_account_access_key (aapi.connectionprofile.ConnectionProfileFileTransferAzureSharedKey attribute)</a>
 </li>
@@ -1157,6 +1294,12 @@
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAzureSharedAccessSignature.azure_account_sas_token">azure_account_sas_token (aapi.connectionprofile.ConnectionProfileFileTransferAzureSharedAccessSignature attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.azure_ad_url">azure_ad_url (aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.azure_ad_url">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAzureAdCertificate.azure_client_certificate_format">azure_client_certificate_format (aapi.connectionprofile.ConnectionProfileFileTransferAzureAdCertificate attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAzureAdCertificate.azure_client_certificate_password">azure_client_certificate_password (aapi.connectionprofile.ConnectionProfileFileTransferAzureAdCertificate attribute)</a>
@@ -1183,6 +1326,16 @@
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAzure.azure_endpoint">azure_endpoint (aapi.connectionprofile.ConnectionProfileFileTransferAzure attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks.azure_login_url">azure_login_url (aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions.azure_login_url">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.azure_login_url">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.azure_login_url">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAzure.azure_storage_type">azure_storage_type (aapi.connectionprofile.ConnectionProfileFileTransferAzure attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAzureAdCertificate.azure_tenant_id">azure_tenant_id (aapi.connectionprofile.ConnectionProfileFileTransferAzureAdCertificate attribute)</a>
@@ -1217,6 +1370,8 @@
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAirflowGoogleComposer.base_u_r_l">base_u_r_l (aapi.connectionprofile.ConnectionProfileAirflowGoogleComposer attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS.base_url">base_url (aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS attribute)</a>
+</li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow">BaseWorkflow (class in ctm_python_client.core.workflow)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAzure.batch">batch (aapi.connectionprofile.ConnectionProfileAzure attribute)</a>
@@ -1224,6 +1379,16 @@
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAzure.Batch.batch_account_key">batch_account_key (aapi.connectionprofile.ConnectionProfileAzure.Batch attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAzure.Batch.batch_account_name">batch_account_name (aapi.connectionprofile.ConnectionProfileAzure.Batch attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.batch_account_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.batch_job_id">batch_job_id (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.batch_region_id">batch_region_id (aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.batch_resource_url">batch_resource_url (aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobOS400FullRestrictedStateAction.batch_time_limit">batch_time_limit (aapi.job.JobOS400FullRestrictedStateAction attribute)</a>
 </li>
@@ -1239,14 +1404,24 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobPeopleSoft.bind_variables">bind_variables (aapi.job.JobPeopleSoft attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.bindings">bindings (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAutomationAnywhere.bot_input_parameters">bot_input_parameters (aapi.integration_factory.jobs.JobAutomationAnywhere attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAutomationAnywhere.bot_to_run">bot_to_run (aapi.integration_factory.jobs.JobAutomationAnywhere attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.basefolder.Folder.AdjustEvents.Bridge">Bridge (aapi.basefolder.Folder.AdjustEvents attribute)</a>
 
         <ul>
           <li><a href="aapi.html#aapi.folderjobbase.SubFolder.AdjustEvents.Bridge">(aapi.folderjobbase.SubFolder.AdjustEvents attribute)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureHDInsight.bring_job_logs_to_output">bring_job_logs_to_output (aapi.integration_factory.jobs.JobAzureHDInsight attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement.bring_logs_to_output">bring_logs_to_output (aapi.integration_factory.jobs.JobTalendDataManagement attribute)</a>
+</li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow.build">build() (ctm_python_client.core.workflow.Workflow method)</a>
 </li>
         <li><a href="aapi.html#aapi.basefolder.SimpleFolder.business_fields">business_fields (aapi.basefolder.SimpleFolder attribute)</a>
@@ -1365,6 +1540,8 @@
 </li>
         <li><a href="aapi.html#aapi.calendar.CalendarRuleBasedCalendar.When.DaysRelation">CalendarRuleBasedCalendar.When.DaysRelation (class in aapi.calendar)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.call_back_url">call_back_url (aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.captureoutput.ActionCaptureOutput.capture">capture (aapi.captureoutput.ActionCaptureOutput attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.propertycondition.PropertyCondition.Property.CaptureVariableName">CaptureVariableName (aapi.propertycondition.PropertyCondition.Property attribute)</a>
@@ -1427,6 +1604,28 @@
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobAWSLambda.client_context_json">client_context_json (aapi.job.JobAWSLambda attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake.client_id">client_id (aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.client_secret">client_secret (aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks.client_secret">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.client_secret">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions.client_secret">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.client_secret">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.client_secret">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.client_secret">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI.client_secret">(aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake.client_secret">(aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferFTPS.SslLevel.ClientServerAuthentication">ClientServerAuthentication (aapi.connectionprofile.ConnectionProfileFileTransferFTPS.SslLevel attribute)</a>
 
         <ul>
@@ -1435,6 +1634,14 @@
           <li><a href="aapi.html#aapi.endpoint.EndpointSrcFtps.SslLevel.ClientServerAuthentication">(aapi.endpoint.EndpointSrcFtps.SslLevel attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.cluster_id">cluster_id (aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureHDInsight.cluster_name">cluster_name (aapi.integration_factory.connection_profiles.ConnectionProfileAzureHDInsight attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureHDInsight.cluster_password">cluster_password (aapi.integration_factory.connection_profiles.ConnectionProfileAzureHDInsight attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureHDInsight.cluster_username">cluster_username (aapi.integration_factory.connection_profiles.ConnectionProfileAzureHDInsight attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileWSCONFIG.cm_container_port">cm_container_port (aapi.connectionprofile.ConnectionProfileWSCONFIG attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.ifbase.IfOutput.code">code (aapi.ifbase.IfOutput attribute)</a>
@@ -1576,6 +1783,58 @@
         <li><a href="aapi.html#aapi.ai.AIJob.connection_profile">connection_profile (aapi.ai.AIJob attribute)</a>
 
         <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAlteryxTrifacta.connection_profile">(aapi.integration_factory.jobs.JobAlteryxTrifacta attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAutomationAnywhere.connection_profile">(aapi.integration_factory.jobs.JobAutomationAnywhere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.connection_profile">(aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.connection_profile">(aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlue.connection_profile">(aapi.integration_factory.jobs.JobAwsGlue attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlueDataBrew.connection_profile">(aapi.integration_factory.jobs.JobAwsGlueDataBrew attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.connection_profile">(aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDatabricks.connection_profile">(aapi.integration_factory.jobs.JobAzureDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDataFactory.connection_profile">(aapi.integration_factory.jobs.JobAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureFunctions.connection_profile">(aapi.integration_factory.jobs.JobAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureHDInsight.connection_profile">(aapi.integration_factory.jobs.JobAzureHDInsight attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureLogicApps.connection_profile">(aapi.integration_factory.jobs.JobAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureSynapse.connection_profile">(aapi.integration_factory.jobs.JobAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureVM.connection_profile">(aapi.integration_factory.jobs.JobAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobBoomiAtomsphere.connection_profile">(aapi.integration_factory.jobs.JobBoomiAtomsphere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobDatabricks.connection_profile">(aapi.integration_factory.jobs.JobDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.connection_profile">(aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataFlow.connection_profile">(aapi.integration_factory.jobs.JobGCPDataFlow attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataproc.connection_profile">(aapi.integration_factory.jobs.JobGCPDataproc attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.connection_profile">(aapi.integration_factory.jobs.JobGCPVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.connection_profile">(aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI.connection_profile">(aapi.integration_factory.jobs.JobMicrosoftPowerBI attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobQlikCloud.connection_profile">(aapi.integration_factory.jobs.JobQlikCloud attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.connection_profile">(aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement.connection_profile">(aapi.integration_factory.jobs.JobTalendDataManagement attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobUIPath.connection_profile">(aapi.integration_factory.jobs.JobUIPath attribute)</a>
+</li>
           <li><a href="aapi.html#aapi.job.JobAirflow.connection_profile">(aapi.job.JobAirflow attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.job.JobAWS.connection_profile">(aapi.job.JobAWS attribute)</a>
@@ -1621,8 +1880,6 @@
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferGroup.connection_profile_file_transfer_ftps_list">connection_profile_file_transfer_ftps_list (aapi.connectionprofile.ConnectionProfileFileTransferGroup attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferGroup.connection_profile_file_transfer_gcs_list">connection_profile_file_transfer_gcs_list (aapi.connectionprofile.ConnectionProfileFileTransferGroup attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferGroup.connection_profile_file_transfer_s3_amazon_list">connection_profile_file_transfer_s3_amazon_list (aapi.connectionprofile.ConnectionProfileFileTransferGroup attribute)</a>
@@ -1635,6 +1892,8 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobFileTransfer.connection_profile_src">connection_profile_src (aapi.job.JobFileTransfer attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileDatabase.connection_retry_num">connection_retry_num (aapi.connectionprofile.ConnectionProfileDatabase attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileDatabase.connection_retry_time_out">connection_retry_time_out (aapi.connectionprofile.ConnectionProfileDatabase attribute)</a>
@@ -1647,6 +1906,48 @@
           <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileHadoop.Sqoop.connection_string">(aapi.connectionprofile.ConnectionProfileHadoop.Sqoop attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta.connection_timeout">connection_timeout (aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2 attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileDatabricks.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileUIPath.connection_timeout">(aapi.integration_factory.connection_profiles.ConnectionProfileUIPath attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAutomationAnywhere.connection_timeout">(aapi.integration_factory.jobs.JobAutomationAnywhere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.connection_timeout">(aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI.connection_timeout">(aapi.integration_factory.jobs.JobMicrosoftPowerBI attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileInformatica.connection_type">connection_type (aapi.connectionprofile.ConnectionProfileInformatica attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfile">ConnectionProfile (class in aapi.connectionprofile)</a>
@@ -1657,13 +1958,43 @@
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAirflowStandalone">ConnectionProfileAirflowStandalone (class in aapi.connectionprofile)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta">ConnectionProfileAlteryxTrifacta (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAutomationAnywhere">ConnectionProfileAutomationAnywhere (class in aapi.integration_factory.connection_profiles)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAWS">ConnectionProfileAWS (class in aapi.connectionprofile)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAWS.ProxySettings">ConnectionProfileAWS.ProxySettings (class in aapi.connectionprofile)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2">ConnectionProfileAwsEC2 (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR">ConnectionProfileAwsEMR (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue">ConnectionProfileAwsGlue (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew">ConnectionProfileAwsGlueDataBrew (class in aapi.integration_factory.connection_profiles)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAzure">ConnectionProfileAzure (class in aapi.connectionprofile)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAzure.Batch">ConnectionProfileAzure.Batch (class in aapi.connectionprofile)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts">ConnectionProfileAzureBatchAccounts (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks">ConnectionProfileAzureDatabricks (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory">ConnectionProfileAzureDataFactory (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions">ConnectionProfileAzureFunctions (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureHDInsight">ConnectionProfileAzureHDInsight (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps">ConnectionProfileAzureLogicApps (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse">ConnectionProfileAzureSynapse (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM">ConnectionProfileAzureVM (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere">ConnectionProfileBoomiAtomsphere (class in aapi.integration_factory.connection_profiles)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileDatabase">ConnectionProfileDatabase (class in aapi.connectionprofile)</a>
 </li>
@@ -1688,6 +2019,8 @@
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileDatabasePostgreSql">ConnectionProfileDatabasePostgreSql (class in aapi.connectionprofile)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileDatabaseSybase">ConnectionProfileDatabaseSybase (class in aapi.connectionprofile)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileDatabricks">ConnectionProfileDatabricks (class in aapi.integration_factory.connection_profiles)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransfer">ConnectionProfileFileTransfer (class in aapi.connectionprofile)</a>
 </li>
@@ -1749,6 +2082,14 @@
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferSFTP">ConnectionProfileFileTransferSFTP (class in aapi.connectionprofile)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPBigQuery">ConnectionProfileGCPBigQuery (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataFlow">ConnectionProfileGCPDataFlow (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc">ConnectionProfileGCPDataproc (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM">ConnectionProfileGCPVM (class in aapi.integration_factory.connection_profiles)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileHadoop">ConnectionProfileHadoop (class in aapi.connectionprofile)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileHadoop.Hive">ConnectionProfileHadoop.Hive (class in aapi.connectionprofile)</a>
@@ -1767,7 +2108,13 @@
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileInformatica.ConnectionType">ConnectionProfileInformatica.ConnectionType (class in aapi.connectionprofile)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS">ConnectionProfileInformaticaCS (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI">ConnectionProfileMicrosoftPowerBI (class in aapi.integration_factory.connection_profiles)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfilePeopleSoft">ConnectionProfilePeopleSoft (class in aapi.connectionprofile)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud">ConnectionProfileQlikCloud (class in aapi.integration_factory.connection_profiles)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileSAP">ConnectionProfileSAP (class in aapi.connectionprofile)</a>
 </li>
@@ -1776,6 +2123,12 @@
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileSAP.GroupLogon">ConnectionProfileSAP.GroupLogon (class in aapi.connectionprofile)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileSAP.SecuredNetworkConnection">ConnectionProfileSAP.SecuredNetworkConnection (class in aapi.connectionprofile)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake">ConnectionProfileSnowflake (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileTalendDataManagement">ConnectionProfileTalendDataManagement (class in aapi.integration_factory.connection_profiles)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileUIPath">ConnectionProfileUIPath (class in aapi.integration_factory.connection_profiles)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileWebServices">ConnectionProfileWebServices (class in aapi.connectionprofile)</a>
 </li>
@@ -1803,6 +2156,8 @@
           <li><a href="aapi.html#aapi.propertycondition.PropertyCondition.Operator.Contains">(aapi.propertycondition.PropertyCondition.Operator attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.content_type">content_type (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobZOS.control_d_category">control_d_category (aapi.job.JobZOS attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobPeopleSoft.control_id">control_id (aapi.job.JobPeopleSoft attribute)</a>
@@ -1823,6 +2178,10 @@
           <li><a href="aapi.html#aapi.output.ActionOutput.Operation.Copy">(aapi.output.ActionOutput.Operation attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.copy_data_from_stage">copy_data_from_stage (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.copy_destination">copy_destination (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.BaseWorkflow.copy_from">copy_from() (ctm_python_client.core.workflow.BaseWorkflow method)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobSAPR3COPY.copy_from_step">copy_from_step (aapi.job.JobSAPR3COPY attribute)</a>
@@ -1835,6 +2194,10 @@
           <li><a href="aapi.html#aapi.job.JobSAPR3PredefinedSapJob.copy_from_step">(aapi.job.JobSAPR3PredefinedSapJob attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.copy_into_table">copy_into_table (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.copy_operation_type">copy_operation_type (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobSAPDataArchivingDelete.copy_spool_file_to">copy_spool_file_to (aapi.job.JobSAPDataArchivingDelete attribute)</a>
 
         <ul>
@@ -1878,6 +2241,8 @@
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.comm.Environment.create_onprem">create_onprem() (ctm_python_client.core.comm.Environment static method)</a>
 </li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.comm.Environment.create_saas">create_saas() (ctm_python_client.core.comm.Environment static method)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.create_table_name">create_table_name (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
 </li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.comm.Environment.create_workbench">create_workbench() (ctm_python_client.core.comm.Environment static method)</a>
 </li>
@@ -1986,7 +2351,13 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobAirflow.dag_id">dag_id (aapi.job.JobAirflow attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDataFactory.data_factory_name">data_factory_name (aapi.integration_factory.jobs.JobAzureDataFactory attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataFlow.data_flow_url">data_flow_url (aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataFlow attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobIBMDataStage.data_stage_job">data_stage_job (aapi.job.JobIBMDataStage attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.database">database (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileHadoop.Sqoop.database_host">database_host (aapi.connectionprofile.ConnectionProfileHadoop.Sqoop attribute)</a>
 </li>
@@ -2036,6 +2407,30 @@
           <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileDatabaseSybase.database_version">(aapi.connectionprofile.ConnectionProfileDatabaseSybase attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDatabricks.databricks_job_id">databricks_job_id (aapi.integration_factory.jobs.JobAzureDatabricks attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobDatabricks.databricks_job_id">(aapi.integration_factory.jobs.JobDatabricks attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileDatabricks.databricks_personal_access_token">databricks_personal_access_token (aapi.integration_factory.connection_profiles.ConnectionProfileDatabricks attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks.databricks_resource">databricks_resource (aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks.databricks_url">databricks_url (aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileDatabricks.databricks_workspace_url">databricks_workspace_url (aapi.integration_factory.connection_profiles.ConnectionProfileDatabricks attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataproc.dataproc_task_type">dataproc_task_type (aapi.integration_factory.jobs.JobGCPDataproc attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc.dataproc_url">dataproc_url (aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI.dataset_id">dataset_id (aapi.integration_factory.jobs.JobMicrosoftPowerBI attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.dataset_name">dataset_name (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI.dataset_refresh_pipeline_deployment">dataset_refresh_pipeline_deployment (aapi.integration_factory.jobs.JobMicrosoftPowerBI attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobVMwareConfigurationCloneVirtualMachine.datastore">datastore (aapi.job.JobVMwareConfigurationCloneVirtualMachine attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.condition.Condition.date">date (aapi.condition.Condition attribute)</a>
@@ -2168,6 +2563,10 @@
           <li><a href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.delete_job">(ctm_python_client.core.monitoring.RunMonitor method)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureVM.delete_vmos_disk">delete_vmos_disk (aapi.integration_factory.jobs.JobAzureVM attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.deleteevents.DeleteEvents">DeleteEvents (class in aapi.deleteevents)</a>
 </li>
         <li><a href="aapi.html#aapi.captureoutput.ActionCaptureOutput.ForwardBy.delimiter">delimiter (aapi.captureoutput.ActionCaptureOutput.ForwardBy attribute)</a>
@@ -2176,8 +2575,6 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobAWSBatch.depends_on">depends_on (aapi.job.JobAWSBatch attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow.deploy">deploy() (ctm_python_client.core.workflow.Workflow method)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobInformatica.depth">depth (aapi.job.JobInformatica attribute)</a>
@@ -2225,6 +2622,10 @@
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.propertycondition.PropertyCondition.Property.Destination">Destination (aapi.propertycondition.PropertyCondition.Property attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.destination_source_bucket_uris">destination_source_bucket_uris (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.destination_table_properties">destination_table_properties (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.TransferOption.DestToSrc">DestToSrc (aapi.filetransfer.FileTransfer.TransferOption attribute)</a>
 </li>
@@ -2382,6 +2783,8 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.period.Period.Period.E">E (aapi.period.Period.Period attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2.ec2_region">ec2_region (aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2 attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobOS400FullScriptFile.embedded_script_file_location">embedded_script_file_location (aapi.job.JobOS400FullScriptFile attribute)</a>
 
         <ul>
@@ -2435,6 +2838,8 @@
         <li><a href="aapi.html#aapi.job.Job.end_folder">end_folder (aapi.job.Job attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobFileTransfer.end_job_not_ok">end_job_not_ok (aapi.job.JobFileTransfer attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere.end_point">end_point (aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.endpoint.Endpoint">Endpoint (class in aapi.endpoint)</a>
 </li>
@@ -2648,6 +3053,8 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobSAPR3CREATE.SpoolListRecipient.RecipientType.ExternalAddress">ExternalAddress (aapi.job.JobSAPR3CREATE.SpoolListRecipient.RecipientType attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.extract_as">extract_as (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileHadoop.Oozie.extraction_rules">extraction_rules (aapi.connectionprofile.ConnectionProfileHadoop.Oozie attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.extractrule.ExtractRule">ExtractRule (class in aapi.extractrule)</a>
@@ -2668,6 +3075,12 @@
           <li><a href="aapi.html#aapi.job.JobHadoop.PreCommands.fail_job_on_command_failure">(aapi.job.JobHadoop.PreCommands attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlueDataBrew.failure_tolerance">failure_tolerance (aapi.integration_factory.jobs.JobAwsGlueDataBrew attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureLogicApps.failure_tolerance">(aapi.integration_factory.jobs.JobAzureLogicApps attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.job.JobSAPR3CREATE.SpoolListRecipient.RecipientType.FaxNumber">FaxNumber (aapi.job.JobSAPR3CREATE.SpoolListRecipient.RecipientType attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.year.Year.feb">feb (aapi.year.Year attribute)</a>
@@ -2685,6 +3098,8 @@
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileWebServices.ServiceType.File">File (aapi.connectionprofile.ConnectionProfileWebServices.ServiceType attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.file_format">file_format (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.basefolder.Folder.DocumentationFile.file_name">file_name (aapi.basefolder.Folder.DocumentationFile attribute)</a>
 
@@ -2770,6 +3185,8 @@
           <li><a href="aapi.html#aapi.folderjobbase.SubFolder.flow_list">(aapi.folderjobbase.SubFolder attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAlteryxTrifacta.flow_name">flow_name (aapi.integration_factory.jobs.JobAlteryxTrifacta attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobZOS.PreventNCT2.Flush">Flush (aapi.job.JobZOS.PreventNCT2 attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.folderjobbase.SubFolder.PathElement.folder">folder (aapi.folderjobbase.SubFolder.PathElement attribute)</a>
@@ -2816,12 +3233,12 @@
 </li>
         <li><a href="aapi.html#aapi.basefolder.Folder.RerunLimit.Units">Folder.RerunLimit.Units (class in aapi.basefolder)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.basefolder.Folder.RerunSpecificTimes">Folder.RerunSpecificTimes (class in aapi.basefolder)</a>
 </li>
         <li><a href="aapi.html#aapi.basefolder.Folder.Sac">Folder.Sac (class in aapi.basefolder)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.basefolder.Folder.When">Folder.When (class in aapi.basefolder)</a>
 </li>
         <li><a href="aapi.html#aapi.basefolder.Folder.When.DaysRelation">Folder.When.DaysRelation (class in aapi.basefolder)</a>
@@ -2830,9 +3247,17 @@
 </li>
         <li><a href="aapi.html#aapi.basefolder.SimpleFolder.folder_client_data_list">folder_client_data_list (aapi.basefolder.SimpleFolder attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobUIPath.folder_id">folder_id (aapi.integration_factory.jobs.JobUIPath attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.basefolder.SimpleFolder.folder_library">folder_library (aapi.basefolder.SimpleFolder attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.extractrule.ExtractRule.folder_name">folder_name (aapi.extractrule.ExtractRule attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobUIPath.folder_name">(aapi.integration_factory.jobs.JobUIPath attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.folder_path">folder_path (aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.folderclientdata.FolderClientData">FolderClientData (class in aapi.folderclientdata)</a>
 </li>
@@ -2938,6 +3363,10 @@
           <li><a href="aapi.html#aapi.steprange.StepRange.from_program">(aapi.steprange.StepRange attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.from_storage_integration">from_storage_integration (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.from_table">from_table (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.basefolder.Folder.When.from_time">from_time (aapi.basefolder.Folder.When attribute)</a>
 
         <ul>
@@ -2966,9 +3395,19 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobAzureFunction.function">function (aapi.job.JobAzureFunction attribute)</a>
 </li>
-        <li><a href="aapi.html#aapi.job.JobAzureFunction.function_app">function_app (aapi.job.JobAzureFunction attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureFunctions.function_app">function_app (aapi.integration_factory.jobs.JobAzureFunctions attribute)</a>
+
+        <ul>
+          <li><a href="aapi.html#aapi.job.JobAzureFunction.function_app">(aapi.job.JobAzureFunction attribute)</a>
 </li>
-        <li><a href="aapi.html#aapi.job.JobAWSLambda.function_name">function_name (aapi.job.JobAWSLambda attribute)</a>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureFunctions.function_name">function_name (aapi.integration_factory.jobs.JobAzureFunctions attribute)</a>
+
+        <ul>
+          <li><a href="aapi.html#aapi.job.JobAWSLambda.function_name">(aapi.job.JobAWSLambda attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureFunctions.function_type">function_type (aapi.integration_factory.jobs.JobAzureFunctions attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -2979,6 +3418,10 @@
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.period.Period.Period.G">G (aapi.period.Period.Period attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM.gcp_api_url">gcp_api_url (aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPBigQuery.gcp_big_query_url">gcp_big_query_url (aapi.integration_factory.connection_profiles.ConnectionProfileGCPBigQuery attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobFileTransfer.gcs_bucket_name_dest">gcs_bucket_name_dest (aapi.job.JobFileTransfer attribute)</a>
 </li>
@@ -2998,12 +3441,22 @@
         </ul></li>
         <li><a href="ctm_python_client.ext.html#ctm_python_client.ext.viz.get_graph">get_graph() (in module ctm_python_client.ext.viz)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.get_instances_logs">get_instances_logs (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.get_jobid">get_jobid() (ctm_python_client.core.monitoring.RunMonitor method)</a>
 </li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.get_log">get_log() (ctm_python_client.core.monitoring.Monitor method)</a>
 
         <ul>
           <li><a href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.get_log">(ctm_python_client.core.monitoring.RunMonitor method)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureLogicApps.get_logs">get_logs (aapi.integration_factory.jobs.JobAzureLogicApps attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureVM.get_logs">(aapi.integration_factory.jobs.JobAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.get_logs">(aapi.integration_factory.jobs.JobGCPVM attribute)</a>
 </li>
         </ul></li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.AbstractWorkflow.get_objects">get_objects() (ctm_python_client.core.workflow.AbstractWorkflow class method)</a>
@@ -3030,14 +3483,14 @@
         </ul></li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.get_status">get_status() (ctm_python_client.core.monitoring.RunMonitor method)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.monitoring.Monitor.get_statuses">get_statuses() (ctm_python_client.core.monitoring.Monitor method)</a>
 
         <ul>
           <li><a href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.get_statuses">(ctm_python_client.core.monitoring.RunMonitor method)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="ctm_python_client.ext.html#ctm_python_client.ext.viz.get_subgraph">get_subgraph() (in module ctm_python_client.ext.viz)</a>
 </li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.credential.AbstractCredentials.get_username">get_username() (ctm_python_client.core.credential.AbstractCredentials class method)</a>
@@ -3062,6 +3515,12 @@
           <li><a href="aapi.html#aapi.runningjobs.RunningJobs.Server.Global">(aapi.runningjobs.RunningJobs.Server attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlue.glue_job_arguments">glue_job_arguments (aapi.integration_factory.jobs.JobAwsGlue attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlue.glue_job_name">glue_job_name (aapi.integration_factory.jobs.JobAwsGlue attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue.glue_url">glue_url (aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.ifbase.IfVariableValue.Operator.GreaterThan">GreaterThan (aapi.ifbase.IfVariableValue.Operator attribute)</a>
 
         <ul>
@@ -3167,6 +3626,8 @@
 </li>
           <li><a href="aapi.html#aapi.hostmapping.HostMapping.host">(aapi.hostmapping.HostMapping attribute)</a>
 </li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAutomationAnywhere.host">(aapi.integration_factory.connection_profiles.ConnectionProfileAutomationAnywhere attribute)</a>
+</li>
           <li><a href="aapi.html#aapi.job.Job.host">(aapi.job.Job attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.workloadpolicy.WorkloadPolicy.Filter.host">(aapi.workloadpolicy.WorkloadPolicy.Filter attribute)</a>
@@ -3247,7 +3708,17 @@
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAWS.iam_role">iam_role (aapi.connectionprofile.ConnectionProfileAWS attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2.iam_role">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2 attribute)</a>
 </li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR.iam_role">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue.iam_role">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew.iam_role">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.job.JobSAPBWProcessChain.id">id (aapi.job.JobSAPBWProcessChain attribute)</a>
 
         <ul>
@@ -3256,6 +3727,32 @@
         </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAS2.EncryptMessageParameters.EncryptionAlgorithm.IDEA_CBC">IDEA_CBC (aapi.connectionprofile.ConnectionProfileFileTransferAS2.EncryptMessageParameters.EncryptionAlgorithm attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDatabricks.idempotency_token">idempotency_token (aapi.integration_factory.jobs.JobAzureDatabricks attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobDatabricks.idempotency_token">(aapi.integration_factory.jobs.JobDatabricks attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAlteryxTrifacta.idempotent_token">idempotent_token (aapi.integration_factory.jobs.JobAlteryxTrifacta attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.idempotent_token">(aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.identity_type">identity_type (aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions.identity_type">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPBigQuery.identity_type">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPBigQuery attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataFlow.identity_type">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataFlow attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc.identity_type">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM.identity_type">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.job.JobZOS.if_collection_list">if_collection_list (aapi.job.JobZOS attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.if_exist">if_exist (aapi.filetransfer.FileTransfer attribute)</a>
@@ -3306,6 +3803,8 @@
 </li>
         <li><a href="aapi.html#aapi.ifbase.IfVariableValue.RangeVariableValue">IfVariableValue.RangeVariableValue (class in aapi.ifbase)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.image_id">image_id (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobSAPDataArchiving.StartCondition.Immediate">Immediate (aapi.job.JobSAPDataArchiving.StartCondition attribute)</a>
 
         <ul>
@@ -3316,14 +3815,14 @@
           <li><a href="aapi.html#aapi.job.JobSAPR3PredefinedSapJob.StartCondition.Immediate">(aapi.job.JobSAPR3PredefinedSapJob.StartCondition attribute)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.businessparameter.BusinessParameter.include">include (aapi.businessparameter.BusinessParameter attribute)</a>
 
         <ul>
           <li><a href="aapi.html#aapi.internalrule.InternalRule.include">(aapi.internalrule.InternalRule attribute)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.job.JobWebServices.include_title_in_output">include_title_in_output (aapi.job.JobWebServices attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobAirflow.OutputDetails.IncludeAllTasksLogs">IncludeAllTasksLogs (aapi.job.JobAirflow.OutputDetails attribute)</a>
@@ -3342,10 +3841,16 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobAWSStepFunction.input">input (aapi.job.JobAWSStepFunction attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.input_fields">input_fields (aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobWebServices.input_file">input_file (aapi.job.JobWebServices attribute)</a>
 </li>
-        <li><a href="aapi.html#aapi.job.JobWebServices.input_parameters">input_parameters (aapi.job.JobWebServices attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureVM.input_parameters">input_parameters (aapi.integration_factory.jobs.JobAzureVM attribute)</a>
+
+        <ul>
+          <li><a href="aapi.html#aapi.job.JobWebServices.input_parameters">(aapi.job.JobWebServices attribute)</a>
 </li>
+        </ul></li>
         <li><a href="aapi.html#aapi.job.JobHadoopMapredStreaming.input_path">input_path (aapi.job.JobHadoopMapredStreaming attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobWebServices.RequestType.InputFile">InputFile (aapi.job.JobWebServices.RequestType attribute)</a>
@@ -3354,7 +3859,17 @@
 </li>
         <li><a href="aapi.html#aapi.ifbase.IfVariableValue.Operator.InRange">InRange (aapi.ifbase.IfVariableValue.Operator attribute)</a>
 </li>
-        <li><a href="aapi.html#aapi.job.JobInformatica.instance_name">instance_name (aapi.job.JobInformatica attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.instance_id">instance_id (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.instance_name">instance_name (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.instance_name">(aapi.integration_factory.jobs.JobGCPVM attribute)</a>
+</li>
+          <li><a href="aapi.html#aapi.job.JobInformatica.instance_name">(aapi.job.JobInformatica attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.instance_type">instance_type (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileInformatica.integration_service">integration_service (aapi.connectionprofile.ConnectionProfileInformatica attribute)</a>
 </li>
@@ -3559,6 +4074,8 @@
         <li><a href="aapi.html#aapi.extractrule.ExtractRule.job_name">job_name (aapi.extractrule.ExtractRule attribute)</a>
 
         <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlueDataBrew.job_name">(aapi.integration_factory.jobs.JobAwsGlueDataBrew attribute)</a>
+</li>
           <li><a href="aapi.html#aapi.job.JobAWSBatch.job_name">(aapi.job.JobAWSBatch attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.job.JobDatabaseMSSQLAgentJob.job_name">(aapi.job.JobDatabaseMSSQLAgentJob attribute)</a>
@@ -3608,11 +4125,17 @@
           <li><a href="aapi.html#aapi.job.JobZOS.job_tag_list">(aapi.job.JobZOS attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.job_timeout">job_timeout (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.workloadpolicy.WorkloadPolicy.Filter.job_type">job_type (aapi.workloadpolicy.WorkloadPolicy.Filter attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobAirflow">JobAirflow (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobAirflow.OutputDetails">JobAirflow.OutputDetails (class in aapi.job)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAlteryxTrifacta">JobAlteryxTrifacta (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAutomationAnywhere">JobAutomationAnywhere (class in aapi.integration_factory.jobs)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobAWS">JobAWS (class in aapi.job)</a>
 </li>
@@ -3623,6 +4146,14 @@
         <li><a href="aapi.html#aapi.job.JobAWSBatch.DependsOn">JobAWSBatch.DependsOn (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobAWSBatch.DependsOn.DependencyType">JobAWSBatch.DependsOn.DependencyType (class in aapi.job)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2">JobAwsEC2 (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR">JobAwsEMR (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlue">JobAwsGlue (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlueDataBrew">JobAwsGlueDataBrew (class in aapi.integration_factory.jobs)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobAWSLambda">JobAWSLambda (class in aapi.job)</a>
 </li>
@@ -3644,9 +4175,29 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobAzureBatchAccount.Wallclock.Unit">JobAzureBatchAccount.Wallclock.Unit (class in aapi.job)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts">JobAzureBatchAccounts (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDatabricks">JobAzureDatabricks (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDataFactory">JobAzureDataFactory (class in aapi.integration_factory.jobs)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobAzureFunction">JobAzureFunction (class in aapi.job)</a>
 </li>
-        <li><a href="aapi.html#aapi.job.JobAzureLogicApps">JobAzureLogicApps (class in aapi.job)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureFunctions">JobAzureFunctions (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureHDInsight">JobAzureHDInsight (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureLogicApps">JobAzureLogicApps (class in aapi.integration_factory.jobs)</a>
+
+        <ul>
+          <li><a href="aapi.html#aapi.job.JobAzureLogicApps">(class in aapi.job)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureSynapse">JobAzureSynapse (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureVM">JobAzureVM (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobBoomiAtomsphere">JobBoomiAtomsphere (class in aapi.integration_factory.jobs)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobCommand">JobCommand (class in aapi.job)</a>
 </li>
@@ -3664,6 +4215,8 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobDatabaseStoredProcedure">JobDatabaseStoredProcedure (class in aapi.job)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobDatabricks">JobDatabricks (class in aapi.integration_factory.jobs)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobDummy">JobDummy (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobEmbeddedScript">JobEmbeddedScript (class in aapi.job)</a>
@@ -3675,6 +4228,14 @@
         <li><a href="aapi.html#aapi.job.JobFileWatcherCreate">JobFileWatcherCreate (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobFileWatcherDelete">JobFileWatcherDelete (class in aapi.job)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery">JobGCPBigQuery (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataFlow">JobGCPDataFlow (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataproc">JobGCPDataproc (class in aapi.integration_factory.jobs)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM">JobGCPVM (class in aapi.integration_factory.jobs)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobHadoop">JobHadoop (class in aapi.job)</a>
 </li>
@@ -3722,6 +4283,8 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobInformatica.WorkflowRestartMode">JobInformatica.WorkflowRestartMode (class in aapi.job)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS">JobInformaticaCS (class in aapi.integration_factory.jobs)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobJava">JobJava (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.donotify.ActionNotify.Destination.JobLog">JobLog (aapi.donotify.ActionNotify.Destination attribute)</a>
@@ -3730,6 +4293,8 @@
           <li><a href="aapi.html#aapi.notify.Notify.Destination.JobLog">(aapi.notify.Notify.Destination attribute)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.job.JobMessaging">JobMessaging (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobMessagingFreeText">JobMessagingFreeText (class in aapi.job)</a>
@@ -3738,14 +4303,14 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobMessagingWaitForReply">JobMessagingWaitForReply (class in aapi.job)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI">JobMicrosoftPowerBI (class in aapi.integration_factory.jobs)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobNetBackup">JobNetBackup (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobOEBS">JobOEBS (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobOEBS.RequestSet">JobOEBS.RequestSet (class in aapi.job)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.job.JobOEBS.SingleRequest">JobOEBS.SingleRequest (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobOS400">JobOS400 (class in aapi.job)</a>
@@ -3819,6 +4384,8 @@
         <li><a href="aapi.html#aapi.job.JobOS400VirtualTerminal.NativeScriptFileLocation">JobOS400VirtualTerminal.NativeScriptFileLocation (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobPeopleSoft">JobPeopleSoft (class in aapi.job)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobQlikCloud">JobQlikCloud (class in aapi.integration_factory.jobs)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobIBMCognos.jobs">jobs (aapi.job.JobIBMCognos attribute)</a>
 </li>
@@ -3962,9 +4529,13 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobSLAManagement.CompleteIn">JobSLAManagement.CompleteIn (class in aapi.job)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake">JobSnowflake (class in aapi.integration_factory.jobs)</a>
+</li>
         <li><a href="aapi.html#aapi.jobtag.JobTag">JobTag (class in aapi.jobtag)</a>
 </li>
         <li><a href="aapi.html#aapi.jobtag.JobTag.TagName">JobTag.TagName (class in aapi.jobtag)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement">JobTalendDataManagement (class in aapi.integration_factory.jobs)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobTandem">JobTandem (class in aapi.job)</a>
 </li>
@@ -3981,6 +4552,8 @@
         <li><a href="aapi.html#aapi.job.JobTandemProgram">JobTandemProgram (class in aapi.job)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobTandemTACLScript">JobTandemTACLScript (class in aapi.job)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobUIPath">JobUIPath (class in aapi.integration_factory.jobs)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobVMware">JobVMware (class in aapi.job)</a>
 </li>
@@ -4050,6 +4623,8 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobZOSMember">JobZOSMember (class in aapi.job)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.json_body">json_body (aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.year.Year.jul">jul (aapi.year.Year attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.year.Year.jun">jun (aapi.year.Year attribute)</a>
@@ -4078,6 +4653,8 @@
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.key_name">key_name (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileHadoop.key_tab_path">key_tab_path (aapi.connectionprofile.ConnectionProfileHadoop attribute)</a>
 </li>
         <li><a href="ctm_python_client.ext.html#ctm_python_client.ext.credential.KeyringCredentials">KeyringCredentials (class in ctm_python_client.ext.credential)</a>
@@ -4118,6 +4695,8 @@
           <li><a href="aapi.html#aapi.job.JobSAPR3PredefinedSapJob.JobCount.LastScheduled">(aapi.job.JobSAPR3PredefinedSapJob.JobCount attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.launch_template_id">launch_template_id (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.ifbase.IfVariableValue.Operator.LessThan">LessThan (aapi.ifbase.IfVariableValue.Operator attribute)</a>
 
         <ul>
@@ -4150,15 +4729,17 @@
           <li><a href="aapi.html#aapi.job.JobOS400Program.library">(aapi.job.JobOS400Program attribute)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.ifbase.IfVariableValue.Operator.Like">Like (aapi.ifbase.IfVariableValue.Operator attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.driver.DriverJdbcDatabase.line_comment">line_comment (aapi.driver.DriverJdbcDatabase attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.captureoutput.ActionCaptureOutput.ForwardBy.lines">lines (aapi.captureoutput.ActionCaptureOutput.ForwardBy attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobZOS.PreventNCT2.List">List (aapi.job.JobZOS.PreventNCT2 attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.load_options">load_options (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAzure.Batch.location">location (aapi.connectionprofile.ConnectionProfileAzure.Batch attribute)</a>
 
@@ -4174,6 +4755,12 @@
 </li>
         <li><a href="aapi.html#aapi.propertycondition.PropertyCondition.Property.LockType">LockType (aapi.propertycondition.PropertyCondition.Property attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataFlow.log_level">log_level (aapi.integration_factory.jobs.JobGCPDataFlow attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement.log_level">(aapi.integration_factory.jobs.JobTalendDataManagement attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.job.JobAzureLogicApps.logic_app_name">logic_app_name (aapi.job.JobAzureLogicApps attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileWebServices.login_body">login_body (aapi.connectionprofile.ConnectionProfileWebServices attribute)</a>
@@ -4181,7 +4768,11 @@
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileWebServices.login_header">login_header (aapi.connectionprofile.ConnectionProfileWebServices attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileWebServices.login_url">login_url (aapi.connectionprofile.ConnectionProfileWebServices attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS.login_url">(aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS attribute)</a>
 </li>
+        </ul></li>
         <li><a href="aapi.html#aapi.basefolder.Folder.Priority.Low">Low (aapi.basefolder.Folder.Priority attribute)</a>
 
         <ul>
@@ -4216,6 +4807,22 @@
           <li><a href="aapi.html#aapi.job.JobHadoopSparkScalaJava.main_class">(aapi.job.JobHadoopSparkScalaJava attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.managed_identity_client_id">managed_identity_client_id (aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.managed_identity_client_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions.managed_identity_client_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.managed_identity_client_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.managed_identity_client_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.managed_identity_client_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.management_url">management_url (aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.basefolder.SimpleFolder.OrderMethod.Manual">Manual (aapi.basefolder.SimpleFolder.OrderMethod attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.hostmapping.HostMapping.map_to">map_to (aapi.hostmapping.HostMapping attribute)</a>
@@ -4238,11 +4845,19 @@
         </ul></li>
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.FileWatcherOptions.max_file_age">max_file_age (aapi.filetransfer.FileTransfer.FileWatcherOptions attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.max_task_retry_count">max_task_retry_count (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobAzureBatchAccount.max_tries">max_tries (aapi.job.JobAzureBatchAccount attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.tag.TagFolder.max_wait">max_wait (aapi.tag.TagFolder attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobHadoopHDFSFileWatcher.max_wait_time">max_wait_time (aapi.job.JobHadoopHDFSFileWatcher attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.max_wall_clock_time">max_wall_clock_time (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.max_wall_time_digits">max_wall_time_digits (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.max_wall_time_unit">max_wall_time_unit (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobFileWatcherCreate.maximal_age">maximal_age (aapi.job.JobFileWatcherCreate attribute)</a>
 </li>
@@ -4419,6 +5034,12 @@
           <li><a href="aapi.html#module-aapi.ifcollection">aapi.ifcollection</a>
 </li>
           <li><a href="aapi.html#module-aapi.ifrerun">aapi.ifrerun</a>
+</li>
+          <li><a href="aapi.integration_factory.html#module-aapi.integration_factory">aapi.integration_factory</a>
+</li>
+          <li><a href="aapi.integration_factory.html#module-aapi.integration_factory.connection_profiles">aapi.integration_factory.connection_profiles</a>
+</li>
+          <li><a href="aapi.integration_factory.html#module-aapi.integration_factory.jobs">aapi.integration_factory.jobs</a>
 </li>
           <li><a href="aapi.html#module-aapi.internalrule">aapi.internalrule</a>
 </li>
@@ -4671,8 +5292,6 @@
           <li><a href="aapi.html#aapi.runningjobs.RunningJobs.Time.TimeType.None_">(aapi.runningjobs.RunningJobs.Time.TimeType attribute)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferFTP.ConnectionMode.noSubstituteIP">noSubstituteIP (aapi.connectionprofile.ConnectionProfileFileTransferFTP.ConnectionMode attribute)</a>
 
         <ul>
@@ -4687,7 +5306,13 @@
           <li><a href="aapi.html#aapi.endpoint.EndpointSrcFtps.ConnectionMode.noSubstituteIP">(aapi.endpoint.EndpointSrcFtps.ConnectionMode attribute)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.sitestandardpolicy.SiteStandardPolicy.Status.Not_Active">Not_Active (aapi.sitestandardpolicy.SiteStandardPolicy.Status attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.notebook_execution_name">notebook_execution_name (aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.notebook_id">notebook_id (aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.ifbase.IfVariableValue.Operator.NotEqualTo">NotEqualTo (aapi.ifbase.IfVariableValue.Operator attribute)</a>
 </li>
@@ -4736,6 +5361,8 @@
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.nullflds">nullflds (aapi.filetransfer.FileTransfer attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobVMwareConfigurationReconfigureVirtualMachine.number_of_c_p_us">number_of_c_p_us (aapi.job.JobVMwareConfigurationReconfigureVirtualMachine attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.number_of_copies">number_of_copies (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.ifbase.IfNumberOfExecutions.number_of_executions">number_of_executions (aapi.ifbase.IfNumberOfExecutions attribute)</a>
 </li>
@@ -4985,6 +5612,110 @@
           <li><a href="aapi.html#aapi.ifcollection.IfCollectionZOS.object_name">(aapi.ifcollection.IfCollectionZOS attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.ifrerun.ActionRestart.object_name">(aapi.ifrerun.ActionRestart attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAutomationAnywhere.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAutomationAnywhere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsEC2 attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsEMR attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlue attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAwsGlueDataBrew attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureHDInsight.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureHDInsight attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileBoomiAtomsphere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileDatabricks.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPBigQuery.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPBigQuery attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataFlow.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataFlow attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileTalendDataManagement.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileTalendDataManagement attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileUIPath.object_name">(aapi.integration_factory.connection_profiles.ConnectionProfileUIPath attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAlteryxTrifacta.object_name">(aapi.integration_factory.jobs.JobAlteryxTrifacta attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAutomationAnywhere.object_name">(aapi.integration_factory.jobs.JobAutomationAnywhere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.object_name">(aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.object_name">(aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlue.object_name">(aapi.integration_factory.jobs.JobAwsGlue attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlueDataBrew.object_name">(aapi.integration_factory.jobs.JobAwsGlueDataBrew attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.object_name">(aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDatabricks.object_name">(aapi.integration_factory.jobs.JobAzureDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDataFactory.object_name">(aapi.integration_factory.jobs.JobAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureFunctions.object_name">(aapi.integration_factory.jobs.JobAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureHDInsight.object_name">(aapi.integration_factory.jobs.JobAzureHDInsight attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureLogicApps.object_name">(aapi.integration_factory.jobs.JobAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureSynapse.object_name">(aapi.integration_factory.jobs.JobAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureVM.object_name">(aapi.integration_factory.jobs.JobAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobBoomiAtomsphere.object_name">(aapi.integration_factory.jobs.JobBoomiAtomsphere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobDatabricks.object_name">(aapi.integration_factory.jobs.JobDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.object_name">(aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataFlow.object_name">(aapi.integration_factory.jobs.JobGCPDataFlow attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataproc.object_name">(aapi.integration_factory.jobs.JobGCPDataproc attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.object_name">(aapi.integration_factory.jobs.JobGCPVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.object_name">(aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI.object_name">(aapi.integration_factory.jobs.JobMicrosoftPowerBI attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobQlikCloud.object_name">(aapi.integration_factory.jobs.JobQlikCloud attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.object_name">(aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement.object_name">(aapi.integration_factory.jobs.JobTalendDataManagement attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobUIPath.object_name">(aapi.integration_factory.jobs.JobUIPath attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.internalrule.InternalRule.object_name">(aapi.internalrule.InternalRule attribute)</a>
 </li>
@@ -5361,9 +6092,13 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobHadoopTajoQuery.open_query">open_query (aapi.job.JobHadoopTajoQuery attribute)</a>
 </li>
-        <li><a href="aapi.html#aapi.job.Job.Output.operation">operation (aapi.job.Job.Output attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureVM.operation">operation (aapi.integration_factory.jobs.JobAzureVM attribute)</a>
 
         <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.operation">(aapi.integration_factory.jobs.JobGCPVM attribute)</a>
+</li>
+          <li><a href="aapi.html#aapi.job.Job.Output.operation">(aapi.job.Job.Output attribute)</a>
+</li>
           <li><a href="aapi.html#aapi.job.JobWebServices.operation">(aapi.job.JobWebServices attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.job.JobZOS.OutputHandling.operation">(aapi.job.JobZOS.OutputHandling attribute)</a>
@@ -5371,6 +6106,8 @@
           <li><a href="aapi.html#aapi.output.ActionOutput.operation">(aapi.output.ActionOutput attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.operations">operations (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.ifbase.IfVariableValue.operator">operator (aapi.ifbase.IfVariableValue attribute)</a>
 
         <ul>
@@ -5380,6 +6117,10 @@
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobAzureBatchAccount.MaxTries.option">option (aapi.job.JobAzureBatchAccount.MaxTries attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobUIPath.optional_input_parameters">optional_input_parameters (aapi.integration_factory.jobs.JobUIPath attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureFunctions.optional_input_parameters_json_format">optional_input_parameters_json_format (aapi.integration_factory.jobs.JobAzureFunctions attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.basefolder.Folder.When.DaysRelation.OR">OR (aapi.basefolder.Folder.When.DaysRelation attribute)</a>
 
@@ -5445,6 +6186,8 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobZOS.output_handling">output_handling (aapi.job.JobZOS attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlueDataBrew.output_job_logs">output_job_logs (aapi.integration_factory.jobs.JobAwsGlueDataBrew attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobWebServices.output_parameters">output_parameters (aapi.job.JobWebServices attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobHadoopMapredStreaming.output_path">output_path (aapi.job.JobHadoopMapredStreaming attribute)</a>
@@ -5468,6 +6211,8 @@
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobWebServices.override_url_endpoint">override_url_endpoint (aapi.job.JobWebServices attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.overwrite">overwrite (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -5501,9 +6246,29 @@
 </li>
         <li><a href="aapi.html#aapi.businessparameter.BusinessParameter.parameter_name">parameter_name (aapi.businessparameter.BusinessParameter attribute)</a>
 </li>
-        <li><a href="aapi.html#aapi.job.JobAWSBatch.parameters">parameters (aapi.job.JobAWSBatch attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDatabricks.parameters">parameters (aapi.integration_factory.jobs.JobAzureDatabricks attribute)</a>
 
         <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDataFactory.parameters">(aapi.integration_factory.jobs.JobAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureHDInsight.parameters">(aapi.integration_factory.jobs.JobAzureHDInsight attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureLogicApps.parameters">(aapi.integration_factory.jobs.JobAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureSynapse.parameters">(aapi.integration_factory.jobs.JobAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobDatabricks.parameters">(aapi.integration_factory.jobs.JobDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.parameters">(aapi.integration_factory.jobs.JobGCPVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI.parameters">(aapi.integration_factory.jobs.JobMicrosoftPowerBI attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.parameters">(aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement.parameters">(aapi.integration_factory.jobs.JobTalendDataManagement attribute)</a>
+</li>
+          <li><a href="aapi.html#aapi.job.JobAWSBatch.parameters">(aapi.job.JobAWSBatch attribute)</a>
+</li>
           <li><a href="aapi.html#aapi.job.JobAzureFunction.parameters">(aapi.job.JobAzureFunction attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.job.JobDatabaseSQLScript.parameters">(aapi.job.JobDatabaseSQLScript attribute)</a>
@@ -5513,6 +6278,12 @@
           <li><a href="aapi.html#aapi.job.JobHadoopHive.parameters">(aapi.job.JobHadoopHive attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.job.JobHadoopPig.parameters">(aapi.job.JobHadoopPig attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataFlow.parameters__json_format">parameters__json_format (aapi.integration_factory.jobs.JobGCPDataFlow attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataproc.parameters__json_format">(aapi.integration_factory.jobs.JobGCPDataproc attribute)</a>
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobZOS.Scheduling.partition_dataset">partition_dataset (aapi.job.JobZOS.Scheduling attribute)</a>
@@ -5580,6 +6351,14 @@
 </li>
           <li><a href="aapi.html#aapi.endpoint.Endpoint.password">(aapi.endpoint.Endpoint attribute)</a>
 </li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta.password">(aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAutomationAnywhere.password">(aapi.integration_factory.connection_profiles.ConnectionProfileAutomationAnywhere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS.password">(aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI.password">(aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI attribute)</a>
+</li>
           <li><a href="aapi.html#aapi.package.Package.password">(aapi.package.Package attribute)</a>
 </li>
         </ul></li>
@@ -5635,11 +6414,33 @@
         </ul></li>
         <li><a href="aapi.html#aapi.calendar.CalendarPeriodic.When.periods">periods (aapi.calendar.CalendarPeriodic.When attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileTalendDataManagement.personal_access_token_authorization">personal_access_token_authorization (aapi.integration_factory.connection_profiles.ConnectionProfileTalendDataManagement attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobHadoopPig.pig_script">pig_script (aapi.job.JobHadoopPig attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.pipe_name">pipe_name (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI.pipeline_id">pipeline_id (aapi.integration_factory.jobs.JobMicrosoftPowerBI attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDataFactory.pipeline_name">pipeline_name (aapi.integration_factory.jobs.JobAzureDataFactory attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureSynapse.pipeline_name">(aapi.integration_factory.jobs.JobAzureSynapse attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.placement_availability_zone">placement_availability_zone (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement.plan_name">plan_name (aapi.integration_factory.jobs.JobTalendDataManagement attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement.plan_polling_intervals">plan_polling_intervals (aapi.integration_factory.jobs.JobTalendDataManagement attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobNetBackup.policy_name">policy_name (aapi.job.JobNetBackup attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.polling_interval">polling_interval (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobBoomiAtomsphere.polling_interval_frequency">polling_interval_frequency (aapi.integration_factory.jobs.JobBoomiAtomsphere attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.propertycondition.PropertyCondition.Property.PoolName">PoolName (aapi.propertycondition.PropertyCondition.Property attribute)</a>
 </li>
@@ -5725,6 +6526,8 @@
           <li><a href="aapi.html#aapi.output.ActionOutput.Operation.Print">(aapi.output.ActionOutput.Operation attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobQlikCloud.print_log_to_output">print_log_to_output (aapi.integration_factory.jobs.JobQlikCloud attribute)</a>
+</li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.print_output">print_output() (ctm_python_client.core.monitoring.RunMonitor method)</a>
 </li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.print_statuses">print_statuses() (ctm_python_client.core.monitoring.RunMonitor method)</a>
@@ -5745,11 +6548,23 @@
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobSAPR3CREATE.SpoolListRecipient.RecipientType.PrivateDistributionList">PrivateDistributionList (aapi.job.JobSAPR3CREATE.SpoolListRecipient.RecipientType attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.procedure_argument">procedure_argument (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobSAPBWProcessChain.process_chain_description">process_chain_description (aapi.job.JobSAPBWProcessChain attribute)</a>
 </li>
-        <li><a href="aapi.html#aapi.job.JobPeopleSoft.process_name">process_name (aapi.job.JobPeopleSoft attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobBoomiAtomsphere.process_name">process_name (aapi.integration_factory.jobs.JobBoomiAtomsphere attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobUIPath.process_name">(aapi.integration_factory.jobs.JobUIPath attribute)</a>
+</li>
+          <li><a href="aapi.html#aapi.job.JobPeopleSoft.process_name">(aapi.job.JobPeopleSoft attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAutomationAnywhere.process_to_run">process_to_run (aapi.integration_factory.jobs.JobAutomationAnywhere attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobPeopleSoft.process_type">process_type (aapi.job.JobPeopleSoft attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAutomationAnywhere.process_uri_path">process_uri_path (aapi.integration_factory.jobs.JobAutomationAnywhere attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobSAPR3SapProfileActivate.ProfileInformation.profile_id">profile_id (aapi.job.JobSAPR3SapProfileActivate.ProfileInformation attribute)</a>
 </li>
@@ -5783,6 +6598,16 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobIBMDataStage.project">project (aapi.job.JobIBMDataStage attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataFlow.project_id">project_id (aapi.integration_factory.jobs.JobGCPDataFlow attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataproc.project_id">(aapi.integration_factory.jobs.JobGCPDataproc attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.project_id">(aapi.integration_factory.jobs.JobGCPVM attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.project_name">project_name (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileHadoop.Hive.ConnectionDefinitionsType.Properties">Properties (aapi.connectionprofile.ConnectionProfileHadoop.Hive.ConnectionDefinitionsType attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobDatabaseMSSQL_SSIS.properties">properties (aapi.job.JobDatabaseMSSQL_SSIS attribute)</a>
@@ -5807,6 +6632,8 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.period.Period.Period.Q">Q (aapi.period.Period.Period attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud.qlik_api_url">qlik_api_url (aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobOS400FullCommandLine.SpecialEnvironment.QShell">QShell (aapi.job.JobOS400FullCommandLine.SpecialEnvironment attribute)</a>
 
         <ul>
@@ -5819,8 +6646,6 @@
         </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileSAP.SecuredNetworkConnection.quality_of_protection">quality_of_protection (aapi.connectionprofile.ConnectionProfileSAP.SecuredNetworkConnection attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.propertycondition.PropertyCondition.Property.Quantity">Quantity (aapi.propertycondition.PropertyCondition.Property attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.resource.ResourcePool.quantity">quantity (aapi.resource.ResourcePool attribute)</a>
@@ -5831,7 +6656,19 @@
           <li><a href="aapi.html#aapi.runningjobs.RunningJobs.quantity">(aapi.runningjobs.RunningJobs attribute)</a>
 </li>
         </ul></li>
-        <li><a href="aapi.html#aapi.job.JobDatabaseEmbeddedQuery.query">query (aapi.job.JobDatabaseEmbeddedQuery attribute)</a>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.query">query (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+
+        <ul>
+          <li><a href="aapi.html#aapi.job.JobDatabaseEmbeddedQuery.query">(aapi.job.JobDatabaseEmbeddedQuery attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.query_input">query_input (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.query_parameters">query_parameters (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.query_to_location">query_to_location (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobOS400ExternalJob.Status.Queue">Queue (aapi.job.JobOS400ExternalJob.Status attribute)</a>
 
@@ -5883,14 +6720,24 @@
 </li>
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.recursive">recursive (aapi.filetransfer.FileTransfer attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake.redirect_uri">redirect_uri (aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobHadoopMapredStreaming.reducer_command">reducer_command (aapi.job.JobHadoopMapredStreaming attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.folderjobbase.SubFolder.reference_path">reference_path (aapi.folderjobbase.SubFolder attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake.refresh_token">refresh_token (aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAWS.region">region (aapi.connectionprofile.ConnectionProfileAWS attribute)</a>
 
         <ul>
           <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferS3Amazon.region">(aapi.connectionprofile.ConnectionProfileFileTransferS3Amazon attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud.region">(aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake.region">(aapi.integration_factory.connection_profiles.ConnectionProfileSnowflake attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataFlow.region">(aapi.integration_factory.jobs.JobGCPDataFlow attribute)</a>
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.donotify.ActionNotify.Urgency.Regular">Regular (aapi.donotify.ActionNotify.Urgency attribute)</a>
@@ -5907,6 +6754,8 @@
           <li><a href="aapi.html#aapi.job.Job.When.RuleBasedCalendars.relationship">(aapi.job.Job.When.RuleBasedCalendars attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.relative_path">relative_path (aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobZOS.OutputHandling.Operation.Release">Release (aapi.job.JobZOS.OutputHandling.Operation attribute)</a>
 
         <ul>
@@ -5923,6 +6772,8 @@
           <li><a href="ctm_python_client.core.html#ctm_python_client.core.monitoring.RunMonitor.release_job">(ctm_python_client.core.monitoring.RunMonitor method)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobQlikCloud.reload_type">reload_type (aapi.integration_factory.jobs.JobQlikCloud attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobSAPR3CREATE.SpoolListRecipient.RecipientType.RemoteMailAddress">RemoteMailAddress (aapi.job.JobSAPR3CREATE.SpoolListRecipient.RecipientType attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.propertycondition.PropertyCondition.Property.Remove">Remove (aapi.propertycondition.PropertyCondition.Property attribute)</a>
@@ -6003,6 +6854,8 @@
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobSAPBWProcessChain.rerun_option">rerun_option (aapi.job.JobSAPBWProcessChain attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.rerun_run_id">rerun_run_id (aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.basefolder.Folder.rerun_specific_times">rerun_specific_times (aapi.basefolder.Folder attribute)</a>
 
         <ul>
@@ -6011,11 +6864,27 @@
           <li><a href="aapi.html#aapi.job.Job.rerun_specific_times">(aapi.job.Job attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.rerun_suspended_taskflow">rerun_suspended_taskflow (aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAlteryxTrifacta.rerun_with_new_idempotency_token">rerun_with_new_idempotency_token (aapi.integration_factory.jobs.JobAlteryxTrifacta attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobSAPBWProcessChain.RerunOption.RerunFromStart">RerunFromStart (aapi.job.JobSAPBWProcessChain.RerunOption attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.resourcepools.ResourcePools.resource">resource (aapi.resourcepools.ResourcePools attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.resource.Resource">Resource (class in aapi.resource)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions.resource_group">resource_group (aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.resource_group">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.resource_group">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI.resource_group">(aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDataFactory.resource_group_name">resource_group_name (aapi.integration_factory.jobs.JobAzureDataFactory attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.Job.resource_list">resource_list (aapi.job.Job attribute)</a>
 
@@ -6023,14 +6892,14 @@
           <li><a href="aapi.html#aapi.job.JobZOS.resource_list">(aapi.job.JobZOS attribute)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.basefolder.Folder.resource_lock_list">resource_lock_list (aapi.basefolder.Folder attribute)</a>
 
         <ul>
           <li><a href="aapi.html#aapi.folderjobbase.SubFolder.resource_lock_list">(aapi.folderjobbase.SubFolder attribute)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.workloadpolicy.WorkloadPolicy.resource_pools">resource_pools (aapi.workloadpolicy.WorkloadPolicy attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.resource.ResourceLock">ResourceLock (class in aapi.resource)</a>
@@ -6073,6 +6942,8 @@
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferS3Compatible.rest_end_point">rest_end_point (aapi.connectionprofile.ConnectionProfileFileTransferS3Compatible attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.rest_login_url">rest_login_url (aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobInformatica.restart_from_task">restart_from_task (aapi.job.JobInformatica attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobSAPBWProcessChain.RerunOption.RestartFromFailiurePoint">RestartFromFailiurePoint (aapi.job.JobSAPBWProcessChain.RerunOption attribute)</a>
@@ -6083,11 +6954,29 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobZOS.History.retention_generations">retention_generations (aapi.job.JobZOS.History attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.retention_time">retention_time (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.retention_time_digits">retention_time_digits (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.retention_time_unit">retention_time_unit (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAlteryxTrifacta.retrack_job_status">retrack_job_status (aapi.integration_factory.jobs.JobAlteryxTrifacta attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobSAPBWProcessChain.retrieve_log">retrieve_log (aapi.job.JobSAPBWProcessChain attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.Job.retroactive_order">retroactive_order (aapi.job.Job attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.retry_number">retry_number (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobDatabaseStoredProcedure.return_value">return_value (aapi.job.JobDatabaseStoredProcedure attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobUIPath.robot_id">robot_id (aapi.integration_factory.jobs.JobUIPath attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobUIPath.robot_name">robot_name (aapi.integration_factory.jobs.JobUIPath attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.role">role (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.routine">routine (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAS2.SignMessageParameters.SignatureAlgorithm.RSA_with_MD5">RSA_with_MD5 (aapi.connectionprofile.ConnectionProfileFileTransferAS2.SignMessageParameters.SignatureAlgorithm attribute)</a>
 </li>
@@ -6147,7 +7036,11 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobZOS.TaskInformation.run_as_started_task">run_as_started_task (aapi.job.JobZOS.TaskInformation attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAlteryxTrifacta.run_id">run_id (aapi.integration_factory.jobs.JobAlteryxTrifacta attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.Job.run_on_all_agents_in_group">run_on_all_agents_in_group (aapi.job.Job attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.run_select_query_and_copy_to_table">run_select_query_and_copy_to_table (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobInformatica.run_single_task">run_single_task (aapi.job.JobInformatica attribute)</a>
 </li>
@@ -6275,8 +7168,12 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobZOS.scheduling_environment">scheduling_environment (aapi.job.JobZOS attribute)</a>
 </li>
-        <li><a href="aapi.html#aapi.job.JobDatabaseStoredProcedure.schema">schema (aapi.job.JobDatabaseStoredProcedure attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.schema">schema (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+
+        <ul>
+          <li><a href="aapi.html#aapi.job.JobDatabaseStoredProcedure.schema">(aapi.job.JobDatabaseStoredProcedure attribute)</a>
 </li>
+        </ul></li>
         <li><a href="aapi.html#aapi.job.JobEmbeddedScript.script">script (aapi.job.JobEmbeddedScript attribute)</a>
 
         <ul>
@@ -6316,6 +7213,8 @@
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileSAP.secured_network_connection">secured_network_connection (aapi.connectionprofile.ConnectionProfileSAP attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileInformatica.security_domain">security_domain (aapi.connectionprofile.ConnectionProfileInformatica attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.select_operation">select_operation (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAS2.send_message_timeout">send_message_timeout (aapi.connectionprofile.ConnectionProfileFileTransferAS2 attribute)</a>
 </li>
@@ -6372,6 +7271,16 @@
         <li><a href="aapi.html#aapi.job.JobWebServices.service">service (aapi.job.JobWebServices attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAirflowGoogleComposer.service_account_key">service_account_key (aapi.connectionprofile.ConnectionProfileAirflowGoogleComposer attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPBigQuery.service_account_key">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPBigQuery attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataFlow.service_account_key">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataFlow attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM.service_account_key">(aapi.integration_factory.connection_profiles.ConnectionProfileGCPVM attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc.service_account_key__json_format">service_account_key__json_format (aapi.integration_factory.connection_profiles.ConnectionProfileGCPDataproc attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAirflowGoogleComposer.service_account_key_filename">service_account_key_filename (aapi.connectionprofile.ConnectionProfileAirflowGoogleComposer attribute)</a>
 </li>
@@ -6382,6 +7291,8 @@
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobSLAManagement.service_priority">service_priority (aapi.job.JobSLAManagement attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.service_role">service_role (aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileWebServices.service_type">service_type (aapi.connectionprofile.ConnectionProfileWebServices attribute)</a>
 </li>
@@ -6413,6 +7324,10 @@
           <li><a href="aapi.html#aapi.job.Job.When.ConfirmationCalendars.shift_by">(aapi.job.Job.When.ConfirmationCalendars attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.show_load_options">show_load_options (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.show_more_options">show_more_options (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileDatabaseOracleSID.sid">sid (aapi.connectionprofile.ConnectionProfileDatabaseOracleSID attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAS2.RequestReceiptParameters.sign">sign (aapi.connectionprofile.ConnectionProfileFileTransferAS2.RequestReceiptParameters attribute)</a>
@@ -6487,6 +7402,8 @@
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileSAP.SecuredNetworkConnection.snc_partner_name">snc_partner_name (aapi.connectionprofile.ConnectionProfileSAP.SecuredNetworkConnection attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.snowflake_sql_statement">snowflake_sql_statement (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobWebServices.soap_header_file">soap_header_file (aapi.job.JobWebServices attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobWebServices.soap_request">soap_request (aapi.job.JobWebServices attribute)</a>
@@ -6497,10 +7414,10 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobHadoopDistCp.source_paths">source_paths (aapi.job.JobHadoopDistCp attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.source_tables_properties">source_tables_properties (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.captureoutput.ActionCaptureOutput.ForwardBy.Delimiter.Space">Space (aapi.captureoutput.ActionCaptureOutput.ForwardBy.Delimiter attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileHadoop.spark">spark (aapi.connectionprofile.ConnectionProfileHadoop attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobHadoopSpark.spark_options">spark_options (aapi.job.JobHadoopSpark attribute)</a>
@@ -6535,6 +7452,8 @@
           <li><a href="aapi.html#aapi.job.Job.When.specific_dates">(aapi.job.Job.When attribute)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.resourcepools.ResourcePools.specific_time">specific_time (aapi.resourcepools.ResourcePools attribute)</a>
 
         <ul>
@@ -6561,6 +7480,20 @@
           <li><a href="aapi.html#aapi.job.JobSAPR3MonitorSapJob.DetectSpawnedJob.DetectAndCreate.SpecificJobDefinition">(aapi.job.JobSAPR3MonitorSapJob.DetectSpawnedJob.DetectAndCreate attribute)</a>
 </li>
           <li><a href="aapi.html#aapi.job.JobSAPR3PredefinedSapJob.DetectSpawnedJob.DetectAndCreate.SpecificJobDefinition">(aapi.job.JobSAPR3PredefinedSapJob.DetectSpawnedJob.DetectAndCreate attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.specify_managed_identity_client_id">specify_managed_identity_client_id (aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.specify_managed_identity_client_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions.specify_managed_identity_client_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.specify_managed_identity_client_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.specify_managed_identity_client_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.specify_managed_identity_client_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobSAPR3COPY.PostJobAction.spool">spool (aapi.job.JobSAPR3COPY.PostJobAction attribute)</a>
@@ -6600,6 +7533,8 @@
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileDatabaseMSSql.AuthenticationType.SQL_Server_Authentication">SQL_Server_Authentication (aapi.connectionprofile.ConnectionProfileDatabaseMSSql.AuthenticationType attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.sql_statement">sql_statement (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileHadoop.sqoop">sqoop (aapi.connectionprofile.ConnectionProfileHadoop attribute)</a>
 </li>
@@ -6655,6 +7590,10 @@
           <li><a href="aapi.html#aapi.endpoint.EndpointSrcFtps.ssl_level">(aapi.endpoint.EndpointSrcFtps attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.stage_name">stage_name (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.stage_url">stage_url (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobAWSBatch.DependsOn.DependencyType.Standard">Standard (aapi.job.JobAWSBatch.DependsOn.DependencyType attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.basefolder.Folder.Rerun.From.Start">Start (aapi.basefolder.Folder.Rerun.From attribute)</a>
@@ -6697,6 +7636,8 @@
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobInformatica.start_from_task">start_from_task (aapi.job.JobInformatica attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.start_or_pause_pipe">start_or_pause_pipe (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobSAPBW.DetectSpawnedJob.start_spawned_job">start_spawned_job (aapi.job.JobSAPBW.DetectSpawnedJob attribute)</a>
 
         <ul>
@@ -6727,6 +7668,8 @@
 </li>
         <li><a href="aapi.html#aapi.driver.DriverJdbcDatabase.statement_separator">statement_separator (aapi.driver.DriverJdbcDatabase attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.statement_timeout">statement_timeout (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.basefolder.Folder.statistics_calendar">statistics_calendar (aapi.basefolder.Folder attribute)</a>
 
         <ul>
@@ -6741,6 +7684,42 @@
           <li><a href="aapi.html#aapi.sitestandardpolicy.SiteStandardPolicy.status">(aapi.sitestandardpolicy.SiteStandardPolicy attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAlteryxTrifacta.status_polling_frequency">status_polling_frequency (aapi.integration_factory.jobs.JobAlteryxTrifacta attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAutomationAnywhere.status_polling_frequency">(aapi.integration_factory.jobs.JobAutomationAnywhere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.status_polling_frequency">(aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlue.status_polling_frequency">(aapi.integration_factory.jobs.JobAwsGlue attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsGlueDataBrew.status_polling_frequency">(aapi.integration_factory.jobs.JobAwsGlueDataBrew attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDatabricks.status_polling_frequency">(aapi.integration_factory.jobs.JobAzureDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureDataFactory.status_polling_frequency">(aapi.integration_factory.jobs.JobAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureHDInsight.status_polling_frequency">(aapi.integration_factory.jobs.JobAzureHDInsight attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureLogicApps.status_polling_frequency">(aapi.integration_factory.jobs.JobAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobDatabricks.status_polling_frequency">(aapi.integration_factory.jobs.JobDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.status_polling_frequency">(aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI.status_polling_frequency">(aapi.integration_factory.jobs.JobMicrosoftPowerBI attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobQlikCloud.status_polling_frequency">(aapi.integration_factory.jobs.JobQlikCloud attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobUIPath.status_polling_frequency">(aapi.integration_factory.jobs.JobUIPath attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.status_polling_interval">status_polling_interval (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureSynapse.status_polling_interval">(aapi.integration_factory.jobs.JobAzureSynapse attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.job.JobHadoopMapredStreaming.steaming_options">steaming_options (aapi.job.JobHadoopMapredStreaming attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobZOS.step_range_list">step_range_list (aapi.job.JobZOS attribute)</a>
@@ -6749,7 +7728,11 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobFileWatcher.stop_time">stop_time (aapi.job.JobFileWatcher attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.storage_integration">storage_integration (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobDatabaseStoredProcedure.stored_procedure">stored_procedure (aapi.job.JobDatabaseStoredProcedure attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.stored_procedure_name">stored_procedure_name (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileHadoop.Hive.ConnectionDefinitionsType.String">String (aapi.connectionprofile.ConnectionProfileHadoop.Hive.ConnectionDefinitionsType attribute)</a>
 </li>
@@ -6795,8 +7778,20 @@
 </li>
         <li><a href="aapi.html#aapi.mail.ActionMail.subject">subject (aapi.mail.ActionMail attribute)</a>
 </li>
-        <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAzure.subscription_id">subscription_id (aapi.connectionprofile.ConnectionProfileAzure attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.subnet_id">subnet_id (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
 </li>
+        <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAzure.subscription_id">subscription_id (aapi.connectionprofile.ConnectionProfileAzure attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.subscription_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions.subscription_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.subscription_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.subscription_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.remedy.ActionRemedy.summary">summary (aapi.remedy.ActionRemedy attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.resourcepools.ResourcePools.WeekDaysRange.FromDay.Sun">Sun (aapi.resourcepools.ResourcePools.WeekDaysRange.FromDay attribute)</a>
@@ -6809,6 +7804,10 @@
           <li><a href="aapi.html#aapi.runningjobs.RunningJobs.WeekDaysRange.ToDay.Sun">(aapi.runningjobs.RunningJobs.WeekDaysRange.ToDay attribute)</a>
 </li>
         </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.synapse_resource">synapse_resource (aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.synapse_url">synapse_url (aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.TransferOption.SyncDestToSrc">SyncDestToSrc (aapi.filetransfer.FileTransfer.TransferOption attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransferAS2.RequestReceiptParameters.Mode.Synchronous">Synchronous (aapi.connectionprofile.ConnectionProfileFileTransferAS2.RequestReceiptParameters.Mode attribute)</a>
@@ -6838,6 +7837,8 @@
 </li>
         </ul></li>
         <li><a href="aapi.html#aapi.captureoutput.ActionCaptureOutput.ForwardBy.Delimiter.Tab">Tab (aapi.captureoutput.ActionCaptureOutput.ForwardBy.Delimiter attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPBigQuery.table_name">table_name (aapi.integration_factory.jobs.JobGCPBigQuery attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.tag.Tag">Tag (class in aapi.tag)</a>
 </li>
@@ -6911,11 +7912,59 @@
 </li>
         <li><a href="aapi.html#aapi.job.JobHadoopDistCp.target_path">target_path (aapi.job.JobHadoopDistCp attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.task_command_line">task_command_line (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.task_flow_url">task_flow_url (aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.task_id_prefix">task_id_prefix (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureBatchAccounts.task_id_variable">task_id_variable (aapi.integration_factory.jobs.JobAzureBatchAccounts attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobZOS.task_information">task_information (aapi.job.JobZOS attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.task_name">task_name (aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement.task_name">(aapi.integration_factory.jobs.JobTalendDataManagement attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement.task_plan_execution">task_plan_execution (aapi.integration_factory.jobs.JobTalendDataManagement attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobTalendDataManagement.task_polling_intervals">task_polling_intervals (aapi.integration_factory.jobs.JobTalendDataManagement attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.task_type">task_type (aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobSAPBWInfoPackage.InfoPackage.tech_name">tech_name (aapi.job.JobSAPBWInfoPackage.InfoPackage attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobSAPR3CREATE.SpoolListRecipient.RecipientType.TelexNumber">TelexNumber (aapi.job.JobSAPR3CREATE.SpoolListRecipient.RecipientType attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataFlow.template_location_gs_">template_location_gs_ (aapi.integration_factory.jobs.JobGCPDataFlow attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.template_name">template_name (aapi.integration_factory.jobs.JobGCPVM attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataFlow.template_type">template_type (aapi.integration_factory.jobs.JobGCPDataFlow attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts.tenant_id">tenant_id (aapi.integration_factory.connection_profiles.ConnectionProfileAzureBatchAccounts attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks.tenant_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDatabricks attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory.tenant_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureDataFactory attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions.tenant_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureFunctions attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps.tenant_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureLogicApps attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse.tenant_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureSynapse attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM.tenant_id">(aapi.integration_factory.connection_profiles.ConnectionProfileAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud.tenant_id">(aapi.integration_factory.connection_profiles.ConnectionProfileQlikCloud attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileUIPath.tenant_name">tenant_name (aapi.integration_factory.connection_profiles.ConnectionProfileUIPath attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileUIPath.tenant_url">tenant_url (aapi.integration_factory.connection_profiles.ConnectionProfileUIPath attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfile.test_on_build">test_on_build (aapi.connectionprofile.ConnectionProfile attribute)</a>
 </li>
@@ -6943,14 +7992,14 @@
           <li><a href="aapi.html#aapi.runningjobs.RunningJobs.time">(aapi.runningjobs.RunningJobs attribute)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.time.Time">Time (class in aapi.time)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobFileWatcher.time_limit">time_limit (aapi.job.JobFileWatcher attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.FileWatcherOptions.time_limit_policy">time_limit_policy (aapi.filetransfer.FileTransfer.FileWatcherOptions attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.FileWatcherOptions.time_limit_value">time_limit_value (aapi.filetransfer.FileTransfer.FileWatcherOptions attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.resourcepools.ResourcePools.Time.time_type">time_type (aapi.resourcepools.ResourcePools.Time attribute)</a>
@@ -7048,6 +8097,20 @@
         <ul>
           <li><a href="aapi.html#aapi.folderjobbase.FolderJobBaseSmart.RerunSpecificTimes.tolerance">(aapi.folderjobbase.FolderJobBaseSmart.RerunSpecificTimes attribute)</a>
 </li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.tolerance">(aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.tolerance">(aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureVM.tolerance">(aapi.integration_factory.jobs.JobAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobBoomiAtomsphere.tolerance">(aapi.integration_factory.jobs.JobBoomiAtomsphere attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataproc.tolerance">(aapi.integration_factory.jobs.JobGCPDataproc attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.tolerance">(aapi.integration_factory.jobs.JobGCPVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobQlikCloud.tolerance">(aapi.integration_factory.jobs.JobQlikCloud attribute)</a>
+</li>
           <li><a href="aapi.html#aapi.job.Job.RerunSpecificTimes.tolerance">(aapi.job.Job.RerunSpecificTimes attribute)</a>
 </li>
         </ul></li>
@@ -7060,6 +8123,8 @@
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.transfer_option">transfer_option (aapi.filetransfer.FileTransfer attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.transfer_type">transfer_type (aapi.filetransfer.FileTransfer attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta.trifacta_url">trifacta_url (aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.trim">trim (aapi.filetransfer.FileTransfer attribute)</a>
 </li>
@@ -7147,8 +8212,6 @@
           <li><a href="aapi.html#aapi.remedy.ActionRemedy.Urgency.Urgent">(aapi.remedy.ActionRemedy.Urgency attribute)</a>
 </li>
         </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.basefolder.Folder.DocumentationUrl.url">url (aapi.basefolder.Folder.DocumentationUrl attribute)</a>
 
         <ul>
@@ -7157,7 +8220,13 @@
           <li><a href="aapi.html#aapi.job.Job.DocumentationUrl.url">(aapi.job.Job.DocumentationUrl attribute)</a>
 </li>
         </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEMR.use_advanced_json_format">use_advanced_json_format (aapi.integration_factory.jobs.JobAwsEMR attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileSAP.use_extended">use_extended (aapi.connectionprofile.ConnectionProfileSAP attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.use_federation_id">use_federation_id (aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobMessagingFreeText.use_free_text_message">use_free_text_message (aapi.job.JobMessagingFreeText attribute)</a>
 
@@ -7203,10 +8272,22 @@
           <li><a href="aapi.html#aapi.job.JobSAPDataArchivingWrite.Variant.user">(aapi.job.JobSAPDataArchivingWrite.Variant attribute)</a>
 </li>
         </ul></li>
-        <li><a href="aapi.html#aapi.job.JobOEBS.user_name">user_name (aapi.job.JobOEBS attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAutomationAnywhere.user_name">user_name (aapi.integration_factory.connection_profiles.ConnectionProfileAutomationAnywhere attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI.user_name">(aapi.integration_factory.connection_profiles.ConnectionProfileMicrosoftPowerBI attribute)</a>
 </li>
+          <li><a href="aapi.html#aapi.job.JobOEBS.user_name">(aapi.job.JobOEBS attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileAWS.ProxySettings.username">username (aapi.connectionprofile.ConnectionProfileAWS.ProxySettings attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta.username">(aapi.integration_factory.connection_profiles.ConnectionProfileAlteryxTrifacta attribute)</a>
 </li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS.username">(aapi.integration_factory.connection_profiles.ConnectionProfileInformaticaCS attribute)</a>
+</li>
+        </ul></li>
     </ul></td>
   </tr></table>
 </section>
@@ -7285,8 +8366,6 @@
         </ul></li>
         <li><a href="aapi.html#aapi.set_.ActionSet.variable">variable (aapi.set_.ActionSet attribute)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.variable.Variable">Variable (class in aapi.variable)</a>
 </li>
         <li><a href="aapi.html#aapi.captureoutput.ActionCaptureOutput.variable_name">variable_name (aapi.captureoutput.ActionCaptureOutput attribute)</a>
@@ -7297,6 +8376,8 @@
         </ul></li>
         <li><a href="aapi.html#aapi.ifbase.IfVariableValue.variable_value">variable_value (aapi.ifbase.IfVariableValue attribute)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.basefolder.Folder.variables">variables (aapi.basefolder.Folder attribute)</a>
 
         <ul>
@@ -7309,6 +8390,22 @@
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobSAPDataArchivingWrite.variant">variant (aapi.job.JobSAPDataArchivingWrite attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAwsEC2.verification_poll_interval">verification_poll_interval (aapi.integration_factory.jobs.JobAwsEC2 attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureVM.verification_poll_interval">(aapi.integration_factory.jobs.JobAzureVM attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.verification_poll_interval">(aapi.integration_factory.jobs.JobGCPVM attribute)</a>
+</li>
+        </ul></li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataFlow.verification_poll_interval_in_seconds">verification_poll_interval_in_seconds (aapi.integration_factory.jobs.JobGCPDataFlow attribute)</a>
+
+        <ul>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataproc.verification_poll_interval_in_seconds">(aapi.integration_factory.jobs.JobGCPDataproc attribute)</a>
+</li>
+          <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobInformaticaCS.verification_poll_interval_in_seconds">(aapi.integration_factory.jobs.JobInformaticaCS attribute)</a>
+</li>
+        </ul></li>
         <li><a href="aapi.html#aapi.connectionprofile.ConnectionProfileFileTransfer.verify_bytes">verify_bytes (aapi.connectionprofile.ConnectionProfileFileTransfer attribute)</a>
 
         <ul>
@@ -7357,6 +8454,8 @@
         </ul></li>
         <li><a href="aapi.html#aapi.job.JobVMwarePower.virtual_machine_name">virtual_machine_name (aapi.job.JobVMwarePower attribute)</a>
 </li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureVM.vm_name">vm_name (aapi.integration_factory.jobs.JobAzureVM attribute)</a>
+</li>
         <li><a href="aapi.html#aapi.job.JobTandemProgram.volume">volume (aapi.job.JobTandemProgram attribute)</a>
 
         <ul>
@@ -7388,6 +8487,8 @@
         <li><a href="aapi.html#aapi.filetransfer.FileTransfer.FileWatcherOptions.TimeLimitPolicy.WaitUntil">WaitUntil (aapi.filetransfer.FileTransfer.FileWatcherOptions.TimeLimitPolicy attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobAzureBatchAccount.wallclock">wallclock (aapi.job.JobAzureBatchAccount attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobSnowflake.warehouse">warehouse (aapi.integration_factory.jobs.JobSnowflake attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.sitestandardpolicy.SiteStandardPolicy.ErrorLevel.Warning">Warning (aapi.sitestandardpolicy.SiteStandardPolicy.ErrorLevel attribute)</a>
 </li>
@@ -7469,8 +8570,12 @@
 </li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow.workbench">workbench() (ctm_python_client.core.workflow.Workflow static method)</a>
 </li>
-        <li><a href="aapi.html#aapi.job.JobInformatica.workflow">workflow (aapi.job.JobInformatica attribute)</a>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobAzureLogicApps.workflow">workflow (aapi.integration_factory.jobs.JobAzureLogicApps attribute)</a>
+
+        <ul>
+          <li><a href="aapi.html#aapi.job.JobInformatica.workflow">(aapi.job.JobInformatica attribute)</a>
 </li>
+        </ul></li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.Workflow">Workflow (class in ctm_python_client.core.workflow)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobInformatica.workflow_execution_mode">workflow_execution_mode (aapi.job.JobInformatica attribute)</a>
@@ -7478,6 +8583,8 @@
         <li><a href="aapi.html#aapi.job.JobInformatica.workflow_parameters_file">workflow_parameters_file (aapi.job.JobInformatica attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.job.JobInformatica.workflow_restart_mode">workflow_restart_mode (aapi.job.JobInformatica attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPDataproc.workflow_template">workflow_template (aapi.integration_factory.jobs.JobGCPDataproc attribute)</a>
 </li>
         <li><a href="ctm_python_client.core.html#ctm_python_client.core.workflow.WorkflowDefaults">WorkflowDefaults (class in ctm_python_client.core.workflow)</a>
 </li>
@@ -7502,6 +8609,10 @@
         <li><a href="aapi.html#aapi.workloadpolicy.WorkloadPolicy">WorkloadPolicy (class in aapi.workloadpolicy)</a>
 </li>
         <li><a href="aapi.html#aapi.workloadpolicy.WorkloadPolicy.Filter">WorkloadPolicy.Filter (class in aapi.workloadpolicy)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI.workspace_id">workspace_id (aapi.integration_factory.jobs.JobMicrosoftPowerBI attribute)</a>
+</li>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobMicrosoftPowerBI.workspace_name">workspace_name (aapi.integration_factory.jobs.JobMicrosoftPowerBI attribute)</a>
 </li>
         <li><a href="aapi.html#aapi.wpperiod.WpPeriod">WpPeriod (class in aapi.wpperiod)</a>
 </li>
@@ -7558,6 +8669,10 @@
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="aapi.html#aapi.period.Period.Period.Z">Z (aapi.period.Period.Period attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="aapi.integration_factory.html#aapi.integration_factory.jobs.JobGCPVM.zone">zone (aapi.integration_factory.jobs.JobGCPVM attribute)</a>
 </li>
     </ul></td>
   </tr></table>
