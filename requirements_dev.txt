@@ -1,4 +1,4 @@
--r requirements.txt
+-r requirements_test.txt
 autopep8
 ipykernel
 pytest

@@ -1,0 +1,908 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="ctm_python_client.ext package" href="ctm_python_client.ext.html" /><link rel="prev" title="aapi" href="aapi.html" />
+
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 6.2.0 and Furo 2023.03.27 -->
+        <title>ctm_python_client.core package - Control-M Python Client documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-sidebar-background: #F0F1F3;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-sidebar-background: #1A1C1E;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-sidebar-background: #1A1C1E;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Control-M Python Client  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Control-M Python Client  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/hello.html">Getting Started with Control-M Python Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/monitoring.html">Monitoring Flows with Control-M Python Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/ai.html">Working with Application Integrator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/folders.html">Folders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/jobtypes.html">Job types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/jobproperties.html">Job and Folder Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/connectionprofiles.html">Connection Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beyond.html">Going Forward</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aapi.html">aapi</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">ctm_python_client.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ctm_python_client.ext.html">ctm_python_client.ext package</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="ctm-python-client-core-package">
+<h1>ctm_python_client.core package<a class="headerlink" href="#ctm-python-client-core-package" title="Permalink to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-ctm_python_client.core.comm">
+<span id="ctm-python-client-core-comm-module"></span><h2>ctm_python_client.core.comm module<a class="headerlink" href="#module-ctm_python_client.core.comm" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.AAPIClientResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.comm.</span></span><span class="sig-name descname"><span class="pre">AAPIClientResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">success</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.AAPIClientResponse" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.AAPIClientResponse.is_ok">
+<span class="sig-name descname"><span class="pre">is_ok</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.AAPIClientResponse.is_ok" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.AbstractAAPIClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.comm.</span></span><span class="sig-name descname"><span class="pre">AbstractAAPIClient</span></span><a class="headerlink" href="#ctm_python_client.core.comm.AbstractAAPIClient" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.AbstractAAPIClient.authenticate">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">authenticate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.AbstractAAPIClient.authenticate" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.Environment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.comm.</span></span><span class="sig-name descname"><span class="pre">Environment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.credential.AbstractCredentials" title="ctm_python_client.core.credential.AbstractCredentials"><span class="pre">AbstractCredentials</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.comm.EnvironmentMode" title="ctm_python_client.core.comm.EnvironmentMode"><span class="pre">EnvironmentMode</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.Environment" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.Environment.create_onprem">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_onprem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'8443'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.credential.AbstractCredentials" title="ctm_python_client.core.credential.AbstractCredentials"><span class="pre">AbstractCredentials</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.Environment.create_onprem" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.Environment.create_saas">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_saas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.credential.AbstractCredentials" title="ctm_python_client.core.credential.AbstractCredentials"><span class="pre">AbstractCredentials</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.Environment.create_saas" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.Environment.create_workbench">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_workbench</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'8443'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.Environment.create_workbench" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.EnvironmentMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.comm.</span></span><span class="sig-name descname"><span class="pre">EnvironmentMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.EnvironmentMode" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.EnvironmentMode.ONPREM">
+<span class="sig-name descname"><span class="pre">ONPREM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Control-M'</span></em><a class="headerlink" href="#ctm_python_client.core.comm.EnvironmentMode.ONPREM" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.EnvironmentMode.SAAS">
+<span class="sig-name descname"><span class="pre">SAAS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Control-M</span> <span class="pre">Helix'</span></em><a class="headerlink" href="#ctm_python_client.core.comm.EnvironmentMode.SAAS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.EnvironmentMode.WORKBENCH">
+<span class="sig-name descname"><span class="pre">WORKBENCH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Control-M</span> <span class="pre">Workbench'</span></em><a class="headerlink" href="#ctm_python_client.core.comm.EnvironmentMode.WORKBENCH" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.OnPremAAPIClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.comm.</span></span><span class="sig-name descname"><span class="pre">OnPremAAPIClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.credential.AbstractCredentials" title="ctm_python_client.core.credential.AbstractCredentials"><span class="pre">AbstractCredentials</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.OnPremAAPIClient" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctm_python_client.core.comm.AbstractAAPIClient" title="ctm_python_client.core.comm.AbstractAAPIClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractAAPIClient</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.OnPremAAPIClient.authenticate">
+<span class="sig-name descname"><span class="pre">authenticate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.OnPremAAPIClient.authenticate" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.SaasAAPIClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.comm.</span></span><span class="sig-name descname"><span class="pre">SaasAAPIClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.credential.AbstractCredentials" title="ctm_python_client.core.credential.AbstractCredentials"><span class="pre">AbstractCredentials</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.SaasAAPIClient" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctm_python_client.core.comm.AbstractAAPIClient" title="ctm_python_client.core.comm.AbstractAAPIClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractAAPIClient</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.comm.SaasAAPIClient.authenticate">
+<span class="sig-name descname"><span class="pre">authenticate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.comm.SaasAAPIClient.authenticate" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ctm_python_client.core.credential">
+<span id="ctm-python-client-core-credential-module"></span><h2>ctm_python_client.core.credential module<a class="headerlink" href="#module-ctm_python_client.core.credential" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.credential.AbstractCredentials">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.credential.</span></span><span class="sig-name descname"><span class="pre">AbstractCredentials</span></span><a class="headerlink" href="#ctm_python_client.core.credential.AbstractCredentials" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Abstract Class for Credentials</p>
+<p>Use to create your custom classes for more advanced use cases of authentication</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.credential.AbstractCredentials.get_password">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.credential.AbstractCredentials.get_password" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.credential.AbstractCredentials.get_username">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_username</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.credential.AbstractCredentials.get_username" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.credential.InputPasswordCredentials">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.credential.</span></span><span class="sig-name descname"><span class="pre">InputPasswordCredentials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.credential.InputPasswordCredentials" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctm_python_client.core.credential.AbstractCredentials" title="ctm_python_client.core.credential.AbstractCredentials"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractCredentials</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.credential.InputPasswordCredentials.get_password">
+<span class="sig-name descname"><span class="pre">get_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.credential.InputPasswordCredentials.get_password" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.credential.InputPasswordCredentials.get_username">
+<span class="sig-name descname"><span class="pre">get_username</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.credential.InputPasswordCredentials.get_username" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.credential.SimpleCredentials">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.credential.</span></span><span class="sig-name descname"><span class="pre">SimpleCredentials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.credential.SimpleCredentials" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctm_python_client.core.credential.AbstractCredentials" title="ctm_python_client.core.credential.AbstractCredentials"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractCredentials</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.credential.SimpleCredentials.get_password">
+<span class="sig-name descname"><span class="pre">get_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.credential.SimpleCredentials.get_password" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.credential.SimpleCredentials.get_username">
+<span class="sig-name descname"><span class="pre">get_username</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.credential.SimpleCredentials.get_username" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ctm_python_client.core.monitoring">
+<span id="ctm-python-client-core-monitoring-module"></span><h2>ctm_python_client.core.monitoring module<a class="headerlink" href="#module-ctm_python_client.core.monitoring" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.monitoring.</span></span><span class="sig-name descname"><span class="pre">Monitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aapiclient</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.comm.OnPremAAPIClient" title="ctm_python_client.core.comm.OnPremAAPIClient"><span class="pre">OnPremAAPIClient</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ctm_python_client.core.comm.SaasAAPIClient" title="ctm_python_client.core.comm.SaasAAPIClient"><span class="pre">SaasAAPIClient</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor.confirm_job">
+<span class="sig-name descname"><span class="pre">confirm_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor.confirm_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Confirms a job. This only applies to jobs which where defined with <cite>confirm=True</cite>.
+Trying to confirm a job which can’t be confirmed or was already confirmed will result in error</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor.delete_job">
+<span class="sig-name descname"><span class="pre">delete_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor.delete_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Deletes a job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor.get_log">
+<span class="sig-name descname"><span class="pre">get_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor.get_log" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the log of a job describing all actions regarding the job execution.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor.get_output">
+<span class="sig-name descname"><span class="pre">get_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor.get_output" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor.get_statuses">
+<span class="sig-name descname"><span class="pre">get_statuses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor.get_statuses" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor.hold_job">
+<span class="sig-name descname"><span class="pre">hold_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor.hold_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Holds a job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor.kill_job">
+<span class="sig-name descname"><span class="pre">kill_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor.kill_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Kills a job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor.release_job">
+<span class="sig-name descname"><span class="pre">release_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor.release_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Releases a held job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor.rerun_job">
+<span class="sig-name descname"><span class="pre">rerun_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor.rerun_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Reruns a job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.Monitor.set_to_ok">
+<span class="sig-name descname"><span class="pre">set_to_ok</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.Monitor.set_to_ok" title="Permalink to this definition">#</a></dt>
+<dd><p>Set a job to OK</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.monitoring.</span></span><span class="sig-name descname"><span class="pre">RunMonitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aapiclient</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.comm.OnPremAAPIClient" title="ctm_python_client.core.comm.OnPremAAPIClient"><span class="pre">OnPremAAPIClient</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#ctm_python_client.core.comm.SaasAAPIClient" title="ctm_python_client.core.comm.SaasAAPIClient"><span class="pre">SaasAAPIClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">monitor_page_uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor" title="ctm_python_client.core.monitoring.Monitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Monitor</span></code></a></p>
+<p>Class RunMonitor</p>
+<p>Allows basic monitoring functions in a similar way that found in the Control-M Web interface</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.confirm_job">
+<span class="sig-name descname"><span class="pre">confirm_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.confirm_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Confirms a job. This only applies to jobs which where defined with <cite>confirm=True</cite>.
+Trying to confirm a job which can’t be confirmed or was already confirmed will result in error</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.delete_job">
+<span class="sig-name descname"><span class="pre">delete_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.delete_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Deletes a job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.get_jobid">
+<span class="sig-name descname"><span class="pre">get_jobid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.get_jobid" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the job id from a job_name.</p>
+<p>job_name can be a job name with or without path.
+If there are multiple jobs with the same name, the result will be determined according to path
+If no path is given, there will be an undefined behavior.</p>
+<p>job_name example : “MyJob” or with path: “MyFolder/Subfolder1/Subfolder2/MyJob”</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.get_log">
+<span class="sig-name descname"><span class="pre">get_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.get_log" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the log of a job describing all actions regarding the job execution.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.get_output">
+<span class="sig-name descname"><span class="pre">get_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.get_output" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the output of a job describing all actions regarding the job execution.
+If not applicable, it returns None.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.get_status">
+<span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.get_status" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the status of a job.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.get_statuses">
+<span class="sig-name descname"><span class="pre">get_statuses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.get_statuses" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the status of the run and all its jobs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.hold_job">
+<span class="sig-name descname"><span class="pre">hold_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.hold_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Holds a job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.kill_job">
+<span class="sig-name descname"><span class="pre">kill_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.kill_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Kills a job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.open_in_browser">
+<span class="sig-name descname"><span class="pre">open_in_browser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.open_in_browser" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.print_output">
+<span class="sig-name descname"><span class="pre">print_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.print_output" title="Permalink to this definition">#</a></dt>
+<dd><p>Print the output of a job describing all actions regarding the job execution.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.print_statuses">
+<span class="sig-name descname"><span class="pre">print_statuses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.print_statuses" title="Permalink to this definition">#</a></dt>
+<dd><p>Pretty prints full status of the run and all its jobs</p>
+<p>You can pass printer kwarg to specify a pretty pritner function. The function accepts one argument: the list of statuses</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.release_job">
+<span class="sig-name descname"><span class="pre">release_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.release_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Releases a held job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.rerun_job">
+<span class="sig-name descname"><span class="pre">rerun_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.rerun_job" title="Permalink to this definition">#</a></dt>
+<dd><p>Reruns a job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.monitoring.RunMonitor.set_to_ok">
+<span class="sig-name descname"><span class="pre">set_to_ok</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ctm_python_client.core.monitoring.RunMonitor.set_to_ok" title="Permalink to this definition">#</a></dt>
+<dd><p>Set a job to OK</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ctm_python_client.core.workflow">
+<span id="ctm-python-client-core-workflow-module"></span><h2>ctm_python_client.core.workflow module<a class="headerlink" href="#module-ctm_python_client.core.workflow" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.AbstractWorkflow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.workflow.</span></span><span class="sig-name descname"><span class="pre">AbstractWorkflow</span></span><a class="headerlink" href="#ctm_python_client.core.workflow.AbstractWorkflow" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.AbstractWorkflow.add">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.AbstractWorkflow.add" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.AbstractWorkflow.chain">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.AbstractWorkflow.chain" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.AbstractWorkflow.connect">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.AbstractWorkflow.connect" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.AbstractWorkflow.dump_json">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dump_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.AbstractWorkflow.dump_json" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.AbstractWorkflow.dumps_json">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dumps_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.AbstractWorkflow.dumps_json" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.AbstractWorkflow.get">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.AbstractWorkflow.get" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.AbstractWorkflow.get_objects">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_objects</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.AbstractWorkflow.get_objects" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.workflow.</span></span><span class="sig-name descname"><span class="pre">BaseWorkflow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.workflow.WorkflowDefaults" title="ctm_python_client.core.workflow.WorkflowDefaults"><span class="pre">WorkflowDefaults</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctm_python_client.core.workflow.AbstractWorkflow" title="ctm_python_client.core.workflow.AbstractWorkflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractWorkflow</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="aapi.html#aapi.bases.AAPIObject" title="aapi.bases.AAPIObject"><span class="pre">AAPIObject</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">inpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_creation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow.add" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow.chain">
+<span class="sig-name descname"><span class="pre">chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="aapi.html#aapi.bases.AAPIJob" title="aapi.bases.AAPIJob"><span class="pre">AAPIJob</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow.chain" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow.clear_all">
+<span class="sig-name descname"><span class="pre">clear_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow.clear_all" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">srcpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow.connect" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow.copy_from">
+<span class="sig-name descname"><span class="pre">copy_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workflow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow.copy_from" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow.create_folder_hierarchy">
+<span class="sig-name descname"><span class="pre">create_folder_hierarchy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow.create_folder_hierarchy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow.dump_json">
+<span class="sig-name descname"><span class="pre">dump_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow.dump_json" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow.dumps_json">
+<span class="sig-name descname"><span class="pre">dumps_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow.dumps_json" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="aapi.html#aapi.bases.AAPIObject" title="aapi.bases.AAPIObject"><span class="pre">AAPIObject</span></a></span></span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow.get" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.BaseWorkflow.get_objects">
+<span class="sig-name descname"><span class="pre">get_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="aapi.html#aapi.bases.AAPIObject" title="aapi.bases.AAPIObject"><span class="pre">AAPIObject</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ctm_python_client.core.workflow.BaseWorkflow.get_objects" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.Workflow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.workflow.</span></span><span class="sig-name descname"><span class="pre">Workflow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">environment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.comm.Environment" title="ctm_python_client.core.comm.Environment"><span class="pre">Environment</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ctm_python_client.core.workflow.WorkflowDefaults" title="ctm_python_client.core.workflow.WorkflowDefaults"><span class="pre">WorkflowDefaults</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_initial_authentication</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.Workflow" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow" title="ctm_python_client.core.workflow.BaseWorkflow"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseWorkflow</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.Workflow.authenticate">
+<span class="sig-name descname"><span class="pre">authenticate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.Workflow.authenticate" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.Workflow.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.Workflow.build" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.Workflow.deploy">
+<span class="sig-name descname"><span class="pre">deploy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.Workflow.deploy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.Workflow.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skip_login</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delete_afterwards</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_in_browser</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor" title="ctm_python_client.core.monitoring.RunMonitor"><span class="pre">RunMonitor</span></a></span></span><a class="headerlink" href="#ctm_python_client.core.workflow.Workflow.run" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.Workflow.workbench">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">workbench</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'8443'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.Workflow.workbench" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.WorkflowDefaults">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ctm_python_client.core.workflow.</span></span><span class="sig-name descname"><span class="pre">WorkflowDefaults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controlm_server</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_as</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="aapi.html#aapi.job.Job.When" title="aapi.job.Job.When"><span class="pre">When</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">application</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_application</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ctm_python_client.core.workflow.WorkflowDefaults" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.WorkflowDefaults.application">
+<span class="sig-name descname"><span class="pre">application</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ctm_python_client.core.workflow.WorkflowDefaults.application" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.WorkflowDefaults.controlm_server">
+<span class="sig-name descname"><span class="pre">controlm_server</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ctm_python_client.core.workflow.WorkflowDefaults.controlm_server" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.WorkflowDefaults.host">
+<span class="sig-name descname"><span class="pre">host</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ctm_python_client.core.workflow.WorkflowDefaults.host" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.WorkflowDefaults.run_as">
+<span class="sig-name descname"><span class="pre">run_as</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ctm_python_client.core.workflow.WorkflowDefaults.run_as" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.WorkflowDefaults.sub_application">
+<span class="sig-name descname"><span class="pre">sub_application</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ctm_python_client.core.workflow.WorkflowDefaults.sub_application" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ctm_python_client.core.workflow.WorkflowDefaults.when">
+<span class="sig-name descname"><span class="pre">when</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="aapi.html#aapi.job.Job.When" title="aapi.job.Job.When"><span class="pre">When</span></a></em><a class="headerlink" href="#ctm_python_client.core.workflow.WorkflowDefaults.when" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ctm_python_client.core">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ctm_python_client.core" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="ctm_python_client.ext.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">ctm_python_client.ext package</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="aapi.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">aapi</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, BMC Inc.
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">ctm_python_client.core package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-ctm_python_client.core.comm">ctm_python_client.core.comm module</a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.AAPIClientResponse"><code class="docutils literal notranslate"><span class="pre">AAPIClientResponse</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.AAPIClientResponse.is_ok"><code class="docutils literal notranslate"><span class="pre">AAPIClientResponse.is_ok()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.AbstractAAPIClient"><code class="docutils literal notranslate"><span class="pre">AbstractAAPIClient</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.AbstractAAPIClient.authenticate"><code class="docutils literal notranslate"><span class="pre">AbstractAAPIClient.authenticate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.Environment"><code class="docutils literal notranslate"><span class="pre">Environment</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.Environment.create_onprem"><code class="docutils literal notranslate"><span class="pre">Environment.create_onprem()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.Environment.create_saas"><code class="docutils literal notranslate"><span class="pre">Environment.create_saas()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.Environment.create_workbench"><code class="docutils literal notranslate"><span class="pre">Environment.create_workbench()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.EnvironmentMode"><code class="docutils literal notranslate"><span class="pre">EnvironmentMode</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.EnvironmentMode.ONPREM"><code class="docutils literal notranslate"><span class="pre">EnvironmentMode.ONPREM</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.EnvironmentMode.SAAS"><code class="docutils literal notranslate"><span class="pre">EnvironmentMode.SAAS</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.EnvironmentMode.WORKBENCH"><code class="docutils literal notranslate"><span class="pre">EnvironmentMode.WORKBENCH</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.OnPremAAPIClient"><code class="docutils literal notranslate"><span class="pre">OnPremAAPIClient</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.OnPremAAPIClient.authenticate"><code class="docutils literal notranslate"><span class="pre">OnPremAAPIClient.authenticate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.SaasAAPIClient"><code class="docutils literal notranslate"><span class="pre">SaasAAPIClient</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.comm.SaasAAPIClient.authenticate"><code class="docutils literal notranslate"><span class="pre">SaasAAPIClient.authenticate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-ctm_python_client.core.credential">ctm_python_client.core.credential module</a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.credential.AbstractCredentials"><code class="docutils literal notranslate"><span class="pre">AbstractCredentials</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.credential.AbstractCredentials.get_password"><code class="docutils literal notranslate"><span class="pre">AbstractCredentials.get_password()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.credential.AbstractCredentials.get_username"><code class="docutils literal notranslate"><span class="pre">AbstractCredentials.get_username()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.credential.InputPasswordCredentials"><code class="docutils literal notranslate"><span class="pre">InputPasswordCredentials</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.credential.InputPasswordCredentials.get_password"><code class="docutils literal notranslate"><span class="pre">InputPasswordCredentials.get_password()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.credential.InputPasswordCredentials.get_username"><code class="docutils literal notranslate"><span class="pre">InputPasswordCredentials.get_username()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.credential.SimpleCredentials"><code class="docutils literal notranslate"><span class="pre">SimpleCredentials</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.credential.SimpleCredentials.get_password"><code class="docutils literal notranslate"><span class="pre">SimpleCredentials.get_password()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.credential.SimpleCredentials.get_username"><code class="docutils literal notranslate"><span class="pre">SimpleCredentials.get_username()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-ctm_python_client.core.monitoring">ctm_python_client.core.monitoring module</a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor"><code class="docutils literal notranslate"><span class="pre">Monitor</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor.confirm_job"><code class="docutils literal notranslate"><span class="pre">Monitor.confirm_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor.delete_job"><code class="docutils literal notranslate"><span class="pre">Monitor.delete_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor.get_log"><code class="docutils literal notranslate"><span class="pre">Monitor.get_log()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor.get_output"><code class="docutils literal notranslate"><span class="pre">Monitor.get_output()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor.get_statuses"><code class="docutils literal notranslate"><span class="pre">Monitor.get_statuses()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor.hold_job"><code class="docutils literal notranslate"><span class="pre">Monitor.hold_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor.kill_job"><code class="docutils literal notranslate"><span class="pre">Monitor.kill_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor.release_job"><code class="docutils literal notranslate"><span class="pre">Monitor.release_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor.rerun_job"><code class="docutils literal notranslate"><span class="pre">Monitor.rerun_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.Monitor.set_to_ok"><code class="docutils literal notranslate"><span class="pre">Monitor.set_to_ok()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor"><code class="docutils literal notranslate"><span class="pre">RunMonitor</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.confirm_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.confirm_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.delete_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.delete_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.get_jobid"><code class="docutils literal notranslate"><span class="pre">RunMonitor.get_jobid()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.get_log"><code class="docutils literal notranslate"><span class="pre">RunMonitor.get_log()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.get_output"><code class="docutils literal notranslate"><span class="pre">RunMonitor.get_output()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.get_status"><code class="docutils literal notranslate"><span class="pre">RunMonitor.get_status()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.get_statuses"><code class="docutils literal notranslate"><span class="pre">RunMonitor.get_statuses()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.hold_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.hold_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.kill_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.kill_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.open_in_browser"><code class="docutils literal notranslate"><span class="pre">RunMonitor.open_in_browser()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.print_output"><code class="docutils literal notranslate"><span class="pre">RunMonitor.print_output()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.print_statuses"><code class="docutils literal notranslate"><span class="pre">RunMonitor.print_statuses()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.release_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.release_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.rerun_job"><code class="docutils literal notranslate"><span class="pre">RunMonitor.rerun_job()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.monitoring.RunMonitor.set_to_ok"><code class="docutils literal notranslate"><span class="pre">RunMonitor.set_to_ok()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-ctm_python_client.core.workflow">ctm_python_client.core.workflow module</a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.AbstractWorkflow"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.AbstractWorkflow.add"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.add()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.AbstractWorkflow.chain"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.chain()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.AbstractWorkflow.connect"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.connect()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.AbstractWorkflow.dump_json"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.dump_json()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.AbstractWorkflow.dumps_json"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.dumps_json()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.AbstractWorkflow.get"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.get()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.AbstractWorkflow.get_objects"><code class="docutils literal notranslate"><span class="pre">AbstractWorkflow.get_objects()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow.add"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.add()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow.chain"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.chain()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow.clear_all"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.clear_all()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow.connect"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.connect()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow.copy_from"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.copy_from()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow.create_folder_hierarchy"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.create_folder_hierarchy()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow.dump_json"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.dump_json()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow.dumps_json"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.dumps_json()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow.get"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.get()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.BaseWorkflow.get_objects"><code class="docutils literal notranslate"><span class="pre">BaseWorkflow.get_objects()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.Workflow"><code class="docutils literal notranslate"><span class="pre">Workflow</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.Workflow.authenticate"><code class="docutils literal notranslate"><span class="pre">Workflow.authenticate()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.Workflow.build"><code class="docutils literal notranslate"><span class="pre">Workflow.build()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.Workflow.deploy"><code class="docutils literal notranslate"><span class="pre">Workflow.deploy()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.Workflow.run"><code class="docutils literal notranslate"><span class="pre">Workflow.run()</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.Workflow.workbench"><code class="docutils literal notranslate"><span class="pre">Workflow.workbench()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.WorkflowDefaults"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults</span></code></a><ul>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.WorkflowDefaults.application"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.application</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.WorkflowDefaults.controlm_server"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.controlm_server</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.WorkflowDefaults.host"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.host</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.WorkflowDefaults.run_as"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.run_as</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.WorkflowDefaults.sub_application"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.sub_application</span></code></a></li>
+<li><a class="reference internal" href="#ctm_python_client.core.workflow.WorkflowDefaults.when"><code class="docutils literal notranslate"><span class="pre">WorkflowDefaults.when</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-ctm_python_client.core">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,575 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Authentication" href="authentication.html" /><link rel="prev" title="Getting Started with Control-M Python Client" href="hello.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 6.2.0 and Furo 2023.03.27 -->
+        <title>Monitoring Flows with Control-M Python Client - Control-M Python Client documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-sidebar-background: #F0F1F3;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-sidebar-background: #1A1C1E;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-sidebar-background: #1A1C1E;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Control-M Python Client  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Control-M Python Client  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../tutorials.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hello.html">Getting Started with Control-M Python Client</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Monitoring Flows with Control-M Python Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ai.html">Working with Application Integrator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folders.html">Folders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobtypes.html">Job types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobproperties.html">Job and Folder Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectionprofiles.html">Connection Profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beyond.html">Going Forward</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">References:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../aapi.html">aapi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ctm_python_client.core.html">ctm_python_client.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ctm_python_client.ext.html">ctm_python_client.ext package</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="Monitoring-Flows-with-Control-M-Python-Client">
+<h1>Monitoring Flows with Control-M Python Client<a class="headerlink" href="#Monitoring-Flows-with-Control-M-Python-Client" title="Permalink to this heading">#</a></h1>
+<p>You can monitor the flow in Control-M Web which provides all the functionalities to monitor and run the workflow. If you prefer to monitor your workflow using code, you can use Control-M Python client.</p>
+<p>Let’s run some workflows that contain jobs with errors and check how they appear in the Monitoring domain. If you need to learn how to create or run flows, see <a class="reference external" href="https://controlm.github.io/ctm-python-client/notebooks/hello.html">Getting Started with Control-M Python Client</a>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ctm_python_client.core.workflow</span> <span class="kn">import</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">WorkflowDefaults</span>
+<span class="kn">from</span> <span class="nn">ctm_python_client.core.comm</span> <span class="kn">import</span> <span class="n">Environment</span>
+<span class="c1"># from ctm_python_client.ext.viz import get_graph</span>
+<span class="kn">from</span> <span class="nn">aapi</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="n">Environment</span><span class="o">.</span><span class="n">create_workbench</span><span class="p">(),</span> <span class="n">WorkflowDefaults</span><span class="p">(</span><span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;workbench&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<section id="Running-a-Workflow">
+<h2>Running a Workflow<a class="headerlink" href="#Running-a-Workflow" title="Permalink to this heading">#</a></h2>
+<p>When you run a workflow, the return object is a <code class="docutils literal notranslate"><span class="pre">RunMonitor</span></code>, which enables you to check the workflow status and query for specific information of a Job, such as the output or logs.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">clear_all</span><span class="p">()</span>
+
+<span class="n">workflow</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;HelloWorld&#39;</span><span class="p">,</span> <span class="s1">&#39;echo &quot;Hello&quot;&#39;</span><span class="p">),</span>
+        <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;CountFiles&#39;</span><span class="p">,</span> <span class="s1">&#39;ls -l | wc&#39;</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;TestMonitor&#39;</span>
+<span class="p">)</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">workflow</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Checking-the-Status">
+<h2>Checking the Status<a class="headerlink" href="#Checking-the-Status" title="Permalink to this heading">#</a></h2>
+<p>When you run a workflow, Control-M starts all the jobs. If you print the status just after you run a job, the status is probably either Executing or Wait Condition.</p>
+<ul class="simple">
+<li><p><strong>Executing</strong>: The Job or Folder is running</p></li>
+<li><p><strong>Wait Condition</strong>: The Job or Folder is waiting for a condition to be satisfied before it can run. In this example the condition is that the previous job finishes.</p></li>
+<li><p><strong>Ended OK</strong>: The Job or Folder executed without returning an error code.</p></li>
+<li><p><strong>Ended Not OK</strong>: The Job or Folder executed with an error, or the run failed</p></li>
+</ul>
+<p>Use <code class="docutils literal notranslate"><span class="pre">.print_status()</span></code> to get a printout of the job statuses. The statuses indent according to heirarchy. Note that the status of a Folder or Subfolder is an aggregation of the status of its jobs</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run</span><span class="o">.</span><span class="n">print_statuses</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Run Status
+--------------------------------------------------
+TestMonitor  ...........................  Wait Condition
+    HelloWorld  ........................  Wait Condition
+    CountFiles  ........................  Wait Condition
+
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># A few seconds should be enough for all jobs to finish</span>
+<span class="n">run</span><span class="o">.</span><span class="n">print_statuses</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Run Status
+--------------------------------------------------
+TestMonitor  ...........................  Ended OK
+    HelloWorld  ........................  Ended OK
+    CountFiles  ........................  Ended OK
+
+</pre></div></div>
+</div>
+<section id="Getting-the-Status-of-a-Specific-Job-or-Folder">
+<h3>Getting the Status of a Specific Job or Folder<a class="headerlink" href="#Getting-the-Status-of-a-Specific-Job-or-Folder" title="Permalink to this heading">#</a></h3>
+<p>To get the status of a specific Job or Folder, use the <code class="docutils literal notranslate"><span class="pre">.get_status()</span></code> method with the name of the Job or Folder. You can pass it as a name or as the entire path.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span><span class="s1">&#39;CountFiles&#39;</span><span class="p">))</span>
+<span class="c1"># Same as print(run.get_status(&#39;TestMonitor/CountFiles&#39;))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;application&#39;: None,
+ &#39;ctm&#39;: None,
+ &#39;cyclic&#39;: None,
+ &#39;deleted&#39;: False,
+ &#39;description&#39;: None,
+ &#39;end_time&#39;: &#39;Jun 14, 2022 11:00:18 AM&#39;,
+ &#39;estimated_end_time&#39;: None,
+ &#39;estimated_start_time&#39;: None,
+ &#39;folder&#39;: &#39;TestMonitor&#39;,
+ &#39;folder_id&#39;: &#39;workbench:0001g&#39;,
+ &#39;held&#39;: False,
+ &#39;host&#39;: None,
+ &#39;job_id&#39;: &#39;workbench:0001i&#39;,
+ &#39;job_json&#39;: None,
+ &#39;log_uri&#39;: &#39;https://localhost:8443/automation-api/run/job/workbench:0001i/log&#39;,
+ &#39;name&#39;: &#39;CountFiles&#39;,
+ &#39;number_of_runs&#39;: 1,
+ &#39;order_date&#39;: None,
+ &#39;output_uri&#39;: &#39;https://localhost:8443/automation-api/run/job/workbench:0001i/output&#39;,
+ &#39;start_time&#39;: &#39;Jun 14, 2022 11:00:18 AM&#39;,
+ &#39;status&#39;: &#39;Ended OK&#39;,
+ &#39;sub_application&#39;: None,
+ &#39;type&#39;: &#39;Command&#39;}
+</pre></div></div>
+</div>
+<p>To get the output of a Job (if an output exists), you can use the <code class="docutils literal notranslate"><span class="pre">.get_output()</span></code> or <code class="docutils literal notranslate"><span class="pre">.print_output()</span></code> method from the RunObject. By default, the output contains the executed commands.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="s1">&#39;CountFiles&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+<span class="c1"># same as run.print_output(&#39;CountFiles&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
++ ls -l
++ wc
+     14     121     785
+
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Errors-and-Troubleshooting">
+<h2>Errors and Troubleshooting<a class="headerlink" href="#Errors-and-Troubleshooting" title="Permalink to this heading">#</a></h2>
+<p>When a job finishes with an error, it does not trigger the next job, which is marked as Waiting for Condition until the previous job runs ok.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">clear_all</span><span class="p">()</span>
+
+<span class="n">workflow</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Command&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">),</span>
+        <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Bye&#39;</span><span class="p">,</span> <span class="s1">&#39;echo &quot;Finished&quot;&#39;</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;TestMonitor&#39;</span>
+<span class="p">)</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">workflow</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Wait until Jobs were ordered</span>
+<span class="n">run</span><span class="o">.</span><span class="n">print_statuses</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Run Status
+--------------------------------------------------
+TestMonitor  ...........................  Executing
+    Command  ...........................  Ended Not OK
+    Bye  ...............................  Wait Condition
+
+</pre></div></div>
+</div>
+<p>We see that the Job “Command” ended Not OK and therefore the next job cannot run. This is because “Bye” depends on the completion of “Command”. If they were indenpendent jobs, they would both run.</p>
+<p>To troubleshoot, you can use the <code class="docutils literal notranslate"><span class="pre">.get_log()</span></code> and the <code class="docutils literal notranslate"><span class="pre">.get_output()</span></code> methods.</p>
+<p>The log gives detailed information of the actions of the job execution. In our example, we do not see the desired information because the failure is in the task itself.</p>
+<p><strong>Note</strong>: The status of <code class="docutils literal notranslate"><span class="pre">Bye</span></code> is <code class="docutils literal notranslate"><span class="pre">Wait</span> <span class="pre">Condition</span></code> because there is a way to force the status of a job to OK and continue the workflow. For more information, see the advanced tutorial.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">get_log</span><span class="p">(</span><span class="s1">&#39;Command&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Event Time            Message                                                                   Code
+
+11:01:15 14-Jun-2022  ORDERED JOB:64; DAILY FORCED, ODATE 20220614                              5065
+11:01:15 14-Jun-2022  FREED BY USER workbench                                                   5402
+11:01:15 14-Jun-2022  SUBMITTED TO workbench                                                    5105
+11:01:16 14-Jun-2022  STARTED AT 20220614110115 ON workbench                                    5101
+11:01:16 14-Jun-2022  JOB STATE CHANGED TO Executing                                            5120
+11:01:16 14-Jun-2022  ENDED AT 20220614110116. OSCOMPSTAT 127. RUNCNT 1                         5100
+11:01:16 14-Jun-2022  Message from Agent: /home/workbench/ctm/sysout/CMD.LOG_00001k_00001       5169
+11:01:16 14-Jun-2022  ENDED NOTOK. NUMBER OF FAILURES SET TO 1                                  5134
+11:01:16 14-Jun-2022  JOB STATE CHANGED TO Analyzed                                             5120
+11:01:16 14-Jun-2022  Job STATE CHANGED TO Post processed                                       5120
+
+</pre></div></div>
+</div>
+<p>In the logs we only see that it was ended not ok, so let’s try the output</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run</span><span class="o">.</span><span class="n">print_output</span><span class="p">(</span><span class="s1">&#39;Command&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
++ foo
+/home/workbench/ctm/runtime/CMD.0000001k_001: line 2: foo: command not found
+
+</pre></div></div>
+</div>
+<p>Notice that the output shows that the issue is that the command that we tried to run does not exist.</p>
+<p>The action that you can take depends on the cause of the error.</p>
+<p>Possible scenarios:</p>
+<ul class="simple">
+<li><p>The command can only be used in a production environment, but not a test environment. You can mark the job to run as dummy</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;TestMonitor/Command&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">run_as_dummy</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>You forgot to download the command before you ran the job. Run a flow that downloads or installs the command and then rerun the job</p></li>
+<li><p>There is a typo in the command. Edit the workflow and run it again.</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="authentication.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Authentication</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="hello.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Getting Started with Control-M Python Client</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, BMC Inc.
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Monitoring Flows with Control-M Python Client</a><ul>
+<li><a class="reference internal" href="#Running-a-Workflow">Running a Workflow</a></li>
+<li><a class="reference internal" href="#Checking-the-Status">Checking the Status</a><ul>
+<li><a class="reference internal" href="#Getting-the-Status-of-a-Specific-Job-or-Folder">Getting the Status of a Specific Job or Folder</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Errors-and-Troubleshooting">Errors and Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
