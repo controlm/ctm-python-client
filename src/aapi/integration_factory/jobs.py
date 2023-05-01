@@ -689,7 +689,7 @@ class JobMicroFocusLinux(Job):
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:Micro Focus Linux'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Connection Profile'})
+                                          '_aapi_repr_': 'ConnectionProfile'})
     jcl_filename: str = attrs.field(kw_only=True, default=None, metadata={
                                       '_aapi_repr_': 'JCL Filename'})
     pds: str = attrs.field(kw_only=True, default=None,
@@ -732,7 +732,7 @@ class JobMicroFocusWindows(Job):
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:Micro Focus Windows'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Connection Profile'})
+                                          '_aapi_repr_': 'ConnectionProfile'})
     jcl_filename: str = attrs.field(kw_only=True, default=None, metadata={
                                       '_aapi_repr_': 'JCL Filename'})
     pds: str = attrs.field(kw_only=True, default=None,
