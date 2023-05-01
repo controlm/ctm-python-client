@@ -680,3 +680,89 @@ class JobAzureVM(Job):
                                  '_aapi_repr_': 'Tolerance'})
     get_logs: str = attrs.field(kw_only=True, default=None, metadata={
                                 '_aapi_repr_': 'Get Logs'})
+
+
+@attrs.define
+class JobMicroFocusLinux(Job):
+
+    _type: str = attrs.field(init=False, default='Job:Micro Focus Linux', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:Micro Focus Linux'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Profile'})
+    jcl_filename: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'JCL Filename'})
+    pds: str = attrs.field(kw_only=True, default=None,
+                             metadata={'_aapi_repr_': 'PDS'})
+    enable_jcl_variables: str = attrs.field(kw_only=True, default=None, metadata={
+                                              '_aapi_repr_': 'Enable JCL Variables'})
+    additional_variables: str = attrs.field(kw_only=True, default=None, metadata={
+                                            '_aapi_repr_': 'Additional Variables'})
+    restart_on_rerun: str = attrs.field(kw_only=True, default=None, metadata={
+                                        '_aapi_repr_': 'Restart on Rerun'})
+    from_step_proc: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'From Step/Proc'})
+    to_step_proc: str = attrs.field(kw_only=True, default=None, metadata={
+                                    '_aapi_repr_': 'To Step/Proc'})
+    recapture_abend_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                             '_aapi_repr_': 'Recapture ABEND Codes'})
+    recapture_cond_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                            '_aapi_repr_': 'Recapture COND Codes'})
+    auto_adjust_restart: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Auto Adjust Restart'})
+    step_specific_condition_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                                     '_aapi_repr_': 'Step-Specific Condition Codes'})
+    set_mf_ucc11: str = attrs.field(kw_only=True, default=None, metadata={
+                                       '_aapi_repr_': 'Set MF_UCC11'})
+    advanced_restart_parameters: str = attrs.field(kw_only=True, default=None, metadata={
+                                                   '_aapi_repr_': 'Advanced Restart Parameters'})
+    rerun_job_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                    '_aapi_repr_': 'Rerun Job ID'})
+    restart_with_modified_jcl: str = attrs.field(kw_only=True, default=None, metadata={
+                                                   '_aapi_repr_': 'Restart with Modified JCL'})
+    modified_jcl_path_and_filename: str = attrs.field(
+        kw_only=True, default=None, metadata={'_aapi_repr_': 'Modified JCL Path and Filename'})
+
+
+
+@attrs.define
+class JobMicroFocusWindows(Job):
+
+    _type: str = attrs.field(init=False, default='Job:Micro Focus Windows', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:Micro Focus Windows'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Profile'})
+    jcl_filename: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'JCL Filename'})
+    pds: str = attrs.field(kw_only=True, default=None,
+                             metadata={'_aapi_repr_': 'PDS'})
+    enable_jcl_variables: str = attrs.field(kw_only=True, default=None, metadata={
+                                              '_aapi_repr_': 'Enable JCL Variables'})
+    additional_variables: str = attrs.field(kw_only=True, default=None, metadata={
+                                            '_aapi_repr_': 'Additional Variables'})
+    restart_on_rerun: str = attrs.field(kw_only=True, default=None, metadata={
+                                        '_aapi_repr_': 'Restart on Rerun'})
+    from_step_proc: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'From Step/Proc'})
+    to_step_proc: str = attrs.field(kw_only=True, default=None, metadata={
+                                    '_aapi_repr_': 'To Step/Proc'})
+    recapture_abend_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                             '_aapi_repr_': 'Recapture ABEND Codes'})
+    recapture_cond_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                            '_aapi_repr_': 'Recapture COND Codes'})
+    auto_adjust_restart: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Auto Adjust Restart'})
+    step_specific_condition_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                                     '_aapi_repr_': 'Step-Specific Condition Codes'})
+    set_mf_ucc11: str = attrs.field(kw_only=True, default=None, metadata={
+                                       '_aapi_repr_': 'Set MF_UCC11'})
+    advanced_restart_parameters: str = attrs.field(kw_only=True, default=None, metadata={
+                                                   '_aapi_repr_': 'Advanced Restart Parameters'})
+    rerun_job_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                    '_aapi_repr_': 'Rerun Job ID'})
+    restart_with_modified_jcl: str = attrs.field(kw_only=True, default=None, metadata={
+                                                   '_aapi_repr_': 'Restart with Modified JCL'})
+    modified_jcl_path_and_filename: str = attrs.field(
+        kw_only=True, default=None, metadata={'_aapi_repr_': 'Modified JCL Path and Filename'})
+
