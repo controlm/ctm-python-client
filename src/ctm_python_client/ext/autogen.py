@@ -8,8 +8,46 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 __all__ = ['generate_ai_plugins_classes']
 
-IF_PLUGINS = ['GDF032022', 'GBQ102022', 'SNF', 'AEC082022', 'TDM052022', 'GDP042022', 'ZSY062022', 'AHD062022', 'GVM062022', 'ADF062021', 'ICS032022', 'BOO032022', 'ZDX112021',
-              'AAR072022',  'UIP072021', 'ATR122022', 'ZLA112022', 'QLC092022', 'GLU062021', 'ADB112022', 'MBI042022', 'ZBA042022', 'DBX032022', 'ZFN032022', 'AEM072022', 'ZVM062022']
+IF_PLUGINS = ['ABA092022',
+              'GBA032023',
+              'GDF032022',
+              'GBQ102022',
+              'AEC082022',
+              'TDM052022',
+              'GDP042022',
+              'ZSY062022',
+              'AHD062022',
+              'AQS012023',
+              'MFL022023',
+              'COM032023',
+              'ZML022023',
+              'GVM062022',
+              'ADF062021',
+              'ASF012023',
+              'ASM0220223',
+              'ICS032022',
+              'BOO032022',
+              'ZDX112021',
+              'ACS042023',
+              'AAR072022',
+              'UIP072021',
+              'ATR122022',
+              'ZLA112022',
+              'QLC092022',
+              'GLU062021',
+              'ADB112022',
+              'ABK042023',
+              'MBI042022',
+              'SNF092022',
+              'ADP122022',
+              'DBX032022',
+              'ZFN032022',
+              'ZBA042022',
+              'AEM072022',
+              'ZVM062022',
+              'MFW022023',
+              'DBT042023']
+
 
 imports_str = '''from aapi import *
 import attrs
