@@ -844,3 +844,16 @@ class ConnectionProfileAwsAthena(ConnectionProfile):
         '_aapi_repr_': 'IAM Role'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
+
+@attrs.define
+class ConnectionProfileGCPDataprep(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:GCP Dataprep', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:GCP Dataprep'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    gcp_dataprep_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                            '_aapi_repr_': 'GCP Dataprep URL'})
+    user_access_token: str = attrs.field(kw_only=True, default=None, metadata={
+                                         '_aapi_repr_': 'User Access Token'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})

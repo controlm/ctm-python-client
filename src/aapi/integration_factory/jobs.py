@@ -1162,3 +1162,24 @@ class JobAwsAthena(Job):
                                  '_aapi_repr_': 'Tolerance'})
     no_perm: str = attrs.field(kw_only=True, default=None, metadata={
                                '_aapi_repr_': 'NoPerm'})
+
+@attrs.define
+class JobGCPDataprep(Job):
+
+    _type: str = attrs.field(init=False, default='Job:GCP Dataprep', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:GCP Dataprep'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'ConnectionProfile'})
+    flow_name: str = attrs.field(kw_only=True, default=None, metadata={
+                                 '_aapi_repr_': 'Flow Name'})
+    parameters: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'Parameters'})
+    execute_job_with_idempotency_token: str = attrs.field(kw_only=True, default=None, metadata={
+                                                          '_aapi_repr_': 'Execute Job with Idempotency Token'})
+    idempotency_token: str = attrs.field(kw_only=True, default=None, metadata={
+                                         '_aapi_repr_': 'Idempotency Token'})
+    status_polling_frequency: str = attrs.field(kw_only=True, default=None, metadata={
+                                                '_aapi_repr_': 'Status Polling Frequency'})
+    failure_tolerance: str = attrs.field(kw_only=True, default=None, metadata={
+                                         '_aapi_repr_': 'Failure Tolerance'})
