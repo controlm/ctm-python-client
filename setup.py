@@ -5,7 +5,7 @@ setup(
     name="ctm-python-client",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    version="2.1.0",
+    version="2.1.2",
     description="Python Workflows for Control-M",
     author="BMC Software",
     license="BSD 3-Clause",
