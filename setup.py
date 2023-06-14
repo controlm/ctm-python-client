@@ -8,7 +8,7 @@ setup(
     name="ctm-python-client",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    version="2.1.2rc",
+    version="2.1.3",
     description="Python Workflows for Control-M",
     long_description=long_description,
     long_description_content_type='text/markdown',

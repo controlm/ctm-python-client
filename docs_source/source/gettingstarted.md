@@ -38,7 +38,7 @@ venv\Scripts\activate.bat
 **Note: Requires `pip` and `git` to be installed.**
 
 ```shell
-pip install git+https://github.com/controlm/ctm-python-client.git
+pip install ctm-python-client
 ```
 
 ### Installing from source
