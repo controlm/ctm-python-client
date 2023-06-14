@@ -1,5 +1,8 @@
 from setuptools import find_packages, setup
+from pathlib import Path
 
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="ctm-python-client",
@@ -7,7 +10,8 @@ setup(
     package_dir={"": "src"},
     version="2.1.2",
     description="Python Workflows for Control-M",
-    long_description="Python Workflows for Control-M",
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author="BMC Software",
     license="BSD 3-Clause",
     keywords="Control-M",
