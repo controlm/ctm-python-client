@@ -14,7 +14,7 @@ setup(
     install_requires=["requests>=2.23.0",
                       "urllib3", "six", "attrs", "certifi", "jinja2"],
     classifiers= [
-        "DEVELOPMENT STATUS :: 5 - PRODUCTION/STABLE",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3"
     ]
