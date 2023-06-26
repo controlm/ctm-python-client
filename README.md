@@ -10,7 +10,9 @@ You do not need to have an in-depth knowledge of Control-M, but some familiarity
 
 ## Installation
 
-We recommend that you set up a virtual environment before installing:
+Control-M Python client requires [Python](https://www.python.org/downloads/) version 3.7 or higher.
+
+We recommend to install Control-M Python Client in a [virtual environment](https://docs.python.org/3/library/venv.html).
 
 For Linux:
 ```
