@@ -155,7 +155,7 @@ class Environment:
 
                 if api_key is None and username is None and password is None:
                     raise Exception(
-                        'api_key or (username + pasword) needs to be defined')
+                        'api_key or (username + password) needs to be defined')
 
                 if username and not password:
                     raise Exception('Cannot define username without password')
