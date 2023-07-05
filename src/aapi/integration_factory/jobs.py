@@ -72,14 +72,14 @@ class JobAzureBackup(Job):
                                             '_aapi_repr_': 'Vault Resource Group'})
     vault_name: str = attrs.field(kw_only=True, default=None, metadata={
                                   '_aapi_repr_': 'Vault Name'})
-    v_m_resource_group: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'VM Resource Group'})
-    v_m_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'VM Name'})
+    vm_resource_group: str = attrs.field(kw_only=True, default=None, metadata={
+        '_aapi_repr_': 'VM Resource Group'})
+    vm_name: str = attrs.field(kw_only=True, default=None, metadata={
+        '_aapi_repr_': 'VM Name'})
     policy_name: str = attrs.field(kw_only=True, default=None, metadata={
                                    '_aapi_repr_': 'Policy Name'})
     include_or_exclude_disks: str = attrs.field(kw_only=True, default=None, metadata={
-                                                '_aapi_repr_': 'Include or Exclude Disks'})
+                                                '_aapi_repr_': 'Include Or Exclude Disks'})
     disk_list: str = attrs.field(kw_only=True, default=None, metadata={
                                  '_abstract_aapi_container_': True})
     restore_to_latest_recovery_point: str = attrs.field(kw_only=True, default=None, metadata={
@@ -559,10 +559,10 @@ class JobGCPBigQuery(Job):
 
 
 @attrs.define
-class JobGCPDataFlow(Job):
+class JobGCPDataflow(Job):
 
-    _type: str = attrs.field(init=False, default='Job:GCP DataFlow', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:GCP DataFlow'})
+    _type: str = attrs.field(init=False, default='Job:GCP:Dataflow', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:GCP Dataflow'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'ConnectionProfile'})
