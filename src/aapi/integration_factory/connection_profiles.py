@@ -419,7 +419,7 @@ class ConnectionProfileGCPBigQuery(ConnectionProfile):
 
 
 @attrs.define
-class ConnectionProfileGCPDataflow(ConnectionProfile):
+class ConnectionProfileGCPDataFlow(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:GCP Dataflow', metadata={
         '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:GCP Dataflow'})

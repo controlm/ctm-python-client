@@ -559,7 +559,7 @@ class JobGCPBigQuery(Job):
 
 
 @attrs.define
-class JobGCPDataflow(Job):
+class JobGCPDataFlow(Job):
 
     _type: str = attrs.field(init=False, default='Job:GCP:Dataflow', metadata={
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:GCP Dataflow'})
