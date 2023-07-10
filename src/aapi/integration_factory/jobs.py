@@ -62,38 +62,38 @@ class JobAwsBatch(Job):
 class JobAzureBackup(Job):
 
     _type: str = attrs.field(init=False, default='Job:Azure Backup', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:Azure Backup'})
+        '_aapi_repr_': 'Type', '_type_aapi_': 'Job:Azure Backup'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'ConnectionProfile'})
+        '_aapi_repr_': 'ConnectionProfile'})
     action: str = attrs.field(kw_only=True, default=None, metadata={
-                              '_aapi_repr_': 'Action'})
+        '_aapi_repr_': 'Action'})
     vault_resource_group: str = attrs.field(kw_only=True, default=None, metadata={
-                                            '_aapi_repr_': 'Vault Resource Group'})
+        '_aapi_repr_': 'Vault Resource Group'})
     vault_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                  '_aapi_repr_': 'Vault Name'})
-    v_m_resource_group: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'VM Resource Group'})
-    v_m_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'VM Name'})
+        '_aapi_repr_': 'Vault Name'})
+    vm_resource_group: str = attrs.field(kw_only=True, default=None, metadata={
+        '_aapi_repr_': 'VM Resource Group'})
+    vm_name: str = attrs.field(kw_only=True, default=None, metadata={
+        '_aapi_repr_': 'VM Name'})
     policy_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                   '_aapi_repr_': 'Policy Name'})
+        '_aapi_repr_': 'Policy Name'})
     include_or_exclude_disks: str = attrs.field(kw_only=True, default=None, metadata={
-                                                '_aapi_repr_': 'Include or Exclude Disks'})
+        '_aapi_repr_': 'Include Or Exclude Disks'})
     disk_list: str = attrs.field(kw_only=True, default=None, metadata={
-                                 '_abstract_aapi_container_': True})
+        '_abstract_aapi_container_': True})
     restore_to_latest_recovery_point: str = attrs.field(kw_only=True, default=None, metadata={
-                                                        '_aapi_repr_': 'Restore to Latest Recovery Point'})
+        '_aapi_repr_': 'Restore to Latest Recovery Point'})
     recovery_point_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'Recovery Point Name'})
+        '_aapi_repr_': 'Recovery Point Name'})
     storage_account_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                            '_aapi_repr_': 'Storage Account Name'})
+        '_aapi_repr_': 'Storage Account Name'})
     restore_region: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Restore Region'})
+        '_aapi_repr_': 'Restore Region'})
     status_polling_frequency: str = attrs.field(kw_only=True, default=None, metadata={
-                                                '_aapi_repr_': 'Status Polling Frequency'})
+        '_aapi_repr_': 'Status Polling Frequency'})
     failure_tolerance_: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Failure Tolerance '})
+        '_aapi_repr_': 'Failure Tolerance '})
 
 
 @attrs.define
@@ -561,25 +561,25 @@ class JobGCPBigQuery(Job):
 @attrs.define
 class JobGCPDataFlow(Job):
 
-    _type: str = attrs.field(init=False, default='Job:GCP DataFlow', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:GCP DataFlow'})
+    _type: str = attrs.field(init=False, default='Job:GCP Dataflow', metadata={
+        '_aapi_repr_': 'Type', '_type_aapi_': 'Job:GCP Dataflow'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'ConnectionProfile'})
+        '_aapi_repr_': 'ConnectionProfile'})
     project_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                  '_aapi_repr_': 'Project ID'})
+        '_aapi_repr_': 'Project ID'})
     region: str = attrs.field(kw_only=True, default=None, metadata={
-                              '_aapi_repr_': 'Region'})
+        '_aapi_repr_': 'Region'})
     template_type: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'Template Type'})
+        '_aapi_repr_': 'Template Type'})
     template_location_gs_: str = attrs.field(kw_only=True, default=None, metadata={
-                                             '_aapi_repr_': 'Template Location (gs://)'})
+        '_aapi_repr_': 'Template Location (gs://)'})
     parameters__json_format: str = attrs.field(kw_only=True, default=None, metadata={
-                                               '_aapi_repr_': 'Parameters (JSON Format)'})
+        '_aapi_repr_': 'Parameters (JSON Format)'})
     verification_poll_interval_in_seconds: str = attrs.field(kw_only=True, default=None, metadata={
-                                                             '_aapi_repr_': 'Verification Poll Interval (in seconds)'})
+        '_aapi_repr_': 'Verification Poll Interval (in seconds)'})
     log_level: str = attrs.field(kw_only=True, default=None, metadata={
-                                 '_aapi_repr_': 'Log Level'})
+        '_aapi_repr_': 'Log Level'})
 
 
 @attrs.define
@@ -1162,6 +1162,7 @@ class JobAwsAthena(Job):
                                  '_aapi_repr_': 'Tolerance'})
     no_perm: str = attrs.field(kw_only=True, default=None, metadata={
                                '_aapi_repr_': 'NoPerm'})
+
 
 @attrs.define
 class JobGCPDataprep(Job):

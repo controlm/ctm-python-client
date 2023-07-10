@@ -74,24 +74,24 @@ class ConnectionProfileAzureBackup(ConnectionProfile):
 class ConnectionProfileAwsECS(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:AWS ECS', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:AWS ECS'})
+        '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:AWS ECS'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     aws_ecs_url: str = attrs.field(kw_only=True, default=None, metadata={
         '_aapi_repr_': 'AWS ECS URL'})
     cloud_watch_url: str = attrs.field(kw_only=True, default=None, metadata={
         '_aapi_repr_': 'Cloud Watch URL'})
     aws_region: str = attrs.field(kw_only=True, default=None, metadata={
-                                  '_aapi_repr_': 'AWS Region'})
+        '_aapi_repr_': 'AWS Region'})
     authentication_method: str = attrs.field(kw_only=True, default=None, metadata={
-                                             '_aapi_repr_': 'Authentication Method'})
+        '_aapi_repr_': 'Authentication Method'})
     aws_access_key: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'AWS Access Key'})
+        '_aapi_repr_': 'AWS Access Key'})
     aws_secret: str = attrs.field(kw_only=True, default=None, metadata={
-                                  '_aapi_repr_': 'AWS Secret'})
+        '_aapi_repr_': 'AWS Secret'})
     aws_iam_role: str = attrs.field(kw_only=True, default=None, metadata={
         '_aapi_repr_': 'AWS IAM Role'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Connection Timeout'})
+        '_aapi_repr_': 'Connection Timeout'})
 
 
 @attrs.define
@@ -421,15 +421,15 @@ class ConnectionProfileGCPBigQuery(ConnectionProfile):
 @attrs.define
 class ConnectionProfileGCPDataFlow(ConnectionProfile):
 
-    _type: str = attrs.field(init=False, default='ConnectionProfile:GCP DataFlow', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:GCP DataFlow'})
+    _type: str = attrs.field(init=False, default='ConnectionProfile:GCP Dataflow', metadata={
+        '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:GCP Dataflow'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     identity_type: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'Identity Type'})
+        '_aapi_repr_': 'Identity Type'})
     data_flow_url: str = attrs.field(kw_only=True, default=None, metadata={
         '_aapi_repr_': 'DataFlow URL'})
     service_account_key: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'Service Account Key'})
+        '_aapi_repr_': 'Service Account Key'})
 
 
 @attrs.define
