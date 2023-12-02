@@ -63,7 +63,7 @@ class ConnectionProfileAzureBackup(ConnectionProfile):
     tenant_id: str = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Tenant ID'})
     application_id: str = attrs.field(kw_only=True, default=None, metadata={
-        '_aapi_repr_': 'Application ID'})
+        '_aapi_repr_': 'Application  ID'})
     client_secret: str = attrs.field(kw_only=True, default=None, metadata={
                                      '_aapi_repr_': 'Client Secret'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
