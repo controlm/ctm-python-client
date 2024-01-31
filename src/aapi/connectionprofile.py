@@ -44,7 +44,7 @@ class ConnectionProfileAirflowGoogleComposer(ConnectionProfileAirflow):
         metadata={'_aapi_repr_': 'ServiceAccountKey'})
     service_account_key_filename: str = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'ServiceAccountKeyFilename'})
-    base_u_r_l: str = attrs.field(metadata={'_aapi_repr_': 'BaseURL'})
+    base_url: str = attrs.field(metadata={'_aapi_repr_': 'BaseURL'})
     target_audience: str = attrs.field(
         metadata={'_aapi_repr_': 'TargetAudience'})
 
