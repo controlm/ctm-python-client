@@ -1,0 +1,29 @@
+integration\_factory package
+============================
+
+Submodules
+----------
+
+integration\_factory.connection\_profiles module
+------------------------------------------------
+
+.. automodule:: integration_factory.connection_profiles
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+integration\_factory.jobs module
+--------------------------------
+
+.. automodule:: integration_factory.jobs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: integration_factory
+   :members:
+   :undoc-members:
+   :show-inheritance:

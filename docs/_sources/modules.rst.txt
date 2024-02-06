@@ -1,7 +1,7 @@
-aapi
-====
+integration_factory
+===================
 
 .. toctree::
    :maxdepth: 4
 
-   aapi
+   integration_factory
