@@ -64,7 +64,7 @@
                 "    command = AIJob.field('Command')            # the field name argument needs to match the one in the Web interface\n",
                 "                                                # the name of the field (lower case command) can be any valid python variable name\n",
                 "\n",
-                "    flags = AIJob.field('Flags')\n",
+                "    flags = AIJob.field_optional('Flags')       # this is an optional field, similar to AIJob.field() but not mandatory to use\n",
                 "\n",
                 "\n"
             ]
@@ -103,6 +103,42 @@
                 "workflow.add(aijob, inpath='AIfolder')\n",
                 "\n",
                 "print(workflow.dumps_json(indent=2))\n"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 5,
+            "metadata": {},
+            "outputs": [
+                {
+                    "name": "stdout",
+                    "output_type": "stream",
+                    "text": [
+                        "{\n",
+                        "  \"AIfolder\": {\n",
+                        "    \"Type\": \"Folder\",\n",
+                        "    \"MySSHCommand\": {\n",
+                        "      \"Type\": \"Job:ApplicationIntegrator:AI AI SSHCommand\",\n",
+                        "      \"ConnectionProfile\": \"HOSTCP\",\n",
+                        "      \"AI-Command\": \"ls\"\n",
+                        "    }\n",
+                        "  }\n",
+                        "}\n"
+                    ]
+                }
+            ],
+            "source": [
+                "# Let's check that the Automation API Json is ok\n",
+                "\n",
+                "workflow = BaseWorkflow()   # BaseWorkflow is a workflow which is not connected to any environment\n",
+                "\n",
+                "# the flags variable is a optional field, we can create job without an optional field\n",
+                "aijob = AIJobSSHCommand('MySSHCommand',\n",
+                "                connection_profile='HOSTCP',\n",
+                "                command='ls')\n",
+                "workflow.add(aijob, inpath='AIfolder')\n",
+                "\n",
+                "print(workflow.dumps_json(indent=2))"
             ]
         }
     ],

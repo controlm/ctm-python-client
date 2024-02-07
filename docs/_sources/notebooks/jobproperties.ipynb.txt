@@ -105,7 +105,7 @@
    "source": [
     "## When\n",
     "\n",
-    "[AutomationAPI Documentation](https://docs.bmc.com/docs/automation-api/monthly/job-properties-993192276.html#JobProperties-WhenWhen)\n",
+    "[AutomationAPI Documentation](https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobProperties.htm?days#When)\n",
     "\n",
     "Enables you to define scheduling parameters for Jobs, Folders and SubFolders, including the option of using calendars. If When is used in a Folder or SubFolder, those parameters apply to all Jobs in the Folder or Subfolder.\n",
     "\n",
@@ -212,7 +212,7 @@
    "source": [
     "## If\n",
     "\n",
-    "[AutomationAPI Documentation](https://docs.bmc.com/docs/automation-api/monthly/job-properties-993192276.html#JobProperties-IfIf)\n",
+    "[AutomationAPI Documentation](https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobProperties.htm?properties#If)\n",
     "\n",
     "If statements trigger one or more actions when job-related criteria are fulfilled (for example, the job ended with a specific status or the job failed several times)."
    ]
@@ -454,7 +454,7 @@
    "source": [
     "## If Actions\n",
     "\n",
-    "[AutomationAPI Documentation](https://docs.bmc.com/docs/automation-api/monthly/job-properties-993192276.html#JobProperties-IfActionsIfActions)\n",
+    "[AutomationAPI Documentation](https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobProperties.htm?days#IfActions)\n",
     "\n",
     "Actions that can be triggered in response to an *If* statement that is fulfilled"
    ]
@@ -880,7 +880,7 @@
    "source": [
     "## Resources\n",
     "\n",
-    "[AutomationAPI Documentation](https://docs.bmc.com/docs/automation-api/monthly/job-properties-993192276.html#JobProperties-ResourcesResources)"
+    "[AutomationAPI Documentation](https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobProperties.htm?days#Resources)"
    ]
   },
   {
