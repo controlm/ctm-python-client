@@ -251,7 +251,7 @@
     <span class="n">command</span> <span class="o">=</span> <span class="n">AIJob</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;Command&#39;</span><span class="p">)</span>            <span class="c1"># the field name argument needs to match the one in the Web interface</span>
                                                 <span class="c1"># the name of the field (lower case command) can be any valid python variable name</span>
 
-    <span class="n">flags</span> <span class="o">=</span> <span class="n">AIJob</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;Flags&#39;</span><span class="p">)</span>
+    <span class="n">flags</span> <span class="o">=</span> <span class="n">AIJob</span><span class="o">.</span><span class="n">field_optional</span><span class="p">(</span><span class="s1">&#39;Flags&#39;</span><span class="p">)</span>       <span class="c1"># this is an optional field, similar to AIJob.field() but not mandatory to use</span>
 <br/><br/><br/></pre></div>
 </div>
 </div>
@@ -285,6 +285,41 @@
       &#34;ConnectionProfile&#34;: &#34;HOSTCP&#34;,
       &#34;AI-Command&#34;: &#34;ls&#34;,
       &#34;AI-Flags&#34;: &#34;-q&#34;
+    }
+  }
+}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s check that the Automation API Json is ok</span>
+
+<span class="n">workflow</span> <span class="o">=</span> <span class="n">BaseWorkflow</span><span class="p">()</span>   <span class="c1"># BaseWorkflow is a workflow which is not connected to any environment</span>
+
+<span class="c1"># the flags variable is a optional field, we can create job without an optional field</span>
+<span class="n">aijob</span> <span class="o">=</span> <span class="n">AIJobSSHCommand</span><span class="p">(</span><span class="s1">&#39;MySSHCommand&#39;</span><span class="p">,</span>
+                <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;HOSTCP&#39;</span><span class="p">,</span>
+                <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">aijob</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;AIfolder&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">workflow</span><span class="o">.</span><span class="n">dumps_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{
+  &#34;AIfolder&#34;: {
+    &#34;Type&#34;: &#34;Folder&#34;,
+    &#34;MySSHCommand&#34;: {
+      &#34;Type&#34;: &#34;Job:ApplicationIntegrator:AI AI SSHCommand&#34;,
+      &#34;ConnectionProfile&#34;: &#34;HOSTCP&#34;,
+      &#34;AI-Command&#34;: &#34;ls&#34;
     }
   }
 }
