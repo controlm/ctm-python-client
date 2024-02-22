@@ -948,7 +948,7 @@ class ConnectionProfileWebServicesREST(ConnectionProfile):
                                 '_aapi_repr_': 'CustomServiceName'})
         auth_method_access_and_secret_keys: AuthMethodAccessAndSecretKeys = attrs.field(
             kw_only=True, default=None, metadata={'_aapi_repr_': 'AuthMethodAccessAndSecretKeys'})
-        auth_method_i_a_m_role: AuthMethodIAMRole = attrs.field(
+        auth_method_iam_role: AuthMethodIAMRole = attrs.field(
             kw_only=True, default=None, metadata={'_aapi_repr_': 'AuthMethodIAMRole'})
 
     @attrs.define
@@ -1226,3 +1226,100 @@ class ConnectionProfileTerraform(ConnectionProfile):
                             '_aapi_repr_': 'Token'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                             '_aapi_repr_': 'Connection Timeout'})
+
+@attrs.define
+class ConnectionProfileAwsDynamoDB(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:AWS DynamoDB', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:AWS DynamoDB'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    aws_dynamo_db_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                            '_aapi_repr_': 'AWS DynamoDB URL'})
+    aws_region: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'AWS Region'})
+    authentication: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Authentication'})
+    aws_access_key: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'AWS Access Key'})
+    aws_secret: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'AWS Secret'})
+    iam_role: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'IAM Role'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+@attrs.define
+class ConnectionProfileAirbyte(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:Airbyte', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Airbyte'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    airbyte_base_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Airbyte Base URL'})
+    api_key: str = attrs.field(kw_only=True, default=None, metadata={
+                                 '_aapi_repr_': 'API Key'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+@attrs.define
+class ConnectionProfileKubernetes(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:Kubernetes', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Kubernetes'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    namespace: str = attrs.field(kw_only=True, default=None, metadata={
+                                 '_aapi_repr_': 'Namespace'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+    kubernetes_cluster_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                                '_aapi_repr_': 'Kubernetes Cluster URL'})
+    service_token_file: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Service Token File'})
+
+@attrs.define
+class ConnectionProfileAwsLambda(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:AWS Lambda', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:AWS Lambda'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    lambda_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                    '_aapi_repr_': 'Lambda URL'})
+    aws_region: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'AWS Region'})
+    authentication: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Authentication'})
+    aws_access_key_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                         '_aapi_repr_': 'AWS Access key ID'})
+    aws_secret: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'AWS Secret'})
+    iam_role: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'IAM Role'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+@attrs.define
+class ConnectionProfileOCIVM(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:OCI VM', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:OCI VM'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    oci_instances_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                             '_aapi_repr_': 'OCI Instances URL'})
+    oci_region: str = attrs.field(kw_only=True, default=None, metadata={
+                                    '_aapi_repr_': 'OCI Region'})
+    authentication: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Authentication'})
+    user_ocid: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'User OCID'})
+    tenancy_ocid: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Tenancy OCID'})
+    fingerprint: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'Fingerprint'})
+    private_key: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'Private Key'})
+    config_file_path: str = attrs.field(kw_only=True, default=None, metadata={
+                                        '_aapi_repr_': 'Config File Path'})
+    profile: str = attrs.field(kw_only=True, default=None, metadata={
+                               '_aapi_repr_': 'Profile'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
