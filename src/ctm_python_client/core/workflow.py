@@ -187,6 +187,25 @@ class BaseWorkflow(AbstractWorkflow):
 
         # Write the add, wait and delete events
 
+        if not obj_src.events_to_add:
+            obj_src.events_to_add.append(
+                AddEvents(events=[]))
+        obj_src.events_to_add[-1].events.append(
+            EventOutAdd(event=event_name))
+
+        if not obj_dest.wait_for_events:
+            obj_dest.wait_for_events.append(
+                WaitForEvents(events=[]))
+        obj_dest.wait_for_events[-1].events.append(
+            EventIn(event=event_name))
+
+        if not obj_dest.events_to_delete:
+            obj_dest.events_to_delete.append(
+                DeleteEvents(events=[]))
+        obj_dest.events_to_delete[-1].events.append(
+            EventOutDelete(event=event_name))
+
+        # support backward compatibility
         if not obj_src.add_events_list:
             obj_src.add_events_list.append(
                 AddEvents('events_to_add', events=[]))

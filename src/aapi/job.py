@@ -273,15 +273,15 @@ class Job(AAPIObject, AAPIJob):
                                   '_aapi_repr_': 'CreatedBy'})
     if_list: typing.List[IfBase] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    condition_list: typing.List[Condition] = attrs.field(
+    event_list: typing.List[Event] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     resource_list: typing.List[Resource] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    wait_for_events_list: typing.List[WaitForEvents] = attrs.field(
+    wait_for_events: typing.List[WaitForEvents] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    add_events_list: typing.List[AddEvents] = attrs.field(
+    events_to_add: typing.List[AddEvents] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    delete_events_list: typing.List[DeleteEvents] = attrs.field(
+    events_to_delete: typing.List[DeleteEvents] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     notify_list: typing.List[Notify] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
@@ -289,7 +289,15 @@ class Job(AAPIObject, AAPIJob):
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     action_capture_output_list: typing.List[ActionCaptureOutput] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-
+# support backward compatibility
+    wait_for_events_list: typing.List[WaitForEvents] = attrs.field(
+        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
+    add_events_list: typing.List[AddEvents] = attrs.field(
+        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
+    delete_events_list: typing.List[DeleteEvents] = attrs.field(
+        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
+    condition_list: typing.List[Condition] = attrs.field(
+        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
 
 @attrs.define
 class JobCommand(Job):
@@ -2557,15 +2565,15 @@ class JobZOS(Job):
                                     '_aapi_repr_': 'MustEnd'})
     if_collection_list: typing.List[IfCollection] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    condition_list: typing.List[Condition] = attrs.field(
+    event_list: typing.List[Event] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     resource_list: typing.List[Resource] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    wait_for_events_list: typing.List[WaitForEvents] = attrs.field(
+    wait_for_events: typing.List[WaitForEvents] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    add_events_list: typing.List[AddEvents] = attrs.field(
+    events_to_add: typing.List[AddEvents] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    delete_events_list: typing.List[DeleteEvents] = attrs.field(
+    events_to_delete: typing.List[DeleteEvents] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     notify_list: typing.List[Notify] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
@@ -2574,6 +2582,15 @@ class JobZOS(Job):
     action_capture_output_list: typing.List[ActionCaptureOutput] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     step_range_list: typing.List[StepRange] = attrs.field(
+        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
+# support backward compatibility
+    condition_list: typing.List[Condition] = attrs.field(
+        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
+    wait_for_events_list: typing.List[WaitForEvents] = attrs.field(
+        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
+    add_events_list: typing.List[AddEvents] = attrs.field(
+        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
+    delete_events_list: typing.List[DeleteEvents] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
 
 
