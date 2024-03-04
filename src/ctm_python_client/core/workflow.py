@@ -208,19 +208,19 @@ class BaseWorkflow(AbstractWorkflow):
         # support backward compatibility
         if not obj_src.add_events_list:
             obj_src.add_events_list.append(
-                AddEvents('events_to_add', events=[]))
+                AddEvents(events=[]))
         obj_src.add_events_list[-1].events.append(
             ConditionOutAdd(event=event_name))
 
         if not obj_dest.wait_for_events_list:
             obj_dest.wait_for_events_list.append(
-                WaitForEvents('events_to_wait', events=[]))
+                WaitForEvents(events=[]))
         obj_dest.wait_for_events_list[-1].events.append(
             ConditionIn(event=event_name))
 
         if not obj_dest.delete_events_list:
             obj_dest.delete_events_list.append(
-                DeleteEvents('events_to_delete', events=[]))
+                DeleteEvents(events=[]))
         obj_dest.delete_events_list[-1].events.append(
             ConditionOutDelete(event=event_name))
 
