@@ -1015,9 +1015,9 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "waitForEventList = WaitForEvents(\"WaitForEvent\", events=[Condition(event=\"e1\"),Condition(event=\"e2\"), Condition(event=\"e3\", date=Event.Date.AnyDate)])\n",
+    "waitForEventList = WaitForEvents([Event(event=\"e1\"), Event(event=\"e2\"), Event(event=\"e3\", date=Event.Date.AnyDate)])\n",
     "job = JobCommand('Job1', command='echo Hello')\n",
-    "job.wait_for_events_list.insert(0, waitForEventList)"
+    "job.event_list.append(waitForEventList)"
    ]
   },
   {
@@ -1035,9 +1035,9 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "addEventListObject =  AddEvents('eventsToAdd', events=[ConditionOutAdd(event=\"e4\",date=Event.Date.NoDate)])\n",
+    "addEventListObject = AddEvents([EventOutAdd(event=\"e4\",date=Event.Date.NoDate)])\n",
     "job = JobCommand('Job1', command='echo Hello')\n",
-    "job.add_events_list.insert(0, waitForEventList)"
+    "job.event_list.append(addEventListObject)"
    ]
   },
   {
@@ -1055,9 +1055,9 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "deleteEventListObject =  DeleteEvents('eventsToDelete', events=[ConditionOutDelete(event=\"e5\",date=Event.Date.NextOrderDate)])\n",
+    "deleteEventListObject = DeleteEvents([EventOutDelete(event=\"e5\",date=Event.Date.NextOrderDate)])\n",
     "job = JobCommand('Job1', command='echo Hello')\n",
-    "job.delete_events_list.insert(0, deleteEventListObject)"
+    "job.event_list.append(deleteEventListObject)"
    ]
   }
  ],

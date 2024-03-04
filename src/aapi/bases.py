@@ -13,6 +13,8 @@ class AAPIObject:
         if '_type' in attrs.fields_dict(self.__class__):
             if not self._type.startswith('Condition'):
                 res['Type'] = self._type
+            if not self._type.startswith('Event'):
+                res['Type'] = self._type
 
         if attrs.has(self):
             for field in attrs.fields(self.__class__):
