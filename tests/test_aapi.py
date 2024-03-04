@@ -82,10 +82,11 @@ def test_events():
     job.event_list.append(addEventListObject1)
     
     addEventListObject2 = aapi.AddEvents([aapi.EventOutAdd(event="add2",date=aapi.Event.Date.NoDate)])
-    job.event_list.append(addEventListObject2)
+    job.add_events_list.append(addEventListObject2)
     
     assert any(isinstance(obj, aapi.WaitForEvents) and any(event.event == 'wait2' for event in obj.events) for obj in job.event_list)
     assert any(isinstance(obj, aapi.DeleteEvents) and any(event.event == 'delete' for event in obj.events) for obj in job.event_list)
     assert any(isinstance(obj, aapi.AddEvents) and any(event.event == 'add1' for event in obj.events) for obj in job.event_list)
+    assert any(isinstance(obj, aapi.AddEvents) and any(event.event == 'add2' for event in obj.events) for obj in job.add_events_list)
     
     assert json.loads(job.dumps_aapi())
