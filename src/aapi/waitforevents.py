@@ -20,4 +20,5 @@ class WaitForEvents(AAPIObject):
 
     def __attrs_post_init__(self):
         if self.object_name == attrs.fields_dict(self.__class__)['object_name'].default:
-            self.object_name = f'{self.object_name}_{random.choices(string.ascii_letters + string.digits, k=8)}'
+            random_attr = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
+            self.object_name = f'{self.object_name}_{random_attr}'
