@@ -11,11 +11,9 @@ class AAPIObject:
         res = {}
 
         if '_type' in attrs.fields_dict(self.__class__):
-            if not self._type.startswith('Condition'):
+            if not self._type.startswith('Condition') and not self._type.startswith('Event'):
                 res['Type'] = self._type
-            if not self._type.startswith('Event'):
-                res['Type'] = self._type
-
+            
         if attrs.has(self):
             for field in attrs.fields(self.__class__):
                 value = self.__getattribute__(field.name)
