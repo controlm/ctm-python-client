@@ -185,44 +185,25 @@ class BaseWorkflow(AbstractWorkflow):
             # self._connections[key_name] = {'count': 1, 'name': event_name}
             self._connections[event_name] = [key_name]
 
-        # Write the add, wait and delete events
+        # Write the add, wait and delete events, support backward compatibility
 
-        if not obj_src.events_to_add:
+        if not obj_src.events_to_add and not obj_src.add_events_list:
             obj_src.events_to_add.append(
                 AddEvents(events=[]))
         obj_src.events_to_add[-1].events.append(
             EventOutAdd(event=event_name))
 
-        if not obj_dest.wait_for_events:
+        if not obj_dest.wait_for_events and not obj_dest.wait_for_events_list:
             obj_dest.wait_for_events.append(
                 WaitForEvents(events=[]))
         obj_dest.wait_for_events[-1].events.append(
             EventIn(event=event_name))
 
-        if not obj_dest.events_to_delete:
+        if not obj_dest.events_to_delete and not obj_dest.delete_events_list:
             obj_dest.events_to_delete.append(
                 DeleteEvents(events=[]))
         obj_dest.events_to_delete[-1].events.append(
             EventOutDelete(event=event_name))
-
-        # support backward compatibility
-        if not obj_src.add_events_list:
-            obj_src.add_events_list.append(
-                AddEvents(events=[]))
-        obj_src.add_events_list[-1].events.append(
-            ConditionOutAdd(event=event_name))
-
-        if not obj_dest.wait_for_events_list:
-            obj_dest.wait_for_events_list.append(
-                WaitForEvents(events=[]))
-        obj_dest.wait_for_events_list[-1].events.append(
-            ConditionIn(event=event_name))
-
-        if not obj_dest.delete_events_list:
-            obj_dest.delete_events_list.append(
-                DeleteEvents(events=[]))
-        obj_dest.delete_events_list[-1].events.append(
-            ConditionOutDelete(event=event_name))
 
     def chain(self, obj_list: typing.List[AAPIJob], inpath: str):
         objpaths = []
