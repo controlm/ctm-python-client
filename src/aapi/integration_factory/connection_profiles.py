@@ -859,7 +859,7 @@ class ConnectionProfileGCPDataproc(ConnectionProfile):
                                      '_aapi_repr_': 'Identity Type'})
     dataproc_url: str = attrs.field(kw_only=True, default=None, metadata={
                                       '_aapi_repr_': 'Dataproc URL'})
-    service_account_key__json_format: str = attrs.field(kw_only=True, default=None, metadata={
+    service_account_key_json_format: str = attrs.field(kw_only=True, default=None, metadata={
                                                         '_aapi_repr_': 'Service Account Key (JSON Format)'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection timeout'})
