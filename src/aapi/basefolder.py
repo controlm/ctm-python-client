@@ -274,6 +274,8 @@ class Folder(SimpleFolder, AAPIJob):
                              metadata={'_aapi_repr_': 'When'})
     if_list: typing.List[IfBase] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
+    event_list: typing.List[Event] = attrs.field(
+        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     wait_for_events: typing.List[WaitForEvents] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     events_to_add: typing.List[AddEvents] = attrs.field(
