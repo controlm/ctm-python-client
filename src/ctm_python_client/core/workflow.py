@@ -89,21 +89,27 @@ class BaseWorkflow(AbstractWorkflow):
         self._connections = {}
 
     def _apply_defaults_for_type(self, obj: typing.Any, type_: str):
-        for field in attrs.fields(WorkflowDefaults):
-            if type_ in field.metadata.get('applyon') \
-                    and self.defaults.__getattribute__(field.name):
-                if obj.__getattribute__(field.name) is None:
-                    obj.__setattr__(
-                        field.name, self.defaults.__getattribute__(field.name))
+        if not obj:
+            return
+        else:
+            for field in attrs.fields(WorkflowDefaults):
+                if type_ in field.metadata.get('applyon') \
+                        and self.defaults.__getattribute__(field.name):
+                    if obj.__getattribute__(field.name) is None:
+                        obj.__setattr__(
+                            field.name, self.defaults.__getattribute__(field.name))
 
     def _apply_defaults_for_job(self, obj: Job):
         self._apply_defaults_for_type(obj, 'Job')
 
     def _apply_defaults_for_folder(self, obj: Folder):
         self._apply_defaults_for_type(obj, 'Folder')
+        list(map(self._apply_defaults_for_SubFolder, obj.sub_folder_list))
+        list(map(self._apply_defaults_for_job, obj.job_list))
 
     def _apply_defaults_for_SimpleFolder(self, obj: SimpleFolder):
         self._apply_defaults_for_type(obj, 'SimpleFolder')
+        list(map(self._apply_defaults_for_job, obj.job_list))
 
     def _apply_defaults_for_SubFolder(self, obj: SubFolder):
         self._apply_defaults_for_type(obj, 'SubFolder')

@@ -90,3 +90,62 @@ def test_events():
     assert any(isinstance(obj, aapi.AddEvents) and any(event.event == 'add2' for event in obj.events) for obj in job.add_events_list)
     
     assert json.loads(job.dumps_aapi())
+
+def test_job_in_folder_run_as():
+    workflow = Workflow(Environment.create_workbench("refael"), WorkflowDefaults(run_as='workbench'), skip_initial_authentication=True)
+    job_command = aapi.JobCommand('TestJob', command='echo Hello')
+    
+    sla_job = aapi.JobSLAManagement('ForecastSLA',
+                       service_name='ForecastSLA',
+                       service_priority='1',
+                       job_runs_deviations_tolerance='1',
+                       complete_in=aapi.JobSLAManagement.CompleteIn(time='00:15'),
+                       complete_by=aapi.JobSLAManagement.CompleteBy(
+                           time='21:40', days='3'),
+                       average_run_time_tolerance=aapi.JobSLAManagement.AverageRunTimeTolerance(
+                           average_run_time='15',
+                           units=aapi.JobSLAManagement.AverageRunTimeTolerance.Units.Minutes
+                       ))
+    
+    subfolder = aapi.SubFolder('SubFolder')
+    folder = aapi.Folder("TestFolder",
+                         sub_folder_list=[subfolder],
+                         job_list=[sla_job, job_command]
+                         )
+    workflow.add(folder)
+    # {"TestFolder": {"Type": "Folder", "ForecastSLA": {"Type": "Job:SLAManagement", "RunAs": "workbench", "ServiceName": "ForecastSLA", "ServicePriority": "1", "JobRunsDeviationsTolerance": "1", "AverageRunTimeTolerance": {"AverageRunTime": "15", "Units": "Minutes"}, "CompleteBy": {"Time": "21:40", "Days": "3"}, "CompleteIn": {"Time": "00:15"}}, "TestJob": {"Type": "Job:Command", "RunAs": "workbench", "Command": "echo Hello"}, "RunAs": "workbench", "SubFolder": {"Type": "SubFolder", "RunAs": "workbench"}}}
+    o = json.loads('''
+        {
+        "Type": "Folder",
+        "ForecastSLA": {
+            "Type": "Job:SLAManagement",
+            "RunAs": "workbench",
+            "ServiceName": "ForecastSLA",
+            "ServicePriority": "1",
+            "JobRunsDeviationsTolerance": "1",
+            "AverageRunTimeTolerance": {
+                "AverageRunTime": "15", 
+                "Units": "Minutes"
+            },
+            "CompleteBy": {
+                "Time": "21:40", 
+                "Days": "3"
+            },
+            "CompleteIn": {
+                "Time": "00:15"
+                }
+            },
+            "TestJob": {
+                "Type": "Job:Command",
+                "RunAs": "workbench",
+                "Command": "echo Hello"
+            },
+            "RunAs": "workbench",
+            "SubFolder": {
+                "Type": "SubFolder", 
+                "RunAs": "workbench"
+            }
+        }
+                   ''')
+    assert workflow.get("TestFolder").as_aapi_dict() == o
+    
