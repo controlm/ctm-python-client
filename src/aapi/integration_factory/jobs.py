@@ -404,24 +404,6 @@ class JobAwsQuickSight(Job):
 
 
 @attrs.define
-class JobApplicationIntegratorAIKubernete1(JobApplicationIntegrator):
-
-    _type: str = attrs.field(init=False, default='Job:ApplicationIntegrator:AI Kubernete1', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:ApplicationIntegrator:AI Kubernete1'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'ConnectionProfile'})
-    ai_connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
-                                              '_aapi_repr_': 'AI-ConnectionProfile'})
-    ai_action: str = attrs.field(kw_only=True, default=None, metadata={
-                                  '_aapi_repr_': 'AI-Action'})
-    ai_yaml_file: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'AI-YamlFile'})
-    ai_resource_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                       '_aapi_repr_': 'AI-ResourceID'})
-
-
-@attrs.define
 class JobAirbyte(Job):
 
     _type: str = attrs.field(init=False, default='Job:Airbyte', metadata={

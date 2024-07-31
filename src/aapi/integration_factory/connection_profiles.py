@@ -325,20 +325,6 @@ class ConnectionProfileAwsQuickSight(ConnectionProfile):
 
 
 @attrs.define
-class ConnectionProfileApplicationIntegratorAIKubernete1(ConnectionProfileApplicationIntegrator):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:ApplicationIntegrator:AI Kubernete1', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:ApplicationIntegrator:AI Kubernete1'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    ai_run_as: str = attrs.field(kw_only=True, default=None, metadata={
-                                  '_aapi_repr_': 'AI-Run As'})
-    ai_run_as_pass: str = attrs.field(kw_only=True, default=None, metadata={
-                                       '_aapi_repr_': 'AI-RunAs-Pass'})
-    ai_kubectl_location: str = attrs.field(kw_only=True, default=None, metadata={
-                                            '_aapi_repr_': 'AI-Kubectl Location'})
-
-
-@attrs.define
 class ConnectionProfileAirbyte(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:Airbyte', metadata={
