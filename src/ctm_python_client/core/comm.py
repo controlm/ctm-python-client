@@ -36,7 +36,7 @@ def sanitize_output(apirequest):
         except Exception as e:
             errors = [err.get('message', '') + ' ' + err.get('item', '')
                       for err in json.loads(e.body)['errors']]
-            return AAPIClientResponse(False, None, errors)
+            raise RuntimeError(f"AAPI request failed: {', '.join(errors)}")
 
     return wrap
 

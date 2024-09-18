@@ -2152,7 +2152,7 @@ class JobSLAManagement(Job):
     _type: str = attrs.field(init=False, default='Job:SLAManagement', metadata={
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:SLAManagement'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    run_as_dummy: str = attrs.field(kw_only=True, default=None, metadata={
+    run_as_dummy: bool = attrs.field(kw_only=True, default=None, metadata={
                                     '_aapi_repr_': 'RunAsDummy'})
     service_name: str = attrs.field(metadata={'_aapi_repr_': 'ServiceName'})
     service_priority: str = attrs.field(kw_only=True, default=None, metadata={
