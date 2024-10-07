@@ -545,12 +545,39 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 <p>In another example,</p>
 <p>Job1 triggers Job2 and Job3, and Job4 is waiting for both Job2 and Job3 to complete.</p>
 <div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="k">def</span> <span class="nf">chain_jobs</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;ChainedJobs&#39;</span><span class="p">):</span>
+    <span class="n">workflow</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="n">inpath</span><span class="p">)</span>
+
+<span class="n">chains</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello1&#39;</span><span class="p">),</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello2&#39;</span><span class="p">)],</span>
+    <span class="p">[</span><span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello1&#39;</span><span class="p">),</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job3&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello3&#39;</span><span class="p">)],</span>
+    <span class="p">[</span><span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello2&#39;</span><span class="p">),</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job4&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello4&#39;</span><span class="p">)],</span>
+    <span class="p">[</span><span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job3&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello3&#39;</span><span class="p">),</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job4&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello4&#39;</span><span class="p">)]</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">job_chain</span> <span class="ow">in</span> <span class="n">chains</span><span class="p">:</span>
+    <span class="n">chain_jobs</span><span class="p">(</span><span class="n">job_chain</span><span class="p">)</span>
+
+<span class="n">get_graph</span><span class="p">(</span><span class="n">workflow</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_hello_27_0.svg" src="../_images/notebooks_hello_27_0.svg" /></div>
+</div>
+<p>Here’s an example for the same scenario using separate triggers:</p>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">clear_all</span><span class="p">()</span>
-
-<span class="n">workflow</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello1&#39;</span><span class="p">),</span>
         <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello2&#39;</span><span class="p">)</span>
@@ -592,7 +619,7 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_hello_27_0.svg" src="../_images/notebooks_hello_27_0.svg" /></div>
+<img alt="../_images/notebooks_hello_29_0.svg" src="../_images/notebooks_hello_29_0.svg" /></div>
 </div>
 </section>
 </section>
