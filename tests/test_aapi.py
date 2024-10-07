@@ -97,6 +97,7 @@ def test_job_in_folder_run_as():
     
     sla_job = aapi.JobSLAManagement('ForecastSLA',
                        service_name='ForecastSLA',
+                       run_as_dummy="false",
                        service_priority='1',
                        job_runs_deviations_tolerance='1',
                        complete_in=aapi.JobSLAManagement.CompleteIn(time='00:15'),
@@ -120,6 +121,7 @@ def test_job_in_folder_run_as():
         "ForecastSLA": {
             "Type": "Job:SLAManagement",
             "RunAs": "workbench",
+            "RunAsDummy": "false",
             "ServiceName": "ForecastSLA",
             "ServicePriority": "1",
             "JobRunsDeviationsTolerance": "1",
