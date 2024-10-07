@@ -1145,19 +1145,19 @@ class JobOS400VirtualTerminal(JobOS400):
     @attrs.define
     class NativeScriptFileLocation(AAPIObject):
 
-        v_t_script_file_native: str = attrs.field(
+        vt_script_file_native: str = attrs.field(
             metadata={'_aapi_repr_': 'VTScriptFileNative'})
 
     @attrs.define
     class IFSScriptFileLocation(AAPIObject):
 
-        v_t_script_file_i_f_s: str = attrs.field(
+        vt_script_file_ifs: str = attrs.field(
             metadata={'_aapi_repr_': 'VTScriptFileIFS'})
 
     @attrs.define
     class EmbeddedScriptFileLocation(AAPIObject):
 
-        v_t_script_file_embedded: str = attrs.field(
+        vt_script_file_embedded: str = attrs.field(
             metadata={'_aapi_repr_': 'VTScriptFileEmbedded'})
         script: str = attrs.field(metadata={'_aapi_repr_': 'Script'})
         use_instream_jcl: str = attrs.field(kw_only=True, default=None, metadata={
@@ -1168,7 +1168,7 @@ class JobOS400VirtualTerminal(JobOS400):
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     native_script_file_location: NativeScriptFileLocation = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'NativeScriptFileLocation'})
-    i_f_s_script_file_location: IFSScriptFileLocation = attrs.field(
+    ifs_script_file_location: IFSScriptFileLocation = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'IFSScriptFileLocation'})
     embedded_script_file_location: EmbeddedScriptFileLocation = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'EmbeddedScriptFileLocation'})
@@ -1220,7 +1220,7 @@ class JobOS400FullScriptFile(JobOS400Full):
     @attrs.define
     class NativeScriptFileLocation(AAPIObject):
 
-        v_t_script_file_native: str = attrs.field(
+        vt_script_file_native: str = attrs.field(
             metadata={'_aapi_repr_': 'VTScriptFileNative'})
         script: str = attrs.field(metadata={'_aapi_repr_': 'script'})
         use_instream_jcl: str = attrs.field(kw_only=True, default=None, metadata={
@@ -1230,7 +1230,7 @@ class JobOS400FullScriptFile(JobOS400Full):
     @attrs.define
     class IFSScriptFileLocation(AAPIObject):
 
-        v_t_script_file_i_f_s: str = attrs.field(
+        vt_script_file_ifs: str = attrs.field(
             metadata={'_aapi_repr_': 'VTScriptFileIFS'})
         path: str = attrs.field(metadata={'_aapi_repr_': 'Path'})
         script: str = attrs.field(metadata={'_aapi_repr_': 'script'})
@@ -1238,7 +1238,7 @@ class JobOS400FullScriptFile(JobOS400Full):
     @attrs.define
     class EmbeddedScriptFileLocation(AAPIObject):
 
-        v_t_script_file_embedded: str = attrs.field(
+        vt_script_file_embedded: str = attrs.field(
             metadata={'_aapi_repr_': 'VTScriptFileEmbedded'})
         script: str = attrs.field(metadata={'_aapi_repr_': 'script'})
         use_instream_jcl: str = attrs.field(kw_only=True, default=None, metadata={
@@ -1257,7 +1257,7 @@ class JobOS400FullScriptFile(JobOS400Full):
         kw_only=True, default=None, metadata={'_aapi_repr_': 'SpecialEnvironment'})
     native_script_file_location: NativeScriptFileLocation = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'NativeScriptFileLocation'})
-    i_f_s_script_file_location: IFSScriptFileLocation = attrs.field(
+    ifs_script_file_location: IFSScriptFileLocation = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'IFSScriptFileLocation'})
     embedded_script_file_location: EmbeddedScriptFileLocation = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'EmbeddedScriptFileLocation'})
@@ -1357,19 +1357,19 @@ class JobOS400FullVirtualTerminal(JobOS400Full):
     @attrs.define
     class NativeScriptFileLocation(AAPIObject):
 
-        v_t_script_file_native: str = attrs.field(
+        vt_script_file_native: str = attrs.field(
             metadata={'_aapi_repr_': 'VTScriptFileNative'})
 
     @attrs.define
     class IFSScriptFileLocation(AAPIObject):
 
-        v_t_script_file_i_f_s: str = attrs.field(
+        vt_script_file_ifs: str = attrs.field(
             metadata={'_aapi_repr_': 'VTScriptFileIFS'})
 
     @attrs.define
     class EmbeddedScriptFileLocation(AAPIObject):
 
-        v_t_script_file_embedded: str = attrs.field(
+        vt_script_file_embedded: str = attrs.field(
             metadata={'_aapi_repr_': 'VTScriptFileEmbedded'})
         script: str = attrs.field(metadata={'_aapi_repr_': 'Script'})
         use_instream_jcl: str = attrs.field(kw_only=True, default=None, metadata={
@@ -1380,7 +1380,7 @@ class JobOS400FullVirtualTerminal(JobOS400Full):
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     native_script_file_location: NativeScriptFileLocation = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'NativeScriptFileLocation'})
-    i_f_s_script_file_location: IFSScriptFileLocation = attrs.field(
+    ifs_script_file_location: IFSScriptFileLocation = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'IFSScriptFileLocation'})
     embedded_script_file_location: EmbeddedScriptFileLocation = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'EmbeddedScriptFileLocation'})
@@ -2152,7 +2152,7 @@ class JobSLAManagement(Job):
     _type: str = attrs.field(init=False, default='Job:SLAManagement', metadata={
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:SLAManagement'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    run_as_dummy: bool = attrs.field(kw_only=True, default=None, metadata={
+    run_as_dummy: str = attrs.field(kw_only=True, default=None, metadata={
                                     '_aapi_repr_': 'RunAsDummy'})
     service_name: str = attrs.field(metadata={'_aapi_repr_': 'ServiceName'})
     service_priority: str = attrs.field(kw_only=True, default=None, metadata={
@@ -2182,7 +2182,7 @@ class JobTandemTACLScript(JobTandem):
     _type: str = attrs.field(init=False, default='Job:Tandem:TACLScript', metadata={
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:Tandem:TACLScript'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    t_a_c_l_script: str = attrs.field(metadata={'_aapi_repr_': 'TACLScript'})
+    tacl_script: str = attrs.field(metadata={'_aapi_repr_': 'TACLScript'})
     volume: str = attrs.field(metadata={'_aapi_repr_': 'Volume'})
 
 
@@ -2211,7 +2211,7 @@ class JobTandemEmbeddedTACLScript(JobTandem):
     _type: str = attrs.field(init=False, default='Job:Tandem:EmbeddedTACLScript', metadata={
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:Tandem:EmbeddedTACLScript'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    t_a_c_l_script: str = attrs.field(metadata={'_aapi_repr_': 'TACLScript'})
+    tacl_script: str = attrs.field(metadata={'_aapi_repr_': 'TACLScript'})
     script: str = attrs.field(metadata={'_aapi_repr_': 'Script'})
 
 
@@ -2226,14 +2226,14 @@ class JobTandemExternalProcess(JobTandem):
     @attrs.define
     class ExternalCPUPIN(AAPIObject):
 
-        c_p_u_id: str = attrs.field(metadata={'_aapi_repr_': 'CPUId'})
+        cpu_id: str = attrs.field(metadata={'_aapi_repr_': 'CPUId'})
 
     _type: str = attrs.field(init=False, default='Job:Tandem:ExternalProcess', metadata={
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:Tandem:ExternalProcess'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     external_process_id: ExternalProcessId = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'ExternalProcessID'})
-    external_c_p_u_p_i_n: ExternalCPUPIN = attrs.field(
+    external_cpu_pin: ExternalCPUPIN = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'ExternalCPUPIN'})
 
 
@@ -2396,7 +2396,7 @@ class JobVMwareConfigurationReconfigureVirtualMachine(JobVMwareConfiguration):
     _type: str = attrs.field(init=False, default='Job:VMware:Configuration:ReconfigureVirtualMachine', metadata={
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:VMware:Configuration:ReconfigureVirtualMachine'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    number_of_c_p_us: str = attrs.field(
+    number_of_cpus: str = attrs.field(
         metadata={'_aapi_repr_': 'NumberOfCPUs'})
 
 
@@ -2541,7 +2541,7 @@ class JobZOS(Job):
                                        '_aapi_repr_': 'SystemAffinity'})
     scheduling_environment: str = attrs.field(kw_only=True, default=None, metadata={
                                               '_aapi_repr_': 'SchedulingEnvironment'})
-    request_n_j_e_node: str = attrs.field(kw_only=True, default=None, metadata={
+    request_nje_node: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'RequestNJENode'})
     task_information: TaskInformation = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'TaskInformation'})
