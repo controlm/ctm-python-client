@@ -286,7 +286,7 @@
 <h2>Creating a Workflow<a class="headerlink" href="#Creating-a-Workflow" title="Permalink to this heading">¶</a></h2>
 <p>To create a workflow, you need to create an instance of a <code class="docutils literal notranslate"><span class="pre">Workflow</span></code> object. You must specify an environment where Control-M Automation API is installed. If you do not have access to Control-M Automation API in your organization or you are trying it on your own PC, use Control-M Workbench:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ctm_python_client.core.workflow</span> <span class="kn">import</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">WorkflowDefaults</span>
@@ -296,7 +296,7 @@
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span>
@@ -314,7 +314,7 @@
 <p>A job is a task that runs on one or more Agents. Control-M Workbench includes a built-in agent called <strong>worbench</strong></p>
 <p>There are multiple job types, and each has a specific purpose. Some job types require specific plugins, such as JobFileTransfer. Let’s start with simple JobCommand which is used to execute an OS command:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a JobCommand which outputs &quot;Hello world!&quot;</span>
@@ -329,7 +329,7 @@
 </div>
 <p>Although a job is created, it is not yet added to the workflow. A job cannot be added as a root object. It can only exist inside a Folder (or SubFolder, SimpleFolder) Either create a Folder and add the job to it, or specify a folder name to add the job to when you add it to the workflow:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">myJob</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;MyFirstFolder&#39;</span><span class="p">)</span>
@@ -341,7 +341,7 @@
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -354,7 +354,7 @@
 <h2>Building and Deploying<a class="headerlink" href="#Building-and-Deploying" title="Permalink to this heading">¶</a></h2>
 <p>The validation of the data is done on the Control-M machine, so let’s build the workflow and check that everything is valid:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">workflow</span><span class="o">.</span><span class="n">build</span><span class="p">()</span><span class="o">.</span><span class="n">is_ok</span><span class="p">():</span>
@@ -373,7 +373,7 @@ The workflow is valid!
 <p>Note that the workflow definitions are still in your code and are not yet added to the Control-M Database.</p>
 <p><strong>Important</strong>: When you deploy the definitions to Control-M, you overwrite existing definitions. Since you do not recieve a warning that you are overwritting definitions, if you are working on a shared environment, do not use folder names that are used by other users</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># deploy() also performs build(), so if your intent is to deploy, you may skip the build</span>
@@ -396,7 +396,7 @@ The workflow was deployed to Control-M!
 <h2>Running and checking the output<a class="headerlink" href="#Running-and-checking-the-output" title="Permalink to this heading">¶</a></h2>
 <p>After the job is deployed, it runs according to its schedule, which is every day by default. You can also choose to run the job anytime. When a job runs, a <code class="docutils literal notranslate"><span class="pre">RunMonitor</span></code> is created, which is used to get the status, output and other information of the run</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the same way deploy() performs build(), run() perform deploy() and build(), so if you want to run a job</span>
@@ -406,7 +406,7 @@ The workflow was deployed to Control-M!
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print output</span>
@@ -435,7 +435,7 @@ Hello world!
 <section id="Adding-jobs-without-connection">
 <h3>Adding jobs without connection<a class="headerlink" href="#Adding-jobs-without-connection" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># clear the workflow</span>
@@ -458,7 +458,7 @@ Hello world!
 <p><strong>Don’t forget to add the binaries folder in PATH. It is prompted in the installation</strong></p>
 <p>If you do not require a visual representation of the flow, skip the installation of Graphviz.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ctm_python_client.ext.viz</span> <span class="kn">import</span> <span class="n">get_graph</span>
@@ -468,7 +468,7 @@ Hello world!
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -479,7 +479,7 @@ Hello world!
 <section id="Connecting-two-Jobs">
 <h3>Connecting two Jobs<a class="headerlink" href="#Connecting-two-Jobs" title="Permalink to this heading">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Connecting </span><span class="si">{</span><span class="n">firstjob</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">secondjob</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -496,7 +496,7 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now there is a flow</span>
@@ -505,7 +505,7 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -516,7 +516,7 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 <h3>Chaining Jobs<a class="headerlink" href="#Chaining-Jobs" title="Permalink to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.connect()</span></code> enables you to create a flow to/from any object in the workflow, but it is inconvenint to use this method for a chain. Let’s learn how to chain multiple jobs. The <code class="docutils literal notranslate"><span class="pre">.chain()</span></code> method uses multiple <code class="docutils literal notranslate"><span class="pre">.connect()</span></code> methods, so the <code class="docutils literal notranslate"><span class="pre">.chain()</span></code> method is a syntactic sugar used to connect a list of jobs.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s clear the workflow</span>
@@ -536,7 +536,7 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -545,7 +545,38 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 <p>In another example,</p>
 <p>Job1 triggers Job2 and Job3, and Job4 is waiting for both Job2 and Job3 to complete.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">clear_all</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">chain_jobs</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;ChainedJobs&#39;</span><span class="p">):</span>
+    <span class="n">workflow</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="n">inpath</span><span class="p">)</span>
+
+<span class="n">chains</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello1&#39;</span><span class="p">),</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello2&#39;</span><span class="p">)],</span>
+    <span class="p">[</span><span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello1&#39;</span><span class="p">),</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job3&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello3&#39;</span><span class="p">)],</span>
+    <span class="p">[</span><span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello2&#39;</span><span class="p">),</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job4&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello4&#39;</span><span class="p">)],</span>
+    <span class="p">[</span><span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job3&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello3&#39;</span><span class="p">),</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job4&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello4&#39;</span><span class="p">)]</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">job_chain</span> <span class="ow">in</span> <span class="n">chains</span><span class="p">:</span>
+    <span class="n">chain_jobs</span><span class="p">(</span><span class="n">job_chain</span><span class="p">)</span>
+
+<span class="n">get_graph</span><span class="p">(</span><span class="n">workflow</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_hello_27_0.svg" src="../_images/notebooks_hello_27_0.svg" /></div>
+</div>
+<p>Here’s an example for the same scenario using separate triggers:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">clear_all</span><span class="p">()</span>
@@ -588,11 +619,11 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_hello_27_0.svg" src="../_images/notebooks_hello_27_0.svg" /></div>
+<img alt="../_images/notebooks_hello_29_0.svg" src="../_images/notebooks_hello_29_0.svg" /></div>
 </div>
 </section>
 </section>
@@ -604,7 +635,7 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 <li><p><code class="docutils literal notranslate"><span class="pre">run_as_dummy=True</span></code>: Adds a new parameter to any regular job type that makes it run as a dummy job. You can mark <code class="docutils literal notranslate"><span class="pre">run_as_dummy=False</span></code> to make it run again as a regular job.</p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">clear_all</span><span class="p">()</span>
@@ -653,7 +684,7 @@ Hello2
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;TestJobDummy/MyJob2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">run_as_dummy</span> <span class="o">=</span> <span class="kc">True</span>
