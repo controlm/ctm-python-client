@@ -283,7 +283,7 @@
           <section id="Job-types">
 <h1>Job types<a class="headerlink" href="#Job-types" title="Permalink to this heading">¶</a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aapi</span> <span class="kn">import</span> <span class="o">*</span>
@@ -300,7 +300,7 @@
 <li><p><strong>command</strong>: The command to execute</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;JobCommandSample&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
@@ -308,7 +308,7 @@
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;JobCommandSample&#39;</span><span class="p">,</span>
@@ -336,7 +336,7 @@
 <li><p><strong>arguments</strong>: An array of strings that are passed as argument to the script</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobScript</span><span class="p">(</span><span class="s1">&#39;JobScriptSample&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;task.sh&#39;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;/home/scripts&#39;</span><span class="p">)</span>
@@ -344,7 +344,7 @@
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobScript</span><span class="p">(</span><span class="s1">&#39;JobScriptSame&#39;</span><span class="p">,</span>
@@ -368,7 +368,7 @@
 <li><p><strong>file_name</strong> : The name of the script file.</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobEmbeddedScript</span><span class="p">(</span><span class="s1">&#39;JobEmbeddedScriptSample&#39;</span><span class="p">,</span>
@@ -396,7 +396,7 @@
 <li><p><strong>s3_bucket_name_dest</strong>: For file transfers between two Amazon S3 or S3-compatible storage services: The name of the S3 bucket at the destination</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobFileTransfer</span><span class="p">(</span><span class="s1">&#39;JobFileTransferSample&#39;</span><span class="p">,</span>
@@ -415,7 +415,7 @@
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># An example of a file transer from a S3 storage to a local filesystem:</span>
@@ -434,7 +434,7 @@
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_FileWatcher.htm">AutomationAPI Documentation</a></p>
 <p>Job that detects the successful completion of a file transfer activity that creates a file</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobFileWatcherCreate</span><span class="p">(</span><span class="s1">&#39;JobFileWatcherCreateSample&#39;</span><span class="p">,</span>
@@ -457,7 +457,7 @@
 <p><a class="reference external" href="ttps://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_FileWatcher.htm">AutomationAPI Documentation</a></p>
 <p>Job that detects the successful completion of a file transfer activity that deletes a file</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobFileWatcherDelete</span><span class="p">(</span><span class="s1">&#39;JobFileWatcherDeleteSample&#39;</span><span class="p">,</span>
@@ -488,7 +488,7 @@
 <li><p><strong>sql_output_format</strong>: Defines the output format as either Text, XML, CSV, or HTML</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobDatabaseEmbeddedQuery</span><span class="p">(</span>
@@ -519,7 +519,7 @@
 <li><p><strong>parameters</strong>: An array of dictionary with name and value. Every name that appears in the SQL script will be replaced by its value pair.</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobDatabaseSQLScript</span><span class="p">(</span><span class="s1">&#39;JobDatabaseSQLScriptSample&#39;</span><span class="p">,</span>
@@ -547,7 +547,7 @@
 <li><p><strong>package</strong>: (Oracle only) Name of a package in the database where the stored procedure resides. The default is “*”, that is, any package in the database.</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobDatabaseStoredProcedure</span><span class="p">(</span><span class="s1">&#39;JobDatabaseStoredProcedureSample&#39;</span><span class="p">,</span>
@@ -574,7 +574,7 @@
 <li><p><strong>category</strong>: The category of the job, as defined in the SQL server</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobDatabaseMSSQLAgentJob</span><span class="p">(</span><span class="s1">&#39;JobDatabaseMSSQLAgentJobSample&#39;</span><span class="p">,</span>
@@ -603,7 +603,7 @@
 <li><p><strong>properties</strong>: Pairs of names and values for properties defined in the SSIS package. Each property name is replaced by its defined value during SSIS package execution.</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobDatabaseMSSQL_SSIS</span><span class="p">(</span><span class="s1">&#39;JobDatabaseMSSQL_SSISSample&#39;</span><span class="p">,</span>
@@ -641,7 +641,7 @@
 <li><p><strong>spark_options</strong>: The options to be passed to the script</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopSparkPython</span><span class="p">(</span><span class="s1">&#39;JobHadoopSparkPythonSample&#39;</span><span class="p">,</span>
@@ -651,7 +651,7 @@
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopSparkPython</span><span class="p">(</span><span class="s1">&#39;JobHadoopSparkPythonSample&#39;</span><span class="p">,</span>
@@ -672,7 +672,7 @@
 <h2>JobHadoopSparkScalaJava<a class="headerlink" href="#JobHadoopSparkScalaJava" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado2">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopSparkScalaJava</span><span class="p">(</span><span class="s1">&#39;JobHadoopSparkScalaJavaSample&#39;</span><span class="p">,</span>
@@ -688,7 +688,7 @@
 <h2>JobHadoopPig<a class="headerlink" href="#JobHadoopPig" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado3">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopPig</span><span class="p">(</span><span class="s1">&#39;JobHadoopPigSample&#39;</span><span class="p">,</span>
@@ -703,7 +703,7 @@
 <h2>JobHadoopSqoop<a class="headerlink" href="#JobHadoopSqoop" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado4">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopSqoop</span><span class="p">(</span><span class="s1">&#39;JobHadoopSqoopSample&#39;</span><span class="p">,</span>
@@ -722,7 +722,7 @@
 <h2>JobHadoopHive<a class="headerlink" href="#JobHadoopHive" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado5">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopHive</span><span class="p">(</span><span class="s1">&#39;JobHadoopHiveSample&#39;</span><span class="p">,</span>
@@ -738,7 +738,7 @@
 <h2>JobHadoopDistCp<a class="headerlink" href="#JobHadoopDistCp" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado6">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopDistCp</span><span class="p">(</span><span class="s1">&#39;JobHadoopDistCpSample&#39;</span><span class="p">,</span>
@@ -755,7 +755,7 @@
 <h2>JobHadoopHDFSCommands<a class="headerlink" href="#JobHadoopHDFSCommands" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado7">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopHDFSCommands</span><span class="p">(</span><span class="s1">&#39;JobHadoopHDFSCommandsSample&#39;</span><span class="p">,</span>
@@ -771,7 +771,7 @@
 <h2>JobHadoopHDFSFileWatcher<a class="headerlink" href="#JobHadoopHDFSFileWatcher" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado13">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopHDFSFileWatcher</span><span class="p">(</span><span class="s1">&#39;JobHadoopHDFSFileWatcherSample&#39;</span><span class="p">,</span>
@@ -788,7 +788,7 @@
 <h2>JobHadoopOozie<a class="headerlink" href="#JobHadoopOozie" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado8">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopOozie</span><span class="p">(</span><span class="s1">&#39;JobHadoopOozieSample&#39;</span><span class="p">,</span>
@@ -805,7 +805,7 @@
 <h2>JobHadoopMapReduce<a class="headerlink" href="#JobHadoopMapReduce" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado9">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopMapReduce</span><span class="p">(</span><span class="s1">&#39;JobHadoopMapReduceSample&#39;</span><span class="p">,</span>
@@ -824,7 +824,7 @@
 <h2>JobHadoopMapredStreaming<a class="headerlink" href="#JobHadoopMapredStreaming" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado10">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopMapredStreaming</span><span class="p">(</span><span class="s1">&#39;JobHadoopMapredStreamingSample&#39;</span><span class="p">,</span>
@@ -846,7 +846,7 @@
 <h2>JobHadoopTajoInputFile<a class="headerlink" href="#JobHadoopTajoInputFile" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado11">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopTajoInputFile</span><span class="p">(</span><span class="s1">&#39;JobHadoopTajoInputFileSample&#39;</span><span class="p">,</span>
@@ -865,7 +865,7 @@
 <h2>JobHadoopTajoQuery<a class="headerlink" href="#JobHadoopTajoQuery" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado12">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopTajoQuery</span><span class="p">(</span><span class="s1">&#39;JobHadoopTajoQuerySample&#39;</span><span class="p">,</span>
@@ -893,7 +893,7 @@
 <li><p><strong>bind_variables</strong>: Values of up to 20 USERDEF variables for sharing data between Control-M and the PeopleSoft job or process</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobPeopleSoft</span><span class="p">(</span><span class="s1">&#39;JobPeopleSoftSample&#39;</span><span class="p">,</span>
@@ -929,7 +929,7 @@
 <li><p><strong>workflow_parameters_file</strong>: The path and name of the workflow parameters file. This enables you to use the same workflow for different actions.</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobInformatica</span><span class="p">(</span><span class="s1">&#39;JobInformaticaSample&#39;</span><span class="p">,</span>
@@ -963,7 +963,7 @@
 <li><p><strong>append_log</strong>: Whether to add the log to the job’s output, either true (the default) or false</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAWSLambda</span><span class="p">(</span><span class="s1">&#39;JobAWSLambdaSample&#39;</span><span class="p">,</span>
@@ -993,7 +993,7 @@
 <li><p><strong>append_log</strong>: Whether to add the log to the job’s output, either true (the default) or false</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAWSStepFunction</span><span class="p">(</span><span class="s1">&#39;JobAWSStepFunctionSample&#39;</span><span class="p">,</span>
@@ -1031,7 +1031,7 @@
 <li><p><strong>append_log</strong>: Whether to add the log to the job’s output, either true (the default) or false</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAWSBatch</span><span class="p">(</span><span class="s1">&#39;JobAWSBatchSample&#39;</span><span class="p">,</span>
@@ -1071,7 +1071,7 @@
 <li><p><strong>append_log</strong>: Whether to add the log to the job’s output, either true (the default) or false</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[74]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAzureFunction</span><span class="p">(</span><span class="s1">&#39;JobAzureFunctionSample&#39;</span><span class="p">,</span>
@@ -1102,14 +1102,14 @@
 <li><p><strong>append_log</strong>: Whether to add the log to the job’s output, either true (the default) or false</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[75]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAzureLogicApps</span><span class="p">(</span><span class="s1">&#39;JobAzureLogicAppsSample&#39;</span><span class="p">,</span>
                         <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPAZURE&#39;</span><span class="p">,</span>
-                        <span class="n">logic_app_name</span><span class="o">=</span><span class="s1">&#39;logic_app&#39;</span><span class="p">,</span>
-                        <span class="n">request_body</span><span class="o">=</span><span class="s1">&#39;{&quot;name&quot;:&quot;value&quot;}&#39;</span><span class="p">,</span>
-                        <span class="n">append_log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                        <span class="n">workflow</span><span class="o">=</span><span class="s1">&#39;workflow_app&#39;</span><span class="p">,</span>
+                        <span class="n">parameters</span><span class="o">=</span><span class="s1">&#39;{&quot;name&quot;:&quot;value&quot;}&#39;</span>
+                        <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1132,7 +1132,7 @@
 <li><p><strong>append_log</strong>: File retention period for the batch job. If you do not include this parameter, the default is an unlimited retention period.</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAzureBatchAccount</span><span class="p">(</span><span class="s1">&#39;JobAzureBatchAccountSample&#39;</span><span class="p">,</span>
@@ -1157,7 +1157,7 @@
 <p><em>Note : Only available with Automation API &gt;= 9.0.20.220</em></p>
 <p>Job that executes standard web services, servlets, or RESTful web services. To manage Web Services jobs, you must have the Control-M for Web Services, Java, and Messaging (Control-M for WJM) plug-in installed in your Control-M environment</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[77]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobWebServices</span><span class="p">(</span><span class="s1">&#39;JobWebServicesSample&#39;</span><span class="p">,</span>
@@ -1216,7 +1216,7 @@
 <h2>JobSLAManagement<a class="headerlink" href="#JobSLAManagement" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_sla.htm">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobSLAManagement</span><span class="p">(</span><span class="s1">&#39;JobSLAManagementSample&#39;</span><span class="p">,</span>
@@ -1231,6 +1231,38 @@
                            <span class="n">units</span><span class="o">=</span><span class="n">JobSLAManagement</span><span class="o">.</span><span class="n">AverageRunTimeTolerance</span><span class="o">.</span><span class="n">Units</span><span class="o">.</span><span class="n">Minutes</span>
                        <span class="p">))</span>
 <br/></pre></div>
+</div>
+</div>
+</section>
+<section id="JobZOS">
+<h2>JobZOS<a class="headerlink" href="#JobZOS" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_zOS.htm?Highlight=zos">AutomationAPI Documentation</a></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobZOSMember</span><span class="p">(</span><span class="s1">&#39;JobZOSMemberSample&#39;</span><span class="p">,</span>
+                   <span class="n">member_library</span><span class="o">=</span><span class="s1">&#39;IOAQ.AAPI#AU.JCL&#39;</span><span class="p">,</span>
+                   <span class="n">archiving</span><span class="o">=</span><span class="n">JobZOS</span><span class="o">.</span><span class="n">Archiving</span><span class="p">(</span><span class="n">archive_sys_data</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+                   <span class="n">must_end</span><span class="o">=</span><span class="n">JobZOS</span><span class="o">.</span><span class="n">MustEnd</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="s1">&#39;15&#39;</span><span class="p">,</span> <span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                   <span class="n">run_on_all_agents_in_group</span><span class="o">=</span><span class="kc">True</span>
+                  <span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobZOSInStreamJCL</span><span class="p">(</span><span class="s1">&#39;JobZOInStreamJCLSample&#39;</span><span class="p">,</span>
+                   <span class="n">member_library</span><span class="o">=</span><span class="s1">&#39;IOAQ.AAPI#AU.JCL&#39;</span><span class="p">,</span>
+                   <span class="n">jcl</span><span class="o">=</span><span class="s2">&quot;//AUTEST0 JOB ,ASM,CLASS=A,REGION=0M</span><span class="se">\\</span><span class="s2">n// JCLLIB ORDER=IOAQ.AAPI#AU.PROCLIB</span><span class="se">\\</span><span class="s2">n// INCLUDE MEMBER=IOASET</span><span class="se">\\</span><span class="s2">n//S1 EXEC IOATEST,PARM=&#39;TERM=C0000&#39;&quot;</span><span class="p">,</span>
+                   <span class="n">archiving</span><span class="o">=</span><span class="n">JobZOS</span><span class="o">.</span><span class="n">Archiving</span><span class="p">(</span><span class="n">archive_sys_data</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+                   <span class="n">run_on_all_agents_in_group</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                   <span class="n">created_by</span><span class="o">=</span><span class="s1">&#39;workbench&#39;</span><span class="p">,</span>
+                   <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;workbench&#39;</span>
+                  <span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -1326,6 +1358,7 @@
 <li><a class="reference internal" href="#JobAzureBatchAccount">JobAzureBatchAccount</a></li>
 <li><a class="reference internal" href="#JobWebServices">JobWebServices</a></li>
 <li><a class="reference internal" href="#JobSLAManagement">JobSLAManagement</a></li>
+<li><a class="reference internal" href="#JobZOS">JobZOS</a></li>
 </ul>
 </li>
 </ul>

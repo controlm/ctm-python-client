@@ -9,7 +9,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 40,
+            "execution_count": 1,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -35,7 +35,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 41,
+            "execution_count": 2,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -44,7 +44,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 42,
+            "execution_count": 3,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -81,7 +81,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 43,
+            "execution_count": 4,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -90,7 +90,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 44,
+            "execution_count": 5,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -122,7 +122,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 45,
+            "execution_count": 6,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -160,7 +160,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 46,
+            "execution_count": 7,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -180,7 +180,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 47,
+            "execution_count": 8,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -206,7 +206,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 48,
+            "execution_count": 9,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -235,7 +235,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 49,
+            "execution_count": 10,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -275,7 +275,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 50,
+            "execution_count": 11,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -313,7 +313,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 51,
+            "execution_count": 12,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -348,7 +348,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 52,
+            "execution_count": 13,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -383,7 +383,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 53,
+            "execution_count": 14,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -420,7 +420,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 54,
+            "execution_count": 15,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -465,7 +465,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 55,
+            "execution_count": 16,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -476,7 +476,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 56,
+            "execution_count": 17,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -504,7 +504,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 57,
+            "execution_count": 18,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -527,7 +527,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 58,
+            "execution_count": 19,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -549,7 +549,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 59,
+            "execution_count": 20,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -575,7 +575,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 60,
+            "execution_count": 21,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -598,7 +598,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 61,
+            "execution_count": 22,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -623,7 +623,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 62,
+            "execution_count": 23,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -646,7 +646,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 63,
+            "execution_count": 24,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -670,7 +670,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 64,
+            "execution_count": 25,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -694,7 +694,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 65,
+            "execution_count": 26,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -720,7 +720,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 66,
+            "execution_count": 27,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -749,7 +749,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 67,
+            "execution_count": 28,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -775,7 +775,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 68,
+            "execution_count": 29,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -810,7 +810,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 69,
+            "execution_count": 30,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -853,7 +853,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 70,
+            "execution_count": 31,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -894,7 +894,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 71,
+            "execution_count": 32,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -931,7 +931,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 72,
+            "execution_count": 33,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -976,7 +976,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 73,
+            "execution_count": 34,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -1023,7 +1023,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 74,
+            "execution_count": 35,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -1061,15 +1061,15 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 75,
+            "execution_count": 36,
             "metadata": {},
             "outputs": [],
             "source": [
                 "job = JobAzureLogicApps('JobAzureLogicAppsSample',\n",
                 "                        connection_profile='CPAZURE',\n",
-                "                        logic_app_name='logic_app',\n",
-                "                        request_body='{\"name\":\"value\"}',\n",
-                "                        append_log=True)"
+                "                        workflow='workflow_app',\n",
+                "                        parameters='{\"name\":\"value\"}'\n",
+                "                        )"
             ]
         },
         {
@@ -1098,7 +1098,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 76,
+            "execution_count": 37,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -1131,7 +1131,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 77,
+            "execution_count": 38,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -1196,7 +1196,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 78,
+            "execution_count": 39,
             "metadata": {},
             "outputs": [],
             "source": [
@@ -1211,6 +1211,45 @@
                 "                           average_run_time='10',\n",
                 "                           units=JobSLAManagement.AverageRunTimeTolerance.Units.Minutes\n",
                 "                       ))\n"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "## JobZOS\n",
+                "\n",
+                "[AutomationAPI Documentation](https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_zOS.htm?Highlight=zos)"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 40,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "job = JobZOSMember('JobZOSMemberSample', \n",
+                "                   member_library='IOAQ.AAPI#AU.JCL',\n",
+                "                   archiving=JobZOS.Archiving(archive_sys_data=True),\n",
+                "                   must_end=JobZOS.MustEnd(hours='1', minutes='15', days=1),\n",
+                "                   run_on_all_agents_in_group=True\n",
+                "                  )\n"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 41,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "job = JobZOSInStreamJCL('JobZOInStreamJCLSample', \n",
+                "                   member_library='IOAQ.AAPI#AU.JCL',\n",
+                "                   jcl=\"//AUTEST0 JOB ,ASM,CLASS=A,REGION=0M\\\\n// JCLLIB ORDER=IOAQ.AAPI#AU.PROCLIB\\\\n// INCLUDE MEMBER=IOASET\\\\n//S1 EXEC IOATEST,PARM='TERM=C0000'\",\n",
+                "                   archiving=JobZOS.Archiving(archive_sys_data=True),\n",
+                "                   run_on_all_agents_in_group=True,\n",
+                "                   created_by='workbench',\n",
+                "                   run_as='workbench'\n",
+                "                  )"
             ]
         }
     ],
@@ -1233,7 +1272,7 @@
             "name": "python",
             "nbconvert_exporter": "python",
             "pygments_lexer": "ipython3",
-            "version": "3.10.4"
+            "version": "3.8.9"
         },
         "orig_nbformat": 4
     },
