@@ -113,6 +113,7 @@ class BaseWorkflow(AbstractWorkflow):
 
     def _apply_defaults_for_SubFolder(self, obj: SubFolder):
         self._apply_defaults_for_type(obj, 'SubFolder')
+        list(map(self._apply_defaults_for_job, obj.job_list))
 
     def add(self, obj: AAPIObject, inpath: str = None, allow_creation: bool = True):
         # apply defaults:
