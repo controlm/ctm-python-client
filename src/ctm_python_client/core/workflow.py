@@ -129,7 +129,7 @@ class BaseWorkflow(AbstractWorkflow):
             pass
 
         if inpath:
-            if isinstance(obj, SubFolder) or isinstance(obj, Job):
+            if isinstance(obj, SubFolder) or isinstance(obj, Job) or isinstance(obj, AAPIJob):
                 try:
                     folder = self.get(inpath)
                 except Exception as e:
@@ -138,7 +138,7 @@ class BaseWorkflow(AbstractWorkflow):
                     else:
                         raise e
                 if folder:
-                    if isinstance(obj, Job):
+                    if isinstance(obj, Job) or isinstance(obj, AAPIJob):
                         folder.job_list.append(obj)
                     else:
                         folder.sub_folder_list.append(obj)
@@ -146,7 +146,7 @@ class BaseWorkflow(AbstractWorkflow):
                     # Folder does not exist, create folder
                     folder, parent_folder = self.create_folder_hierarchy(inpath)
                     self._apply_defaults_for_folder(folder)
-                    if isinstance(obj, Job):
+                    if isinstance(obj, Job) or isinstance(obj, AAPIJob):
                         parent_folder.job_list.append(obj)
                     else:
                         parent_folder.sub_folder_list.append(obj)
@@ -408,13 +408,40 @@ class Workflow(BaseWorkflow):
 
         try:
             res = self.aapiclient.run_api.run_jobs(fpath.resolve())
-            # return res
             run_ =  RunMonitor(res.run_id, self.aapiclient, monitor_page_uri= res.monitor_page_uri)
-            if open_in_browser:                
+            if open_in_browser:
                 run_.open_in_browser()
             return run_
         except Exception as e:
-            raise e
+            errors = [err.get('message', '') + ' ' + err.get('item', '')
+                      for err in json.loads(e.body)['errors']]
+            raise RuntimeError(f"AAPI request failed: {', '.join(errors)}")
+        finally:
+            if delete_afterwards:
+                fpath.unlink()
+
+    def run_on_demand(self, skip_login: bool = False, file_path: str = None, delete_afterwards: bool = True, open_in_browser=False) -> RunMonitor:
+        if not skip_login:
+            self.aapiclient.authenticate()
+
+        if not file_path:
+            file_path = f'{tempfile.gettempdir()}/temp_{random.randint(1000,9999)}.json'
+
+        fpath = pathlib.Path(file_path)
+
+        with open(fpath.resolve(), 'w') as f:
+            self.dump_json(f)
+
+        try:
+            res = self.aapiclient.run_api.run_on_demand(fpath.resolve())
+            run_ =  RunMonitor(res.run_id, self.aapiclient, monitor_page_uri= res.monitor_page_uri)
+            if open_in_browser:           
+                run_.open_in_browser()
+            return run_
+        except Exception as e:
+            errors = [err.get('message', '') + ' ' + err.get('item', '')
+                for err in json.loads(e.body)['errors']]
+            raise RuntimeError(f"AAPI request failed: {', '.join(errors)}")
         finally:
             if delete_afterwards:
                 fpath.unlink()
