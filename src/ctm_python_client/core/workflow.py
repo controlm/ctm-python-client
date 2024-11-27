@@ -67,8 +67,7 @@ class WorkflowDefaults:
     run_as: str = attrs.field(default=None, metadata={'applyon': [
                               'Folder', 'SimpleFolder', 'SubFolder', 'Job']})
     host: str = attrs.field(default=None, metadata={'applyon': ['Job']})
-    when: Job.When = attrs.field(default=None, metadata={
-                                 'applyon': ['Folder', 'Job']})
+    when: Job.When = attrs.field(default=None, metadata={'applyon': ['Folder', 'Job']})
     application: str = attrs.field(default=None, metadata={'applyon': [
                                    'Folder', 'SimpleFolder', 'SubFolder', 'Job']})
     sub_application: str = attrs.field(default=None, metadata={'applyon': [
