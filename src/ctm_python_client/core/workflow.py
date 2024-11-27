@@ -8,7 +8,7 @@ import tempfile
 import collections
 import copy
 
-from aapi import *
+from aapi import AAPIJob, AAPIObject, Job, Folder, SubFolder, SimpleFolder, WaitForEvents, AddEvents, DeleteEvents, EventOutDelete, EventIn, EventOutAdd, ConnectionProfile
 from ctm_python_client.core.comm import AAPIClientResponse, AbstractAAPIClient, Environment, EnvironmentMode, OnPremAAPIClient, SaasAAPIClient, sanitize_output
 from ctm_python_client.core.monitoring import RunMonitor
 
