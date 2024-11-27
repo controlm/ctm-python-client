@@ -6,7 +6,7 @@ import random
 from ctm_python_client.core.workflow import WorkflowDefaults, Workflow
 from ctm_python_client.core.comm import Environment
 from ctm_python_client.core.monitoring import RunMonitor
-from aapi import Job, FolderJobBaseSmart, Folder
+from aapi import *
 
 class AAPIJob:
     pass
