@@ -3,10 +3,8 @@ import enum
 import typing
 import json
 import random
-from ctm_python_client.core.workflow import WorkflowDefaults, Workflow
 from ctm_python_client.core.comm import Environment
 from ctm_python_client.core.monitoring import RunMonitor
-from aapi import *
 
 class AAPIJob:
     pass
@@ -63,13 +61,25 @@ class AAPIObject:
     def as_dict(self):        
         return attrs.asdict(self)
     
-    def run_on_demand(self, environment: Environment, workflow_defaults: WorkflowDefaults = None, inpath: str = f'run_on_demand{random.randint(100,999)}', skip_login: bool = False, file_path: str = None, delete_afterwards: bool = True) -> RunMonitor:        
+    def run_on_demand(self, environment: Environment, inpath: str = f'run_on_demand{random.randint(100,999)}', skip_login: bool = False, 
+                      file_path: str = None, delete_afterwards: bool = True, controlm_server: str = None, run_as: str = None, 
+                      host: str = None, application: str = None, sub_application: str = None) -> RunMonitor:        
+        # Import circular dependency
+        from ctm_python_client.core.workflow import Workflow, WorkflowDefaults
+        from aapi import Job, Folder, FolderJobBaseSmart
+        
         if isinstance(self, Job) or (hasattr(self, 'job_list') and self.job_list is not None and 
                   len(self.job_list) > 0) or isinstance(self, FolderJobBaseSmart):
             try:
                 on_demand_workflow = Workflow(
                     environment,
-                    workflow_defaults
+                    WorkflowDefaults(
+                        controlm_server=controlm_server,
+                        run_as=run_as,
+                        host=host,
+                        application=application,
+                        sub_application=sub_application
+                    )
                 )
                 if isinstance(self, Folder):
                     on_demand_workflow.add(self)
