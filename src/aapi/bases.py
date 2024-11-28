@@ -61,15 +61,14 @@ class AAPIObject:
     def as_dict(self):        
         return attrs.asdict(self)
     
-    def run_on_demand(self, environment: Environment, inpath: str = f'run_on_demand{random.randint(100,999)}', skip_login: bool = False, 
-                      file_path: str = None, delete_afterwards: bool = True, controlm_server: str = None, run_as: str = None, 
-                      host: str = None, application: str = None, sub_application: str = None) -> RunMonitor:        
+    def run_on_demand(self, environment: Environment, inpath: str = f'run_on_demand{random.randint(100,999)}', controlm_server: str = None, 
+                      run_as: str = None, host: str = None, application: str = None, sub_application: str = None, skip_login: bool = False, 
+                      file_path: str = None, delete_afterwards: bool = True, open_in_browser: str = None) -> RunMonitor:        
         # Import circular dependency
         from ctm_python_client.core.workflow import Workflow, WorkflowDefaults
-        from aapi import Job, Folder, FolderJobBaseSmart
+        from aapi import Job, Folder
         
-        if isinstance(self, Job) or (hasattr(self, 'job_list') and self.job_list is not None and 
-                  len(self.job_list) > 0) or isinstance(self, FolderJobBaseSmart):
+        if isinstance(self, Job) or (hasattr(self, 'job_list') and self.job_list is not None and len(self.job_list) > 0):
             try:
                 on_demand_workflow = Workflow(
                     environment,
@@ -89,7 +88,8 @@ class AAPIObject:
                 on_demand_workflow.run_on_demand(
                     skip_login=skip_login, 
                     file_path=file_path, 
-                    delete_afterwards=delete_afterwards
+                    delete_afterwards=delete_afterwards,
+                    open_in_browser=open_in_browser
                     )
             except Exception as e:
                 errors = [err.get('message', '') + ' ' + err.get('item', '')
