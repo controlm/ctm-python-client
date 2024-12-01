@@ -66,9 +66,9 @@ class AAPIObject:
                       file_path: str = None, delete_afterwards: bool = True, open_in_browser: str = None) -> RunMonitor:        
         # Import circular dependency
         from ctm_python_client.core.workflow import Workflow, WorkflowDefaults
-        from aapi import Job, Folder
+        from aapi import Folder
         
-        if isinstance(self, Job) or (hasattr(self, 'job_list') and self.job_list is not None and len(self.job_list) > 0):
+        if (hasattr(self, '_type') and 'Job' in self._type) or (hasattr(self, 'job_list') and self.job_list is not None and len(self.job_list) > 0):
             try:
                 on_demand_workflow = Workflow(
                     environment,
@@ -92,9 +92,12 @@ class AAPIObject:
                     open_in_browser=open_in_browser
                     )
             except Exception as e:
-                errors = [err.get('message', '') + ' ' + err.get('item', '')
-                    for err in json.loads(e.body)['errors']]
-                raise RuntimeError(f"AAPI request failed: {', '.join(errors)}")
+                if e.body:
+                    errors = [err.get('message', '') + ' ' + err.get('item', '')
+                        for err in json.loads(e.body)['errors']]
+                    raise RuntimeError(f"AAPI request failed: {', '.join(errors)}")
+                else:
+                    raise e
             finally:
                 on_demand_workflow.clear_all()
         else:
