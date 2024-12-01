@@ -2,6 +2,9 @@ import attrs
 import enum
 import typing
 import json
+import random
+from ctm_python_client.core.comm import Environment
+from ctm_python_client.core.monitoring import RunMonitor
 
 class AAPIJob:
     pass
@@ -58,3 +61,41 @@ class AAPIObject:
     def as_dict(self):        
         return attrs.asdict(self)
     
+    def run_on_demand(self, environment: Environment, inpath: str = f'run_on_demand{random.randint(100,999)}', controlm_server: str = None, 
+                      run_as: str = None, host: str = None, application: str = None, sub_application: str = None, skip_login: bool = False, 
+                      file_path: str = None, delete_afterwards: bool = True, open_in_browser: str = None) -> RunMonitor:        
+        # Import circular dependency
+        from ctm_python_client.core.workflow import Workflow, WorkflowDefaults
+        from aapi import Job, Folder
+        
+        if isinstance(self, Job) or (hasattr(self, 'job_list') and self.job_list is not None and len(self.job_list) > 0):
+            try:
+                on_demand_workflow = Workflow(
+                    environment,
+                    WorkflowDefaults(
+                        controlm_server=controlm_server,
+                        run_as=run_as,
+                        host=host,
+                        application=application,
+                        sub_application=sub_application
+                    )
+                )
+                if isinstance(self, Folder):
+                    on_demand_workflow.add(self)
+                else:
+                    on_demand_workflow.add(self, inpath=inpath)
+                
+                on_demand_workflow.run_on_demand(
+                    skip_login=skip_login, 
+                    file_path=file_path, 
+                    delete_afterwards=delete_afterwards,
+                    open_in_browser=open_in_browser
+                    )
+            except Exception as e:
+                errors = [err.get('message', '') + ' ' + err.get('item', '')
+                    for err in json.loads(e.body)['errors']]
+                raise RuntimeError(f"AAPI request failed: {', '.join(errors)}")
+            finally:
+                on_demand_workflow.clear_all()
+        else:
+            raise Exception('Run is not allowed for json without jobs')
