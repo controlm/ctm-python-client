@@ -92,7 +92,7 @@ class AAPIObject:
                     open_in_browser=open_in_browser
                     )
             except Exception as e:
-                if e.body:
+                if hasattr(e, 'body'):
                     errors = [err.get('message', '') + ' ' + err.get('item', '')
                         for err in json.loads(e.body)['errors']]
                     raise RuntimeError(f"AAPI request failed: {', '.join(errors)}")
