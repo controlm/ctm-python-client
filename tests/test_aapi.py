@@ -1,4 +1,4 @@
-
+import pytest
 import json
 import aapi
 from ctm_python_client.core.workflow import Workflow, WorkflowDefaults, BaseWorkflow
@@ -151,3 +151,12 @@ def test_job_in_folder_run_as():
                    ''')
     assert workflow.get("TestFolder").as_aapi_dict() == o
     
+def test_run_ondemand_without_jobs():
+    demand_sub_folder = aapi.SubFolder("TestFolder")
+    with pytest.raises(Exception, match='Run is not allowed for json without jobs'):
+        demand_sub_folder.run_on_demand(Environment.create_workbench("refael"), WorkflowDefaults(run_as='workbench'), run_as='workbench', controlm_server='workbench')
+    
+    demand_folder = aapi.Folder("TestFolder")
+    with pytest.raises(Exception, match='Run is not allowed for json without jobs'):
+        demand_folder.run_on_demand(Environment.create_workbench("refael"), WorkflowDefaults(run_as='workbench'), run_as='workbench', controlm_server='workbench')
+
