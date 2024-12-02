@@ -85,7 +85,7 @@ class AAPIObject:
                 else:
                     on_demand_workflow.add(self, inpath=inpath)
                 
-                on_demand_workflow.run_on_demand(
+                return on_demand_workflow.run_on_demand(
                     skip_login=skip_login, 
                     file_path=file_path, 
                     delete_afterwards=delete_afterwards,
