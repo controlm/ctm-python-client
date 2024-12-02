@@ -438,9 +438,12 @@ class Workflow(BaseWorkflow):
                 run_.open_in_browser()
             return run_
         except Exception as e:
-            errors = [err.get('message', '') + ' ' + err.get('item', '')
-                for err in json.loads(e.body)['errors']]
-            raise RuntimeError(f"AAPI request failed: {', '.join(errors)}")
+            if e.body:
+                errors = [err.get('message', '') + ' ' + err.get('item', '')
+                    for err in json.loads(e.body)['errors']]
+                raise RuntimeError(f"AAPI request failed: {', '.join(errors)}")
+            else:
+                raise e
         finally:
             if delete_afterwards:
                 fpath.unlink()
