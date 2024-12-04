@@ -61,7 +61,7 @@ class AAPIObject:
     def as_dict(self):        
         return attrs.asdict(self)
     
-    def run_on_demand(self, environment: Environment, inpath: str = f'run_on_demand{random.randint(100,999)}', controlm_server: str = None, 
+    def run_on_demand(self, environment: Environment, skip_initial_authentication: bool = False, inpath: str = f'run_on_demand{random.randint(100,999)}', controlm_server: str = None, 
                       run_as: str = None, host: str = None, application: str = None, sub_application: str = None, skip_login: bool = False, 
                       file_path: str = None, delete_afterwards: bool = True, open_in_browser: str = None) -> RunMonitor:        
         # Import circular dependency
@@ -78,7 +78,8 @@ class AAPIObject:
                         host=host,
                         application=application,
                         sub_application=sub_application
-                    )
+                    ),
+                    skip_initial_authentication=skip_initial_authentication
                 )
                 if isinstance(self, Folder):
                     on_demand_workflow.add(self)
