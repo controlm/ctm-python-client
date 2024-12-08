@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Auto generation of AI Plugins with Control-M Workbench" href="autogen.html" /><link rel="prev" title="Authentication" href="authentication.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Going Forward" href="../beyond.html" /><link rel="prev" title="Connection Profiles" href="connectionprofiles.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.05.06 -->
-        <title>Working with Application Integrator - Control-M Python Client documentation</title>
+        <title>Run On Demand - Control-M Python Client documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
@@ -218,11 +218,11 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../tutorials.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="hello.html">Getting Started with Control-M Python Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="monitoring.html">Monitoring Flows with Control-M Python Client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Working with Application Integrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ai.html">Working with Application Integrator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autogen.html">Auto generation of AI Plugins with Control-M Workbench</a></li>
 </ul>
 </li>
@@ -230,7 +230,7 @@
 <li class="toctree-l1"><a class="reference internal" href="jobtypes.html">Job types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jobproperties.html">Job and Folder Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="connectionprofiles.html">Connection Profiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="run_ondemand.html">Run On Demand</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Run On Demand</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../beyond.html">Going Forward</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">References:</span></p>
@@ -261,7 +261,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/notebooks/ai.ipynb.txt" title="View this page">
+  <a class="muted-link" href="../_sources/notebooks/run_ondemand.ipynb.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -281,58 +281,61 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="Working-with-Application-Integrator">
-<h1>Working with Application Integrator<a class="headerlink" href="#Working-with-Application-Integrator" title="Permalink to this heading">¶</a></h1>
-<p>Control-M Application Integrator is a web-based application that allows you to create custom job types that you can easily deploy in the Control-M environment. These jobs can be managed alongside any Control-M job, which enables you to manage on-premises and multi-cloud application workflows for commercial, custom, and home-grown applications through a single platform.</p>
-<p>Control-M Python Client allows you to work with Application Integrator Job Types by providing a base class which you can create your own Application Integrator job types</p>
-<section id="Building-Custom-Application-Integrator-Job-Types-with-AIJob">
-<h2>Building Custom Application Integrator Job Types with <code class="docutils literal notranslate"><span class="pre">AIJob</span></code><a class="headerlink" href="#Building-Custom-Application-Integrator-Job-Types-with-AIJob" title="Permalink to this heading">¶</a></h2>
-<p>You create Application Integrator Job types through the Application Integrator web interface. After you deploy a job to an Agent, you can use it as any other Job type from the job palette in the Planning domain.</p>
-<p>To use the new job type that you create in Control-M Python Client, you need to create the JobType as a class in your code. This is made easy by the <code class="docutils literal notranslate"><span class="pre">AIJob</span></code> class that serves as the base class that provides all the necessary functionalities to make your class work as a valid Automation API definition.</p>
-<p>Let’s see a simple example.</p>
-<p>Below we create a simple Application Integrator JobType called <strong>AI SSHCommand</strong>. It accepts two paramaters that we define in the Application Integrator web interface: <strong>Command</strong> and <strong>Flags</strong> in addition to the Connection Profile.</p>
-<p><em>Note</em>: You cannot add or edit Application Integrator connection profiles in Control-M Python Client. You must add them in the Application Integrator web interface.</p>
-<p><a class="reference external" href="image.png"><img alt="AI Job parameters" src="../_images/image.png" /></a></p>
-<p>Let’s create the class in Control-M Python Client</p>
+          <section id="Run-On-Demand">
+<h1>Run On Demand<a class="headerlink" href="#Run-On-Demand" title="Permalink to this heading">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ctm_python_client.core.comm</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">ctm_python_client.core.workflow</span> <span class="kn">import</span> <span class="o">*</span>
-
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ctm_python_client.core.comm</span> <span class="kn">import</span> <span class="n">Environment</span>
 <span class="kn">from</span> <span class="nn">aapi</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">attrs</span>
-
-<span class="c1"># All JobTypes are decorated with attrs</span>
-
-<span class="nd">@attrs</span><span class="o">.</span><span class="n">define</span>
-<span class="k">class</span> <span class="nc">AIJobSSHCommand</span><span class="p">(</span><span class="n">AIJob</span><span class="p">):</span>   <span class="c1"># We derive from AIJob, the name of the class can be any valid python class name</span>
-    <span class="n">_type</span> <span class="o">=</span> <span class="n">AIJob</span><span class="o">.</span><span class="n">type_field</span><span class="p">(</span><span class="s1">&#39;AI SSHCommand&#39;</span><span class="p">)</span>   <span class="c1"># We add a &quot;type&quot; field, with the same name you would see in the web interface.</span>
-                                                <span class="c1"># the name in type IS important and should match the one seen in the Web Interface</span>
-                                                <span class="c1"># in the Planning section</span>
-
-    <span class="n">command</span> <span class="o">=</span> <span class="n">AIJob</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;Command&#39;</span><span class="p">)</span>            <span class="c1"># the field name argument needs to match the one in the Web interface</span>
-                                                <span class="c1"># the name of the field (lower case command) can be any valid python variable name</span>
-
-    <span class="n">flags</span> <span class="o">=</span> <span class="n">AIJob</span><span class="o">.</span><span class="n">field_optional</span><span class="p">(</span><span class="s1">&#39;Flags&#39;</span><span class="p">)</span>       <span class="c1"># this is an optional field, similar to AIJob.field() but not mandatory to use</span>
-<br/><br/><br/></pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s check that the Automation API Json is ok</span>
+</div>
+<p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_Services_RunService.htm#run2">AutomationAPI Documentation</a></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">run_on_demand()</span></code> method in the Control-M Python Client allows you to execute individual jobs, folders, or subfolders dynamically without using Workflow. You do not need to deploy the jobs to the Control-M/EM database and the User Daily job does not need to trigger them. This is useful for event-driven job executions.</p>
+<p>This guide demonstrates how to use <code class="docutils literal notranslate"><span class="pre">run_on_demand()</span></code> with the <code class="docutils literal notranslate"><span class="pre">Job</span></code>, <code class="docutils literal notranslate"><span class="pre">Folder</span></code>, and <code class="docutils literal notranslate"><span class="pre">SubFolder</span></code> classes.</p>
+<p><strong>Requires Control-M/EM version 9.0.21.200</strong></p>
+<section id="Code-Example:">
+<h2>Code Example:<a class="headerlink" href="#Code-Example:" title="Permalink to this heading">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="c1"># Step 1: Define the Job, Folder, Sub-Folder</span>
+<span class="n">demand_job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;HelloJob&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">demand_sub_folder</span> <span class="o">=</span> <span class="n">SubFolder</span><span class="p">(</span><span class="s2">&quot;TestSubFolder&quot;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span><span class="n">demand_job</span><span class="p">])</span>
+<span class="n">demand_folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s2">&quot;TestFolder&quot;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span><span class="n">demand_job</span><span class="p">])</span>
 
-<span class="n">workflow</span> <span class="o">=</span> <span class="n">BaseWorkflow</span><span class="p">()</span>   <span class="c1"># BaseWorkflow is a workflow which is not connected to any environment</span>
-<span class="n">aijob</span> <span class="o">=</span> <span class="n">AIJobSSHCommand</span><span class="p">(</span><span class="s1">&#39;MySSHCommand&#39;</span><span class="p">,</span>
-                <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;HOSTCP&#39;</span><span class="p">,</span>
-                <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span>
-                <span class="n">flags</span><span class="o">=</span><span class="s1">&#39;-q&#39;</span><span class="p">)</span>
-<span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">aijob</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;AIfolder&#39;</span><span class="p">)</span>
+<span class="c1"># Step 2: Define an Environment</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">create_onprem</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;controlm&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;***&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;****&#39;</span><span class="p">)</span>
+<span class="c1"># Step 3: Run the Job On Demand</span>
+<span class="n">run_demand_job</span> <span class="o">=</span> <span class="n">demand_job</span><span class="o">.</span><span class="n">run_on_demand</span><span class="p">(</span>
+    <span class="n">environment</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
+    <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
+    <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;ControlM&#39;</span>
+    <span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">run_demand_job</span><span class="o">.</span><span class="n">print_output</span><span class="p">(</span><span class="s1">&#39;HelloJob&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">workflow</span><span class="o">.</span><span class="n">dumps_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="c1"># Step 4: Run the SubFolder On Demand</span>
+<span class="n">run_demand_sub_folder</span> <span class="o">=</span> <span class="n">demand_sub_folder</span><span class="o">.</span><span class="n">run_on_demand</span><span class="p">(</span>
+    <span class="n">environment</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
+    <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
+    <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;ControlM&#39;</span>
+    <span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">run_demand_sub_folder</span><span class="o">.</span><span class="n">print_statuses</span><span class="p">()</span>
+
+<span class="c1"># Step 5: Run the Folder On Demand</span>
+<span class="n">run_demand_folder</span> <span class="o">=</span> <span class="n">demand_folder</span><span class="o">.</span><span class="n">run_on_demand</span><span class="p">(</span>
+    <span class="n">environment</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
+    <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
+    <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;ControlM&#39;</span>
+    <span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">run_demand_folder</span><span class="o">.</span><span class="n">print_statuses</span><span class="p">()</span>
 <br/></pre></div>
 </div>
 </div>
@@ -341,54 +344,30 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{
-  &#34;AIfolder&#34;: {
-    &#34;Type&#34;: &#34;Folder&#34;,
-    &#34;MySSHCommand&#34;: {
-      &#34;Type&#34;: &#34;Job:ApplicationIntegrator:AI SSHCommand&#34;,
-      &#34;ConnectionProfile&#34;: &#34;HOSTCP&#34;,
-      &#34;AI-Command&#34;: &#34;ls&#34;,
-      &#34;AI-Flags&#34;: &#34;-q&#34;
-    }
-  }
-}
++ echo Hello
+Hello
+
+Run Status
+--------------------------------------------------
+    run_on_demand928  ..................  Ended OK
+        HelloJob  ......................  Ended OK
+
+Run Status
+--------------------------------------------------
+    TestFolder  ........................  Ended OK
+    HelloJob  ..........................  Ended OK
+
 </pre></div></div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s check that the Automation API Json is ok</span>
-
-<span class="n">workflow</span> <span class="o">=</span> <span class="n">BaseWorkflow</span><span class="p">()</span>   <span class="c1"># BaseWorkflow is a workflow which is not connected to any environment</span>
-
-<span class="c1"># the flags variable is a optional field, we can create job without an optional field</span>
-<span class="n">aijob</span> <span class="o">=</span> <span class="n">AIJobSSHCommand</span><span class="p">(</span><span class="s1">&#39;MySSHCommand&#39;</span><span class="p">,</span>
-                <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;HOSTCP&#39;</span><span class="p">,</span>
-                <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
-<span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">aijob</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;AIfolder&#39;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">workflow</span><span class="o">.</span><span class="n">dumps_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-{
-  &#34;AIfolder&#34;: {
-    &#34;Type&#34;: &#34;Folder&#34;,
-    &#34;MySSHCommand&#34;: {
-      &#34;Type&#34;: &#34;Job:ApplicationIntegrator:AI AI SSHCommand&#34;,
-      &#34;ConnectionProfile&#34;: &#34;HOSTCP&#34;,
-      &#34;AI-Command&#34;: &#34;ls&#34;
-    }
-  }
-}
-</pre></div></div>
-</div>
+</section>
+<section id="Additional-Notes:">
+<h2>Additional Notes:<a class="headerlink" href="#Additional-Notes:" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Ensure that the <em>Control-M/EM version is 9.0.21.200</em> or higher. Older versions not support the <code class="docutils literal notranslate"><span class="pre">run_on_demand()</span></code> method.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Folder</span></code>s and <code class="docutils literal notranslate"><span class="pre">Subfolder</span></code>s must include at least one <code class="docutils literal notranslate"><span class="pre">Job</span></code>. If a <code class="docutils literal notranslate"><span class="pre">Folder</span></code> or <code class="docutils literal notranslate"><span class="pre">SubFolder</span></code> does not contain any jobs, an exception will be raised with the error: <code class="docutils literal notranslate"><span class="pre">&quot;Run</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">allowed</span> <span class="pre">for</span> <span class="pre">JSON</span> <span class="pre">without</span> <span class="pre">jobs&quot;</span></code></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">run_as</span></code> user must have the necessary permissions in Control-M.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">controlm_server</span></code> parameter specifies the Control-M server responsible for execution.</p></li>
+</ul>
 </section>
 </section>
 
@@ -397,23 +376,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="autogen.html">
+          <a class="next-page" href="../beyond.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Auto generation of AI Plugins with Control-M Workbench</div>
+                <div class="title">Going Forward</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="authentication.html">
+          <a class="prev-page" href="connectionprofiles.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Authentication</div>
+                <div class="title">Connection Profiles</div>
                 
               </div>
             </a>
@@ -447,8 +426,9 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Working with Application Integrator</a><ul>
-<li><a class="reference internal" href="#Building-Custom-Application-Integrator-Job-Types-with-AIJob">Building Custom Application Integrator Job Types with <code class="docutils literal notranslate"><span class="pre">AIJob</span></code></a></li>
+<li><a class="reference internal" href="#">Run On Demand</a><ul>
+<li><a class="reference internal" href="#Code-Example:">Code Example:</a></li>
+<li><a class="reference internal" href="#Additional-Notes:">Additional Notes:</a></li>
 </ul>
 </li>
 </ul>
