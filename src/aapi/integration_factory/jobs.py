@@ -1662,22 +1662,6 @@ class JobAzureDatabricks(Job):
 
 
 @attrs.define
-class JobApplicationIntegratorAISimplePlugin(JobApplicationIntegrator):
-
-    _type: str = attrs.field(init=False, default='Job:ApplicationIntegrator:AI Simple Plugin', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:ApplicationIntegrator:AI Simple Plugin'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'ConnectionProfile'})
-    ai_connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
-                                              '_aapi_repr_': 'AI-ConnectionProfile'})
-    ai_user: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'AI-User'})
-    ai_connection_type: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'AI-Connection Type'})
-
-
-@attrs.define
 class JobTerraform(Job):
 
     _type: str = attrs.field(init=False, default='Job:Terraform', metadata={
