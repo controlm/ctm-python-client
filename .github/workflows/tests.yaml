@@ -10,11 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        python-version: 
-          - 3.9.21  # Used for Ubuntu
-        include:
-          - os: windows-latest
-            python-version: 3.9.18  # Use an available version on Windows
+        python-version: ['3.9.18']
 
     steps:
     - uses: actions/checkout@v2
