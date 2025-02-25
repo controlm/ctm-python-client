@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js" lang="en" data-content_root="">
+<html class="no-js" lang="en" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Job and Folder Properties" href="jobproperties.html" /><link rel="prev" title="Folders" href="folders.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.05.06 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
         <title>Job types - Control-M Python Client documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
-    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     
     
 
@@ -92,19 +92,6 @@
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
   <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
     <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -145,7 +132,7 @@
       <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
       <path d="M13.5 6.5l4 4" />
       <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" /
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
   <symbol id="svg-eye" viewBox="0 0 24 24">
@@ -282,17 +269,17 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="Job-types">
-<h1>Job types<a class="headerlink" href="#Job-types" title="Permalink to this heading">¶</a></h1>
+<h1>Job types<a class="headerlink" href="#Job-types" title="Link to this heading">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aapi</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from aapi import *
 </pre></div>
 </div>
 </div>
 <section id="JobCommand">
-<h2>JobCommand<a class="headerlink" href="#JobCommand" title="Permalink to this heading">¶</a></h2>
+<h2>JobCommand<a class="headerlink" href="#JobCommand" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_commandScript.htm#JobCommand">AutomationAPI Documentation</a></p>
 <p>Job that executes an Operating System command</p>
 <p>Required arguments:</p>
@@ -304,7 +291,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;JobCommandSample&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;JobCommandSample&#39;, command=&#39;echo Hello&#39;)
 </pre></div>
 </div>
 </div>
@@ -312,18 +299,18 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;JobCommandSample&#39;</span><span class="p">,</span>
-                 <span class="n">command</span><span class="o">=</span><span class="s1">&#39;mycommand&#39;</span><span class="p">,</span>
-                 <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
-                 <span class="n">host</span><span class="o">=</span><span class="s1">&#39;myhost.com&#39;</span><span class="p">,</span>
-                 <span class="n">pre_command</span><span class="o">=</span><span class="s1">&#39;echo Precommand&#39;</span><span class="p">,</span>
-                 <span class="n">post_command</span><span class="o">=</span><span class="s1">&#39;echo Finished&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;JobCommandSample&#39;,
+                 command=&#39;mycommand&#39;,
+                 run_as=&#39;user&#39;,
+                 host=&#39;myhost.com&#39;,
+                 pre_command=&#39;echo Precommand&#39;,
+                 post_command=&#39;echo Finished&#39;)
 </pre></div>
 </div>
 </div>
 </section>
 <section id="JobScript">
-<h2>JobScript<a class="headerlink" href="#JobScript" title="Permalink to this heading">¶</a></h2>
+<h2>JobScript<a class="headerlink" href="#JobScript" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://docs.bmc.com/docs/automation-api/monthly/job-types-993192279.html#Jobtypes-JobScriptJob:Script">AutomationAPI Documentation</a></p>
 <p>Job that executes a script</p>
 <p>Required arguments:</p>
@@ -340,7 +327,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobScript</span><span class="p">(</span><span class="s1">&#39;JobScriptSample&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;task.sh&#39;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;/home/scripts&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobScript(&#39;JobScriptSample&#39;, file_name=&#39;task.sh&#39;, file_path=&#39;/home/scripts&#39;)
 </pre></div>
 </div>
 </div>
@@ -348,18 +335,18 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobScript</span><span class="p">(</span><span class="s1">&#39;JobScriptSame&#39;</span><span class="p">,</span>
-                <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;task.sh&#39;</span><span class="p">,</span>
-                <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%%</span><span class="s1">path&#39;</span><span class="p">,</span>
-                <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
-                <span class="n">arguments</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;arg1&#39;</span><span class="p">,</span> <span class="s1">&#39;arg2&#39;</span><span class="p">],</span>
-                <span class="n">variables</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;/home/scripts&#39;</span><span class="p">}])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobScript(&#39;JobScriptSame&#39;,
+                file_name=&#39;task.sh&#39;,
+                file_path=&#39;%%path&#39;,
+                run_as=&#39;user&#39;,
+                arguments=[&#39;arg1&#39;, &#39;arg2&#39;],
+                variables=[{&#39;path&#39;: &#39;/home/scripts&#39;}])
 </pre></div>
 </div>
 </div>
 </section>
 <section id="JobEmbeddedScript">
-<h2>JobEmbeddedScript<a class="headerlink" href="#JobEmbeddedScript" title="Permalink to this heading">¶</a></h2>
+<h2>JobEmbeddedScript<a class="headerlink" href="#JobEmbeddedScript" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://docs.bmc.com/docs/automation-api/monthly/job-types-993192279.html#Jobtypes-JobEmbScriptJob:EmbeddedScript">AutomationAPI Documentation</a></p>
 <p>Job that executes a script written in the job itself. Note that control characters need to be escaped</p>
 <p>Required arguments:</p>
@@ -372,15 +359,15 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobEmbeddedScript</span><span class="p">(</span><span class="s1">&#39;JobEmbeddedScriptSample&#39;</span><span class="p">,</span>
-                        <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;filename.sh&#39;</span><span class="p">,</span>
-                        <span class="n">script</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;#!/bin/bash\necho &quot;Hello&quot;\necho &quot;Bye&quot;&#39;</span><span class="p">),</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobEmbeddedScript(&#39;JobEmbeddedScriptSample&#39;,
+                        file_name=&#39;filename.sh&#39;,
+                        script=r&#39;#!/bin/bash\necho &quot;Hello&quot;\necho &quot;Bye&quot;&#39;),
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobFileTransfer">
-<h2>JobFileTransfer<a class="headerlink" href="#JobFileTransfer" title="Permalink to this heading">¶</a></h2>
+<h2>JobFileTransfer<a class="headerlink" href="#JobFileTransfer" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://docs.bmc.com/docs/automation-api/monthly/job-types-993192279.html#Jobtypes-JobFileTransferJob:FileTransfer">AutomationAPI Documentation</a></p>
 <p>Job that executes a list of file transfers</p>
 <p>Required arguments:</p>
@@ -400,18 +387,18 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobFileTransfer</span><span class="p">(</span><span class="s1">&#39;JobFileTransferSample&#39;</span><span class="p">,</span>
-                      <span class="n">connection_profile_src</span><span class="o">=</span><span class="s1">&#39;CP1&#39;</span><span class="p">,</span> <span class="n">connection_profile_dest</span><span class="o">=</span><span class="s1">&#39;CP2&#39;</span><span class="p">,</span>
-                      <span class="n">number_of_retries</span><span class="o">=</span><span class="s1">&#39;7&#39;</span><span class="p">,</span>
-                      <span class="n">file_transfers</span><span class="o">=</span><span class="p">[</span>
-                          <span class="n">FileTransfer</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s1">&#39;/home/ctm/file1&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;/home/cmt/file2&#39;</span><span class="p">,</span>
-                                       <span class="n">transfer_type</span><span class="o">=</span><span class="n">FileTransfer</span><span class="o">.</span><span class="n">TransferType</span><span class="o">.</span><span class="n">Binary</span><span class="p">,</span>
-                                       <span class="n">transfer_option</span><span class="o">=</span><span class="n">FileTransfer</span><span class="o">.</span><span class="n">TransferOption</span><span class="o">.</span><span class="n">SrcToDest</span><span class="p">),</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobFileTransfer(&#39;JobFileTransferSample&#39;,
+                      connection_profile_src=&#39;CP1&#39;, connection_profile_dest=&#39;CP2&#39;,
+                      number_of_retries=&#39;7&#39;,
+                      file_transfers=[
+                          FileTransfer(src=&#39;/home/ctm/file1&#39;, dest=&#39;/home/cmt/file2&#39;,
+                                       transfer_type=FileTransfer.TransferType.Binary,
+                                       transfer_option=FileTransfer.TransferOption.SrcToDest),
 
-                          <span class="n">FileTransfer</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s1">&#39;/home/ctm/file1&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;/home/cmt/file2&#39;</span><span class="p">,</span>
-                                       <span class="n">transfer_type</span><span class="o">=</span><span class="n">FileTransfer</span><span class="o">.</span><span class="n">TransferType</span><span class="o">.</span><span class="n">Binary</span><span class="p">,</span>
-                                       <span class="n">transfer_option</span><span class="o">=</span><span class="n">FileTransfer</span><span class="o">.</span><span class="n">TransferOption</span><span class="o">.</span><span class="n">SrcToDest</span><span class="p">),</span>
-                      <span class="p">])</span>
+                          FileTransfer(src=&#39;/home/ctm/file1&#39;, dest=&#39;/home/cmt/file2&#39;,
+                                       transfer_type=FileTransfer.TransferType.Binary,
+                                       transfer_option=FileTransfer.TransferOption.SrcToDest),
+                      ])
 </pre></div>
 </div>
 </div>
@@ -419,61 +406,61 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># An example of a file transer from a S3 storage to a local filesystem:</span>
-<span class="n">job</span> <span class="o">=</span> <span class="n">JobFileTransfer</span><span class="p">(</span><span class="s1">&#39;TransferS3ToLocal&#39;</span><span class="p">,</span>
-                      <span class="n">connection_profile_src</span><span class="o">=</span><span class="s1">&#39;amazonCP&#39;</span><span class="p">,</span> <span class="n">connection_profile_dest</span><span class="o">=</span><span class="s1">&#39;localcp&#39;</span><span class="p">,</span>
-                      <span class="n">s3_bucket_name</span><span class="o">=</span><span class="s1">&#39;bucket&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># An example of a file transer from a S3 storage to a local filesystem:
+job = JobFileTransfer(&#39;TransferS3ToLocal&#39;,
+                      connection_profile_src=&#39;amazonCP&#39;, connection_profile_dest=&#39;localcp&#39;,
+                      s3_bucket_name=&#39;bucket&#39;)
 
-<span class="c1"># Note that file_transfers is by default initialized as an empty list</span>
-<span class="n">job</span><span class="o">.</span><span class="n">file_transfers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">FileTransfer</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s1">&#39;folder/file1&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;/home/file1&#39;</span><span class="p">))</span>
+# Note that file_transfers is by default initialized as an empty list
+job.file_transfers.append(FileTransfer(src=&#39;folder/file1&#39;, dest=&#39;/home/file1&#39;))
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobFileWatcherCreate">
-<h2>JobFileWatcherCreate<a class="headerlink" href="#JobFileWatcherCreate" title="Permalink to this heading">¶</a></h2>
+<h2>JobFileWatcherCreate<a class="headerlink" href="#JobFileWatcherCreate" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_FileWatcher.htm">AutomationAPI Documentation</a></p>
 <p>Job that detects the successful completion of a file transfer activity that creates a file</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobFileWatcherCreate</span><span class="p">(</span><span class="s1">&#39;JobFileWatcherCreateSample&#39;</span><span class="p">,</span>
-                           <span class="n">path</span><span class="o">=</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">path*.txt&#39;</span><span class="p">,</span>
-                           <span class="n">search_interval</span><span class="o">=</span><span class="s1">&#39;45&#39;</span><span class="p">,</span>
-                           <span class="n">time_limit</span><span class="o">=</span><span class="s1">&#39;22&#39;</span><span class="p">,</span>
-                           <span class="n">start_time</span><span class="o">=</span><span class="s1">&#39;201705041535&#39;</span><span class="p">,</span>
-                           <span class="n">stop_time</span><span class="o">=</span><span class="s1">&#39;201805041535&#39;</span><span class="p">,</span>
-                           <span class="n">minimum_size</span><span class="o">=</span><span class="s1">&#39;10B&#39;</span><span class="p">,</span>
-                           <span class="n">wildcard</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                           <span class="n">minimal_age</span><span class="o">=</span><span class="s1">&#39;1Y&#39;</span><span class="p">,</span>
-                           <span class="n">maximal_age</span><span class="o">=</span><span class="s1">&#39;1D2H4MIN&#39;</span>
-                           <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobFileWatcherCreate(&#39;JobFileWatcherCreateSample&#39;,
+                           path=&#39;C:\\path*.txt&#39;,
+                           search_interval=&#39;45&#39;,
+                           time_limit=&#39;22&#39;,
+                           start_time=&#39;201705041535&#39;,
+                           stop_time=&#39;201805041535&#39;,
+                           minimum_size=&#39;10B&#39;,
+                           wildcard=False,
+                           minimal_age=&#39;1Y&#39;,
+                           maximal_age=&#39;1D2H4MIN&#39;
+                           )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobFileWatcherDelete">
-<h2>JobFileWatcherDelete<a class="headerlink" href="#JobFileWatcherDelete" title="Permalink to this heading">¶</a></h2>
+<h2>JobFileWatcherDelete<a class="headerlink" href="#JobFileWatcherDelete" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="ttps://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_FileWatcher.htm">AutomationAPI Documentation</a></p>
 <p>Job that detects the successful completion of a file transfer activity that deletes a file</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobFileWatcherDelete</span><span class="p">(</span><span class="s1">&#39;JobFileWatcherDeleteSample&#39;</span><span class="p">,</span>
-                           <span class="n">path</span><span class="o">=</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">path*.txt&#39;</span><span class="p">,</span>
-                           <span class="n">search_interval</span><span class="o">=</span><span class="s1">&#39;45&#39;</span><span class="p">,</span>
-                           <span class="n">time_limit</span><span class="o">=</span><span class="s1">&#39;22&#39;</span><span class="p">,</span>
-                           <span class="n">start_time</span><span class="o">=</span><span class="s1">&#39;201705041535&#39;</span><span class="p">,</span>
-                           <span class="n">stop_time</span><span class="o">=</span><span class="s1">&#39;201805041535&#39;</span><span class="p">,</span>
-                           <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobFileWatcherDelete(&#39;JobFileWatcherDeleteSample&#39;,
+                           path=&#39;C:\\path*.txt&#39;,
+                           search_interval=&#39;45&#39;,
+                           time_limit=&#39;22&#39;,
+                           start_time=&#39;201705041535&#39;,
+                           stop_time=&#39;201805041535&#39;,
+                           )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobDatabaseEmbeddedQuery">
-<h2>JobDatabaseEmbeddedQuery<a class="headerlink" href="#JobDatabaseEmbeddedQuery" title="Permalink to this heading">¶</a></h2>
+<h2>JobDatabaseEmbeddedQuery<a class="headerlink" href="#JobDatabaseEmbeddedQuery" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_Databases.htm#JobDatabaseEmbeddedQuery">AutomationAPI Documentation</a></p>
 <p>Job that runs an embedded query</p>
 <p>Required arguments:</p>
@@ -492,22 +479,22 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobDatabaseEmbeddedQuery</span><span class="p">(</span>
-    <span class="s1">&#39;JobEmbeddedQuerySample&#39;</span><span class="p">,</span>
-    <span class="n">query</span><span class="o">=</span><span class="s1">&#39;SELECT </span><span class="si">%%</span><span class="s1">firstParamName AS VAR1 </span><span class="se">\\</span><span class="s1">n FROM DUMMY </span><span class="se">\\</span><span class="s1">n ORDER BY </span><span class="se">\\</span><span class="s1">t VAR1 DESC&#39;</span><span class="p">,</span>
-    <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPDB&#39;</span><span class="p">,</span>
-    <span class="n">variables</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;firstParamName&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}],</span>
-    <span class="n">autocommit</span><span class="o">=</span><span class="s1">&#39;N&#39;</span><span class="p">,</span>
-    <span class="n">output_execution_log</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
-    <span class="n">output_sql_output</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
-    <span class="n">sql_output_format</span><span class="o">=</span><span class="s1">&#39;XML&#39;</span>
-<span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobDatabaseEmbeddedQuery(
+    &#39;JobEmbeddedQuerySample&#39;,
+    query=&#39;SELECT %%firstParamName AS VAR1 \\n FROM DUMMY \\n ORDER BY \\t VAR1 DESC&#39;,
+    connection_profile=&#39;CPDB&#39;,
+    variables=[{&#39;firstParamName&#39;: &#39;value&#39;}],
+    autocommit=&#39;N&#39;,
+    output_execution_log=&#39;y&#39;,
+    output_sql_output=&#39;y&#39;,
+    sql_output_format=&#39;XML&#39;
+)
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobDatabaseSQLScript">
-<h2>JobDatabaseSQLScript<a class="headerlink" href="#JobDatabaseSQLScript" title="Permalink to this heading">¶</a></h2>
+<h2>JobDatabaseSQLScript<a class="headerlink" href="#JobDatabaseSQLScript" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_Databases.htm#JobDatabaseSQLScript">AutomationAPI Documentation</a></p>
 <p>Job that runs a SQL script from a file system</p>
 <p>Required arguments:</p>
@@ -523,16 +510,16 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobDatabaseSQLScript</span><span class="p">(</span><span class="s1">&#39;JobDatabaseSQLScriptSample&#39;</span><span class="p">,</span>
-                           <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPDB&#39;</span><span class="p">,</span>
-                           <span class="n">sql_script</span><span class="o">=</span><span class="s1">&#39;/home/script.sql&#39;</span><span class="p">,</span>
-                           <span class="n">parameters</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;param1&#39;</span><span class="p">:</span> <span class="s1">&#39;val1&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;param2&#39;</span><span class="p">:</span> <span class="s1">&#39;val2&#39;</span><span class="p">}])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobDatabaseSQLScript(&#39;JobDatabaseSQLScriptSample&#39;,
+                           connection_profile=&#39;CPDB&#39;,
+                           sql_script=&#39;/home/script.sql&#39;,
+                           parameters=[{&#39;param1&#39;: &#39;val1&#39;}, {&#39;param2&#39;: &#39;val2&#39;}])
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobDatabaseStoredProcedure">
-<h2>JobDatabaseStoredProcedure<a class="headerlink" href="#JobDatabaseStoredProcedure" title="Permalink to this heading">¶</a></h2>
+<h2>JobDatabaseStoredProcedure<a class="headerlink" href="#JobDatabaseStoredProcedure" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_Databases.htm#JobDatabaseStoredProcedure">AutomationAPI Documentation</a></p>
 <p>Job that runs a program that is stored on the database</p>
 <p>Required Arguments:</p>
@@ -551,17 +538,17 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobDatabaseStoredProcedure</span><span class="p">(</span><span class="s1">&#39;JobDatabaseStoredProcedureSample&#39;</span><span class="p">,</span>
-                                 <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPDB&#39;</span><span class="p">,</span>
-                                 <span class="n">stored_procedure</span><span class="o">=</span><span class="s1">&#39;procedure&#39;</span><span class="p">,</span>
-                                 <span class="n">schema</span><span class="o">=</span><span class="s1">&#39;public&#39;</span><span class="p">,</span>
-                                 <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;RV&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobDatabaseStoredProcedure(&#39;JobDatabaseStoredProcedureSample&#39;,
+                                 connection_profile=&#39;CPDB&#39;,
+                                 stored_procedure=&#39;procedure&#39;,
+                                 schema=&#39;public&#39;,
+                                 return_value=&#39;RV&#39;)
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobDatabaseMSSQLAgentJob">
-<h2>JobDatabaseMSSQLAgentJob<a class="headerlink" href="#JobDatabaseMSSQLAgentJob" title="Permalink to this heading">¶</a></h2>
+<h2>JobDatabaseMSSQLAgentJob<a class="headerlink" href="#JobDatabaseMSSQLAgentJob" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_Databases.htm#JobDatabaseMSSQLAgentJob">AutomationAPI Documentation</a></p>
 <p>Job that manages a SQL server defined job</p>
 <p><em>Note</em> : Only available with Automation API &gt;= 9.0.19.210</p>
@@ -578,16 +565,16 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobDatabaseMSSQLAgentJob</span><span class="p">(</span><span class="s1">&#39;JobDatabaseMSSQLAgentJobSample&#39;</span><span class="p">,</span>
-                               <span class="n">job_name</span><span class="o">=</span><span class="s1">&#39;get_version&#39;</span><span class="p">,</span>
-                               <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPDB&#39;</span><span class="p">,</span>
-                               <span class="n">category</span><span class="o">=</span><span class="s1">&#39;Data Collector&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobDatabaseMSSQLAgentJob(&#39;JobDatabaseMSSQLAgentJobSample&#39;,
+                               job_name=&#39;get_version&#39;,
+                               connection_profile=&#39;CPDB&#39;,
+                               category=&#39;Data Collector&#39;)
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobDatabaseMSSQL_SSIS">
-<h2>JobDatabaseMSSQL_SSIS<a class="headerlink" href="#JobDatabaseMSSQL_SSIS" title="Permalink to this heading">¶</a></h2>
+<h2>JobDatabaseMSSQL_SSIS<a class="headerlink" href="#JobDatabaseMSSQL_SSIS" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_Databases.htm#JobDatabaseMSSQLSSIS">AutomationAPI Documentation</a></p>
 <p>Job that executes of SQL Server Integration Services (SSIS) packages:</p>
 <p><em>Note</em> : Only available with Automation API &gt;= 9.0.19.220</p>
@@ -607,28 +594,28 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobDatabaseMSSQL_SSIS</span><span class="p">(</span><span class="s1">&#39;JobDatabaseMSSQL_SSISSample&#39;</span><span class="p">,</span>
-                           <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPDB&#39;</span><span class="p">,</span>
-                           <span class="n">package_source</span><span class="o">=</span><span class="n">JobDatabaseMSSQL_SSIS</span><span class="o">.</span><span class="n">PackageSource</span><span class="o">.</span><span class="n">SSIS_Catalog</span><span class="p">,</span>
-                           <span class="n">package_name</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">Data Collector</span><span class="se">\\</span><span class="s1">SqlTraceCollect&#39;</span><span class="p">,</span>
-                           <span class="n">catalog_env</span><span class="o">=</span><span class="s1">&#39;ENV_NAME&#39;</span><span class="p">,</span>
-                           <span class="n">config_files</span><span class="o">=</span><span class="p">[</span>
-                               <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">dbauser</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">test.dtsConfig&#39;</span><span class="p">,</span>
-                               <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">dbauser</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">test2.dtsConfig&#39;</span>
-                           <span class="p">],</span>
-                           <span class="n">properties</span><span class="o">=</span><span class="p">[{</span>
-                               <span class="s1">&#39;PropertyName&#39;</span><span class="p">:</span> <span class="s1">&#39;PropertyValue&#39;</span>
-                           <span class="p">},</span>
-                               <span class="p">{</span>
-                               <span class="s1">&#39;PropertyName2&#39;</span><span class="p">:</span> <span class="s1">&#39;PropertyValue2&#39;</span>
-                           <span class="p">}]</span>
-                           <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobDatabaseMSSQL_SSIS(&#39;JobDatabaseMSSQL_SSISSample&#39;,
+                           connection_profile=&#39;CPDB&#39;,
+                           package_source=JobDatabaseMSSQL_SSIS.PackageSource.SSIS_Catalog,
+                           package_name=&#39;\\Data Collector\\SqlTraceCollect&#39;,
+                           catalog_env=&#39;ENV_NAME&#39;,
+                           config_files=[
+                               &#39;C:\\Users\\dbauser\\Desktop\\test.dtsConfig&#39;,
+                               &#39;C:\\Users\\dbauser\\Desktop\\test2.dtsConfig&#39;
+                           ],
+                           properties=[{
+                               &#39;PropertyName&#39;: &#39;PropertyValue&#39;
+                           },
+                               {
+                               &#39;PropertyName2&#39;: &#39;PropertyValue2&#39;
+                           }]
+                           )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopSparkPython">
-<h2>JobHadoopSparkPython<a class="headerlink" href="#JobHadoopSparkPython" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopSparkPython<a class="headerlink" href="#JobHadoopSparkPython" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado">AutomationAPI Documentation</a></p>
 <p>Job that runs a Spark Python program</p>
 <p>Required arguments:</p>
@@ -645,9 +632,9 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopSparkPython</span><span class="p">(</span><span class="s1">&#39;JobHadoopSparkPythonSample&#39;</span><span class="p">,</span>
-                           <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                           <span class="n">spark_script</span><span class="o">=</span><span class="s1">&#39;/home/process.py&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopSparkPython(&#39;JobHadoopSparkPythonSample&#39;,
+                           connection_profile=&#39;CP&#39;,
+                           spark_script=&#39;/home/process.py&#39;)
 <br/></pre></div>
 </div>
 </div>
@@ -655,229 +642,229 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopSparkPython</span><span class="p">(</span><span class="s1">&#39;JobHadoopSparkPythonSample&#39;</span><span class="p">,</span>
-                           <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                           <span class="n">spark_script</span><span class="o">=</span><span class="s1">&#39;/home/process.py&#39;</span><span class="p">,</span>
-                           <span class="n">arguments</span><span class="o">=</span><span class="p">[</span>
-                               <span class="s1">&#39;1000&#39;</span><span class="p">,</span>
-                               <span class="s1">&#39;120&#39;</span>
-                           <span class="p">],</span>
-                           <span class="n">spark_options</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;--master&#39;</span><span class="p">:</span> <span class="s1">&#39;yarn&#39;</span><span class="p">},</span>
-                                          <span class="p">{</span><span class="s1">&#39;--num&#39;</span><span class="p">:</span> <span class="s1">&#39;-executors 50&#39;</span><span class="p">}]</span>
-                           <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopSparkPython(&#39;JobHadoopSparkPythonSample&#39;,
+                           connection_profile=&#39;CP&#39;,
+                           spark_script=&#39;/home/process.py&#39;,
+                           arguments=[
+                               &#39;1000&#39;,
+                               &#39;120&#39;
+                           ],
+                           spark_options=[{&#39;--master&#39;: &#39;yarn&#39;},
+                                          {&#39;--num&#39;: &#39;-executors 50&#39;}]
+                           )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopSparkScalaJava">
-<h2>JobHadoopSparkScalaJava<a class="headerlink" href="#JobHadoopSparkScalaJava" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopSparkScalaJava<a class="headerlink" href="#JobHadoopSparkScalaJava" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado2">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopSparkScalaJava</span><span class="p">(</span><span class="s1">&#39;JobHadoopSparkScalaJavaSample&#39;</span><span class="p">,</span>
-                              <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                              <span class="n">program_jar</span><span class="o">=</span><span class="s1">&#39;/home/user/ScalaProgram.jar&#39;</span><span class="p">,</span>
-                              <span class="n">main_class</span><span class="o">=</span><span class="s1">&#39;com.mycomp.sparkScalaProgramName.mainClassName&#39;</span>
-                              <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopSparkScalaJava(&#39;JobHadoopSparkScalaJavaSample&#39;,
+                              connection_profile=&#39;CP&#39;,
+                              program_jar=&#39;/home/user/ScalaProgram.jar&#39;,
+                              main_class=&#39;com.mycomp.sparkScalaProgramName.mainClassName&#39;
+                              )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopPig">
-<h2>JobHadoopPig<a class="headerlink" href="#JobHadoopPig" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopPig<a class="headerlink" href="#JobHadoopPig" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado3">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopPig</span><span class="p">(</span><span class="s1">&#39;JobHadoopPigSample&#39;</span><span class="p">,</span>
-                   <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                   <span class="n">pig_script</span><span class="o">=</span><span class="s1">&#39;/home/user/script.pg&#39;</span>
-                   <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopPig(&#39;JobHadoopPigSample&#39;,
+                   connection_profile=&#39;CP&#39;,
+                   pig_script=&#39;/home/user/script.pg&#39;
+                   )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopSqoop">
-<h2>JobHadoopSqoop<a class="headerlink" href="#JobHadoopSqoop" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopSqoop<a class="headerlink" href="#JobHadoopSqoop" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado4">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopSqoop</span><span class="p">(</span><span class="s1">&#39;JobHadoopSqoopSample&#39;</span><span class="p">,</span>
-                     <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                     <span class="n">sqoop_command</span><span class="o">=</span><span class="s1">&#39;import --table foo --target-dir /dest_dir&#39;</span><span class="p">,</span>
-                     <span class="n">sqoop_options</span><span class="o">=</span><span class="p">[</span>
-                         <span class="p">{</span><span class="s2">&quot;--warehouse-dir&quot;</span><span class="p">:</span> <span class="s2">&quot;/shared&quot;</span><span class="p">},</span>
-                         <span class="p">{</span><span class="s2">&quot;--default-character-set&quot;</span><span class="p">:</span> <span class="s2">&quot;latin1&quot;</span><span class="p">}</span>
-                     <span class="p">]</span>
-                     <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopSqoop(&#39;JobHadoopSqoopSample&#39;,
+                     connection_profile=&#39;CP&#39;,
+                     sqoop_command=&#39;import --table foo --target-dir /dest_dir&#39;,
+                     sqoop_options=[
+                         {&quot;--warehouse-dir&quot;: &quot;/shared&quot;},
+                         {&quot;--default-character-set&quot;: &quot;latin1&quot;}
+                     ]
+                     )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopHive">
-<h2>JobHadoopHive<a class="headerlink" href="#JobHadoopHive" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopHive<a class="headerlink" href="#JobHadoopHive" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado5">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopHive</span><span class="p">(</span><span class="s1">&#39;JobHadoopHiveSample&#39;</span><span class="p">,</span>
-                    <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                    <span class="n">hive_script</span><span class="o">=</span><span class="s1">&#39;/home/user1/hive.script&#39;</span><span class="p">,</span>
-                    <span class="n">parameters</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;amount&#39;</span><span class="p">:</span> <span class="s1">&#39;1000&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;topic&#39;</span><span class="p">:</span> <span class="s1">&#39;food&#39;</span><span class="p">}],</span>
-                    <span class="n">hive_options</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;hive.root.logger&#39;</span><span class="p">:</span> <span class="s1">&#39;INFO, console&#39;</span><span class="p">})</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopHive(&#39;JobHadoopHiveSample&#39;,
+                    connection_profile=&#39;CP&#39;,
+                    hive_script=&#39;/home/user1/hive.script&#39;,
+                    parameters=[{&#39;amount&#39;: &#39;1000&#39;}, {&#39;topic&#39;: &#39;food&#39;}],
+                    hive_options={&#39;hive.root.logger&#39;: &#39;INFO, console&#39;})
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopDistCp">
-<h2>JobHadoopDistCp<a class="headerlink" href="#JobHadoopDistCp" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopDistCp<a class="headerlink" href="#JobHadoopDistCp" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado6">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopDistCp</span><span class="p">(</span><span class="s1">&#39;JobHadoopDistCpSample&#39;</span><span class="p">,</span>
-                      <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                      <span class="n">target_path</span><span class="o">=</span><span class="s1">&#39;hdfs://nns2:8020/foo/bar&#39;</span><span class="p">,</span>
-                      <span class="n">source_paths</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;hdfs://nns1:8020/foo/a&#39;</span><span class="p">],</span>
-                      <span class="n">distcp_options</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;-m&#39;</span><span class="p">:</span> <span class="s1">&#39;3&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;-filelimit&#39;</span><span class="p">:</span> <span class="s1">&#39;100&#39;</span><span class="p">}]</span>
-                      <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopDistCp(&#39;JobHadoopDistCpSample&#39;,
+                      connection_profile=&#39;CP&#39;,
+                      target_path=&#39;hdfs://nns2:8020/foo/bar&#39;,
+                      source_paths=[&#39;hdfs://nns1:8020/foo/a&#39;],
+                      distcp_options=[{&#39;-m&#39;: &#39;3&#39;}, {&#39;-filelimit&#39;: &#39;100&#39;}]
+                      )
 </pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopHDFSCommands">
-<h2>JobHadoopHDFSCommands<a class="headerlink" href="#JobHadoopHDFSCommands" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopHDFSCommands<a class="headerlink" href="#JobHadoopHDFSCommands" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado7">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopHDFSCommands</span><span class="p">(</span><span class="s1">&#39;JobHadoopHDFSCommandsSample&#39;</span><span class="p">,</span>
-                            <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                            <span class="n">commands</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;get&quot;</span><span class="p">:</span> <span class="s2">&quot;hdfs://nn.example.com/user/hadoop/file localfile&quot;</span><span class="p">},</span>
-                                      <span class="p">{</span><span class="s2">&quot;rm&quot;</span><span class="p">:</span> <span class="s2">&quot;hdfs://nn.example.com/file /user/hadoop/emptydir&quot;</span><span class="p">}]</span>
-                            <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopHDFSCommands(&#39;JobHadoopHDFSCommandsSample&#39;,
+                            connection_profile=&#39;CP&#39;,
+                            commands=[{&quot;get&quot;: &quot;hdfs://nn.example.com/user/hadoop/file localfile&quot;},
+                                      {&quot;rm&quot;: &quot;hdfs://nn.example.com/file /user/hadoop/emptydir&quot;}]
+                            )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopHDFSFileWatcher">
-<h2>JobHadoopHDFSFileWatcher<a class="headerlink" href="#JobHadoopHDFSFileWatcher" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopHDFSFileWatcher<a class="headerlink" href="#JobHadoopHDFSFileWatcher" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado13">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopHDFSFileWatcher</span><span class="p">(</span><span class="s1">&#39;JobHadoopHDFSFileWatcherSample&#39;</span><span class="p">,</span>
-                               <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                               <span class="n">hdfs_file_path</span><span class="o">=</span><span class="s1">&#39;/input/filename&#39;</span><span class="p">,</span>
-                               <span class="n">min_detected_size</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
-                               <span class="n">max_wait_time</span><span class="o">=</span><span class="s1">&#39;2&#39;</span>
-                               <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopHDFSFileWatcher(&#39;JobHadoopHDFSFileWatcherSample&#39;,
+                               connection_profile=&#39;CP&#39;,
+                               hdfs_file_path=&#39;/input/filename&#39;,
+                               min_detected_size=&#39;1&#39;,
+                               max_wait_time=&#39;2&#39;
+                               )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopOozie">
-<h2>JobHadoopOozie<a class="headerlink" href="#JobHadoopOozie" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopOozie<a class="headerlink" href="#JobHadoopOozie" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado8">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopOozie</span><span class="p">(</span><span class="s1">&#39;JobHadoopOozieSample&#39;</span><span class="p">,</span>
-                     <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                     <span class="n">job_properties_file</span><span class="o">=</span><span class="s1">&#39;/home/user/job.properties&#39;</span><span class="p">,</span>
-                     <span class="n">oozie_options</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;inputDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/usr/tucu/inputdir&quot;</span><span class="p">},</span>
-                                    <span class="p">{</span><span class="s2">&quot;outputDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/usr/tucu/outputdir&quot;</span><span class="p">}]</span>
-                     <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopOozie(&#39;JobHadoopOozieSample&#39;,
+                     connection_profile=&#39;CP&#39;,
+                     job_properties_file=&#39;/home/user/job.properties&#39;,
+                     oozie_options=[{&quot;inputDir&quot;: &quot;/usr/tucu/inputdir&quot;},
+                                    {&quot;outputDir&quot;: &quot;/usr/tucu/outputdir&quot;}]
+                     )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopMapReduce">
-<h2>JobHadoopMapReduce<a class="headerlink" href="#JobHadoopMapReduce" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopMapReduce<a class="headerlink" href="#JobHadoopMapReduce" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado9">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopMapReduce</span><span class="p">(</span><span class="s1">&#39;JobHadoopMapReduceSample&#39;</span><span class="p">,</span>
-                         <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                         <span class="n">program_jar</span><span class="o">=</span><span class="s1">&#39;/home/user1/hadoop-jobs/hadoop-mapreduce-examples.jar&#39;</span><span class="p">,</span>
-                         <span class="n">main_class</span><span class="o">=</span><span class="s1">&#39;com.mycomp.mainClassName&#39;</span><span class="p">,</span>
-                         <span class="n">arguments</span><span class="o">=</span><span class="p">[</span>
-                             <span class="s1">&#39;arg1&#39;</span><span class="p">,</span>
-                             <span class="s1">&#39;arg2&#39;</span>
-                         <span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopMapReduce(&#39;JobHadoopMapReduceSample&#39;,
+                         connection_profile=&#39;CP&#39;,
+                         program_jar=&#39;/home/user1/hadoop-jobs/hadoop-mapreduce-examples.jar&#39;,
+                         main_class=&#39;com.mycomp.mainClassName&#39;,
+                         arguments=[
+                             &#39;arg1&#39;,
+                             &#39;arg2&#39;
+                         ])
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopMapredStreaming">
-<h2>JobHadoopMapredStreaming<a class="headerlink" href="#JobHadoopMapredStreaming" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopMapredStreaming<a class="headerlink" href="#JobHadoopMapredStreaming" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado10">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopMapredStreaming</span><span class="p">(</span><span class="s1">&#39;JobHadoopMapredStreamingSample&#39;</span><span class="p">,</span>
-                               <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                               <span class="n">input_path</span><span class="o">=</span><span class="s1">&#39;/user/input/&#39;</span><span class="p">,</span>
-                               <span class="n">output_path</span><span class="o">=</span><span class="s1">&#39;/tmp/output&#39;</span><span class="p">,</span>
-                               <span class="n">mapper_command</span><span class="o">=</span><span class="s1">&#39;mapper.py&#39;</span><span class="p">,</span>
-                               <span class="n">reducer_command</span><span class="o">=</span><span class="s1">&#39;reducer.py&#39;</span><span class="p">,</span>
-                               <span class="n">general_options</span><span class="o">=</span><span class="p">[</span>
-                                   <span class="p">{</span><span class="s2">&quot;-D&quot;</span><span class="p">:</span> <span class="s2">&quot;fs.permissions.umask-mode=000&quot;</span><span class="p">},</span>
-                                   <span class="p">{</span><span class="s2">&quot;-files&quot;</span><span class="p">:</span> <span class="s2">&quot;/home/user/hadoop-streaming/mapper.py,/home/user/hadoop-streaming/reducer.py&quot;</span><span class="p">}</span>
-                               <span class="p">]</span>
-                               <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopMapredStreaming(&#39;JobHadoopMapredStreamingSample&#39;,
+                               connection_profile=&#39;CP&#39;,
+                               input_path=&#39;/user/input/&#39;,
+                               output_path=&#39;/tmp/output&#39;,
+                               mapper_command=&#39;mapper.py&#39;,
+                               reducer_command=&#39;reducer.py&#39;,
+                               general_options=[
+                                   {&quot;-D&quot;: &quot;fs.permissions.umask-mode=000&quot;},
+                                   {&quot;-files&quot;: &quot;/home/user/hadoop-streaming/mapper.py,/home/user/hadoop-streaming/reducer.py&quot;}
+                               ]
+                               )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopTajoInputFile">
-<h2>JobHadoopTajoInputFile<a class="headerlink" href="#JobHadoopTajoInputFile" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopTajoInputFile<a class="headerlink" href="#JobHadoopTajoInputFile" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado11">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopTajoInputFile</span><span class="p">(</span><span class="s1">&#39;JobHadoopTajoInputFileSample&#39;</span><span class="p">,</span>
-                             <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                             <span class="n">full_file_path</span><span class="o">=</span><span class="s1">&#39;/home/user/tajo_command.sh&#39;</span><span class="p">,</span>
-                             <span class="n">tajo_options</span><span class="o">=</span><span class="p">[</span>
-                                 <span class="p">{</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;1000&quot;</span><span class="p">},</span>
-                                 <span class="p">{</span><span class="s2">&quot;volume&quot;</span><span class="p">:</span> <span class="s2">&quot;120&quot;</span><span class="p">}</span>
-                             <span class="p">]</span>
-                             <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopTajoInputFile(&#39;JobHadoopTajoInputFileSample&#39;,
+                             connection_profile=&#39;CP&#39;,
+                             full_file_path=&#39;/home/user/tajo_command.sh&#39;,
+                             tajo_options=[
+                                 {&quot;amount&quot;: &quot;1000&quot;},
+                                 {&quot;volume&quot;: &quot;120&quot;}
+                             ]
+                             )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobHadoopTajoQuery">
-<h2>JobHadoopTajoQuery<a class="headerlink" href="#JobHadoopTajoQuery" title="Permalink to this heading">¶</a></h2>
+<h2>JobHadoopTajoQuery<a class="headerlink" href="#JobHadoopTajoQuery" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataProcessing.htm#Job:Hado12">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobHadoopTajoQuery</span><span class="p">(</span><span class="s1">&#39;JobHadoopTajoQuerySample&#39;</span><span class="p">,</span>
-                         <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span>
-                         <span class="n">open_query</span><span class="o">=</span><span class="s1">&#39;SELECT </span><span class="si">%%</span><span class="s1">firstParamName AS VAR1 </span><span class="se">\\</span><span class="s1">n FROM DUMMY </span><span class="se">\\</span><span class="s1">n ORDER BY </span><span class="se">\\</span><span class="s1">t VAR1 DESC&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobHadoopTajoQuery(&#39;JobHadoopTajoQuerySample&#39;,
+                         connection_profile=&#39;CP&#39;,
+                         open_query=&#39;SELECT %%firstParamName AS VAR1 \\n FROM DUMMY \\n ORDER BY \\t VAR1 DESC&#39;)
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobPeopleSoft">
-<h2>JobPeopleSoft<a class="headerlink" href="#JobPeopleSoft" title="Permalink to this heading">¶</a></h2>
+<h2>JobPeopleSoft<a class="headerlink" href="#JobPeopleSoft" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_ERP.htm#JobPeopleSoft">AutomationAPI Documentation</a></p>
 <p>Job that manages PeopleSoft jobs and processes</p>
 <p>Required arguments:</p>
@@ -897,21 +884,21 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobPeopleSoft</span><span class="p">(</span><span class="s1">&#39;JobPeopleSoftSample&#39;</span><span class="p">,</span>
-                    <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP_PS&#39;</span><span class="p">,</span>
-                    <span class="n">user</span><span class="o">=</span><span class="s1">&#39;PS_User&#39;</span><span class="p">,</span>
-                    <span class="n">control_id</span><span class="o">=</span><span class="s1">&#39;controlid&#39;</span><span class="p">,</span>
-                    <span class="n">server_name</span><span class="o">=</span><span class="s1">&#39;server&#39;</span><span class="p">,</span>
-                    <span class="n">process_type</span><span class="o">=</span><span class="s1">&#39;ptype&#39;</span><span class="p">,</span>
-                    <span class="n">process_name</span><span class="o">=</span><span class="s1">&#39;pname&#39;</span><span class="p">,</span>
-                    <span class="n">append_to_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                    <span class="n">bind_variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;val1&#39;</span><span class="p">,</span> <span class="s1">&#39;val2&#39;</span><span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobPeopleSoft(&#39;JobPeopleSoftSample&#39;,
+                    connection_profile=&#39;CP_PS&#39;,
+                    user=&#39;PS_User&#39;,
+                    control_id=&#39;controlid&#39;,
+                    server_name=&#39;server&#39;,
+                    process_type=&#39;ptype&#39;,
+                    process_name=&#39;pname&#39;,
+                    append_to_output=False,
+                    bind_variables=[&#39;val1&#39;, &#39;val2&#39;])
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobInformatica">
-<h2>JobInformatica<a class="headerlink" href="#JobInformatica" title="Permalink to this heading">¶</a></h2>
+<h2>JobInformatica<a class="headerlink" href="#JobInformatica" title="Link to this heading">¶</a></h2>
 <p>[AutomationAPI Documentation]((<a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataIntegration.htm#Job:Informatica">https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_DataIntegration.htm#Job:Informatica</a>)</p>
 <p>Job that manages Informatica workflows</p>
 <p>Required arguments:</p>
@@ -933,22 +920,22 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobInformatica</span><span class="p">(</span><span class="s1">&#39;JobInformaticaSample&#39;</span><span class="p">,</span>
-               <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP_INF&#39;</span><span class="p">,</span>
-               <span class="n">repository_folder</span><span class="o">=</span><span class="s1">&#39;POC&#39;</span><span class="p">,</span>
-               <span class="n">workflow</span><span class="o">=</span><span class="s1">&#39;WF_TEST&#39;</span><span class="p">,</span>
-               <span class="n">instance_name</span><span class="o">=</span><span class="s1">&#39;MyInstance&#39;</span><span class="p">,</span>
-               <span class="n">os_profile</span><span class="o">=</span><span class="s1">&#39;OSPROFILE&#39;</span><span class="p">,</span>
-               <span class="n">workflow_execution_mode</span><span class="o">=</span><span class="n">JobInformatica</span><span class="o">.</span><span class="n">WorkflowExecutionMode</span><span class="o">.</span><span class="n">RunSingleTask</span><span class="p">,</span>
-               <span class="n">workflow_restart_mode</span><span class="o">=</span><span class="n">JobInformatica</span><span class="o">.</span><span class="n">WorkflowRestartMode</span><span class="o">.</span><span class="n">ForceRestartFromSpecificTask</span><span class="p">,</span>
-               <span class="n">restart_from_task</span><span class="o">=</span><span class="s1">&#39;s_MapTest_Success&#39;</span><span class="p">,</span>
-               <span class="n">workflow_parameters_file</span><span class="o">=</span><span class="s1">&#39;/opt/wf1.prop&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobInformatica(&#39;JobInformaticaSample&#39;,
+               connection_profile=&#39;CP_INF&#39;,
+               repository_folder=&#39;POC&#39;,
+               workflow=&#39;WF_TEST&#39;,
+               instance_name=&#39;MyInstance&#39;,
+               os_profile=&#39;OSPROFILE&#39;,
+               workflow_execution_mode=JobInformatica.WorkflowExecutionMode.RunSingleTask,
+               workflow_restart_mode=JobInformatica.WorkflowRestartMode.ForceRestartFromSpecificTask,
+               restart_from_task=&#39;s_MapTest_Success&#39;,
+               workflow_parameters_file=&#39;/opt/wf1.prop&#39;)
 </pre></div>
 </div>
 </div>
 </section>
 <section id="JobAWSLambda">
-<h2>JobAWSLambda<a class="headerlink" href="#JobAWSLambda" title="Permalink to this heading">¶</a></h2>
+<h2>JobAWSLambda<a class="headerlink" href="#JobAWSLambda" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_CloudCompute.htm#Job:AWS2">AutomationAPI Documentation</a></p>
 <p>Job that executes an AWS Lambda service on an AWS server</p>
 <p>Required arguments:</p>
@@ -967,19 +954,19 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAWSLambda</span><span class="p">(</span><span class="s1">&#39;JobAWSLambdaSample&#39;</span><span class="p">,</span>
-                   <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPAWS&#39;</span><span class="p">,</span>
-                   <span class="n">function_name</span><span class="o">=</span><span class="s1">&#39;fname&#39;</span><span class="p">,</span>
-                   <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
-                   <span class="n">payload</span><span class="o">=</span><span class="s1">&#39;{&quot;myVar&quot;:&quot;value1&quot;, &quot;othervar&quot;:&quot;value2&quot;}&#39;</span><span class="p">,</span>
-                   <span class="n">append_log</span><span class="o">=</span><span class="kc">True</span>
-                   <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobAWSLambda(&#39;JobAWSLambdaSample&#39;,
+                   connection_profile=&#39;CPAWS&#39;,
+                   function_name=&#39;fname&#39;,
+                   version=&#39;1&#39;,
+                   payload=&#39;{&quot;myVar&quot;:&quot;value1&quot;, &quot;othervar&quot;:&quot;value2&quot;}&#39;,
+                   append_log=True
+                   )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobAWSStepFunction">
-<h2>JobAWSStepFunction<a class="headerlink" href="#JobAWSStepFunction" title="Permalink to this heading">¶</a></h2>
+<h2>JobAWSStepFunction<a class="headerlink" href="#JobAWSStepFunction" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_AppWorkflows.htm#Job:AWS">AutomationAPI Documentation</a></p>
 <p>Job that executes an AWS Step Function service on an AWS server</p>
 <p>Required arguments:</p>
@@ -997,18 +984,18 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAWSStepFunction</span><span class="p">(</span><span class="s1">&#39;JobAWSStepFunctionSample&#39;</span><span class="p">,</span>
-                         <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPAWS&#39;</span><span class="p">,</span>
-                         <span class="n">state_machine</span><span class="o">=</span><span class="s1">&#39;smach1&#39;</span><span class="p">,</span>
-                         <span class="n">execution_name</span><span class="o">=</span><span class="s1">&#39;exec1&#39;</span><span class="p">,</span>
-                         <span class="nb">input</span><span class="o">=</span><span class="s1">&#39;{&quot;var&quot;:&quot;value&quot;, &quot;othervar&quot;:&quot;val2&quot;}&#39;</span><span class="p">,</span>
-                         <span class="n">append_log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobAWSStepFunction(&#39;JobAWSStepFunctionSample&#39;,
+                         connection_profile=&#39;CPAWS&#39;,
+                         state_machine=&#39;smach1&#39;,
+                         execution_name=&#39;exec1&#39;,
+                         input=&#39;{&quot;var&quot;:&quot;value&quot;, &quot;othervar&quot;:&quot;val2&quot;}&#39;,
+                         append_log=False)
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobAWSBatch">
-<h2>JobAWSBatch<a class="headerlink" href="#JobAWSBatch" title="Permalink to this heading">¶</a></h2>
+<h2>JobAWSBatch<a class="headerlink" href="#JobAWSBatch" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_CloudCompute.htm#Job:AWS">AutomationAPI Documentation</a></p>
 <p>Job that executes an AWS Batch service on an AWS server</p>
 <p>Required arguments:</p>
@@ -1035,29 +1022,29 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAWSBatch</span><span class="p">(</span><span class="s1">&#39;JobAWSBatchSample&#39;</span><span class="p">,</span>
-                  <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPAWS&#39;</span><span class="p">,</span>
-                  <span class="n">job_name</span><span class="o">=</span><span class="s1">&#39;batchjob&#39;</span><span class="p">,</span>
-                  <span class="n">job_definition</span><span class="o">=</span><span class="s1">&#39;jobdef&#39;</span><span class="p">,</span>
-                  <span class="n">job_definition_revision</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span>
-                  <span class="n">job_queue</span><span class="o">=</span><span class="s1">&#39;queue1&#39;</span><span class="p">,</span>
-                  <span class="n">aws_job_type</span><span class="o">=</span><span class="n">JobAWSBatch</span><span class="o">.</span><span class="n">AwsJobType</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
-                  <span class="n">array_size</span><span class="o">=</span><span class="s1">&#39;100&#39;</span><span class="p">,</span>
-                  <span class="n">depends_on</span><span class="o">=</span><span class="n">JobAWSBatch</span><span class="o">.</span><span class="n">DependsOn</span><span class="p">(</span>
-                      <span class="n">dependency_type</span><span class="o">=</span><span class="n">JobAWSBatch</span><span class="o">.</span><span class="n">DependsOn</span><span class="o">.</span><span class="n">DependencyType</span><span class="o">.</span><span class="n">Standard</span><span class="p">,</span>
-                      <span class="n">job_depends_on</span><span class="o">=</span><span class="s1">&#39;job5&#39;</span><span class="p">),</span>
-                  <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span>
-                  <span class="n">memory</span><span class="o">=</span><span class="s1">&#39;10&#39;</span><span class="p">,</span>
-                  <span class="n">v_cpus</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span>
-                  <span class="n">job_attempts</span><span class="o">=</span><span class="s1">&#39;5&#39;</span><span class="p">,</span>
-                  <span class="n">execution_timeout</span><span class="o">=</span><span class="s1">&#39;60&#39;</span><span class="p">,</span>
-                  <span class="n">append_log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobAWSBatch(&#39;JobAWSBatchSample&#39;,
+                  connection_profile=&#39;CPAWS&#39;,
+                  job_name=&#39;batchjob&#39;,
+                  job_definition=&#39;jobdef&#39;,
+                  job_definition_revision=&#39;3&#39;,
+                  job_queue=&#39;queue1&#39;,
+                  aws_job_type=JobAWSBatch.AwsJobType.Array,
+                  array_size=&#39;100&#39;,
+                  depends_on=JobAWSBatch.DependsOn(
+                      dependency_type=JobAWSBatch.DependsOn.DependencyType.Standard,
+                      job_depends_on=&#39;job5&#39;),
+                  command=&#39;ls&#39;,
+                  memory=&#39;10&#39;,
+                  v_cpus=&#39;2&#39;,
+                  job_attempts=&#39;5&#39;,
+                  execution_timeout=&#39;60&#39;,
+                  append_log=False)
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobAzureFunction">
-<h2>JobAzureFunction<a class="headerlink" href="#JobAzureFunction" title="Permalink to this heading">¶</a></h2>
+<h2>JobAzureFunction<a class="headerlink" href="#JobAzureFunction" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_CloudCompute.htm#Job:Azur4">AutomationAPI Documentation</a></p>
 <p>Job that executes an Azure function service.</p>
 <p>Required arguments:</p>
@@ -1075,21 +1062,21 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAzureFunction</span><span class="p">(</span><span class="s1">&#39;JobAzureFunctionSample&#39;</span><span class="p">,</span>
-                       <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPAZURE&#39;</span><span class="p">,</span>
-                       <span class="n">function</span><span class="o">=</span><span class="s1">&#39;AzureFunction&#39;</span><span class="p">,</span>
-                       <span class="n">function_app</span><span class="o">=</span><span class="s1">&#39;funcapp&#39;</span><span class="p">,</span>
-                       <span class="n">append_log</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                       <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
-                           <span class="p">{</span><span class="s2">&quot;firstParamName&quot;</span><span class="p">:</span> <span class="s2">&quot;firstParamValue&quot;</span><span class="p">},</span>
-                           <span class="p">{</span><span class="s2">&quot;secondParamName&quot;</span><span class="p">:</span> <span class="s2">&quot;secondParamValue&quot;</span><span class="p">}</span>
-                       <span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobAzureFunction(&#39;JobAzureFunctionSample&#39;,
+                       connection_profile=&#39;CPAZURE&#39;,
+                       function=&#39;AzureFunction&#39;,
+                       function_app=&#39;funcapp&#39;,
+                       append_log=False,
+                       parameters=[
+                           {&quot;firstParamName&quot;: &quot;firstParamValue&quot;},
+                           {&quot;secondParamName&quot;: &quot;secondParamValue&quot;}
+                       ])
 </pre></div>
 </div>
 </div>
 </section>
 <section id="JobAzureLogicApps">
-<h2>JobAzureLogicApps<a class="headerlink" href="#JobAzureLogicApps" title="Permalink to this heading">¶</a></h2>
+<h2>JobAzureLogicApps<a class="headerlink" href="#JobAzureLogicApps" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_AppWorkflows.htm#Job:Azur">AutomationAPI Documentation</a></p>
 <p>Job that executes an Azure Logic App service</p>
 <p>Required arguments:</p>
@@ -1106,17 +1093,17 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAzureLogicApps</span><span class="p">(</span><span class="s1">&#39;JobAzureLogicAppsSample&#39;</span><span class="p">,</span>
-                        <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPAZURE&#39;</span><span class="p">,</span>
-                        <span class="n">workflow</span><span class="o">=</span><span class="s1">&#39;workflow_app&#39;</span><span class="p">,</span>
-                        <span class="n">parameters</span><span class="o">=</span><span class="s1">&#39;{&quot;name&quot;:&quot;value&quot;}&#39;</span>
-                        <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobAzureLogicApps(&#39;JobAzureLogicAppsSample&#39;,
+                        connection_profile=&#39;CPAZURE&#39;,
+                        workflow=&#39;workflow_app&#39;,
+                        parameters=&#39;{&quot;name&quot;:&quot;value&quot;}&#39;
+                        )
 </pre></div>
 </div>
 </div>
 </section>
 <section id="JobAzureBatchAccount">
-<h2>JobAzureBatchAccount<a class="headerlink" href="#JobAzureBatchAccount" title="Permalink to this heading">¶</a></h2>
+<h2>JobAzureBatchAccount<a class="headerlink" href="#JobAzureBatchAccount" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_CloudCompute.htm#Job:Azur">AutomationAPI Documentation</a></p>
 <p>Job that executes an Azure Batch Accounts service</p>
 <p>Required arguments:</p>
@@ -1136,24 +1123,24 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobAzureBatchAccount</span><span class="p">(</span><span class="s1">&#39;JobAzureBatchAccountSample&#39;</span><span class="p">,</span>
-                           <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CPAZURE&#39;</span><span class="p">,</span>
-                           <span class="n">job_id</span><span class="o">=</span><span class="s1">&#39;azurejob&#39;</span><span class="p">,</span>
-                           <span class="n">command_line</span><span class="o">=</span><span class="s1">&#39;echo &quot;Hello&quot;&#39;</span><span class="p">,</span>
-                           <span class="n">append_log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                           <span class="n">wallclock</span><span class="o">=</span><span class="n">JobAzureBatchAccount</span><span class="o">.</span><span class="n">Wallclock</span><span class="p">(</span>
-                               <span class="n">time</span><span class="o">=</span><span class="s1">&#39;70&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">JobAzureBatchAccount</span><span class="o">.</span><span class="n">Wallclock</span><span class="o">.</span><span class="n">Unit</span><span class="o">.</span><span class="n">Minutes</span><span class="p">),</span>
-                           <span class="n">max_tries</span><span class="o">=</span><span class="n">JobAzureBatchAccount</span><span class="o">.</span><span class="n">MaxTries</span><span class="p">(</span>
-                               <span class="n">count</span><span class="o">=</span><span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="n">option</span><span class="o">=</span><span class="n">JobAzureBatchAccount</span><span class="o">.</span><span class="n">MaxTries</span><span class="o">.</span><span class="n">Option</span><span class="o">.</span><span class="n">Custom</span><span class="p">),</span>
-                           <span class="n">retention</span><span class="o">=</span><span class="n">JobAzureBatchAccount</span><span class="o">.</span><span class="n">Retention</span><span class="p">(</span>
-                               <span class="n">time</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">JobAzureBatchAccount</span><span class="o">.</span><span class="n">Retention</span><span class="o">.</span><span class="n">Unit</span><span class="o">.</span><span class="n">Hours</span><span class="p">)</span>
-                           <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobAzureBatchAccount(&#39;JobAzureBatchAccountSample&#39;,
+                           connection_profile=&#39;CPAZURE&#39;,
+                           job_id=&#39;azurejob&#39;,
+                           command_line=&#39;echo &quot;Hello&quot;&#39;,
+                           append_log=True,
+                           wallclock=JobAzureBatchAccount.Wallclock(
+                               time=&#39;70&#39;, unit=JobAzureBatchAccount.Wallclock.Unit.Minutes),
+                           max_tries=JobAzureBatchAccount.MaxTries(
+                               count=&#39;6&#39;, option=JobAzureBatchAccount.MaxTries.Option.Custom),
+                           retention=JobAzureBatchAccount.Retention(
+                               time=&#39;1&#39;, unit=JobAzureBatchAccount.Retention.Unit.Hours)
+                           )
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobWebServices">
-<h2>JobWebServices<a class="headerlink" href="#JobWebServices" title="Permalink to this heading">¶</a></h2>
+<h2>JobWebServices<a class="headerlink" href="#JobWebServices" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_WebSrvc.htm#JobWebServices">AutomationAPI Documentation</a></p>
 <p><em>Note : Only available with Automation API &gt;= 9.0.20.220</em></p>
 <p>Job that executes standard web services, servlets, or RESTful web services. To manage Web Services jobs, you must have the Control-M for Web Services, Java, and Messaging (Control-M for WJM) plug-in installed in your Control-M environment</p>
@@ -1161,93 +1148,93 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobWebServices</span><span class="p">(</span><span class="s1">&#39;JobWebServicesSample&#39;</span><span class="p">,</span>
-                     <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;CP_WS&#39;</span><span class="p">,</span>
-                     <span class="n">location</span><span class="o">=</span><span class="s1">&#39;http://www.dneonline.com/calculator.asmx?WSDL&#39;</span><span class="p">,</span>
-                     <span class="n">soap_header_file</span><span class="o">=</span><span class="s1">&#39;c:</span><span class="se">\\</span><span class="s1">myheader.txt&#39;</span><span class="p">,</span>
-                     <span class="n">service</span><span class="o">=</span><span class="s1">&#39;Calculator(Port:CalculatorSoap)&#39;</span><span class="p">,</span>
-                     <span class="n">operation</span><span class="o">=</span><span class="s1">&#39;Add&#39;</span><span class="p">,</span>
-                     <span class="n">request_type</span><span class="o">=</span><span class="n">JobWebServices</span><span class="o">.</span><span class="n">RequestType</span><span class="o">.</span><span class="n">Parameter</span><span class="p">,</span>
-                     <span class="n">override_url_endpoint</span><span class="o">=</span><span class="s1">&#39;http://myoverridehost.com&#39;</span><span class="p">,</span>
-                     <span class="n">override_content_type</span><span class="o">=</span><span class="s1">&#39;*/*&#39;</span><span class="p">,</span>
-                     <span class="n">http_connection_timeout</span><span class="o">=</span><span class="s1">&#39;2345&#39;</span><span class="p">,</span>
-                     <span class="n">preemptive_http_authentication</span><span class="o">=</span><span class="s1">&#39;abc@bmc.com&#39;</span><span class="p">,</span>
-                     <span class="n">include_title_in_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                     <span class="n">exclude_job_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                     <span class="n">output_parameters</span><span class="o">=</span><span class="p">[{</span>
-                         <span class="s2">&quot;Element&quot;</span><span class="p">:</span> <span class="s2">&quot;AddResponse.AddResult&quot;</span><span class="p">,</span>
-                         <span class="s2">&quot;HttpCode&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-                         <span class="s2">&quot;Destination&quot;</span><span class="p">:</span> <span class="s2">&quot;testResultAdd&quot;</span><span class="p">,</span>
-                         <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-                     <span class="p">}],</span>
-                     <span class="n">input_parameters</span><span class="o">=</span><span class="p">[</span>
-                         <span class="p">{</span>
-                             <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;intA&quot;</span><span class="p">,</span>
-                             <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="s2">&quot;97&quot;</span><span class="p">,</span>
-                             <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-                         <span class="p">},</span>
-                         <span class="p">{</span>
-                             <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;intB&quot;</span><span class="p">,</span>
-                             <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="s2">&quot;345&quot;</span><span class="p">,</span>
-                             <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
-                         <span class="p">},</span>
-                         <span class="p">{</span>
-                             <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;accept-encoding&quot;</span><span class="p">,</span>
-                             <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="s2">&quot;*/*&quot;</span><span class="p">,</span>
-                             <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;header&quot;</span>
-                         <span class="p">}</span>
-                     <span class="p">],</span>
-                     <span class="n">soap_request</span><span class="o">=</span><span class="p">[</span>
-<span class="w">                         </span><span class="sd">&#39;&#39;&#39;&lt;soapenv:Envelope xmlns:soapenv=http://schemas.xmlsoap.org/soap/envelope/ xmlns:tem=http://tempuri.org/&gt;</span>
-<span class="sd">                                &lt;soapenv:Header/&gt;</span>
-<span class="sd">                                &lt;soapenv:Body&gt;</span>
-<span class="sd">                                    &lt;tem:Add&gt;</span>
-<span class="sd">                                        &lt;tem:intA&gt;98978&lt;/tem:intA&gt;</span>
-<span class="sd">                                        &lt;tem:intB&gt;75675&lt;/tem:intB&gt;</span>
-<span class="sd">                                    &lt;/tem:Add&gt;</span>
-<span class="sd">                                &lt;/soapenv:Body&gt;</span>
-<span class="sd">                            &lt;/soapenv:Envelope&gt;&#39;&#39;&#39;</span>
-                     <span class="p">],</span>
-                     <span class="n">input_file</span><span class="o">=</span><span class="s1">&#39;/home/usr/soap.xml&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobWebServices(&#39;JobWebServicesSample&#39;,
+                     connection_profile=&#39;CP_WS&#39;,
+                     location=&#39;http://www.dneonline.com/calculator.asmx?WSDL&#39;,
+                     soap_header_file=&#39;c:\\myheader.txt&#39;,
+                     service=&#39;Calculator(Port:CalculatorSoap)&#39;,
+                     operation=&#39;Add&#39;,
+                     request_type=JobWebServices.RequestType.Parameter,
+                     override_url_endpoint=&#39;http://myoverridehost.com&#39;,
+                     override_content_type=&#39;*/*&#39;,
+                     http_connection_timeout=&#39;2345&#39;,
+                     preemptive_http_authentication=&#39;abc@bmc.com&#39;,
+                     include_title_in_output=True,
+                     exclude_job_output=False,
+                     output_parameters=[{
+                         &quot;Element&quot;: &quot;AddResponse.AddResult&quot;,
+                         &quot;HttpCode&quot;: &quot;*&quot;,
+                         &quot;Destination&quot;: &quot;testResultAdd&quot;,
+                         &quot;Type&quot;: &quot;string&quot;
+                     }],
+                     input_parameters=[
+                         {
+                             &quot;Name&quot;: &quot;intA&quot;,
+                             &quot;Value&quot;: &quot;97&quot;,
+                             &quot;Type&quot;: &quot;string&quot;
+                         },
+                         {
+                             &quot;Name&quot;: &quot;intB&quot;,
+                             &quot;Value&quot;: &quot;345&quot;,
+                             &quot;Type&quot;: &quot;string&quot;
+                         },
+                         {
+                             &quot;Name&quot;: &quot;accept-encoding&quot;,
+                             &quot;Value&quot;: &quot;*/*&quot;,
+                             &quot;Type&quot;: &quot;header&quot;
+                         }
+                     ],
+                     soap_request=[
+                         &#39;&#39;&#39;&lt;soapenv:Envelope xmlns:soapenv=http://schemas.xmlsoap.org/soap/envelope/ xmlns:tem=http://tempuri.org/&gt;
+                                &lt;soapenv:Header/&gt;
+                                &lt;soapenv:Body&gt;
+                                    &lt;tem:Add&gt;
+                                        &lt;tem:intA&gt;98978&lt;/tem:intA&gt;
+                                        &lt;tem:intB&gt;75675&lt;/tem:intB&gt;
+                                    &lt;/tem:Add&gt;
+                                &lt;/soapenv:Body&gt;
+                            &lt;/soapenv:Envelope&gt;&#39;&#39;&#39;
+                     ],
+                     input_file=&#39;/home/usr/soap.xml&#39;)
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobSLAManagement">
-<h2>JobSLAManagement<a class="headerlink" href="#JobSLAManagement" title="Permalink to this heading">¶</a></h2>
+<h2>JobSLAManagement<a class="headerlink" href="#JobSLAManagement" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_sla.htm">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobSLAManagement</span><span class="p">(</span><span class="s1">&#39;JobSLAManagementSample&#39;</span><span class="p">,</span>
-                       <span class="n">service_name</span><span class="o">=</span><span class="s1">&#39;SLA-service&#39;</span><span class="p">,</span>
-                       <span class="n">service_priority</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
-                       <span class="n">job_runs_deviations_tolerance</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
-                       <span class="n">complete_in</span><span class="o">=</span><span class="n">JobSLAManagement</span><span class="o">.</span><span class="n">CompleteIn</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;00:01&#39;</span><span class="p">),</span>
-                       <span class="n">complete_by</span><span class="o">=</span><span class="n">JobSLAManagement</span><span class="o">.</span><span class="n">CompleteBy</span><span class="p">(</span>
-                           <span class="n">time</span><span class="o">=</span><span class="s1">&#39;21:40&#39;</span><span class="p">,</span> <span class="n">days</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">),</span>
-                       <span class="n">average_run_time_tolerance</span><span class="o">=</span><span class="n">JobSLAManagement</span><span class="o">.</span><span class="n">AverageRunTimeTolerance</span><span class="p">(</span>
-                           <span class="n">average_run_time</span><span class="o">=</span><span class="s1">&#39;10&#39;</span><span class="p">,</span>
-                           <span class="n">units</span><span class="o">=</span><span class="n">JobSLAManagement</span><span class="o">.</span><span class="n">AverageRunTimeTolerance</span><span class="o">.</span><span class="n">Units</span><span class="o">.</span><span class="n">Minutes</span>
-                       <span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobSLAManagement(&#39;JobSLAManagementSample&#39;,
+                       service_name=&#39;SLA-service&#39;,
+                       service_priority=&#39;1&#39;,
+                       job_runs_deviations_tolerance=&#39;1&#39;,
+                       complete_in=JobSLAManagement.CompleteIn(time=&#39;00:01&#39;),
+                       complete_by=JobSLAManagement.CompleteBy(
+                           time=&#39;21:40&#39;, days=&#39;3&#39;),
+                       average_run_time_tolerance=JobSLAManagement.AverageRunTimeTolerance(
+                           average_run_time=&#39;10&#39;,
+                           units=JobSLAManagement.AverageRunTimeTolerance.Units.Minutes
+                       ))
 <br/></pre></div>
 </div>
 </div>
 </section>
 <section id="JobZOS">
-<h2>JobZOS<a class="headerlink" href="#JobZOS" title="Permalink to this heading">¶</a></h2>
+<h2>JobZOS<a class="headerlink" href="#JobZOS" title="Link to this heading">¶</a></h2>
 <p><a class="reference external" href="https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_CodeRef_JobTypes_zOS.htm?Highlight=zos">AutomationAPI Documentation</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobZOSMember</span><span class="p">(</span><span class="s1">&#39;JobZOSMemberSample&#39;</span><span class="p">,</span>
-                   <span class="n">member_library</span><span class="o">=</span><span class="s1">&#39;IOAQ.AAPI#AU.JCL&#39;</span><span class="p">,</span>
-                   <span class="n">archiving</span><span class="o">=</span><span class="n">JobZOS</span><span class="o">.</span><span class="n">Archiving</span><span class="p">(</span><span class="n">archive_sys_data</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-                   <span class="n">must_end</span><span class="o">=</span><span class="n">JobZOS</span><span class="o">.</span><span class="n">MustEnd</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="s1">&#39;15&#39;</span><span class="p">,</span> <span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-                   <span class="n">run_on_all_agents_in_group</span><span class="o">=</span><span class="kc">True</span>
-                  <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobZOSMember(&#39;JobZOSMemberSample&#39;,
+                   member_library=&#39;IOAQ.AAPI#AU.JCL&#39;,
+                   archiving=JobZOS.Archiving(archive_sys_data=True),
+                   must_end=JobZOS.MustEnd(hours=&#39;1&#39;, minutes=&#39;15&#39;, days=1),
+                   run_on_all_agents_in_group=True
+                  )
 <br/></pre></div>
 </div>
 </div>
@@ -1255,14 +1242,14 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobZOSInStreamJCL</span><span class="p">(</span><span class="s1">&#39;JobZOInStreamJCLSample&#39;</span><span class="p">,</span>
-                   <span class="n">member_library</span><span class="o">=</span><span class="s1">&#39;IOAQ.AAPI#AU.JCL&#39;</span><span class="p">,</span>
-                   <span class="n">jcl</span><span class="o">=</span><span class="s2">&quot;//AUTEST0 JOB ,ASM,CLASS=A,REGION=0M</span><span class="se">\\</span><span class="s2">n// JCLLIB ORDER=IOAQ.AAPI#AU.PROCLIB</span><span class="se">\\</span><span class="s2">n// INCLUDE MEMBER=IOASET</span><span class="se">\\</span><span class="s2">n//S1 EXEC IOATEST,PARM=&#39;TERM=C0000&#39;&quot;</span><span class="p">,</span>
-                   <span class="n">archiving</span><span class="o">=</span><span class="n">JobZOS</span><span class="o">.</span><span class="n">Archiving</span><span class="p">(</span><span class="n">archive_sys_data</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-                   <span class="n">run_on_all_agents_in_group</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                   <span class="n">created_by</span><span class="o">=</span><span class="s1">&#39;workbench&#39;</span><span class="p">,</span>
-                   <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;workbench&#39;</span>
-                  <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobZOSInStreamJCL(&#39;JobZOInStreamJCLSample&#39;,
+                   member_library=&#39;IOAQ.AAPI#AU.JCL&#39;,
+                   jcl=&quot;//AUTEST0 JOB ,ASM,CLASS=A,REGION=0M\\n// JCLLIB ORDER=IOAQ.AAPI#AU.PROCLIB\\n// INCLUDE MEMBER=IOASET\\n//S1 EXEC IOATEST,PARM=&#39;TERM=C0000&#39;&quot;,
+                   archiving=JobZOS.Archiving(archive_sys_data=True),
+                   run_on_all_agents_in_group=True,
+                   created_by=&#39;workbench&#39;,
+                   run_as=&#39;workbench&#39;
+                  )
 </pre></div>
 </div>
 </div>
@@ -1371,12 +1358,10 @@
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

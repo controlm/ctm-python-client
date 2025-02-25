@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js" lang="en" data-content_root="">
+<html class="no-js" lang="en" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Job types" href="jobtypes.html" /><link rel="prev" title="Auto generation of AI Plugins with Control-M Workbench" href="autogen.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.05.06 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
         <title>Folders - Control-M Python Client documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
-    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     
     
 
@@ -92,19 +92,6 @@
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
   <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
     <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -145,7 +132,7 @@
       <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
       <path d="M13.5 6.5l4 4" />
       <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" /
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
   <symbol id="svg-eye" viewBox="0 0 24 24">
@@ -282,30 +269,30 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="Folders">
-<h1>Folders<a class="headerlink" href="#Folders" title="Permalink to this heading">¶</a></h1>
+<h1>Folders<a class="headerlink" href="#Folders" title="Link to this heading">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aapi</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from aapi import *
 </pre></div>
 </div>
 </div>
 <section id="Folder">
-<h2>Folder<a class="headerlink" href="#Folder" title="Permalink to this heading">¶</a></h2>
+<h2>Folder<a class="headerlink" href="#Folder" title="Link to this heading">¶</a></h2>
 <p>The default type of folder (as opposed to a simple folder) enables you to configure various settings such as scheduling, event management, adding resources, or adding notifications on the folder level. Folder-level definitions are inherited by the jobs or subfolders within the folder.</p>
 <p>For example, you can specify scheduling criteria on the folder level instead of defining the criteria per job in the folder. All jobs in the folder will take on the rules of the folder. This reduces job definition in code.</p>
 <section id="Examples">
-<h3>Examples<a class="headerlink" href="#Examples" title="Permalink to this heading">¶</a></h3>
+<h3>Examples<a class="headerlink" href="#Examples" title="Link to this heading">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;MyFolder&#39;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span>
-    <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo I am a Job&#39;</span><span class="p">),</span>
-    <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo I am also a Job&#39;</span><span class="p">),</span>
-    <span class="n">JobDummy</span><span class="p">(</span><span class="s1">&#39;Job3&#39;</span><span class="p">),</span>
-<span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sample_folder = Folder(&#39;MyFolder&#39;, job_list=[
+    JobCommand(&#39;Job1&#39;, command=&#39;echo I am a Job&#39;),
+    JobCommand(&#39;Job2&#39;, command=&#39;echo I am also a Job&#39;),
+    JobDummy(&#39;Job3&#39;),
+])
 </pre></div>
 </div>
 </div>
@@ -313,39 +300,39 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;MyFolder&#39;</span><span class="p">,</span>
-                       <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;controlm&#39;</span><span class="p">,</span>
-                       <span class="n">site_standard</span><span class="o">=</span><span class="s1">&#39;mysitestandard&#39;</span><span class="p">,</span>
-                       <span class="n">business_fields</span><span class="o">=</span><span class="p">[</span>
-                           <span class="p">{</span><span class="s1">&#39;Department&#39;</span><span class="p">:</span> <span class="s1">&#39;HR&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;Company&#39;</span><span class="p">:</span> <span class="s1">&#39;BMC&#39;</span><span class="p">}],</span>
-                       <span class="n">order_method</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">OrderMethod</span><span class="o">.</span><span class="n">Manual</span>
-                       <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sample_folder = Folder(&#39;MyFolder&#39;,
+                       controlm_server=&#39;controlm&#39;,
+                       site_standard=&#39;mysitestandard&#39;,
+                       business_fields=[
+                           {&#39;Department&#39;: &#39;HR&#39;}, {&#39;Company&#39;: &#39;BMC&#39;}],
+                       order_method=Folder.OrderMethod.Manual
+                       )
 <br/></pre></div>
 </div>
 </div>
 </section>
 </section>
 <section id="SubFolder">
-<h2>SubFolder<a class="headerlink" href="#SubFolder" title="Permalink to this heading">¶</a></h2>
+<h2>SubFolder<a class="headerlink" href="#SubFolder" title="Link to this heading">¶</a></h2>
 <p>A subfolder is a folder contained within another (parent) folder or subfolder. A subfolder can contain a group of jobs or a next-level subfolder. Subfolders offer many (but not all) of the capabilities that are offered by regular folders.</p>
 <section id="id1">
-<h3>Examples<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<h3>Examples<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;FolderWithSubFolders&#39;</span><span class="p">,</span> <span class="n">sub_folder_list</span><span class="o">=</span><span class="p">[</span>
-    <span class="n">SubFolder</span><span class="p">(</span><span class="s1">&#39;FirstSubFolder&#39;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span><span class="n">JobScript</span><span class="p">(</span>
-        <span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;script.sh&#39;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;/home/scripts&#39;</span><span class="p">)]),</span>
-    <span class="n">SubFolder</span><span class="p">(</span><span class="s1">&#39;SecondSubFolder&#39;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span><span class="n">JobDummy</span><span class="p">(</span><span class="s1">&#39;DummyJob&#39;</span><span class="p">)])</span>
-<span class="p">])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>folder = Folder(&#39;FolderWithSubFolders&#39;, sub_folder_list=[
+    SubFolder(&#39;FirstSubFolder&#39;, job_list=[JobScript(
+        &#39;Job1&#39;, file_name=&#39;script.sh&#39;, file_path=&#39;/home/scripts&#39;)]),
+    SubFolder(&#39;SecondSubFolder&#39;, job_list=[JobDummy(&#39;DummyJob&#39;)])
+])
 <br/></pre></div>
 </div>
 </div>
 </section>
 </section>
 <section id="Arguments">
-<h2>Arguments<a class="headerlink" href="#Arguments" title="Permalink to this heading">¶</a></h2>
+<h2>Arguments<a class="headerlink" href="#Arguments" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>controlm_server</strong> : Specifies a Control-M Scheduling Server. If more than one Control-M Scheduling Server is configured in the system, you must define the server that the folder belongs to</p></li>
 <li><p><strong>site_standard</strong> : Enforces the defined Site Standard to the folder and all jobs contained within the folder</p></li>
@@ -359,27 +346,27 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;SampleFolder&#39;</span><span class="p">,</span>
-                <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;ctmserver&#39;</span><span class="p">,</span>
-                <span class="n">site_standard</span><span class="o">=</span><span class="s1">&#39;sitestd&#39;</span><span class="p">,</span>
-                <span class="n">business_fields</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;Department&#39;</span><span class="p">:</span> <span class="s1">&#39;HR&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;Company&#39;</span><span class="p">:</span> <span class="s1">&#39;BMC&#39;</span><span class="p">}],</span>
-                <span class="n">order_method</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">OrderMethod</span><span class="o">.</span><span class="n">Manual</span><span class="p">,</span>
-                <span class="n">application</span><span class="o">=</span><span class="s1">&#39;ApplicationName&#39;</span><span class="p">,</span>
-                <span class="n">sub_application</span><span class="o">=</span><span class="s1">&#39;SubApplication&#39;</span><span class="p">,</span>
-                <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;controlm&#39;</span><span class="p">,</span>
-                <span class="n">when</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">When</span><span class="p">(</span><span class="n">week_days</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SUN&#39;</span><span class="p">]),</span>
-                <span class="n">active_retention_policy</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">ActiveRetentionPolicy</span><span class="o">.</span><span class="n">KeepAll</span><span class="p">,</span>
-                <span class="n">days_keep_active</span><span class="o">=</span><span class="s1">&#39;41&#39;</span><span class="p">,</span>
-                <span class="n">confirm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="n">created_by</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
-                <span class="n">description</span><span class="o">=</span><span class="s1">&#39;FolderSample with lot of properties set&#39;</span><span class="p">,</span>
-                <span class="n">priority</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">Priority</span><span class="o">.</span><span class="n">High</span><span class="p">,</span>
-                <span class="n">rerun</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">Rerun</span><span class="p">(</span><span class="n">every</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">),</span>
-                <span class="n">rerun_limit</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">RerunLimit</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">),</span>
-                <span class="n">time_zone</span><span class="o">=</span><span class="s1">&#39;HAW&#39;</span><span class="p">,</span>
-                <span class="n">variables</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;var1&#39;</span><span class="p">:</span> <span class="s1">&#39;val&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;var2&#39;</span><span class="p">:</span> <span class="s1">&#39;val2&#39;</span><span class="p">}],</span>
-                <span class="n">job_list</span><span class="o">=</span><span class="p">[]</span>
-                <span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>folder = Folder(&#39;SampleFolder&#39;,
+                controlm_server=&#39;ctmserver&#39;,
+                site_standard=&#39;sitestd&#39;,
+                business_fields=[{&#39;Department&#39;: &#39;HR&#39;}, {&#39;Company&#39;: &#39;BMC&#39;}],
+                order_method=Folder.OrderMethod.Manual,
+                application=&#39;ApplicationName&#39;,
+                sub_application=&#39;SubApplication&#39;,
+                run_as=&#39;controlm&#39;,
+                when=Folder.When(week_days=[&#39;SUN&#39;]),
+                active_retention_policy=Folder.ActiveRetentionPolicy.KeepAll,
+                days_keep_active=&#39;41&#39;,
+                confirm=True,
+                created_by=&#39;user&#39;,
+                description=&#39;FolderSample with lot of properties set&#39;,
+                priority=Folder.Priority.High,
+                rerun=Folder.Rerun(every=&#39;2&#39;),
+                rerun_limit=Folder.RerunLimit(times=&#39;3&#39;),
+                time_zone=&#39;HAW&#39;,
+                variables=[{&#39;var1&#39;: &#39;val&#39;}, {&#39;var2&#39;: &#39;val2&#39;}],
+                job_list=[]
+                )
 <br/></pre></div>
 </div>
 </div>
@@ -462,12 +449,10 @@
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
