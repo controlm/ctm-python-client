@@ -7,11 +7,11 @@ After you complete the tutorials, it's time to write your own workflows. Use Con
 Learn how to create more complex workflows from the resources below.
 The provision service of Control-M Automation API enables you to easily install Agents.
 
-- [Control-M Documentation](https://docs.bmc.com/docs/display/workloadautomation/Control-M+Workload+Automation+Documentation)
+- [Control-M Documentation](https://docs.bmc.com/xwiki/bin/view/Control-M-Orchestration/)
 - [Helix Control-M Documentation](https://documents.bmc.com/supportu/controlm-saas/en-US/Documentation/home.htm)
-- [Automation API Documentation](https://docs.bmc.com/docs/display/public/workloadautomation/Control-M+Automation+API+-+Getting+Started+Guide)
-- [Automation API with Helix Control-M Documentation](https://docs.bmc.com/docs/display/ctmSaaSAPI/Control-M+SaaS+Automation+API+Home)
-- [Provisioning an agent with Automation API](https://docs.bmc.com/docs/automation-api/monthly/provision-service-1040174602.html#Provisionservice-provisionFresh)
+- [Automation API Documentation](https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_Intro.htm)
+- [Automation API with Helix Control-M Documentation](https://documents.bmc.com/supportu/API/Helix/en-US/Documentation/API_Intro.htm)
+- [Provisioning an agent with Automation API](https://documents.bmc.com/supportu/API/Monthly/en-US/Documentation/API_Services_ProvisionService.htm#AgentandPluginProvisioning)
 - [Application Integrator](https://documents.bmc.com/supportu/9.0.20/etc/ai/help/en-US/Web_Help/index.htm#69319.htm)
 
 ## Extending Control-M Python Client
