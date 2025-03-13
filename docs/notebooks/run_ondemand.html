@@ -274,8 +274,8 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from ctm_python_client.core.comm import Environment
-from aapi import *
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.comm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Environment</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">aapi</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -289,40 +289,40 @@ from aapi import *
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import time
-# Step 1: Define the Job, Folder, Sub-Folder
-demand_job = JobCommand(&#39;HelloJob&#39;, command=&#39;echo Hello&#39;)
-demand_sub_folder = SubFolder(&quot;TestSubFolder&quot;, job_list=[demand_job])
-demand_folder = Folder(&quot;TestFolder&quot;, job_list=[demand_job])
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="c1"># Step 1: Define the Job, Folder, Sub-Folder</span>
+<span class="n">demand_job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;HelloJob&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">demand_sub_folder</span> <span class="o">=</span> <span class="n">SubFolder</span><span class="p">(</span><span class="s2">&quot;TestSubFolder&quot;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span><span class="n">demand_job</span><span class="p">])</span>
+<span class="n">demand_folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s2">&quot;TestFolder&quot;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span><span class="n">demand_job</span><span class="p">])</span>
 
-# Step 2: Define an Environment
-env = Environment.create_onprem(host=&#39;controlm&#39;, username=&#39;***&#39;, password=&#39;****&#39;)
-# Step 3: Run the Job On Demand
-run_demand_job = demand_job.run_on_demand(
-    environment=env,
-    run_as=&#39;user&#39;,
-    controlm_server=&#39;ControlM&#39;
-    )
-time.sleep(4)
-run_demand_job.print_output(&#39;HelloJob&#39;)
+<span class="c1"># Step 2: Define an Environment</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">create_onprem</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;controlm&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;***&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;****&#39;</span><span class="p">)</span>
+<span class="c1"># Step 3: Run the Job On Demand</span>
+<span class="n">run_demand_job</span> <span class="o">=</span> <span class="n">demand_job</span><span class="o">.</span><span class="n">run_on_demand</span><span class="p">(</span>
+    <span class="n">environment</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
+    <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
+    <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;ControlM&#39;</span>
+    <span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">run_demand_job</span><span class="o">.</span><span class="n">print_output</span><span class="p">(</span><span class="s1">&#39;HelloJob&#39;</span><span class="p">)</span>
 
-# Step 4: Run the SubFolder On Demand
-run_demand_sub_folder = demand_sub_folder.run_on_demand(
-    environment=env,
-    run_as=&#39;user&#39;,
-    controlm_server=&#39;ControlM&#39;
-    )
-time.sleep(4)
-run_demand_sub_folder.print_statuses()
+<span class="c1"># Step 4: Run the SubFolder On Demand</span>
+<span class="n">run_demand_sub_folder</span> <span class="o">=</span> <span class="n">demand_sub_folder</span><span class="o">.</span><span class="n">run_on_demand</span><span class="p">(</span>
+    <span class="n">environment</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
+    <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
+    <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;ControlM&#39;</span>
+    <span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">run_demand_sub_folder</span><span class="o">.</span><span class="n">print_statuses</span><span class="p">()</span>
 
-# Step 5: Run the Folder On Demand
-run_demand_folder = demand_folder.run_on_demand(
-    environment=env,
-    run_as=&#39;user&#39;,
-    controlm_server=&#39;ControlM&#39;
-    )
-time.sleep(4)
-run_demand_folder.print_statuses()
+<span class="c1"># Step 5: Run the Folder On Demand</span>
+<span class="n">run_demand_folder</span> <span class="o">=</span> <span class="n">demand_folder</span><span class="o">.</span><span class="n">run_on_demand</span><span class="p">(</span>
+    <span class="n">environment</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
+    <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
+    <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;ControlM&#39;</span>
+    <span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">run_demand_folder</span><span class="o">.</span><span class="n">print_statuses</span><span class="p">()</span>
 <br/></pre></div>
 </div>
 </div>

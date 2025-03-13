@@ -276,10 +276,10 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import ctm_python_client.ext.autogen as autogen
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ctm_python_client.ext.autogen</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">autogen</span>
 
-# this will autogenerate a file called generatedplugins.py with the definitions of all plugins you have in workbench
-autogen.generate_ai_plugins_classes(output_file=&quot;./generatedplugins.py&quot;)
+<span class="c1"># this will autogenerate a file called generatedplugins.py with the definitions of all plugins you have in workbench</span>
+<span class="n">autogen</span><span class="o">.</span><span class="n">generate_ai_plugins_classes</span><span class="p">(</span><span class="n">output_file</span><span class="o">=</span><span class="s2">&quot;./generatedplugins.py&quot;</span><span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -288,7 +288,7 @@ autogen.generate_ai_plugins_classes(output_file=&quot;./generatedplugins.py&quot
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>!type generatedplugins.py
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">type</span><span class="w"> </span>generatedplugins.py
 </pre></div>
 </div>
 </div>
@@ -333,7 +333,7 @@ class ConnectionProfileAIExampleplugin(AIConnectionProfile):
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from generatedplugins import *
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">generatedplugins</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -342,8 +342,8 @@ class ConnectionProfileAIExampleplugin(AIConnectionProfile):
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>cp = ConnectionProfileAIExampleplugin(&quot;TESTCP&quot;, centralized=True, examplepassword=&quot;password&quot;)
-job = AIJobExampleplugin(&quot;MyExampleJob&quot;, connection_profile=&quot;TESTCP&quot;, examplefield=&quot;My field&quot;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">=</span> <span class="n">ConnectionProfileAIExampleplugin</span><span class="p">(</span><span class="s2">&quot;TESTCP&quot;</span><span class="p">,</span> <span class="n">centralized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">examplepassword</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">job</span> <span class="o">=</span> <span class="n">AIJobExampleplugin</span><span class="p">(</span><span class="s2">&quot;MyExampleJob&quot;</span><span class="p">,</span> <span class="n">connection_profile</span><span class="o">=</span><span class="s2">&quot;TESTCP&quot;</span><span class="p">,</span> <span class="n">examplefield</span><span class="o">=</span><span class="s2">&quot;My field&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -351,11 +351,11 @@ job = AIJobExampleplugin(&quot;MyExampleJob&quot;, connection_profile=&quot;TEST
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from ctm_python_client.core.workflow import *
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-w = Workflow.workbench()
-w.add(cp)
-job_name = w.add(job, inpath=&quot;TestApplicationIntegrator&quot;)
+<span class="n">w</span> <span class="o">=</span> <span class="n">Workflow</span><span class="o">.</span><span class="n">workbench</span><span class="p">()</span>
+<span class="n">w</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
+<span class="n">job_name</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="s2">&quot;TestApplicationIntegrator&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -363,8 +363,8 @@ job_name = w.add(job, inpath=&quot;TestApplicationIntegrator&quot;)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>run = w.run()
-print(run.get_output(job_name))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="n">job_name</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>

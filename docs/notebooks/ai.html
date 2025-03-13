@@ -285,24 +285,24 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from ctm_python_client.core.comm import *
-from ctm_python_client.core.workflow import *
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.comm</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-from aapi import *
-import attrs
+<span class="kn">from</span><span class="w"> </span><span class="nn">aapi</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
 
-# All JobTypes are decorated with attrs
+<span class="c1"># All JobTypes are decorated with attrs</span>
 
-@attrs.define
-class AIJobSSHCommand(AIJob):   # We derive from AIJob, the name of the class can be any valid python class name
-    _type = AIJob.type_field(&#39;AI SSHCommand&#39;)   # We add a &quot;type&quot; field, with the same name you would see in the web interface.
-                                                # the name in type IS important and should match the one seen in the Web Interface
-                                                # in the Planning section
+<span class="nd">@attrs</span><span class="o">.</span><span class="n">define</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AIJobSSHCommand</span><span class="p">(</span><span class="n">AIJob</span><span class="p">):</span>   <span class="c1"># We derive from AIJob, the name of the class can be any valid python class name</span>
+    <span class="n">_type</span> <span class="o">=</span> <span class="n">AIJob</span><span class="o">.</span><span class="n">type_field</span><span class="p">(</span><span class="s1">&#39;AI SSHCommand&#39;</span><span class="p">)</span>   <span class="c1"># We add a &quot;type&quot; field, with the same name you would see in the web interface.</span>
+                                                <span class="c1"># the name in type IS important and should match the one seen in the Web Interface</span>
+                                                <span class="c1"># in the Planning section</span>
 
-    command = AIJob.field(&#39;Command&#39;)            # the field name argument needs to match the one in the Web interface
-                                                # the name of the field (lower case command) can be any valid python variable name
+    <span class="n">command</span> <span class="o">=</span> <span class="n">AIJob</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s1">&#39;Command&#39;</span><span class="p">)</span>            <span class="c1"># the field name argument needs to match the one in the Web interface</span>
+                                                <span class="c1"># the name of the field (lower case command) can be any valid python variable name</span>
 
-    flags = AIJob.field_optional(&#39;Flags&#39;)       # this is an optional field, similar to AIJob.field() but not mandatory to use
+    <span class="n">flags</span> <span class="o">=</span> <span class="n">AIJob</span><span class="o">.</span><span class="n">field_optional</span><span class="p">(</span><span class="s1">&#39;Flags&#39;</span><span class="p">)</span>       <span class="c1"># this is an optional field, similar to AIJob.field() but not mandatory to use</span>
 <br/><br/><br/></pre></div>
 </div>
 </div>
@@ -310,16 +310,16 @@ class AIJobSSHCommand(AIJob):   # We derive from AIJob, the name of the class ca
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Let&#39;s check that the Automation API Json is ok
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s check that the Automation API Json is ok</span>
 
-workflow = BaseWorkflow()   # BaseWorkflow is a workflow which is not connected to any environment
-aijob = AIJobSSHCommand(&#39;MySSHCommand&#39;,
-                connection_profile=&#39;HOSTCP&#39;,
-                command=&#39;ls&#39;,
-                flags=&#39;-q&#39;)
-workflow.add(aijob, inpath=&#39;AIfolder&#39;)
+<span class="n">workflow</span> <span class="o">=</span> <span class="n">BaseWorkflow</span><span class="p">()</span>   <span class="c1"># BaseWorkflow is a workflow which is not connected to any environment</span>
+<span class="n">aijob</span> <span class="o">=</span> <span class="n">AIJobSSHCommand</span><span class="p">(</span><span class="s1">&#39;MySSHCommand&#39;</span><span class="p">,</span>
+                <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;HOSTCP&#39;</span><span class="p">,</span>
+                <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span>
+                <span class="n">flags</span><span class="o">=</span><span class="s1">&#39;-q&#39;</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">aijob</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;AIfolder&#39;</span><span class="p">)</span>
 
-print(workflow.dumps_json(indent=2))
+<span class="nb">print</span><span class="p">(</span><span class="n">workflow</span><span class="o">.</span><span class="n">dumps_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
 <br/></pre></div>
 </div>
 </div>
@@ -345,17 +345,17 @@ print(workflow.dumps_json(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Let&#39;s check that the Automation API Json is ok
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s check that the Automation API Json is ok</span>
 
-workflow = BaseWorkflow()   # BaseWorkflow is a workflow which is not connected to any environment
+<span class="n">workflow</span> <span class="o">=</span> <span class="n">BaseWorkflow</span><span class="p">()</span>   <span class="c1"># BaseWorkflow is a workflow which is not connected to any environment</span>
 
-# the flags variable is a optional field, we can create job without an optional field
-aijob = AIJobSSHCommand(&#39;MySSHCommand&#39;,
-                connection_profile=&#39;HOSTCP&#39;,
-                command=&#39;ls&#39;)
-workflow.add(aijob, inpath=&#39;AIfolder&#39;)
+<span class="c1"># the flags variable is a optional field, we can create job without an optional field</span>
+<span class="n">aijob</span> <span class="o">=</span> <span class="n">AIJobSSHCommand</span><span class="p">(</span><span class="s1">&#39;MySSHCommand&#39;</span><span class="p">,</span>
+                <span class="n">connection_profile</span><span class="o">=</span><span class="s1">&#39;HOSTCP&#39;</span><span class="p">,</span>
+                <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">aijob</span><span class="p">,</span> <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;AIfolder&#39;</span><span class="p">)</span>
 
-print(workflow.dumps_json(indent=2))
+<span class="nb">print</span><span class="p">(</span><span class="n">workflow</span><span class="o">.</span><span class="n">dumps_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
