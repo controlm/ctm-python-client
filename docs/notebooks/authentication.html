@@ -281,34 +281,34 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Examples of Environments
-from ctm_python_client.core.workflow import *
-from ctm_python_client.core.comm import *
-from ctm_python_client.core.credential import *
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Examples of Environments</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.comm</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.credential</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-# Create an environment for Control-M
-my_environment = Environment(&#39;https://mymachine:8443/automation-api&#39;, username=&#39;user&#39;, password=&#39;password&#39;, mode=EnvironmentMode.ONPREM)
+<span class="c1"># Create an environment for Control-M</span>
+<span class="n">my_environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="s1">&#39;https://mymachine:8443/automation-api&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">EnvironmentMode</span><span class="o">.</span><span class="n">ONPREM</span><span class="p">)</span>
 
-# which is the same:
-# Note that OnPrem environment by default use the port 8443, if another port is used, you can specify it
-my_environment = Environment.create_onprem(&#39;mymachine&#39;,username=&#39;user&#39;, password=&#39;password&#39;)
+<span class="c1"># which is the same:</span>
+<span class="c1"># Note that OnPrem environment by default use the port 8443, if another port is used, you can specify it</span>
+<span class="n">my_environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">create_onprem</span><span class="p">(</span><span class="s1">&#39;mymachine&#39;</span><span class="p">,</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">)</span>
 
-# Create an environment for Helix Control-M (SaaS)
-my_environment = Environment.create_saas(&#39;https://mysaas-aapi/automation-api&#39;, api_key=&#39;myapikey&#39;)
+<span class="c1"># Create an environment for Helix Control-M (SaaS)</span>
+<span class="n">my_environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">create_saas</span><span class="p">(</span><span class="s1">&#39;https://mysaas-aapi/automation-api&#39;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;myapikey&#39;</span><span class="p">)</span>
 
-# Create an environment to work with Control-M Workbench
+<span class="c1"># Create an environment to work with Control-M Workbench</span>
 
-# by default sets host to localhost and port to 8443
-my_environment = Environment.create_workbench()
+<span class="c1"># by default sets host to localhost and port to 8443</span>
+<span class="n">my_environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">create_workbench</span><span class="p">()</span>
 
-# If wokrbench is running on a remote machine, you can specify the host
-my_environment = Environment.create_workbench(host=&#39;mymachine&#39;)
+<span class="c1"># If wokrbench is running on a remote machine, you can specify the host</span>
+<span class="n">my_environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">create_workbench</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;mymachine&#39;</span><span class="p">)</span>
 
-# In the case the port 8443 is mapped to another port (for example multiple instances of a workbench container), you can specify the port
-my_environment = Environment.create_workbench(host=&#39;mymachine&#39;, port=&#39;8444&#39;)
+<span class="c1"># In the case the port 8443 is mapped to another port (for example multiple instances of a workbench container), you can specify the port</span>
+<span class="n">my_environment</span> <span class="o">=</span> <span class="n">Environment</span><span class="o">.</span><span class="n">create_workbench</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;mymachine&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s1">&#39;8444&#39;</span><span class="p">)</span>
 
 
-workflow = Workflow(my_environment)
+<span class="n">workflow</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="n">my_environment</span><span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -327,38 +327,38 @@ workflow = Workflow(my_environment)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span>from ctm_python_client.core.workflow import *
-from ctm_python_client.core.comm import *
-from ctm_python_client.core.credential import *
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.comm</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.credential</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-# example of creating an workflow for Control-M with username and password:
-workflow = Workflow(
-    Environment.create_onprem(&#39;mhyHost&#39;, credentials=InputPasswordCredentials(&#39;myuser&#39;))
-)
+<span class="c1"># example of creating an workflow for Control-M with username and password:</span>
+<span class="n">workflow</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span>
+    <span class="n">Environment</span><span class="o">.</span><span class="n">create_onprem</span><span class="p">(</span><span class="s1">&#39;mhyHost&#39;</span><span class="p">,</span> <span class="n">credentials</span><span class="o">=</span><span class="n">InputPasswordCredentials</span><span class="p">(</span><span class="s1">&#39;myuser&#39;</span><span class="p">))</span>
+<span class="p">)</span>
 
-# example of creating an workflow for Helix Control-M with an API key:
-workflow = Workflow(
-    Environment.create_saas(&#39;mhyHost&#39;, credentials=InputPasswordCredentials(&#39;token&#39;))
-)
+<span class="c1"># example of creating an workflow for Helix Control-M with an API key:</span>
+<span class="n">workflow</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span>
+    <span class="n">Environment</span><span class="o">.</span><span class="n">create_saas</span><span class="p">(</span><span class="s1">&#39;mhyHost&#39;</span><span class="p">,</span> <span class="n">credentials</span><span class="o">=</span><span class="n">InputPasswordCredentials</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">))</span>
+<span class="p">)</span>
 
-# example with using Keyring
-# make sure you have keyring installed: pip install keyring
-from ctm_python_client.ext.credential import KeyringCredentials
+<span class="c1"># example with using Keyring</span>
+<span class="c1"># make sure you have keyring installed: pip install keyring</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.ext.credential</span><span class="w"> </span><span class="kn">import</span> <span class="n">KeyringCredentials</span>
 
-# on a terminal run:
-# keyring set servicename username
-# servicename is not used in the authentication but is useful to distinguish between multiple environments
-# example:
-# keyring set development myuser
-# keyring set production myuser
-# you also can do the same in python
-import keyring
-keyring.set_password(&#39;production&#39;, &#39;username&#39;)
+<span class="c1"># on a terminal run:</span>
+<span class="c1"># keyring set servicename username</span>
+<span class="c1"># servicename is not used in the authentication but is useful to distinguish between multiple environments</span>
+<span class="c1"># example:</span>
+<span class="c1"># keyring set development myuser</span>
+<span class="c1"># keyring set production myuser</span>
+<span class="c1"># you also can do the same in python</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">keyring</span>
+<span class="n">keyring</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s1">&#39;production&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">)</span>
 
-# if using API key, the password is the key, and the username is not used, so you can put any value
-# that seems significant for you
-# example:
-# keyring set development tokenAdmin
+<span class="c1"># if using API key, the password is the key, and the username is not used, so you can put any value</span>
+<span class="c1"># that seems significant for you</span>
+<span class="c1"># example:</span>
+<span class="c1"># keyring set development tokenAdmin</span>
 <br/><br/></pre></div>
 </div>
 </div>

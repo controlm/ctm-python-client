@@ -274,7 +274,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from aapi import *
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">aapi</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -288,11 +288,11 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sample_folder = Folder(&#39;MyFolder&#39;, job_list=[
-    JobCommand(&#39;Job1&#39;, command=&#39;echo I am a Job&#39;),
-    JobCommand(&#39;Job2&#39;, command=&#39;echo I am also a Job&#39;),
-    JobDummy(&#39;Job3&#39;),
-])
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;MyFolder&#39;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo I am a Job&#39;</span><span class="p">),</span>
+    <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo I am also a Job&#39;</span><span class="p">),</span>
+    <span class="n">JobDummy</span><span class="p">(</span><span class="s1">&#39;Job3&#39;</span><span class="p">),</span>
+<span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -300,13 +300,13 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sample_folder = Folder(&#39;MyFolder&#39;,
-                       controlm_server=&#39;controlm&#39;,
-                       site_standard=&#39;mysitestandard&#39;,
-                       business_fields=[
-                           {&#39;Department&#39;: &#39;HR&#39;}, {&#39;Company&#39;: &#39;BMC&#39;}],
-                       order_method=Folder.OrderMethod.Manual
-                       )
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;MyFolder&#39;</span><span class="p">,</span>
+                       <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;controlm&#39;</span><span class="p">,</span>
+                       <span class="n">site_standard</span><span class="o">=</span><span class="s1">&#39;mysitestandard&#39;</span><span class="p">,</span>
+                       <span class="n">business_fields</span><span class="o">=</span><span class="p">[</span>
+                           <span class="p">{</span><span class="s1">&#39;Department&#39;</span><span class="p">:</span> <span class="s1">&#39;HR&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;Company&#39;</span><span class="p">:</span> <span class="s1">&#39;BMC&#39;</span><span class="p">}],</span>
+                       <span class="n">order_method</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">OrderMethod</span><span class="o">.</span><span class="n">Manual</span>
+                       <span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -321,11 +321,11 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>folder = Folder(&#39;FolderWithSubFolders&#39;, sub_folder_list=[
-    SubFolder(&#39;FirstSubFolder&#39;, job_list=[JobScript(
-        &#39;Job1&#39;, file_name=&#39;script.sh&#39;, file_path=&#39;/home/scripts&#39;)]),
-    SubFolder(&#39;SecondSubFolder&#39;, job_list=[JobDummy(&#39;DummyJob&#39;)])
-])
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;FolderWithSubFolders&#39;</span><span class="p">,</span> <span class="n">sub_folder_list</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">SubFolder</span><span class="p">(</span><span class="s1">&#39;FirstSubFolder&#39;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span><span class="n">JobScript</span><span class="p">(</span>
+        <span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;script.sh&#39;</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;/home/scripts&#39;</span><span class="p">)]),</span>
+    <span class="n">SubFolder</span><span class="p">(</span><span class="s1">&#39;SecondSubFolder&#39;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span><span class="n">JobDummy</span><span class="p">(</span><span class="s1">&#39;DummyJob&#39;</span><span class="p">)])</span>
+<span class="p">])</span>
 <br/></pre></div>
 </div>
 </div>
@@ -346,27 +346,27 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>folder = Folder(&#39;SampleFolder&#39;,
-                controlm_server=&#39;ctmserver&#39;,
-                site_standard=&#39;sitestd&#39;,
-                business_fields=[{&#39;Department&#39;: &#39;HR&#39;}, {&#39;Company&#39;: &#39;BMC&#39;}],
-                order_method=Folder.OrderMethod.Manual,
-                application=&#39;ApplicationName&#39;,
-                sub_application=&#39;SubApplication&#39;,
-                run_as=&#39;controlm&#39;,
-                when=Folder.When(week_days=[&#39;SUN&#39;]),
-                active_retention_policy=Folder.ActiveRetentionPolicy.KeepAll,
-                days_keep_active=&#39;41&#39;,
-                confirm=True,
-                created_by=&#39;user&#39;,
-                description=&#39;FolderSample with lot of properties set&#39;,
-                priority=Folder.Priority.High,
-                rerun=Folder.Rerun(every=&#39;2&#39;),
-                rerun_limit=Folder.RerunLimit(times=&#39;3&#39;),
-                time_zone=&#39;HAW&#39;,
-                variables=[{&#39;var1&#39;: &#39;val&#39;}, {&#39;var2&#39;: &#39;val2&#39;}],
-                job_list=[]
-                )
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;SampleFolder&#39;</span><span class="p">,</span>
+                <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;ctmserver&#39;</span><span class="p">,</span>
+                <span class="n">site_standard</span><span class="o">=</span><span class="s1">&#39;sitestd&#39;</span><span class="p">,</span>
+                <span class="n">business_fields</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;Department&#39;</span><span class="p">:</span> <span class="s1">&#39;HR&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;Company&#39;</span><span class="p">:</span> <span class="s1">&#39;BMC&#39;</span><span class="p">}],</span>
+                <span class="n">order_method</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">OrderMethod</span><span class="o">.</span><span class="n">Manual</span><span class="p">,</span>
+                <span class="n">application</span><span class="o">=</span><span class="s1">&#39;ApplicationName&#39;</span><span class="p">,</span>
+                <span class="n">sub_application</span><span class="o">=</span><span class="s1">&#39;SubApplication&#39;</span><span class="p">,</span>
+                <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;controlm&#39;</span><span class="p">,</span>
+                <span class="n">when</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">When</span><span class="p">(</span><span class="n">week_days</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SUN&#39;</span><span class="p">]),</span>
+                <span class="n">active_retention_policy</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">ActiveRetentionPolicy</span><span class="o">.</span><span class="n">KeepAll</span><span class="p">,</span>
+                <span class="n">days_keep_active</span><span class="o">=</span><span class="s1">&#39;41&#39;</span><span class="p">,</span>
+                <span class="n">confirm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">created_by</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="s1">&#39;FolderSample with lot of properties set&#39;</span><span class="p">,</span>
+                <span class="n">priority</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">Priority</span><span class="o">.</span><span class="n">High</span><span class="p">,</span>
+                <span class="n">rerun</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">Rerun</span><span class="p">(</span><span class="n">every</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">),</span>
+                <span class="n">rerun_limit</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">RerunLimit</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">),</span>
+                <span class="n">time_zone</span><span class="o">=</span><span class="s1">&#39;HAW&#39;</span><span class="p">,</span>
+                <span class="n">variables</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;var1&#39;</span><span class="p">:</span> <span class="s1">&#39;val&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;var2&#39;</span><span class="p">:</span> <span class="s1">&#39;val2&#39;</span><span class="p">}],</span>
+                <span class="n">job_list</span><span class="o">=</span><span class="p">[]</span>
+                <span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>

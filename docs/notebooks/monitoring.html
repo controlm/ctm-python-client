@@ -276,10 +276,10 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from ctm_python_client.core.workflow import Workflow, WorkflowDefaults
-from ctm_python_client.core.comm import Environment
-# from ctm_python_client.ext.viz import get_graph
-from aapi import *
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">WorkflowDefaults</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.core.comm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Environment</span>
+<span class="c1"># from ctm_python_client.ext.viz import get_graph</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">aapi</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -287,7 +287,7 @@ from aapi import *
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>workflow = Workflow(Environment.create_workbench(), WorkflowDefaults(run_as=&#39;workbench&#39;))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="n">Environment</span><span class="o">.</span><span class="n">create_workbench</span><span class="p">(),</span> <span class="n">WorkflowDefaults</span><span class="p">(</span><span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;workbench&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -298,17 +298,17 @@ from aapi import *
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>workflow.clear_all()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">clear_all</span><span class="p">()</span>
 
-workflow.chain(
-    [
-        JobCommand(&#39;HelloWorld&#39;, &#39;echo &quot;Hello&quot;&#39;),
-        JobCommand(&#39;CountFiles&#39;, &#39;ls -l | wc&#39;)
-    ],
-    inpath=&#39;TestMonitor&#39;
-)
+<span class="n">workflow</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;HelloWorld&#39;</span><span class="p">,</span> <span class="s1">&#39;echo &quot;Hello&quot;&#39;</span><span class="p">),</span>
+        <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;CountFiles&#39;</span><span class="p">,</span> <span class="s1">&#39;ls -l | wc&#39;</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;TestMonitor&#39;</span>
+<span class="p">)</span>
 
-run = workflow.run()
+<span class="n">run</span> <span class="o">=</span> <span class="n">workflow</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -327,7 +327,7 @@ run = workflow.run()
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>run.print_statuses()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run</span><span class="o">.</span><span class="n">print_statuses</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -348,11 +348,11 @@ TestMonitor  ...........................  Wait Condition
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import time
-time.sleep(4)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 
-# A few seconds should be enough for all jobs to finish
-run.print_statuses()
+<span class="c1"># A few seconds should be enough for all jobs to finish</span>
+<span class="n">run</span><span class="o">.</span><span class="n">print_statuses</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -376,8 +376,8 @@ TestMonitor  ...........................  Ended OK
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(run.get_status(&#39;CountFiles&#39;))
-# Same as print(run.get_status(&#39;TestMonitor/CountFiles&#39;))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span><span class="s1">&#39;CountFiles&#39;</span><span class="p">))</span>
+<span class="c1"># Same as print(run.get_status(&#39;TestMonitor/CountFiles&#39;))</span>
 </pre></div>
 </div>
 </div>
@@ -416,10 +416,10 @@ TestMonitor  ...........................  Ended OK
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>output = run.get_output(&#39;CountFiles&#39;)
-print(output)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="s1">&#39;CountFiles&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 
-# same as run.print_output(&#39;CountFiles&#39;)
+<span class="c1"># same as run.print_output(&#39;CountFiles&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -443,17 +443,17 @@ print(output)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>workflow.clear_all()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">clear_all</span><span class="p">()</span>
 
-workflow.chain(
-    [
-        JobCommand(&#39;Command&#39;, &#39;foo&#39;),
-        JobCommand(&#39;Bye&#39;, &#39;echo &quot;Finished&quot;&#39;),
-    ],
-    inpath=&#39;TestMonitor&#39;
-)
+<span class="n">workflow</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Command&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">),</span>
+        <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Bye&#39;</span><span class="p">,</span> <span class="s1">&#39;echo &quot;Finished&quot;&#39;</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">inpath</span><span class="o">=</span><span class="s1">&#39;TestMonitor&#39;</span>
+<span class="p">)</span>
 
-run = workflow.run()
+<span class="n">run</span> <span class="o">=</span> <span class="n">workflow</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -461,8 +461,8 @@ run = workflow.run()
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>time.sleep(2) # Wait until Jobs were ordered
-run.print_statuses()
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Wait until Jobs were ordered</span>
+<span class="n">run</span><span class="o">.</span><span class="n">print_statuses</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -487,7 +487,7 @@ TestMonitor  ...........................  Executing
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(run.get_log(&#39;Command&#39;))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">get_log</span><span class="p">(</span><span class="s1">&#39;Command&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -516,7 +516,7 @@ Event Time            Message                                                   
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>run.print_output(&#39;Command&#39;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run</span><span class="o">.</span><span class="n">print_output</span><span class="p">(</span><span class="s1">&#39;Command&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

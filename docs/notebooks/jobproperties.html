@@ -274,7 +274,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from aapi import *
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">aapi</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -301,54 +301,54 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>folder = Folder(&#39;SampleFolder&#39;,
-                controlm_server=&#39;ctmserver&#39;,
-                site_standard=&#39;sitestd&#39;,
-                business_fields=[{&#39;Department&#39;: &#39;HR&#39;}, {&#39;Company&#39;: &#39;BMC&#39;}],
-                order_method=Folder.OrderMethod.Manual,
-                application=&#39;ApplicationName&#39;,
-                sub_application=&#39;SubApplication&#39;,
-                run_as=&#39;controlm&#39;,
-                when=Folder.When(week_days=[&#39;SUN&#39;]),
-                active_retention_policy=Folder.ActiveRetentionPolicy.KeepAll,
-                days_keep_active=&#39;41&#39;,
-                confirm=True,
-                created_by=&#39;user&#39;,
-                description=&#39;FolderSample with lot of properties set&#39;,
-                priority=Folder.Priority.High,
-                rerun=Folder.Rerun(every=&#39;2&#39;),
-                rerun_limit=Folder.RerunLimit(times=&#39;3&#39;),
-                time_zone=&#39;HAW&#39;,
-                variables=[{&#39;var1&#39;: &#39;val&#39;}, {&#39;var2&#39;: &#39;val2&#39;}]
-                )
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;SampleFolder&#39;</span><span class="p">,</span>
+                <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;ctmserver&#39;</span><span class="p">,</span>
+                <span class="n">site_standard</span><span class="o">=</span><span class="s1">&#39;sitestd&#39;</span><span class="p">,</span>
+                <span class="n">business_fields</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;Department&#39;</span><span class="p">:</span> <span class="s1">&#39;HR&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;Company&#39;</span><span class="p">:</span> <span class="s1">&#39;BMC&#39;</span><span class="p">}],</span>
+                <span class="n">order_method</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">OrderMethod</span><span class="o">.</span><span class="n">Manual</span><span class="p">,</span>
+                <span class="n">application</span><span class="o">=</span><span class="s1">&#39;ApplicationName&#39;</span><span class="p">,</span>
+                <span class="n">sub_application</span><span class="o">=</span><span class="s1">&#39;SubApplication&#39;</span><span class="p">,</span>
+                <span class="n">run_as</span><span class="o">=</span><span class="s1">&#39;controlm&#39;</span><span class="p">,</span>
+                <span class="n">when</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">When</span><span class="p">(</span><span class="n">week_days</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SUN&#39;</span><span class="p">]),</span>
+                <span class="n">active_retention_policy</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">ActiveRetentionPolicy</span><span class="o">.</span><span class="n">KeepAll</span><span class="p">,</span>
+                <span class="n">days_keep_active</span><span class="o">=</span><span class="s1">&#39;41&#39;</span><span class="p">,</span>
+                <span class="n">confirm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">created_by</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="s1">&#39;FolderSample with lot of properties set&#39;</span><span class="p">,</span>
+                <span class="n">priority</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">Priority</span><span class="o">.</span><span class="n">High</span><span class="p">,</span>
+                <span class="n">rerun</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">Rerun</span><span class="p">(</span><span class="n">every</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">),</span>
+                <span class="n">rerun_limit</span><span class="o">=</span><span class="n">Folder</span><span class="o">.</span><span class="n">RerunLimit</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">),</span>
+                <span class="n">time_zone</span><span class="o">=</span><span class="s1">&#39;HAW&#39;</span><span class="p">,</span>
+                <span class="n">variables</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;var1&#39;</span><span class="p">:</span> <span class="s1">&#39;val&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;var2&#39;</span><span class="p">:</span> <span class="s1">&#39;val2&#39;</span><span class="p">}]</span>
+                <span class="p">)</span>
 
-folder.sub_folder_list.append(
-    SubFolder(&#39;MySubFolder1&#39;, job_list=[
-        # this job will run as dummy, the command will not be executed
-        JobCommand(&#39;MyFirstJob&#39;, command=&#39;ls&#39;, run_as_dummy=True),
-        # This job is marked as &#39;confirm&#39;, it will not run until user confirms
-        JobCommand(&#39;OtherJob&#39;, command=&#39;ls&#39;, confirm=True),
-    ],
-        if_list=[
-        IfCompletionStatus(&#39;goodScenario&#39;, completion_status=&#39;OK&#39;, on_list=[
-            ActionMail(&#39;sendMail&#39;, message=&#39;All jobs ran successfully&#39;,
-                       to=&#39;team@comp.com&#39;, subject=&#39;Jobs notification&#39;)
-        ]),
+<span class="n">folder</span><span class="o">.</span><span class="n">sub_folder_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">SubFolder</span><span class="p">(</span><span class="s1">&#39;MySubFolder1&#39;</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="p">[</span>
+        <span class="c1"># this job will run as dummy, the command will not be executed</span>
+        <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;MyFirstJob&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span> <span class="n">run_as_dummy</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="c1"># This job is marked as &#39;confirm&#39;, it will not run until user confirms</span>
+        <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;OtherJob&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span> <span class="n">confirm</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="p">],</span>
+        <span class="n">if_list</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">IfCompletionStatus</span><span class="p">(</span><span class="s1">&#39;goodScenario&#39;</span><span class="p">,</span> <span class="n">completion_status</span><span class="o">=</span><span class="s1">&#39;OK&#39;</span><span class="p">,</span> <span class="n">on_list</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">ActionMail</span><span class="p">(</span><span class="s1">&#39;sendMail&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;All jobs ran successfully&#39;</span><span class="p">,</span>
+                       <span class="n">to</span><span class="o">=</span><span class="s1">&#39;team@comp.com&#39;</span><span class="p">,</span> <span class="n">subject</span><span class="o">=</span><span class="s1">&#39;Jobs notification&#39;</span><span class="p">)</span>
+        <span class="p">]),</span>
 
-        IfCompletionStatus(&#39;badScenario&#39;, completion_status=&#39;NOK&#39;, on_list=[
-            ActionRun(&#39;runCorrectiveJob&#39;,
-                      folder=&#39;REMEDY_FOLDER&#39;, job=&#39;RemedyJob&#39;)
-        ])
+        <span class="n">IfCompletionStatus</span><span class="p">(</span><span class="s1">&#39;badScenario&#39;</span><span class="p">,</span> <span class="n">completion_status</span><span class="o">=</span><span class="s1">&#39;NOK&#39;</span><span class="p">,</span> <span class="n">on_list</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;runCorrectiveJob&#39;</span><span class="p">,</span>
+                      <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;REMEDY_FOLDER&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;RemedyJob&#39;</span><span class="p">)</span>
+        <span class="p">])</span>
 
-    ],
-        notify_list=[
-        NotifyNotOK(
-            &#39;alertIfNOK&#39;, destination=Notify.Destination.Alerts, message=&#39;Jobs not ok&#39;),
-        NotifyDoesNotEnd(&#39;alertIfJobIsStuck&#39;, by=&#39;1200&#39;,
-                         destination=Notify.Destination.Alerts, message=&#39;Jobs didnt end&#39;),
-    ]
-    )
-)
+    <span class="p">],</span>
+        <span class="n">notify_list</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">NotifyNotOK</span><span class="p">(</span>
+            <span class="s1">&#39;alertIfNOK&#39;</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">Notify</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">Alerts</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;Jobs not ok&#39;</span><span class="p">),</span>
+        <span class="n">NotifyDoesNotEnd</span><span class="p">(</span><span class="s1">&#39;alertIfJobIsStuck&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;1200&#39;</span><span class="p">,</span>
+                         <span class="n">destination</span><span class="o">=</span><span class="n">Notify</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">Alerts</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;Jobs didnt end&#39;</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -411,22 +411,22 @@ folder.sub_folder_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>when = Job.When(
-    schedule=&#39;Never&#39;,
-    months=[&#39;JAN&#39;, &#39;OCT&#39;, &#39;DEC&#39;],
-    month_days=[&#39;22&#39;, &#39;1&#39;, &#39;11&#39;],
-    week_days=[&#39;MON&#39;, &#39;TUE&#39;],
-    from_time=&#39;1500&#39;,
-    to_time=&#39;1800&#39;
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">when</span> <span class="o">=</span> <span class="n">Job</span><span class="o">.</span><span class="n">When</span><span class="p">(</span>
+    <span class="n">schedule</span><span class="o">=</span><span class="s1">&#39;Never&#39;</span><span class="p">,</span>
+    <span class="n">months</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;JAN&#39;</span><span class="p">,</span> <span class="s1">&#39;OCT&#39;</span><span class="p">,</span> <span class="s1">&#39;DEC&#39;</span><span class="p">],</span>
+    <span class="n">month_days</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;22&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">],</span>
+    <span class="n">week_days</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;MON&#39;</span><span class="p">,</span> <span class="s1">&#39;TUE&#39;</span><span class="p">],</span>
+    <span class="n">from_time</span><span class="o">=</span><span class="s1">&#39;1500&#39;</span><span class="p">,</span>
+    <span class="n">to_time</span><span class="o">=</span><span class="s1">&#39;1800&#39;</span>
+<span class="p">)</span>
 
-# example with specific dates
-when = Job.When(
-    week_days=[&#39;NONE&#39;],
-    months=[&#39;NONE&#39;],
-    month_days=[&#39;NONE&#39;],
-    specific_dates=[&#39;03/10&#39;, &#39;03/01&#39;]
-)
+<span class="c1"># example with specific dates</span>
+<span class="n">when</span> <span class="o">=</span> <span class="n">Job</span><span class="o">.</span><span class="n">When</span><span class="p">(</span>
+    <span class="n">week_days</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NONE&#39;</span><span class="p">],</span>
+    <span class="n">months</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NONE&#39;</span><span class="p">],</span>
+    <span class="n">month_days</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NONE&#39;</span><span class="p">],</span>
+    <span class="n">specific_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;03/10&#39;</span><span class="p">,</span> <span class="s1">&#39;03/01&#39;</span><span class="p">]</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -437,26 +437,44 @@ when = Job.When(
 <p>If statements trigger one or more actions when job-related criteria are fulfilled (for example, the job ended with a specific status or the job failed several times).</p>
 <section id="IfCompletionStatus">
 <h3>IfCompletionStatus<a class="headerlink" href="#IfCompletionStatus" title="Link to this heading">¶</a></h3>
-<p>Triggers actions based on job completion status. In this example, if the job runs unsuccessfully, it sends an email and runs another job. You can set this property for a Job, Folder, or SubFolder</p>
+<p>Triggers actions based on job completion status. In this example, if the job runs unsuccessfully, it sends an email, runs another job, and adds an event. You can set this property for a Job, Folder, or SubFolder.</p>
+<p>Example 1: Sending an Email and Running Another Job on Failure</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job1&#39;, command=&#39;echo Hello&#39;)
-job.if_list.append(
-    IfCompletionStatus(&#39;action_if_failure&#39;,
-                       completion_status=&#39;NOTOK&#39;,
-                       on_list=[
-                           ActionMail(
-                               &#39;mailToTeam&#39;, message=&#39;Job %%JOBNAME failed&#39;, to=&#39;myteam@mail.com&#39;),
-                           ActionRun(&#39;runcorrectiveJob&#39;,
-                                     folder=&#39;FolderName&#39;, job=&#39;JobName&#39;)
-                       ]
-                       )
-)
-<br/></pre></div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">if_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">IfCompletionStatus</span><span class="p">(</span><span class="s1">&#39;action_if_failure&#39;</span><span class="p">,</span>
+                       <span class="n">completion_status</span><span class="o">=</span><span class="s1">&#39;NOTOK&#39;</span><span class="p">,</span>
+                       <span class="n">on_list</span><span class="o">=</span><span class="p">[</span>
+                           <span class="n">ActionMail</span><span class="p">(</span>
+                               <span class="s1">&#39;mailToTeam&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;Job </span><span class="si">%%</span><span class="s1">JOBNAME failed&#39;</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="s1">&#39;myteam@mail.com&#39;</span><span class="p">),</span>
+                           <span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;runcorrectiveJob&#39;</span><span class="p">,</span>
+                                     <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;FolderName&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;JobName&#39;</span><span class="p">)</span>
+                       <span class="p">]</span>
+                       <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
 </div>
 </div>
+<p>Example 2: Adding an Event on Job Failure</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">if_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">IfCompletionStatus</span><span class="p">(</span><span class="s1">&#39;action_if_failure&#39;</span><span class="p">,</span> <span class="n">completion_status</span><span class="o">=</span><span class="s1">&#39;NOTOK&#39;</span><span class="p">,</span>
+                       <span class="n">on_list</span><span class="o">=</span><span class="p">[</span>
+                           <span class="n">EventAdd</span><span class="p">(</span><span class="s1">&#39;setEvent&#39;</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s2">&quot;condition&quot;</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="n">Event</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">OrderDate</span><span class="p">)</span>
+                       <span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>This ensures that if the job fails (completion status is NOTOK), an event is added with the specified condition and order date.</p>
 </section>
 <section id="IfNumberOfReruns">
 <h3>IfNumberOfReruns<a class="headerlink" href="#IfNumberOfReruns" title="Link to this heading">¶</a></h3>
@@ -465,12 +483,12 @@ job.if_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job2&#39;, command=&#39;echo Hello&#39;)
-job.if_list.append(
-    IfNumberOfReruns(&#39;actionByNumberOfReruns&#39;,
-                     number_of_reruns=&#39;&gt;=4&#39;,
-                     on_list=[ActionRun(&#39;RunJob&#39;, folder=&#39;Folder1&#39;, job=&#39;Job1&#39;)])
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">if_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">IfNumberOfReruns</span><span class="p">(</span><span class="s1">&#39;actionByNumberOfReruns&#39;</span><span class="p">,</span>
+                     <span class="n">number_of_reruns</span><span class="o">=</span><span class="s1">&#39;&gt;=4&#39;</span><span class="p">,</span>
+                     <span class="n">on_list</span><span class="o">=</span><span class="p">[</span><span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;RunJob&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;Folder1&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;Job1&#39;</span><span class="p">)])</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -482,12 +500,12 @@ job.if_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job2&#39;, command=&#39;echo Hello&#39;)
-job.if_list.append(
-    IfNumberOfFailures(&#39;ActionByNumberOfFailures&#39;,
-                       number_of_failures=&#39;1&#39;,
-                       on_list=[ActionRun(&#39;RunJob&#39;, folder=&#39;Folder1&#39;, job=&#39;Job1&#39;)])
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">if_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">IfNumberOfFailures</span><span class="p">(</span><span class="s1">&#39;ActionByNumberOfFailures&#39;</span><span class="p">,</span>
+                       <span class="n">number_of_failures</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+                       <span class="n">on_list</span><span class="o">=</span><span class="p">[</span><span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;RunJob&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;Folder1&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;Job1&#39;</span><span class="p">)])</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -499,11 +517,11 @@ job.if_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job2&#39;, command=&#39;echo Hello&#39;)
-job.if_list.append(
-    IfJobNotSubmitted(&#39;ActionByJobNotSubmitted&#39;,
-                      on_list=[ActionRun(&#39;RunJob&#39;, folder=&#39;Folder1&#39;, job=&#39;Job1&#39;)])
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">if_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">IfJobNotSubmitted</span><span class="p">(</span><span class="s1">&#39;ActionByJobNotSubmitted&#39;</span><span class="p">,</span>
+                      <span class="n">on_list</span><span class="o">=</span><span class="p">[</span><span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;RunJob&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;Folder1&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;Job1&#39;</span><span class="p">)])</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -515,11 +533,11 @@ job.if_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job2&#39;, command=&#39;echo Hello&#39;)
-job.if_list.append(
-    IfJobOutputNotFound(&#39;ActionByOutputNotFound&#39;,
-                      on_list=[ActionRun(&#39;RunJob&#39;, folder=&#39;Folder1&#39;, job=&#39;Job1&#39;)])
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">if_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">IfJobOutputNotFound</span><span class="p">(</span><span class="s1">&#39;ActionByOutputNotFound&#39;</span><span class="p">,</span>
+                      <span class="n">on_list</span><span class="o">=</span><span class="p">[</span><span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;RunJob&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;Folder1&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;Job1&#39;</span><span class="p">)])</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -531,12 +549,12 @@ job.if_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job2&#39;, command=&#39;echo Hello&#39;)
-job.if_list.append(
-    IfNumberOfExecutions(&#39;ActionByNumberExecutions&#39;,
-                         number_of_executions=&#39;&gt;=5&#39;,
-                         on_list=[ActionRun(&#39;RunJob&#39;, folder=&#39;Folder1&#39;, job=&#39;Job1&#39;)])
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">if_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">IfNumberOfExecutions</span><span class="p">(</span><span class="s1">&#39;ActionByNumberExecutions&#39;</span><span class="p">,</span>
+                         <span class="n">number_of_executions</span><span class="o">=</span><span class="s1">&#39;&gt;=5&#39;</span><span class="p">,</span>
+                         <span class="n">on_list</span><span class="o">=</span><span class="p">[</span><span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;RunJob&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;Folder1&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;Job1&#39;</span><span class="p">)])</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -548,13 +566,13 @@ job.if_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job2&#39;, command=&#39;echo Hello&#39;)
-job.if_list.append(
-    IfOutput(&#39;OutputFound&#39;,
-             code=&#39;myfile.sh&#39;,
-             statement=&#39;ls -l&#39;,
-             on_list=[ActionRun(&#39;RunJob&#39;, folder=&#39;Folder1&#39;, job=&#39;Job1&#39;)])
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">if_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">IfOutput</span><span class="p">(</span><span class="s1">&#39;OutputFound&#39;</span><span class="p">,</span>
+             <span class="n">code</span><span class="o">=</span><span class="s1">&#39;myfile.sh&#39;</span><span class="p">,</span>
+             <span class="n">statement</span><span class="o">=</span><span class="s1">&#39;ls -l&#39;</span><span class="p">,</span>
+             <span class="n">on_list</span><span class="o">=</span><span class="p">[</span><span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;RunJob&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;Folder1&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;Job1&#39;</span><span class="p">)])</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -566,17 +584,17 @@ job.if_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job2&#39;, command=&#39;echo Hello&#39;)
-job.if_list.append(
-    IfVariableValue(&#39;VariableValue&#39;,
-                    variable_name=&#39;IpAddress&#39;,
-                    variable_value=&#39;1&#39;,
-                    operator=IfVariableValue.Operator.EndWith,
-                    on_list=[ActionRun(&#39;RunJob&#39;, folder=&#39;Folder1&#39;, job=&#39;Job1&#39;)],
-                    do_list=[ActionRun(&#39;RunJob1&#39;, folder=&#39;Folder1&#39;, job=&#39;Job1&#39;)])
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">if_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">IfVariableValue</span><span class="p">(</span><span class="s1">&#39;VariableValue&#39;</span><span class="p">,</span>
+                    <span class="n">variable_name</span><span class="o">=</span><span class="s1">&#39;IpAddress&#39;</span><span class="p">,</span>
+                    <span class="n">variable_value</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+                    <span class="n">operator</span><span class="o">=</span><span class="n">IfVariableValue</span><span class="o">.</span><span class="n">Operator</span><span class="o">.</span><span class="n">EndWith</span><span class="p">,</span>
+                    <span class="n">on_list</span><span class="o">=</span><span class="p">[</span><span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;RunJob&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;Folder1&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;Job1&#39;</span><span class="p">)],</span>
+                    <span class="n">do_list</span><span class="o">=</span><span class="p">[</span><span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;RunJob1&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;Folder1&#39;</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="s1">&#39;Job1&#39;</span><span class="p">)])</span>
+<span class="p">)</span>
 
-print(job.dumps_aapi(indent=2))
+<span class="nb">print</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">dumps_aapi</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -629,15 +647,15 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>action = ActionMail(
-    &#39;mailToTeam&#39;,
-    urgency=ActionMail.Urgency.Urgent,
-    subject=&#39;Completion Mail&#39;,
-    message=&#39;%%JOBNAME just completed&#39;,
-    to=&#39;team@comp.com&#39;,
-    cc=&#39;other@comp.com&#39;,
-    attach_output=True
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">ActionMail</span><span class="p">(</span>
+    <span class="s1">&#39;mailToTeam&#39;</span><span class="p">,</span>
+    <span class="n">urgency</span><span class="o">=</span><span class="n">ActionMail</span><span class="o">.</span><span class="n">Urgency</span><span class="o">.</span><span class="n">Urgent</span><span class="p">,</span>
+    <span class="n">subject</span><span class="o">=</span><span class="s1">&#39;Completion Mail&#39;</span><span class="p">,</span>
+    <span class="n">message</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%%</span><span class="s1">JOBNAME just completed&#39;</span><span class="p">,</span>
+    <span class="n">to</span><span class="o">=</span><span class="s1">&#39;team@comp.com&#39;</span><span class="p">,</span>
+    <span class="n">cc</span><span class="o">=</span><span class="s1">&#39;other@comp.com&#39;</span><span class="p">,</span>
+    <span class="n">attach_output</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -649,7 +667,7 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>action = ActionRerun(&#39;rerunAction&#39;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">ActionRerun</span><span class="p">(</span><span class="s1">&#39;rerunAction&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -661,7 +679,7 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>action = ActionSet(&#39;SetVariable&#39;, variable=&#39;var1&#39;, value=&#39;1&#39;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">ActionSet</span><span class="p">(</span><span class="s1">&#39;SetVariable&#39;</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="s1">&#39;var1&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -673,7 +691,7 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>action = ActionSetToOK(&#39;SetToOk&#39;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">ActionSetToOK</span><span class="p">(</span><span class="s1">&#39;SetToOk&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -685,7 +703,7 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>action = ActionSetToNotOK(&#39;SetToNotOk&#39;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">ActionSetToNotOK</span><span class="p">(</span><span class="s1">&#39;SetToNotOk&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -697,7 +715,7 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>action = ActionStopCyclicRun(&#39;SetToOk&#39;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">ActionStopCyclicRun</span><span class="p">(</span><span class="s1">&#39;SetToOk&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -709,14 +727,14 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>action = ActionRun(&#39;CorrectiveJob&#39;,
-                   folder=&#39;FolderName&#39;,
-                   job=&#39;JobName&#39;,
-                   controlm_server=&#39;ctmserver&#39;,
-                   date=&#39;010218&#39;,
-                   variables=[{&#39;cvar1&#39;: &#39;val1&#39;}, {&#39;cvar2&#39;: &#39;val2&#39;}],
-                   run_as_independent_flow=True
-                   )
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">ActionRun</span><span class="p">(</span><span class="s1">&#39;CorrectiveJob&#39;</span><span class="p">,</span>
+                   <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;FolderName&#39;</span><span class="p">,</span>
+                   <span class="n">job</span><span class="o">=</span><span class="s1">&#39;JobName&#39;</span><span class="p">,</span>
+                   <span class="n">controlm_server</span><span class="o">=</span><span class="s1">&#39;ctmserver&#39;</span><span class="p">,</span>
+                   <span class="n">date</span><span class="o">=</span><span class="s1">&#39;010218&#39;</span><span class="p">,</span>
+                   <span class="n">variables</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;cvar1&#39;</span><span class="p">:</span> <span class="s1">&#39;val1&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;cvar2&#39;</span><span class="p">:</span> <span class="s1">&#39;val2&#39;</span><span class="p">}],</span>
+                   <span class="n">run_as_independent_flow</span><span class="o">=</span><span class="kc">True</span>
+                   <span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -728,10 +746,10 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>action = ActionNotify(&#39;NotifyAction&#39;,
-                      message=&#39;job just ran&#39;,
-                      destination=ActionNotify.Destination.JobLog,
-                      urgency=ActionNotify.Urgency.VeryUrgent)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">ActionNotify</span><span class="p">(</span><span class="s1">&#39;NotifyAction&#39;</span><span class="p">,</span>
+                      <span class="n">message</span><span class="o">=</span><span class="s1">&#39;job just ran&#39;</span><span class="p">,</span>
+                      <span class="n">destination</span><span class="o">=</span><span class="n">ActionNotify</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">JobLog</span><span class="p">,</span>
+                      <span class="n">urgency</span><span class="o">=</span><span class="n">ActionNotify</span><span class="o">.</span><span class="n">Urgency</span><span class="o">.</span><span class="n">VeryUrgent</span><span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -743,11 +761,11 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>action = ActionRemedy(&#39;RemedyTicket&#39;,
-                      summary=&#39;CONTROL-M job %%JOBNAME on node %%NODEID return code %%COMPSTAT&#39;,
-                      message=&#39;CONTROL-M job %%JOBNAME run %%RUNCOUNT ended on node %%NODEID return code %%COMPSTAT Application: %%APPLIC&#39;,
-                      urgency=ActionRemedy.Urgency.Low
-                      )
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">ActionRemedy</span><span class="p">(</span><span class="s1">&#39;RemedyTicket&#39;</span><span class="p">,</span>
+                      <span class="n">summary</span><span class="o">=</span><span class="s1">&#39;CONTROL-M job </span><span class="si">%%</span><span class="s1">JOBNAME on node </span><span class="si">%%</span><span class="s1">NODEID return code </span><span class="si">%%</span><span class="s1">COMPSTAT&#39;</span><span class="p">,</span>
+                      <span class="n">message</span><span class="o">=</span><span class="s1">&#39;CONTROL-M job </span><span class="si">%%</span><span class="s1">JOBNAME run </span><span class="si">%%</span><span class="s1">RUNCOUNT ended on node </span><span class="si">%%</span><span class="s1">NODEID return code </span><span class="si">%%</span><span class="s1">COMPSTAT Application: </span><span class="si">%%</span><span class="s1">APPLIC&#39;</span><span class="p">,</span>
+                      <span class="n">urgency</span><span class="o">=</span><span class="n">ActionRemedy</span><span class="o">.</span><span class="n">Urgency</span><span class="o">.</span><span class="n">Low</span>
+                      <span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -759,9 +777,9 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>action = ActionOutput(
-    &#39;CopyOutput&#39;, operation=ActionOutput.Operation.Copy,
-    destination=&#39;/home/copyHere&#39;)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">ActionOutput</span><span class="p">(</span>
+    <span class="s1">&#39;CopyOutput&#39;</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="n">ActionOutput</span><span class="o">.</span><span class="n">Operation</span><span class="o">.</span><span class="n">Copy</span><span class="p">,</span>
+    <span class="n">destination</span><span class="o">=</span><span class="s1">&#39;/home/copyHere&#39;</span><span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -778,12 +796,12 @@ print(job.dumps_aapi(indent=2))
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job1&#39;, command=&#39;ls -l&#39;)
-job.notify_list.append(
-    NotifyOK(&#39;Notify1&#39;,
-             message=&#39;Job OK&#39;,
-             destination=Notify.Destination.JobLog)
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls -l&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">notify_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">NotifyOK</span><span class="p">(</span><span class="s1">&#39;Notify1&#39;</span><span class="p">,</span>
+             <span class="n">message</span><span class="o">=</span><span class="s1">&#39;Job OK&#39;</span><span class="p">,</span>
+             <span class="n">destination</span><span class="o">=</span><span class="n">Notify</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">JobLog</span><span class="p">)</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -795,12 +813,12 @@ job.notify_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job1&#39;, command=&#39;ls -l&#39;)
-job.notify_list.append(
-    NotifyNotOK(&#39;Notify1&#39;,
-             message=&#39;Job NOT OK&#39;,
-             destination=Notify.Destination.Alerts)
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls -l&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">notify_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">NotifyNotOK</span><span class="p">(</span><span class="s1">&#39;Notify1&#39;</span><span class="p">,</span>
+             <span class="n">message</span><span class="o">=</span><span class="s1">&#39;Job NOT OK&#39;</span><span class="p">,</span>
+             <span class="n">destination</span><span class="o">=</span><span class="n">Notify</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">Alerts</span><span class="p">)</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -812,13 +830,13 @@ job.notify_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job1&#39;, command=&#39;ls -l&#39;)
-job.notify_list.append(
-    NotifyDoesNotStart(&#39;Notify1&#39;,
-             message=&#39;Job did not start&#39;,
-             by=&#39;1510&#39;,
-             destination=Notify.Destination.Console)
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls -l&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">notify_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">NotifyDoesNotStart</span><span class="p">(</span><span class="s1">&#39;Notify1&#39;</span><span class="p">,</span>
+             <span class="n">message</span><span class="o">=</span><span class="s1">&#39;Job did not start&#39;</span><span class="p">,</span>
+             <span class="n">by</span><span class="o">=</span><span class="s1">&#39;1510&#39;</span><span class="p">,</span>
+             <span class="n">destination</span><span class="o">=</span><span class="n">Notify</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">Console</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -830,15 +848,15 @@ job.notify_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job1&#39;, command=&#39;ls -l&#39;)
-job.notify_list.append(
-    NotifyExecutionTime(&#39;Notify1&#39;,
-                        message=&quot;Job didn&#39;t complete in less than 3 minutes&quot;,
-                        destination=Notify.Destination.JobLog,
-                        criteria=NotifyExecutionTime.Criteria.LessThan,
-                        value=&#39;3&#39;
-                        )
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls -l&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">notify_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">NotifyExecutionTime</span><span class="p">(</span><span class="s1">&#39;Notify1&#39;</span><span class="p">,</span>
+                        <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Job didn&#39;t complete in less than 3 minutes&quot;</span><span class="p">,</span>
+                        <span class="n">destination</span><span class="o">=</span><span class="n">Notify</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">JobLog</span><span class="p">,</span>
+                        <span class="n">criteria</span><span class="o">=</span><span class="n">NotifyExecutionTime</span><span class="o">.</span><span class="n">Criteria</span><span class="o">.</span><span class="n">LessThan</span><span class="p">,</span>
+                        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;3&#39;</span>
+                        <span class="p">)</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -850,14 +868,14 @@ job.notify_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job1&#39;, command=&#39;ls -l&#39;)
-job.notify_list.append(
-    NotifyDoesNotEnd(&#39;Notify1&#39;,
-                     message=&quot;Job didn&#39;t by 12h20&quot;,
-                     destination=Notify.Destination.JobLog,
-                     by=&#39;1220&#39;
-                     )
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls -l&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">notify_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">NotifyDoesNotEnd</span><span class="p">(</span><span class="s1">&#39;Notify1&#39;</span><span class="p">,</span>
+                     <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Job didn&#39;t by 12h20&quot;</span><span class="p">,</span>
+                     <span class="n">destination</span><span class="o">=</span><span class="n">Notify</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">JobLog</span><span class="p">,</span>
+                     <span class="n">by</span><span class="o">=</span><span class="s1">&#39;1220&#39;</span>
+                     <span class="p">)</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -869,13 +887,13 @@ job.notify_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job1&#39;, command=&#39;ls -l&#39;)
-job.notify_list.append(
-    NotifyRerun(&#39;Notify1&#39;,
-                message=&quot;Job reran&quot;,
-                destination=Notify.Destination.JobLog
-                )
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls -l&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">notify_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">NotifyRerun</span><span class="p">(</span><span class="s1">&#39;Notify1&#39;</span><span class="p">,</span>
+                <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Job reran&quot;</span><span class="p">,</span>
+                <span class="n">destination</span><span class="o">=</span><span class="n">Notify</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">JobLog</span>
+                <span class="p">)</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -888,14 +906,14 @@ job.notify_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job1&#39;, command=&#39;ls -l&#39;)
-job.notify_list.append(
-    NotifyLateCyclicSubmit(&#39;Notify1&#39;,
-                           message=&quot;Cyclic job did not submit on time&quot;,
-                           destination=Notify.Destination.JobLog,
-                           by=&#39;10&#39;  # Job cyclic is late by 10 minutes
-                           )
-)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls -l&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">notify_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">NotifyLateCyclicSubmit</span><span class="p">(</span><span class="s1">&#39;Notify1&#39;</span><span class="p">,</span>
+                           <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Cyclic job did not submit on time&quot;</span><span class="p">,</span>
+                           <span class="n">destination</span><span class="o">=</span><span class="n">Notify</span><span class="o">.</span><span class="n">Destination</span><span class="o">.</span><span class="n">JobLog</span><span class="p">,</span>
+                           <span class="n">by</span><span class="o">=</span><span class="s1">&#39;10&#39;</span>  <span class="c1"># Job cyclic is late by 10 minutes</span>
+                           <span class="p">)</span>
+<span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -911,14 +929,14 @@ job.notify_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>folder = Folder(&#39;ResourceSample&#39;,
-                job_list=[
-                    JobCommand(&#39;job1&#39;, command=&#39;ls&#39;, resource_list=[
-                        ResourcePool(&#39;semaphore1&#39;, quantity=&#39;3&#39;)
-                    ]
-                    )
-                ]
-                )
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;ResourceSample&#39;</span><span class="p">,</span>
+                <span class="n">job_list</span><span class="o">=</span><span class="p">[</span>
+                    <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span> <span class="n">resource_list</span><span class="o">=</span><span class="p">[</span>
+                        <span class="n">ResourcePool</span><span class="p">(</span><span class="s1">&#39;semaphore1&#39;</span><span class="p">,</span> <span class="n">quantity</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+                    <span class="p">]</span>
+                    <span class="p">)</span>
+                <span class="p">]</span>
+                <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -930,15 +948,15 @@ job.notify_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>folder = Folder(&#39;ResourceSample&#39;,
-                job_list=[
-                    JobCommand(&#39;job1&#39;, command=&#39;ls&#39;, resource_list=[
-                        ResourceLock(
-                            &#39;lock1&#39;, lock_type=ResourceLock.LockType.Exclusive)
-                    ]
-                    )
-                ]
-                )
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s1">&#39;ResourceSample&#39;</span><span class="p">,</span>
+                <span class="n">job_list</span><span class="o">=</span><span class="p">[</span>
+                    <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span> <span class="n">resource_list</span><span class="o">=</span><span class="p">[</span>
+                        <span class="n">ResourceLock</span><span class="p">(</span>
+                            <span class="s1">&#39;lock1&#39;</span><span class="p">,</span> <span class="n">lock_type</span><span class="o">=</span><span class="n">ResourceLock</span><span class="o">.</span><span class="n">LockType</span><span class="o">.</span><span class="n">Exclusive</span><span class="p">)</span>
+                    <span class="p">]</span>
+                    <span class="p">)</span>
+                <span class="p">]</span>
+                <span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
@@ -958,11 +976,11 @@ job.notify_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>job = JobCommand(&#39;Job1&#39;, command=&#39;ls&#39;, rerun=Job.Rerun(
-    every=&#39;4&#39;,
-    from_=Job.Rerun.From.End,
-    times=&#39;3&#39;,
-     units=Job.Rerun.Units.Days))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span> <span class="n">rerun</span><span class="o">=</span><span class="n">Job</span><span class="o">.</span><span class="n">Rerun</span><span class="p">(</span>
+    <span class="n">every</span><span class="o">=</span><span class="s1">&#39;4&#39;</span><span class="p">,</span>
+    <span class="n">from_</span><span class="o">=</span><span class="n">Job</span><span class="o">.</span><span class="n">Rerun</span><span class="o">.</span><span class="n">From</span><span class="o">.</span><span class="n">End</span><span class="p">,</span>
+    <span class="n">times</span><span class="o">=</span><span class="s1">&#39;3&#39;</span><span class="p">,</span>
+     <span class="n">units</span><span class="o">=</span><span class="n">Job</span><span class="o">.</span><span class="n">Rerun</span><span class="o">.</span><span class="n">Units</span><span class="o">.</span><span class="n">Days</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1009,9 +1027,9 @@ job.notify_list.append(
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>waitForEventList = WaitForEvents([Event(event=&quot;e1&quot;), Event(event=&quot;e2&quot;), Event(event=&quot;e3&quot;, date=Event.Date.AnyDate)])
-job = JobCommand(&#39;Job1&#39;, command=&#39;echo Hello&#39;)
-job.event_list.append(waitForEventList)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">waitForEventList</span> <span class="o">=</span> <span class="n">WaitForEvents</span><span class="p">([</span><span class="n">Event</span><span class="p">(</span><span class="n">event</span><span class="o">=</span><span class="s2">&quot;e1&quot;</span><span class="p">),</span> <span class="n">Event</span><span class="p">(</span><span class="n">event</span><span class="o">=</span><span class="s2">&quot;e2&quot;</span><span class="p">),</span> <span class="n">Event</span><span class="p">(</span><span class="n">event</span><span class="o">=</span><span class="s2">&quot;e3&quot;</span><span class="p">,</span> <span class="n">date</span><span class="o">=</span><span class="n">Event</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">AnyDate</span><span class="p">)])</span>
+<span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">event_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">waitForEventList</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1023,9 +1041,9 @@ job.event_list.append(waitForEventList)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>addEventListObject = AddEvents([EventOutAdd(event=&quot;e4&quot;,date=Event.Date.NoDate)])
-job = JobCommand(&#39;Job1&#39;, command=&#39;echo Hello&#39;)
-job.event_list.append(addEventListObject)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">addEventListObject</span> <span class="o">=</span> <span class="n">AddEvents</span><span class="p">([</span><span class="n">EventOutAdd</span><span class="p">(</span><span class="n">event</span><span class="o">=</span><span class="s2">&quot;e4&quot;</span><span class="p">,</span><span class="n">date</span><span class="o">=</span><span class="n">Event</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">NoDate</span><span class="p">)])</span>
+<span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">event_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">addEventListObject</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1037,9 +1055,9 @@ job.event_list.append(addEventListObject)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>deleteEventListObject = DeleteEvents([EventOutDelete(event=&quot;e5&quot;,date=Event.Date.NextOrderDate)])
-job = JobCommand(&#39;Job1&#39;, command=&#39;echo Hello&#39;)
-job.event_list.append(deleteEventListObject)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deleteEventListObject</span> <span class="o">=</span> <span class="n">DeleteEvents</span><span class="p">([</span><span class="n">EventOutDelete</span><span class="p">(</span><span class="n">event</span><span class="o">=</span><span class="s2">&quot;e5&quot;</span><span class="p">,</span><span class="n">date</span><span class="o">=</span><span class="n">Event</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">NextOrderDate</span><span class="p">)])</span>
+<span class="n">job</span> <span class="o">=</span> <span class="n">JobCommand</span><span class="p">(</span><span class="s1">&#39;Job1&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="s1">&#39;echo Hello&#39;</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">event_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">deleteEventListObject</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
