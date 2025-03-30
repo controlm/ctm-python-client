@@ -14,13 +14,23 @@ class AAPIJob:
 
 
 class AAPIObject:
-    def as_aapi_dict(self):
+    def as_aapi_dict(self, ignore_event_type=True):
+        
+        # Import inside the method to prevent circular import issues
+        from aapi.ifbase import IfCompletionStatus  
+        
         res = {}
 
-        if "_type" in attrs.fields_dict(self.__class__):
-            if not self._type.startswith("Condition") or self._type.startswith("Event"):
-                res["Type"] = self._type
+        if '_type' in attrs.fields_dict(self.__class__):
+            is_condition_or_event = self._type.startswith(('Condition', 'Event'))
+    
+            if ignore_event_type:
+                if not is_condition_or_event:
+                    res['Type'] = self._type
+            elif self._type.startswith('Event'):
+                res['Type'] = self._type
 
+                
         if attrs.has(self):
             for field in attrs.fields(self.__class__):
                 value = self.__getattribute__(field.name)
@@ -49,7 +59,10 @@ class AAPIObject:
 
                 elif field.metadata.get("_abstract_aapi_container_"):
                     for obj in value:
-                        res[obj.object_name] = obj.as_aapi_dict()
+                        obj_ignore_type = ignore_event_type
+                        if isinstance(self, IfCompletionStatus):
+                            obj_ignore_type = False  
+                        res[obj.object_name] = obj.as_aapi_dict(ignore_event_type=obj_ignore_type)
 
         else:
             res["attrsibutes_valid"] = False
