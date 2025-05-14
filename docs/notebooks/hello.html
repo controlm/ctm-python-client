@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Monitoring Flows with Control-M Python Client" href="monitoring.html" /><link rel="prev" title="Tutorials" href="../tutorials.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Getting Started with Control-M Python Client - Control-M Python Client documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
@@ -446,7 +446,7 @@ Hello world!
 <p><strong>Don’t forget to add the binaries folder in PATH. It is prompted in the installation</strong></p>
 <p>If you do not require a visual representation of the flow, skip the installation of Graphviz.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ctm_python_client.ext.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_graph</span>
@@ -456,7 +456,7 @@ Hello world!
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -502,6 +502,39 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 </div>
 </div>
 </section>
+<section id="Connecting-two-SubFolders">
+<h3>Connecting two SubFolders<a class="headerlink" href="#Connecting-two-SubFolders" title="Link to this heading">¶</a></h3>
+<p>You can also connect SubFolders, not just Jobs or Folders. To do this, use workflow.connect(src, dest, inpath=…) where src and dest are the names of the SubFolders (as strings), and inpath is the name of the parent Folder that contains them.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow</span><span class="o">.</span><span class="n">clear_all</span><span class="p">()</span>
+
+<span class="c1">#FOLDER</span>
+<span class="n">folder</span> <span class="o">=</span> <span class="n">Folder</span><span class="p">(</span><span class="s2">&quot;my-folder&quot;</span><span class="p">)</span>
+
+<span class="c1">#Subfolders</span>
+<span class="n">subFolder1</span> <span class="o">=</span> <span class="n">SubFolder</span><span class="p">(</span><span class="s2">&quot;sub-folder-1&quot;</span><span class="p">)</span>
+<span class="n">folder</span><span class="o">.</span><span class="n">sub_folder_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subFolder1</span><span class="p">)</span>
+<span class="n">subFolder2</span> <span class="o">=</span> <span class="n">SubFolder</span><span class="p">(</span><span class="s2">&quot;sub-folder-2&quot;</span><span class="p">)</span>
+<span class="n">folder</span><span class="o">.</span><span class="n">sub_folder_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subFolder2</span><span class="p">)</span>
+
+<span class="n">workflow</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;sub-folder-1&quot;</span><span class="p">,</span> <span class="s2">&quot;sub-folder-2&quot;</span><span class="p">,</span><span class="n">inpath</span><span class="o">=</span><span class="s2">&quot;my-folder&quot;</span><span class="p">)</span>
+
+<span class="n">get_graph</span><span class="p">(</span><span class="n">workflow</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_hello_26_0.svg" src="../_images/notebooks_hello_26_0.svg" />
+</div>
+</div>
+</section>
 <section id="Chaining-Jobs">
 <h3>Chaining Jobs<a class="headerlink" href="#Chaining-Jobs" title="Link to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">.connect()</span></code> enables you to create a flow to/from any object in the workflow, but it is inconvenint to use this method for a chain. Let’s learn how to chain multiple jobs. The <code class="docutils literal notranslate"><span class="pre">.chain()</span></code> method uses multiple <code class="docutils literal notranslate"><span class="pre">.connect()</span></code> methods, so the <code class="docutils literal notranslate"><span class="pre">.chain()</span></code> method is a syntactic sugar used to connect a list of jobs.</p>
@@ -530,7 +563,7 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_hello_25_0.svg" src="../_images/notebooks_hello_25_0.svg" />
+<img alt="../_images/notebooks_hello_28_0.svg" src="../_images/notebooks_hello_28_0.svg" />
 </div>
 </div>
 <p>In another example,</p>
@@ -563,7 +596,7 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_hello_27_0.svg" src="../_images/notebooks_hello_27_0.svg" />
+<img alt="../_images/notebooks_hello_30_0.svg" src="../_images/notebooks_hello_30_0.svg" />
 </div>
 </div>
 <p>Here’s an example for the same scenario using separate triggers:</p>
@@ -615,7 +648,7 @@ Connecting MyFolder/MyFirstJob to MyFolder/MySecondJob
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_hello_29_0.svg" src="../_images/notebooks_hello_29_0.svg" />
+<img alt="../_images/notebooks_hello_32_0.svg" src="../_images/notebooks_hello_32_0.svg" />
 </div>
 </div>
 </section>
@@ -777,6 +810,7 @@ Hello
 <li><a class="reference internal" href="#Flows">Flows</a><ul>
 <li><a class="reference internal" href="#Adding-jobs-without-connection">Adding jobs without connection</a></li>
 <li><a class="reference internal" href="#Connecting-two-Jobs">Connecting two Jobs</a></li>
+<li><a class="reference internal" href="#Connecting-two-SubFolders">Connecting two SubFolders</a></li>
 <li><a class="reference internal" href="#Chaining-Jobs">Chaining Jobs</a></li>
 </ul>
 </li>
@@ -797,5 +831,7 @@ Hello
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
