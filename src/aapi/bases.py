@@ -9,10 +9,11 @@ from ctm_python_client.core.comm import Environment
 from ctm_python_client.core.monitoring import RunMonitor
 
 
+@attrs.define
 class AAPIJob:
     pass
 
-
+@attrs.define
 class AAPIObject:
     def as_aapi_dict(self, ignore_event_type=True):
         

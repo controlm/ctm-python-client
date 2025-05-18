@@ -3,7 +3,10 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
+
+from aapi.bases import AAPIObject
+from aapi.businessparameter import BusinessParameter
+from aapi.internalrule import InternalRule
 
 
 @attrs.define

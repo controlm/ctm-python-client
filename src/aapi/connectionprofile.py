@@ -1,9 +1,14 @@
 
 from __future__ import annotations
+from importlib.resources import Package
 import attrs
 import typing
 import enum
-from aapi import *
+
+from aapi.bases import AAPIObject
+from aapi.endpoint import EndpointDestFtp, EndpointDestFtps, EndpointDestLocal, EndpointDestSftp, EndpointSrcFtp, EndpointSrcFtps, EndpointSrcLocal, EndpointSrcSftp
+from aapi.extractrule import ExtractRule
+from aapi.packageparams import PackageParams
 
 
 @attrs.define

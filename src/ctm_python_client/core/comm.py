@@ -128,7 +128,7 @@ class Environment:
     def create_workbench(host: str = 'localhost', port: str = '8443'):
         return Environment(f'https://{host}:{port}/automation-api', 'workbench', 'workbench', mode=EnvironmentMode.WORKBENCH)
 
-    @staticmethod
+    @staticmethod 
     def create_onprem(host: str, port: str = '8443',  username: str = None, password: str = None, credentials: AbstractCredentials = None):
         return Environment(f'https://{host}:{port}/automation-api', username=username, password=password, credentials=credentials, mode=EnvironmentMode.ONPREM)
 

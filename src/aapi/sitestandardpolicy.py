@@ -3,8 +3,9 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
 
+from aapi.bases import AAPIObject
+from aapi.businessfield import BusinessField
 
 @attrs.define
 class SiteStandardPolicy(AAPIObject):

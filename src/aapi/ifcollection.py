@@ -3,7 +3,10 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
+
+from aapi.bases import AAPIObject
+from aapi.do import Do
+from aapi.if_ import IfZOS
 
 
 @attrs.define

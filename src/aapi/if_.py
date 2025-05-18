@@ -1,10 +1,11 @@
 
 from __future__ import annotations
+from ast import If
 import attrs
 import typing
 import enum
-from aapi import *
 
+from aapi.bases import AAPIObject
 
 @attrs.define
 class IfZOS(If):

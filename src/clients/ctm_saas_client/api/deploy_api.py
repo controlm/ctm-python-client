@@ -1341,7 +1341,7 @@ class DeployApi(object):
                  returns the request thread.
         """
 
-        all_params = ['format', 'folder', 'ctm', 'server']  # noqa: E501
+        all_params = ['format', 'folder', 'ctm', 'server', 'useArrayFormat']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1370,6 +1370,8 @@ class DeployApi(object):
             query_params.append(('ctm', params['ctm']))  # noqa: E501
         if 'server' in params:
             query_params.append(('server', params['server']))  # noqa: E501
+        if "useArrayFormat" in params:
+            query_params.append(('useArrayFormat', params['useArrayFormat']))  # noqa: E501
 
         header_params = {}
 

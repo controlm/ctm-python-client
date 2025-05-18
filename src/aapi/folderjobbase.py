@@ -3,8 +3,16 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
-
+from aapi.bases import AAPIJob, AAPIObject
+from aapi.addevents import AddEvents
+from aapi.deleteevents import DeleteEvents
+from aapi.ifbase import IfBase
+from aapi.job import Job
+from aapi.jobtag import JobTag
+from aapi.notify import Notify
+from aapi.resource import ResourceLock
+from aapi.tag import Tag, TagFolder
+from aapi.waitforevents import WaitForEvents
 
 @attrs.define
 class FolderJobBase(AAPIObject):
@@ -211,8 +219,6 @@ class SubFolder(FolderJobBase, AAPIJob):
                                              '_abstract_aapi_container_': True})
     sub_folder_list: typing.List[SubFolder] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    flow_list: typing.List[Flow] = attrs.field(kw_only=True, factory=list, metadata={
-                                               '_abstract_aapi_container_': True})
     job_tag_list: typing.List[JobTag] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     resource_lock_list: typing.List[ResourceLock] = attrs.field(

@@ -1640,7 +1640,6 @@ class DeployApi(object):
                 **kwargs
             )  # noqa: E501
             return data
-
     def get_deployed_folders_new_with_http_info(self, **kwargs):  # noqa: E501
         """Get deployed jobs that match the search criteria.  # noqa: E501
 
@@ -1660,7 +1659,7 @@ class DeployApi(object):
                  returns the request thread.
         """
 
-        all_params = ["format", "folder", "ctm", "server"]  # noqa: E501
+        all_params = ["format", "folder", "ctm", "server", "useArrayFormat"]  # noqa: E501
         all_params.append("async_req")
         all_params.append("_return_http_data_only")
         all_params.append("_preload_content")
@@ -1689,6 +1688,8 @@ class DeployApi(object):
             query_params.append(("ctm", params["ctm"]))  # noqa: E501
         if "server" in params:
             query_params.append(("server", params["server"]))  # noqa: E501
+        if "useArrayFormat" in params:
+            query_params.append(("useArrayFormat", params["useArrayFormat"]))  # noqa: E501
 
         header_params = {}
 
