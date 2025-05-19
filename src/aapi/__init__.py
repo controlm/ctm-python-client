@@ -74,6 +74,14 @@ from aapi.ctbruledata import ActionControlMAnalyzerRule
 from aapi.ifrerun import ActionRestart
 from aapi.ifcollection import IfCollection, IfCollectionZOS
 
-
 from aapi.integration_factory.jobs import *
 from aapi.integration_factory.connection_profiles import *
+
+# Initialize and configure the shared Converter instance for the entire project.
+# This will ensure that custom deserialization (structure hooks) is available globally.
+# from aapi.utils.converter import converter
+
+from aapi.utils.converter import initialize_converter
+
+# Initialize the global converter hooks
+initialize_converter()

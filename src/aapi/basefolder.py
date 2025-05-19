@@ -1,9 +1,23 @@
 
 from __future__ import annotations
-import attrs
-import typing
+
 import enum
-from aapi import *
+import typing
+
+import attrs
+from aapi.addevents import AddEvents
+from aapi.bases import AAPIJob, AAPIObject
+from aapi.calendar import CalendarRuleBased
+from aapi.deleteevents import DeleteEvents
+from aapi.event import Event
+from aapi.folderclientdata import FolderClientData
+from aapi.folderjobbase import SubFolder
+from aapi.ifbase import IfBase
+from aapi.job import Job
+from aapi.notify import Notify
+from aapi.resource import ResourceLock
+from aapi.tag import TagGlobal
+from aapi.waitforevents import WaitForEvents
 
 
 @attrs.define
@@ -13,7 +27,6 @@ class SimpleFolder(AAPIObject):
 
         Automatic = "Automatic"
         Manual = "Manual"
-
     _type: str = attrs.field(init=False, default='SimpleFolder', metadata={
                              '_aapi_repr_': 'Type', '_type_aapi_': 'SimpleFolder'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
@@ -28,16 +41,13 @@ class SimpleFolder(AAPIObject):
     business_fields: typing.List[typing.Dict[str,str]] = attrs.field(
         kw_only=True, metadata={'_aapi_repr_': 'BusinessFields'}, factory=list)
     job_list: typing.List[Job] = attrs.field(kw_only=True, factory=list, metadata={
-                                             '_abstract_aapi_container_': True})
-    flow_list: typing.List[Flow] = attrs.field(kw_only=True, factory=list, metadata={
-                                               '_abstract_aapi_container_': True})
+                                             '_abstract_aapi_container_': True, '_aapi_repr_': 'Jobs'})
     folder_client_data_list: typing.List[FolderClientData] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
 
 
 @attrs.define
 class Folder(SimpleFolder, AAPIJob):
-
     @attrs.define
     class DocumentationFile(AAPIObject):
 
@@ -274,13 +284,15 @@ class Folder(SimpleFolder, AAPIJob):
                              metadata={'_aapi_repr_': 'When'})
     if_list: typing.List[IfBase] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    event_list: typing.List[Event] = attrs.field(
-        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
+      
+    event_list: Event = attrs.field(kw_only=True, default=None, metadata={
+                               '_aapi_repr_': 'eventsToWaitFor'})
+    events_to_add: AddEvents = attrs.field(kw_only=True, default=None, metadata={
+                               '_aapi_repr_': 'eventsToAdd'})
+    events_to_delete: DeleteEvents = attrs.field(kw_only=True, default=None, metadata={
+                               '_aapi_repr_': 'eventsToDelete'})
+   
     wait_for_events: typing.List[WaitForEvents] = attrs.field(
-        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    events_to_add: typing.List[AddEvents] = attrs.field(
-        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    events_to_delete: typing.List[DeleteEvents] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     notify_list: typing.List[Notify] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})

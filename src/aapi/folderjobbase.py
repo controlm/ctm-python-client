@@ -3,8 +3,16 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
-
+from aapi.bases import AAPIJob, AAPIObject
+from aapi.addevents import AddEvents
+from aapi.deleteevents import DeleteEvents
+from aapi.ifbase import IfBase
+from aapi.job import Job
+from aapi.jobtag import JobTag
+from aapi.notify import Notify
+from aapi.resource import ResourceLock
+from aapi.tag import Tag, TagFolder
+from aapi.waitforevents import WaitForEvents
 
 @attrs.define
 class FolderJobBase(AAPIObject):
@@ -211,19 +219,19 @@ class SubFolder(FolderJobBase, AAPIJob):
                                              '_abstract_aapi_container_': True})
     sub_folder_list: typing.List[SubFolder] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    flow_list: typing.List[Flow] = attrs.field(kw_only=True, factory=list, metadata={
-                                               '_abstract_aapi_container_': True})
     job_tag_list: typing.List[JobTag] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     resource_lock_list: typing.List[ResourceLock] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     if_list: typing.List[IfBase] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
+    
+    events_to_add: AddEvents = attrs.field(kw_only=True, default=None, metadata={
+                               '_aapi_repr_': 'eventsToAdd'})
+    events_to_delete: DeleteEvents = attrs.field(kw_only=True, default=None, metadata={
+                               '_aapi_repr_': 'eventsToDelete'})
+    
     wait_for_events: typing.List[WaitForEvents] = attrs.field(
-        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    events_to_add: typing.List[AddEvents] = attrs.field(
-        kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
-    events_to_delete: typing.List[DeleteEvents] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})
     notify_list: typing.List[Notify] = attrs.field(
         kw_only=True, factory=list, metadata={'_abstract_aapi_container_': True})

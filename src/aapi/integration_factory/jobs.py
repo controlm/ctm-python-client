@@ -3,7 +3,10 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
+
+from aapi.bases import AAPIObject
+from aapi.job import Job
+
 
 
 @attrs.define
@@ -1439,7 +1442,7 @@ class JobAzureServiceBus(Job):
                                           '_aapi_repr_': 'ConnectionProfile'})
     service_bus_namespace: str = attrs.field(kw_only=True, default=None, metadata={
                                              '_aapi_repr_': 'Service Bus Namespace'})
-    queue_topic_name: str = attrs.field(kw_only=True, default=None, metadata={'_aapi_repr_': 'Queue\Topic Name'})
+    queue_topic_name: str = attrs.field(kw_only=True, default=None, metadata={'_aapi_repr_': 'Queue\\Topic Name'})
     message_format: str = attrs.field(kw_only=True, default=None, metadata={
                                       '_aapi_repr_': 'Message Format'})
     message_body: str = attrs.field(kw_only=True, default=None, metadata={

@@ -366,6 +366,7 @@ class RunMonitor(Monitor):
 
         try:
             res = self.aapiclient.run_api.get_jobs_status(self.run_id)
+            print("shachar")
             return [
                 o for o in res.statuses if cond(o)
             ][0].job_id

@@ -1,16 +1,38 @@
 import abc
-import typing
-import attrs
+import ast
+import collections
+import copy
 import json
 import pathlib
 import random
 import tempfile
-import collections
-import copy
+import typing
 
-from aapi import *
-from ctm_python_client.core.comm import AAPIClientResponse, AbstractAAPIClient, Environment, EnvironmentMode, OnPremAAPIClient, SaasAAPIClient, sanitize_output
+import attrs
+
+
+import cattrs
+from attr import resolve_types
+from ctm_python_client.core.comm import (
+    AAPIClientResponse,
+    AbstractAAPIClient,
+    Environment,
+    EnvironmentMode,
+    OnPremAAPIClient,
+    SaasAAPIClient,
+    sanitize_output,
+)
 from ctm_python_client.core.monitoring import RunMonitor
+from aapi.addevents import AddEvents
+from aapi.basefolder import Folder, SimpleFolder
+from aapi.bases import AAPIJob, AAPIObject
+from aapi.connectionprofile import ConnectionProfile
+from aapi.deleteevents import DeleteEvents
+from aapi.event import EventIn, EventOutAdd, EventOutDelete
+from aapi.folderjobbase import SubFolder
+from aapi.job import Job
+from aapi.waitforevents import WaitForEvents
+from aapi.utils.converter.shared_converter import converter
 
 __all__ = ['AbstractWorkflow', 'WorkflowDefaults', 'BaseWorkflow', 'Workflow']
 
@@ -192,24 +214,32 @@ class BaseWorkflow(AbstractWorkflow):
             self._connections[event_name] = [key_name]
 
         # Write the add, wait and delete events, support backward compatibility
-
+        
+        
         if not obj_src.events_to_add and not obj_src.add_events_list:
-            obj_src.events_to_add.append(
-                AddEvents(events=[]))
-        obj_src.events_to_add[-1].events.append(
-            EventOutAdd(event=event_name))
+            obj_src.events_to_add = AddEvents(events=[])
+        if obj_src.events_to_add:
+            obj_src.events_to_add.events.append(EventOutAdd(event=event_name))
+        elif obj_src.add_events_list:
+            obj_src.add_events_list[-1].events.append(EventOutAdd(event=event_name))
 
-        if not obj_dest.wait_for_events and not obj_dest.wait_for_events_list:
-            obj_dest.wait_for_events.append(
-                WaitForEvents(events=[]))
-        obj_dest.wait_for_events[-1].events.append(
-            EventIn(event=event_name))
 
-        if not obj_dest.events_to_delete and not obj_dest.delete_events_list:
-            obj_dest.events_to_delete.append(
-                DeleteEvents(events=[]))
-        obj_dest.events_to_delete[-1].events.append(
-            EventOutDelete(event=event_name))
+        if obj_dest.wait_for_events is None and not obj_dest.wait_for_events_list:
+            obj_dest.wait_for_events = WaitForEvents(events=[])
+
+        if obj_dest.wait_for_events:
+            obj_dest.wait_for_events.events.append(EventIn(event=event_name))
+        elif obj_dest.wait_for_events_list:
+            obj_dest.wait_for_events_list[-1].events.append(EventIn(event=event_name))
+        
+        if obj_dest.events_to_delete is None:
+            if obj_dest.delete_events_list:
+                obj_dest.events_to_delete = obj_dest.delete_events_list[0]
+            else:
+                obj_dest.events_to_delete = DeleteEvents(events=[])
+
+        obj_dest.events_to_delete.events.append(EventOutDelete(event=event_name))
+
 
     def chain(self, obj_list: typing.List[AAPIJob], inpath: str):
         objpaths = []
@@ -450,3 +480,53 @@ class Workflow(BaseWorkflow):
         finally:
             if delete_afterwards:
                 fpath.unlink()
+    
+
+    def get_jobs(environment: Environment, server: str = "*", folder: str = "*") -> "Workflow":
+        """
+        Retrieve a Workflow instance based on deployed folders and jobs matching server and folder patterns.
+
+        :param environment: Control-M environment to fetch from
+        :param server: Control-M server name (supports wildcards)
+        :param folder: Folder name pattern (supports wildcards)
+        :return: Populated Workflow instance or None if error occurs
+        """
+        try:
+
+            # Select the appropriate AAPI client
+            client = (
+                SaasAAPIClient(environment.endpoint, environment.credentials)
+                if environment.mode == EnvironmentMode.SAAS
+                else OnPremAAPIClient(environment.endpoint, environment.credentials)
+            )
+
+            client.authenticate()
+
+            # Query the deployed folders and jobs
+            raw_response = client.deploy_api.get_deployed_folders_new(
+                server=server,
+                folder=folder,
+                format="json",
+                useArrayFormat=True
+            )
+
+            # Parse the raw response safely into a Python dictionary
+            folders_data = ast.literal_eval(raw_response)
+
+            # Initialize an empty workflow with default settings
+            workflow = Workflow(environment, WorkflowDefaults(run_as='default_user'))
+
+            # Convert each folder dict into a Folder instance and add to the workflow
+            for folder_name, folder_dict in folders_data.items():
+                folder_dict.setdefault("object_name", folder_name)
+
+                for job in folder_dict.get("Jobs", []):
+                    job.setdefault("object_name", job.get("Name"))
+
+                folder_instance = converter.structure(folder_dict, Folder)
+                workflow.add(folder_instance)
+
+            return workflow
+
+        except Exception as error:
+            raise RuntimeError(f"Failed to retrieve job definitions: {error}")

@@ -3,8 +3,11 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
 
+from aapi.bases import AAPIObject
+from aapi.hostmapping import HostMapping
+from aapi.resourcepools import ResourcePools
+from aapi.runningjobs import RunningJobs
 
 @attrs.define
 class WorkloadPolicy(AAPIObject):

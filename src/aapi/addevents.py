@@ -5,8 +5,8 @@ import typing
 import enum
 import random
 import string
-from aapi import *
-
+from aapi.bases import AAPIObject
+from aapi.event import EventOutAdd
 
 @attrs.define
 class AddEvents(AAPIObject):

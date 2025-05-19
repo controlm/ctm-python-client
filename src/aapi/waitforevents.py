@@ -5,8 +5,9 @@ import typing
 import enum
 import random
 import string
-from aapi import *
 
+from aapi.bases import AAPIObject
+from aapi.event import EventIn
 
 @attrs.define
 class WaitForEvents(AAPIObject):

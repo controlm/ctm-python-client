@@ -1,0 +1,193 @@
+[33m461e4b3[m[33m ([m[1;36mHEAD -> [m[1;32mshachardevelopment[m[33m, [m[1;31morigin/shachardevelopment[m[33m)[m Your clear commit message here
+[33mab3fa50[m[33m ([m[1;31morigin/docs-update/connecting-sub-folders[m[33m, [m[1;32mdocs-update/connecting-sub-folders[m[33m)[m Add generated SVGs for SubFolder connection doc
+[33m6903376[m docs: add documentation for connecting SubFolders in a Workflow
+[33m112a976[m[33m ([m[1;33mtag: 2.4.8[m[33m, [m[1;32mmain[m[33m)[m Release 2.4.8 (#124)
+[33mebd5515[m fix: correctly handle event type in as_aapi_dict (#123)
+[33m0062a4f[m Merge pull request #119 from controlm/MarchRelease
+[33m7debcda[m Fix: Handle missing sub_folder_list in get_graph (#120)
+[33ma7f24f8[m[33m ([m[1;31morigin/MarchRelease[m[33m)[m Update jobs.py
+[33m72b4f1a[m Update test_sanity.py
+[33mcb2928b[m Update __init__.py
+[33m184d589[m Update setup.py
+[33m995b3d5[m Update test_sanity.py
+[33mfd8cc6c[m Update setup.py
+[33m72610a7[m Update autogen.py
+[33m4a23da2[m Update __init__.py
+[33m1393625[m Update jobs.py
+[33mb2997f9[m Update connection_profiles.py
+[33m9a3b059[m Enhance IfCompletionStatus: Add event action & update docs (#118)
+[33mc966a13[m[33m ([m[1;33mtag: 2.4.7[m[33m, [m[1;32morigin/main[m[33m)[m Update Broken Links (#117)
+[33mce68262[m[33m ([m[1;33mtag: 2.4.6[m[33m)[m Control-M Integrations Factory up to January 2025 (#116)
+[33m6d01fa0[m[33m ([m[1;33mtag: 2.4.5[m[33m)[m Control-M Integrations Factory up to December 2024 (#113)
+[33m1826949[m Revert "Control-M Integrations Factory up to December 2024 (#110)" (#112)
+[33m753c744[m Control-M Integrations Factory up to December 2024 (#110)
+[33m27ff621[m Merge pull request #83 from controlm/dependabot/pip/certifi-2024.7.4
+[33m714f037[m[33m ([m[1;33mtag: 2.4.4[m[33m)[m Merge pull request #107 from controlm/run-on-demand-documentation
+[33m0afab2c[m support run on-demand Automation-API #89
+[33m867ed58[m[33m ([m[1;33mtag: 2.4.3[m[33m)[m Merge pull request #106 from controlm/_Support-run-ondemand
+[33mc214eed[m Support run ondemand Automation-API Control-M
+[33m59aafe0[m Support run ondemand Automation-API Control-M
+[33m1cb651f[m[33m ([m[1;33mtag: 2.4.2[m[33m)[m Merge pull request #105 from controlm/fix_run_on_demand
+[33m7d99a07[m Support run ondemand Automation-API Control-M
+[33mb966673[m Support run ondemand Automation-API Control-M
+[33m6920381[m Support run ondemand - add to pytest
+[33m784ad02[m Support run ondemand Automation-API Control-M
+[33m2377a37[m[33m ([m[1;33mtag: 2.4.1[m[33m)[m Merge pull request #104 from controlm/Support-run-ondemand
+[33m4060a4e[m Support run ondemand Automation-API Control-M
+[33mb271412[m Support run ondemand Automation-API Control-M
+[33m9c03306[m[33m ([m[1;33mtag: 2.4.0[m[33m)[m Merge pull request #103 from controlm/support-run_on_demand
+[33mdeb24e7[m Support run ondemand Automation-API Control-M
+[33m00ae988[m Merge pull request #102 from controlm/support-run_on_demand
+[33m81d198c[m Support run ondemand Automation-API Control-M
+[33m9d6b933[m fix pytest - circular dependency
+[33macd1d22[m fix pytest
+[33m652eb29[m fix pytest
+[33m249cfe0[m fix pytest
+[33m000cdba[m Support run ondemand Automation-API Control-M
+[33m1f216fa[m[33m ([m[1;33mtag: 2.3.7[m[33m)[m Merge pull request #101 from controlm/integration-factory-Nov-release
+[33maab1906[m[33m ([m[1;31morigin/integration-factory-Nov-release[m[33m)[m Control-M Integrations Factory up to November 2024
+[33md850296[m Merge pull request #100 from controlm/fix-sub-folder-defaults
+[33m2d166d5[m[33m ([m[1;31morigin/fix-sub-folder-defaults[m[33m)[m Fix apply defaults for sub folder  #90
+[33m097104f[m[33m ([m[1;33mtag: 2.3.6[m[33m)[m Merge pull request #99 from controlm/integration-factory-Oct-release
+[33m4cb6d1a[m Control-M Integrations Factory up to October 2024
+[33m7d9cee2[m Merge pull request #98 from controlm/py-documentation-zos-job
+[33m617ec5f[m update Control-M Python Client documentation z/OS Job
+[33m51553be[m update Control-M Python Client documentation z/OS Job
+[33m0617a3e[m Merge pull request #94 from controlm/fix-bugs-10-24
+[33mb74159f[m update Control-M Python Client documentation Chaining Jobs
+[33m94a9c45[m update Control-M Python Client documentation Chaining Jobs
+[33m4c064e6[m Merge pull request #93 from controlm/fix-bugs-10-24
+[33meeb82f4[m Revert "update Control-M Python Client documentation Chaining Jobs"
+[33m3a930bd[m Revert "update Control-M Python Client documentation Chaining Jobs"
+[33mc8fcb63[m Revert "update Control-M Python Client documentation Chaining Jobs"
+[33m38876bd[m Merge pull request #92 from controlm/fix-bugs-10-24
+[33m3db491c[m update Control-M Python Client documentation Chaining Jobs
+[33mc0134dd[m Merge pull request #91 from controlm/fix-bugs-10-24
+[33m27a1c09[m update Control-M Python Client documentation Chaining Jobs
+[33m1b1f0c5[m update Control-M Python Client documentation Chaining Jobs
+[33mf1d6f91[m fix job SLA Management
+[33m976dc4b[m[33m ([m[1;33mtag: 2.3.5[m[33m)[m Merge pull request #88 from controlm/fix-bugs-09-24
+[33m5e618f6[m Control-M Integrations Factory up to September 2024
+[33m7021015[m fix workflow.deploy() not raise an error
+[33m15ba5f3[m fix the value of RunAsDummy in the job SLA
+[33m11cc7f7[m[33m ([m[1;33mtag: 2.3.4[m[33m)[m Merge pull request #87 from controlm/integration-factory-Aug-release
+[33m817d1fd[m Control-M Integrations Factory up to August 2024
+[33ma0915a7[m[33m ([m[1;33mtag: 2.3.3[m[33m)[m Merge pull request #85 from controlm/integration-factory-July-release
+[33meeb80a1[m Control-M Integrations Factory up to July 2024
+[33m864c9a5[m Bump certifi from 2023.7.22 to 2024.7.4
+[33m94c33ee[m Merge pull request #82 from controlm/py-documentation-chain
+[33mddf251c[m update Control-M Python Client documentation Chaining Jobs
+[33m8788013[m[33m ([m[1;33mtag: 2.3.2[m[33m)[m Merge pull request #81 from controlm/py-documentation-chain
+[33m319e1e5[m release 2.3.2
+[33mc5e8c9e[m Merge pull request #80 from controlm/py-documentation-chain
+[33m18b5457[m update Control-M Python Client documentation Chaining Jobs
+[33m156f739[m[33m ([m[1;33mtag: 2.3.1[m[33m)[m Merge pull request #79 from controlm/fix-run-as
+[33m286592a[m fix run_as job and sub_folder in folder objs
+[33m9e94d1e[m[33m ([m[1;33mtag: 2.3.0[m[33m)[m Merge pull request #77 from controlm/dependabot/pip/urllib3-1.26.19
+[33m7be8bac[m Merge pull request #78 from controlm/integration-factory-June-release
+[33m4139795[m Control-M Integrations Factory up to June 2024
+[33m2ad055e[m Bump urllib3 from 1.26.18 to 1.26.19
+[33m9bce409[m[33m ([m[1;33mtag: 2.2.6[m[33m)[m Merge pull request #76 from controlm/integration-factory-May-release
+[33m75ddecd[m Control-M Integrations Factory up to May 2024
+[33m6e60880[m[33m ([m[1;33mtag: 2.2.5[m[33m)[m Merge pull request #75 from controlm/integration-factory-April-release
+[33m8061b8e[m Control-M Integrations Factory up to April 2024
+[33mb586325[m Control-M Integrations Factory up to April 2024
+[33m5ab0533[m[33m ([m[1;33mtag: 2.2.4[m[33m)[m Merge pull request #74 from controlm/integration-factory-March-release
+[33m22741f0[m Control-M Integrations Factory up to March 2024
+[33md22b671[m[33m ([m[1;33mtag: 2.2.3[m[33m)[m Merge pull request #72 from controlm/behavior-of-events
+[33m1f07532[m Release for 2.2.3
+[33mdcf6114[m Merge pull request #71 from controlm/behavior-of-events
+[33m411582f[m fix Workflow methods chain and connect #70
+[33me44d962[m[33m ([m[1;33mtag: 2.2.2[m[33m)[m Merge pull request #69 from controlm/behavior-of-events
+[33m8ceb506[m Release for 2.2.2
+[33m6070acf[m Merge pull request #68 from controlm/behavior-of-events
+[33m35e5bde[m fix events backward compatibility
+[33m8f0837d[m[33m ([m[1;33mtag: 2.2.1[m[33m)[m Merge pull request #67 from controlm/behavior-of-events
+[33mbe0387c[m Events behavior - issue #29
+[33mcb2f3bc[m add pytests
+[33m33a8983[m Events behavior - #29
+[33mc18222c[m Merge pull request #66 from controlm/behavior-of-events
+[33m4c39802[m Events behavior - issue #29
+[33ma143543[m[33m ([m[1;33mtag: 2.1.6[m[33m)[m Merge pull request #65 from controlm/integration-factory-February-release
+[33m9bb57ed[m Control-M Integrations Factory up to February 2024
+[33m1ea4b5d[m Control-M Integrations Factory up to February 2024
+[33m973542f[m Ai job type documentation (#63)
+[33mabdce61[m[33m ([m[1;33mtag: 2.1.5[m[33m)[m Merge pull request #61 from controlm/integration-factory-January-release
+[33m8499cdd[m Release for 2.1.5
+[33m0d8daa9[m Bump urllib3 from 1.26.17 to 1.26.18 (#54)
+[33m1ea5ac4[m Control-M Integrations Factory up to January 2024 (#60)
+[33m67303ab[m Control-M Integrations Factory up to January 2024
+[33m30dd39f[m Control-M Integrations Factory up to January 2024
+[33m57701eb[m[33m ([m[1;33mtag: 2.1.4[m[33m)[m Merge pull request #58 from controlm/integration-factory-nov-release
+[33mef052b4[m Merge branch 'main' into integration-factory-nov-release
+[33m99b257a[m Control-M Integrations Factory up to December 2023
+[33mc763c44[m Control-M Integrations Factory up to December 2023
+[33m8fcd47f[m Merge pull request #53 from controlm/dependabot/pip/urllib3-1.26.17
+[33m28768dc[m Bump urllib3 from 1.26.9 to 1.26.17
+[33mf030820[m Bump certifi from 2022.12.7 to 2023.7.22 (#39)
+[33m0475026[m Merge pull request #38 from controlm/Integrations-Factory-up-to-July
+[33m2409c7a[m Control-M Integrations Factory up to July 5th
+[33mc363ee3[m Merge pull request #36 from controlm/add-event-doc
+[33m47db8f0[m Add Event Documentation
+[33m8696520[m Merge branch 'readme-required-python-version' into main
+[33m501318c[m add python required version in README.md
+[33m3460cc1[m[33m ([m[1;33mtag: 2.1.3[m[33m)[m + doc for the new Integration Python jobs
+[33m3876bba[m + change documentation to use Pypi
+[33mbfe378c[m[33m ([m[1;33mtag: 2.1.2rc[m[33m)[m Update setup.py
+[33m777b387[m[33m ([m[1;33mtag: 2.1.2[m[33m)[m Update setup.py
+[33m6c34993[m Update setup.py
+[33m0538841[m Update setup.py
+[33m1b4b81b[m Update publish.yaml
+[33m020b611[m Update setup.py
+[33m12e144c[m + Control-M Integrations up to May 31th (#33)
+[33m68b4843[m + workflow - publish python package (#32)
+[33m2c21a1c[m + Control-M Integrations up to April 30th
+[33ma18d94c[m fix ConnectionProfile representation
+[33m1481ca2[m + MicroFocus integration support
+[33md716ebe[m[33m ([m[1;33mtag: 2.1.0[m[33m)[m + nojekyll
+[33mef09772[m rename documentation folders
+[33mde058d4[m + if doc
+[33m054b97b[m + docs_page which contains built documentation
+[33m6567839[m Add jinja2 as dependency
+[33mfa84d76[m Feature/autogen ai (#23)
+[33m3253b44[m + run_number in monitoring (#19)
+[33mb0ca11f[m Bump certifi from 2021.10.8 to 2022.12.7 (#15)
+[33m54cd503[m Fix get_log
+[33mf6308bb[m Feature/tests (#14)
+[33m799687c[m Merge pull request #13 from controlm/development
+[33mf5bb64a[m + monitor base class
+[33m02c11b2[m change version -> 2.0.2
+[33mad136ec[m[33m ([m[1;33mtag: 2.0.2[m[33m)[m Merge pull request #12 from controlm/development
+[33m9c4f66b[m[33m ([m[1;33mtag: 2.0.1[m[33m)[m change stup version and author
+[33m3eb0a4d[m Merge pull request #11 from controlm/development
+[33m44df195[m + gitignore
+[33mbe46e29[m + monitoring actions
+[33m57dc0e8[m + refactor version info
+[33m1b60e51[m[33m ([m[1;33mtag: release-2.0.0[m[33m)[m fix links
+[33mb353731[m RELEASE v.2.0.0 init commit
+[33m977f119[m Update issue templates
+[33m7e3c41a[m Create Code of Conduct (#3)
+[33mb9fb0ae[m Support statement (#2)
+[33mc1c7b83[m Update README.md
+[33md2e1dbb[m remove broken links
+[33mb9ffa49[m fix client dependency
+[33ma3aeb1a[m fix readme
+[33mf9dedff[m Update LICENSE
+[33m81bcf64[m Create LICENSE
+[33mbaeb0c8[m Delete LICENSE
+[33me418cb3[m Update README.md
+[33m75661a8[m add "six" dependency
+[33mb110d2d[m add contributing guidelines
+[33m76d648a[m fix link to examples
+[33m0329fbc[m review Readme and add BMC Demos
+[33m3558f13[m Update README.md
+[33mcd711d9[m add examples notebooks
+[33mf2529a5[m remove outdated docker files
+[33mdaedf19[m Update README
+[33m678c7ac[m Merge branch 'main' of github.com:controlm/ctm-python-client into main
+[33m5c46dea[m fix client dependencies
+[33me4fa959[m Update README.md
+[33m26598f8[m Update README.md
+[33m6a44aa3[m + Demo files
+[33md5c3cff[m Initial code commit
+[33meeddf4e[m Initial commit
