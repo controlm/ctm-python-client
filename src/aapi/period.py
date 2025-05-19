@@ -3,7 +3,8 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
+from aapi.bases import AAPIObject
+from aapi.year import Year
 
 
 @attrs.define

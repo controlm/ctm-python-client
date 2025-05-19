@@ -1,17 +1,34 @@
 import abc
-import typing
-import attrs
+import ast
+import collections
+import copy
 import json
 import pathlib
 import random
 import tempfile
-import collections
-import copy
+import typing
+import attrs
 
-from aapi import *
-from ctm_python_client.core.comm import AAPIClientResponse, AbstractAAPIClient, Environment, EnvironmentMode, OnPremAAPIClient, SaasAAPIClient, sanitize_output
+
+from ctm_python_client.core.comm import (
+    AAPIClientResponse,
+    AbstractAAPIClient,
+    Environment,
+    EnvironmentMode,
+    OnPremAAPIClient,
+    SaasAAPIClient,
+    sanitize_output,
+)
 from ctm_python_client.core.monitoring import RunMonitor
-
+from aapi.addevents import AddEvents
+from aapi.basefolder import Folder, SimpleFolder
+from aapi.bases import AAPIJob, AAPIObject
+from aapi.connectionprofile import ConnectionProfile
+from aapi.deleteevents import DeleteEvents
+from aapi.event import EventIn, EventOutAdd, EventOutDelete
+from aapi.folderjobbase import SubFolder
+from aapi.job import Job
+from aapi.waitforevents import WaitForEvents
 __all__ = ['AbstractWorkflow', 'WorkflowDefaults', 'BaseWorkflow', 'Workflow']
 
 

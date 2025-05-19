@@ -3,8 +3,17 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
-
+from aapi.bases import AAPIJob, AAPIObject
+from aapi.addevents import AddEvents
+from aapi.deleteevents import DeleteEvents
+from aapi.ifbase import IfBase
+from aapi.job import Job
+from aapi.jobtag import JobTag
+from aapi.notify import Notify
+from aapi.resource import ResourceLock
+from aapi.tag import Tag, TagFolder
+from aapi.waitforevents import WaitForEvents
+from aapi.flow import Flow
 
 @attrs.define
 class FolderJobBase(AAPIObject):

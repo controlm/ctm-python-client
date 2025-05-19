@@ -4,8 +4,9 @@ import enum
 import typing
 
 import attrs
-
-from aapi import *
+from aapi.on import On
+from aapi.bases import AAPIObject
+from aapi.do import Do
 
 
 @attrs.define
