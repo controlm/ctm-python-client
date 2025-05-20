@@ -43,7 +43,7 @@ class SimpleFolder(AAPIObject):
     business_fields: typing.List[typing.Dict[str,str]] = attrs.field(
         kw_only=True, metadata={'_aapi_repr_': 'BusinessFields'}, factory=list)
     job_list: typing.List[Job] = attrs.field(kw_only=True, factory=list, metadata={
-                                             '_abstract_aapi_container_': True})
+                                              '_abstract_aapi_container_': True, '_aapi_alias_': 'Jobs'})
     flow_list: typing.List[Flow] = attrs.field(kw_only=True, factory=list, metadata={
                                                '_abstract_aapi_container_': True})
     folder_client_data_list: typing.List[FolderClientData] = attrs.field(

@@ -29,6 +29,8 @@ from aapi.event import EventIn, EventOutAdd, EventOutDelete
 from aapi.folderjobbase import SubFolder
 from aapi.job import Job
 from aapi.waitforevents import WaitForEvents
+from aapi.utils.converter.shared_converter import converter
+
 __all__ = ['AbstractWorkflow', 'WorkflowDefaults', 'BaseWorkflow', 'Workflow']
 
 
@@ -467,3 +469,51 @@ class Workflow(BaseWorkflow):
         finally:
             if delete_afterwards:
                 fpath.unlink()
+    
+    def get_jobs(environment: Environment, server: str = "*", folder: str = "*") -> "Workflow":
+        """
+        Retrieve a Workflow instance based on deployed folders and jobs matching server and folder patterns.
+        :param environment: Control-M environment to fetch from
+        :param server: Control-M server name (supports wildcards)
+        :param folder: Folder name pattern (supports wildcards)
+        :return: Populated Workflow instance or None if error occurs
+        """
+        try:
+
+            # Select the appropriate AAPI client
+            client = (
+                SaasAAPIClient(environment.endpoint, environment.credentials)
+                if environment.mode == EnvironmentMode.SAAS
+                else OnPremAAPIClient(environment.endpoint, environment.credentials)
+            )
+
+            client.authenticate()
+
+            # Query the deployed folders and jobs
+            raw_response = client.deploy_api.get_deployed_folders_new(
+                server=server,
+                folder=folder,
+                format="json",
+                useArrayFormat=True
+            )
+
+            # Parse the raw response safely into a Python dictionary
+            folders_data = ast.literal_eval(raw_response)
+
+            # Initialize an empty workflow with default settings
+            workflow = Workflow(environment, WorkflowDefaults(run_as='default_user'))
+
+            # Convert each folder dict into a Folder instance and add to the workflow
+            for folder_name, folder_dict in folders_data.items():
+                folder_dict.setdefault("object_name", folder_name)
+
+                for job in folder_dict.get("Jobs", []):
+                    job.setdefault("object_name", job.get("Name"))
+
+                folder_instance = converter.structure(folder_dict, Folder)
+                workflow.add(folder_instance)
+
+            return workflow
+
+        except Exception as error:
+            raise RuntimeError(f"Failed to retrieve job definitions: {error}")

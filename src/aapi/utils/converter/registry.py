@@ -13,7 +13,7 @@ def make_structure_hook(cls, converter: Converter):
 
         # Create field mapping from JSON keys to attribute names
         field_map = {
-            f.metadata.get("_aapi_repr_", f.name): f.name
+            f.metadata.get("_aapi_repr_", f.metadata.get("_aapi_alias_", f.name)): f.name
             for f in attr.fields(cls)
         }
 
