@@ -3,3 +3,4 @@ pytest
 keyring
 coverage
 graphviz
+cattrs
