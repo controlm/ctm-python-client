@@ -3,11 +3,11 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
+from aapi.bases import AAPIObject
 
 
 @attrs.define
-class Flow_(AAPIObject):
+class Flow(AAPIObject):
 
     _type: str = attrs.field(init=False, default='Flow', metadata={
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Flow'})

@@ -11,7 +11,7 @@ from aapi.connectionprofile import ConnectionProfile, ConnectionProfileAirflow, 
 from aapi.deleteevents import DeleteEvents
 from aapi.do import Do
 from aapi.event import Event, EventAdd, EventDelete, EventIn, EventOut, EventOutAdd, EventOutDelete
-from aapi.flow_ import Flow_
+from aapi.flow import Flow
 from aapi.basefolder import SimpleFolder, Folder
 from aapi.folderclientdata import FolderClientData
 from aapi.businessfield import BusinessField
@@ -77,3 +77,12 @@ from aapi.ifcollection import IfCollection, IfCollectionZOS
 
 from aapi.integration_factory.jobs import *
 from aapi.integration_factory.connection_profiles import *
+
+# Initialize and configure the shared Converter instance for the entire project.
+# This will ensure that custom deserialization (structure hooks) is available globally.
+# from aapi.utils.converter import converter
+
+from aapi.utils.converter import initialize_converter
+
+# Initialize the global converter hooks
+initialize_converter()

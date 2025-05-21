@@ -3,8 +3,23 @@ from __future__ import annotations
 import attrs
 import typing
 import enum
-from aapi import *
+import typing
 
+import attrs
+from aapi.addevents import AddEvents
+from aapi.bases import AAPIJob, AAPIObject
+from aapi.calendar import CalendarRuleBased
+from aapi.deleteevents import DeleteEvents
+from aapi.event import Event
+from aapi.folderclientdata import FolderClientData
+from aapi.folderjobbase import SubFolder
+from aapi.ifbase import IfBase
+from aapi.job import Job
+from aapi.notify import Notify
+from aapi.resource import ResourceLock
+from aapi.tag import TagGlobal
+from aapi.waitforevents import WaitForEvents
+from aapi.flow import Flow
 
 @attrs.define
 class SimpleFolder(AAPIObject):
@@ -28,7 +43,7 @@ class SimpleFolder(AAPIObject):
     business_fields: typing.List[typing.Dict[str,str]] = attrs.field(
         kw_only=True, metadata={'_aapi_repr_': 'BusinessFields'}, factory=list)
     job_list: typing.List[Job] = attrs.field(kw_only=True, factory=list, metadata={
-                                             '_abstract_aapi_container_': True})
+                                              '_abstract_aapi_container_': True, '_aapi_alias_': 'Jobs'})
     flow_list: typing.List[Flow] = attrs.field(kw_only=True, factory=list, metadata={
                                                '_abstract_aapi_container_': True})
     folder_client_data_list: typing.List[FolderClientData] = attrs.field(
