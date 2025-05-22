@@ -489,7 +489,7 @@ class Workflow(BaseWorkflow):
 
             client.authenticate()
 
-            # Prepare query parameters, conditionally adding 'job' if it's not None
+            # Prepare query parameters
             query_params = {
                 "server": server,
                 "folder": folder,
