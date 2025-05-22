@@ -217,6 +217,7 @@
 <li class="toctree-l1"><a class="reference internal" href="notebooks/jobproperties.html">Job and Folder Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/connectionprofiles.html">Connection Profiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/run_ondemand.html">Run On Demand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/get_jobs.html">Get Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="beyond.html">Going Forward</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">References:</span></p>
@@ -706,20 +707,12 @@ If not applicable, it returns None.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ctm_python_client.core.workflow.Workflow.get_jobs">
-<span class="sig-name descname"><span class="pre">get_jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'*'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ctm_python_client.core.workflow.Workflow" title="ctm_python_client.core.workflow.Workflow"><span class="pre">Workflow</span></a></span></span><a class="headerlink" href="#ctm_python_client.core.workflow.Workflow.get_jobs" title="Link to this definition">¶</a></dt>
-<dd><p>Retrieve a Workflow instance based on deployed folders and jobs matching server and folder patterns.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>environment</strong> – Control-M environment to fetch from</p></li>
-<li><p><strong>server</strong> – Control-M server name (supports wildcards)</p></li>
-<li><p><strong>folder</strong> – Folder name pattern (supports wildcards)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Populated Workflow instance or None if error occurs</p>
-</dd>
-</dl>
+<span class="sig-name descname"><span class="pre">get_jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ctm_python_client.core.workflow.Workflow" title="ctm_python_client.core.workflow.Workflow"><span class="pre">Workflow</span></a></span></span><a class="headerlink" href="#ctm_python_client.core.workflow.Workflow.get_jobs" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a Workflow instance based on deployed folders and jobs matching server and folder patterns.
+:param environment: Control-M environment to fetch from
+:param server: Control-M server name
+:param folder: Folder name pattern (supports wildcards)
+:return: Populated Workflow instance or raises RuntimeError if an error occurs</p>
 </dd></dl>
 
 <dl class="py method">

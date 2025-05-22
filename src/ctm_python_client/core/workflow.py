@@ -30,6 +30,7 @@ from aapi.folderjobbase import SubFolder
 from aapi.job import Job
 from aapi.waitforevents import WaitForEvents
 from aapi.utils.converter.shared_converter import converter
+from typing import Union
 
 __all__ = ['AbstractWorkflow', 'WorkflowDefaults', 'BaseWorkflow', 'Workflow']
 
@@ -470,16 +471,15 @@ class Workflow(BaseWorkflow):
             if delete_afterwards:
                 fpath.unlink()
     
-    def get_jobs(environment: Environment, server: str = "*", folder: str = "*") -> "Workflow":
+    def get_jobs(environment: Environment, server: str, folder: str) -> "Workflow":
         """
         Retrieve a Workflow instance based on deployed folders and jobs matching server and folder patterns.
         :param environment: Control-M environment to fetch from
-        :param server: Control-M server name (supports wildcards)
+        :param server: Control-M server name
         :param folder: Folder name pattern (supports wildcards)
-        :return: Populated Workflow instance or None if error occurs
+        :return: Populated Workflow instance or raises RuntimeError if an error occurs
         """
         try:
-
             # Select the appropriate AAPI client
             client = (
                 SaasAAPIClient(environment.endpoint, environment.credentials)
@@ -489,13 +489,16 @@ class Workflow(BaseWorkflow):
 
             client.authenticate()
 
+            # Prepare query parameters, conditionally adding 'job' if it's not None
+            query_params = {
+                "server": server,
+                "folder": folder,
+                "format": "json",
+                "useArrayFormat": "true"
+            }
+
             # Query the deployed folders and jobs
-            raw_response = client.deploy_api.get_deployed_folders_new(
-                server=server,
-                folder=folder,
-                format="json",
-                useArrayFormat=True
-            )
+            raw_response = client.deploy_api.get_deployed_folders_new(**query_params)
 
             # Parse the raw response safely into a Python dictionary
             folders_data = ast.literal_eval(raw_response)
@@ -503,9 +506,23 @@ class Workflow(BaseWorkflow):
             # Initialize an empty workflow with default settings
             workflow = Workflow(environment, WorkflowDefaults(run_as='default_user'))
 
+            # Normalize folders_data to a list of folder dictionaries
+            if isinstance(folders_data, dict):
+                if "Folders" in folders_data and isinstance(folders_data["Folders"], list):
+                    # Format: {"Folders": [folder1, folder2, ...]}
+                    folder_dicts = folders_data["Folders"]
+                else:
+                    # Format: {folder_name1: folder_dict1, folder_name2: folder_dict2, ...}
+                    folder_dicts = []
+                    for folder_name, folder_dict in folders_data.items():
+                        folder_dict.setdefault("object_name", folder_name)
+                        folder_dicts.append(folder_dict)
+            else:
+                raise RuntimeError("Unexpected format in folders_data")
+
             # Convert each folder dict into a Folder instance and add to the workflow
-            for folder_name, folder_dict in folders_data.items():
-                folder_dict.setdefault("object_name", folder_name)
+            for folder_dict in folder_dicts:
+                folder_dict.setdefault("object_name", folder_dict.get("Name"))
 
                 for job in folder_dict.get("Jobs", []):
                     job.setdefault("object_name", job.get("Name"))
