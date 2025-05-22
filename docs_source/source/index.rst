@@ -22,6 +22,7 @@ Control-M Python Client is built for data scientists and developers who prefer a
    notebooks/jobproperties   
    notebooks/connectionprofiles
    notebooks/run_ondemand
+   notebooks/get_jobs
    beyond
 
 .. toctree::
