@@ -15,8 +15,15 @@ setup(
     author="BMC Software",
     license="BSD 3-Clause",
     keywords="Control-M",
-    install_requires=["requests>=2.23.0",
-                      "urllib3", "six", "attrs", "certifi", "jinja2"],
+    install_requires=[
+        "requests>=2.23.0",
+        "urllib3",
+        "six",
+        "attrs",
+        "certifi",
+        "jinja2",
+        "cattrs>=24.1.3"
+    ],
     classifiers= [
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
