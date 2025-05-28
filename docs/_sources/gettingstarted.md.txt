@@ -14,7 +14,7 @@ We suggest that you download a python IDE.
 
 If you don't have Python, download [Python](https://www.python.org/downloads/)
 
-**Control-M Python Client requires Python version 3.7 or higher**
+**Control-M Python Client requires Python version 3.10 or higher**
 
 
 We recommend to install Control-M Python Client in a [virtual environment](https://docs.python.org/3/library/venv.html). 

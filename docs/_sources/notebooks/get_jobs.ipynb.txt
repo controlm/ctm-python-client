@@ -155,14 +155,6 @@
     "- **job: str** (Not supported yet)  \n",
     "  Currently not supported. The API ignores this parameter if provided."
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "59899dfc",
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
