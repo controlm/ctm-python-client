@@ -15,24 +15,23 @@ class AAPIJob:
 
 class AAPIObject:
     def as_aapi_dict(self, ignore_event_type=True):
-        
         # Import inside the method to prevent circular import issues
         from aapi.ifbase import IfCompletionStatus  
-        
         res = {}
-
+        
+        # Get type if it exists
         if '_type' in attrs.fields_dict(self.__class__):
-            is_condition_or_event = self._type.startswith(('Condition', 'Event'))
-    
-            if ignore_event_type:
-                if not is_condition_or_event:
-                    res['Type'] = self._type
-            elif self._type.startswith('Event'):
-                res['Type'] = self._type
+            type_value = self._type
+            should_ignore_type = ignore_event_type and type_value.startswith(('Event', 'Condition'))
+            if not should_ignore_type:
+                res['Type'] = type_value
 
-                
+        # Process remaining (non-_type) fields
         if attrs.has(self):
             for field in attrs.fields(self.__class__):
+                if field.name == '_type': # type already handled
+                    continue
+                    
                 value = self.__getattribute__(field.name)
                 aapi_repr = field.metadata.get("_aapi_repr_")
 
@@ -42,14 +41,15 @@ class AAPIObject:
                 if aapi_repr:
                     if "_type_aapi_" in field.metadata:
                         if "_hide_type_" in field.metadata:
-                            if "Type" in res:
-                                res.__delitem__("Type")
+                            res.pop("Type", None)
                         continue
+
+                    # Handle different value types
                     if "as_aapi_dict" in dir(value):
                         res[aapi_repr] = value.as_aapi_dict()
                     elif isinstance(value, list):
                         res[aapi_repr] = [
-                            (o.as_aapi_dict() if "as_aapi_dict" in dir(o) else o)
+                            o.as_aapi_dict() if "as_aapi_dict" in dir(o) else o
                             for o in value
                         ]
                     elif isinstance(value, enum.Enum):
@@ -61,11 +61,11 @@ class AAPIObject:
                     for obj in value:
                         obj_ignore_type = ignore_event_type
                         if isinstance(self, IfCompletionStatus):
-                            obj_ignore_type = False  
+                            obj_ignore_type = False
                         res[obj.object_name] = obj.as_aapi_dict(ignore_event_type=obj_ignore_type)
 
         else:
-            res["attrsibutes_valid"] = False
+            res["attributes_valid"] = False
 
         return res
 
