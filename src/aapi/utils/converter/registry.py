@@ -53,9 +53,18 @@ def make_structure_hook(cls, converter: Converter):
                         kwargs[field_name] = structured_list
                     else:
                         kwargs[field_name] = value  # fallback for plain lists
-
                 else:
-                    kwargs[field_name] = value  # assign simple fields as-is
+                    # Add type conversion for simple fields
+                    if field_type == int and isinstance(value, str) and value.isdigit():
+                        kwargs[field_name] = int(value)
+                    elif field_type == float and isinstance(value, str):
+                        try:
+                            kwargs[field_name] = float(value)
+                        except ValueError:
+                            kwargs[field_name] = value
+
+                    else:
+                        kwargs[field_name] = value  # assign simple fields as-is
 
             except Exception:
                 kwargs[field_name] = value  # fallback on failure to deserialize

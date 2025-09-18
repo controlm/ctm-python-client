@@ -61,7 +61,7 @@ class Job(AAPIObject, AAPIJob):
             Hours = "Hours"
             Days = "Days"
 
-        times: str = attrs.field(kw_only=True, default=None, metadata={
+        times: int = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Times'})
         every: int = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Every'})
@@ -87,7 +87,7 @@ class Job(AAPIObject, AAPIJob):
             Hours = "Hours"
             Days = "Days"
 
-        times: str = attrs.field(kw_only=True, default=None, metadata={
+        times: int = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Times'})
         every: str = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Every'})
@@ -105,7 +105,7 @@ class Job(AAPIObject, AAPIJob):
             End = "End"
             Target = "Target"
 
-        times: str = attrs.field(kw_only=True, default=None, metadata={
+        times: int = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Times'})
         intervals: typing.List[str] = attrs.field(
             kw_only=True, default=None, metadata={'_aapi_repr_': 'Intervals'})
@@ -115,7 +115,7 @@ class Job(AAPIObject, AAPIJob):
     @attrs.define
     class RerunSpecificTimes(AAPIObject):
 
-        times: str = attrs.field(kw_only=True, default=None, metadata={
+        times: int = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Times'})
         at: typing.List[str] = attrs.field(
             kw_only=True, default=None, metadata={'_aapi_repr_': 'At'})
@@ -369,7 +369,7 @@ class JobFileWatcher(Job):
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:FileWatcher'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     path: str = attrs.field(metadata={'_aapi_repr_': 'Path'})
-    search_interval: str = attrs.field(kw_only=True, default=None, metadata={
+    search_interval: int = attrs.field(kw_only=True, default=None, metadata={
                                        '_aapi_repr_': 'SearchInterval'})
     time_limit: str = attrs.field(kw_only=True, default=None, metadata={
                                   '_aapi_repr_': 'TimeLimit'})
@@ -736,7 +736,7 @@ class JobFileTransfer(Job):
                                        '_aapi_repr_': 'EndJobNOTOK'})
     rerun_from_point_of_failure: bool = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'RerunFromPointOfFailure'})
-    number_of_retries: str = attrs.field(kw_only=True, default=None, metadata={
+    number_of_retries: int = attrs.field(kw_only=True, default=None, metadata={
                                          '_aapi_repr_': 'NumberOfRetries'})
 
 
@@ -920,7 +920,7 @@ class JobHadoopHDFSFileWatcher(JobHadoop):
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     hdfs_file_path: str = attrs.field(kw_only=True, default=None, metadata={
                                       '_aapi_repr_': 'HdfsFilePath'})
-    min_detected_size: str = attrs.field(kw_only=True, default=None, metadata={
+    min_detected_size: int = attrs.field(kw_only=True, default=None, metadata={
         '_aapi_repr_': 'MinDetecedSize'})
     max_wait_time: str = attrs.field(kw_only=True, default=None, metadata={
                                      '_aapi_repr_': 'MaxWaitTime'})
@@ -1329,7 +1329,7 @@ class JobOS400FullRestrictedStateAction(JobOS400Full):
                                  '_aapi_repr_': 'Action'})
     device: str = attrs.field(kw_only=True, default=None, metadata={
                               '_aapi_repr_': 'Device'})
-    batch_time_limit: str = attrs.field(kw_only=True, default=None, metadata={
+    batch_time_limit: int = attrs.field(kw_only=True, default=None, metadata={
                                         '_aapi_repr_': 'BatchTimeLimit '})
     command: str = attrs.field(kw_only=True, default=None, metadata={
                                '_aapi_repr_': 'command '})
@@ -2408,7 +2408,7 @@ class JobVMwareConfigurationReconfigureVirtualMachine(JobVMwareConfiguration):
     _type: str = attrs.field(init=False, default='Job:VMware:Configuration:ReconfigureVirtualMachine', metadata={
                              '_aapi_repr_': 'Type', '_type_aapi_': 'Job:VMware:Configuration:ReconfigureVirtualMachine'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    number_of_cpus: str = attrs.field(
+    number_of_cpus: int = attrs.field(
         metadata={'_aapi_repr_': 'NumberOfCPUs'})
 
 
@@ -2450,7 +2450,7 @@ class JobWebServices(Job):
                                              '_aapi_repr_': 'OverrideUrlEndpoint'})
     override_content_type: str = attrs.field(kw_only=True, default=None, metadata={
                                              '_aapi_repr_': 'OverrideContentType'})
-    http_connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+    http_connection_timeout: int = attrs.field(kw_only=True, default=None, metadata={
                                                '_aapi_repr_': 'HttpConnectionTimeout'})
     preemptive_http_authentication: str = attrs.field(
         kw_only=True, default=None, metadata={'_aapi_repr_': 'PreemptiveHttpAuthentication'})
