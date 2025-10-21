@@ -13,3 +13,4 @@ venv
 .mywork/
 build/
 .tox/
+.idea
