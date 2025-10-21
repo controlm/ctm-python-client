@@ -54,8 +54,8 @@ class ConnectionProfileGCPVertexAI(ConnectionProfile):
                                      '_aapi_repr_': 'HTTP Codes'})
     rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
                                       '_aapi_repr_': 'Rerun Interval'})
-    rerun_attempts_: str = attrs.field(kw_only=True, default=None, metadata={
-                                       '_aapi_repr_': 'Rerun Attempts '})
+    rerun_attempts: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Attempts'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
 
@@ -78,22 +78,6 @@ class ConnectionProfileAwsDynamoDB(ConnectionProfile):
                                   '_aapi_repr_': 'AWS Secret'})
     iam_role: str = attrs.field(kw_only=True, default=None, metadata={
                                   '_aapi_repr_': 'IAM Role'})
-    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Connection Timeout'})
-
-
-@attrs.define
-class ConnectionProfileGCPDeploymentManager(ConnectionProfile):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:GCP Deployment Manager', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:GCP Deployment Manager'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    identity_type: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'Identity Type'})
-    deployment_manager_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                                '_aapi_repr_': 'Deployment Manager URL'})
-    service_account_key: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'Service Account Key'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
 
@@ -126,6 +110,22 @@ class ConnectionProfileAzureDevOps(ConnectionProfile):
                                       '_aapi_repr_': 'Application ID'})
     client_secret: str = attrs.field(kw_only=True, default=None, metadata={
                                      '_aapi_repr_': 'Client Secret'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
+class ConnectionProfileGCPDeploymentManager(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:GCP Deployment Manager', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:GCP Deployment Manager'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    identity_type: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'Identity Type'})
+    deployment_manager_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                                '_aapi_repr_': 'Deployment Manager URL'})
+    service_account_key: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Service Account Key'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
 
@@ -452,6 +452,12 @@ class ConnectionProfileAzureBatchAccounts(ConnectionProfile):
                                        '_aapi_repr_': 'Batch Region ID'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
+    http_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'HTTP Codes'})
+    rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Interval'})
+    rerun_attempts: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Attempts'})
 
 
 @attrs.define
@@ -731,32 +737,6 @@ class ConnectionProfileAwsMWAA(ConnectionProfile):
 
 
 @attrs.define
-class ConnectionProfileVeritasNetBackup(ConnectionProfile):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:Veritas NetBackup', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Veritas NetBackup'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    master_server_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Master Server Name'})
-    endpoint_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Endpoint URL'})
-    authentication_type: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'Authentication Type'})
-    domain_type: str = attrs.field(kw_only=True, default=None, metadata={
-                                   '_aapi_repr_': 'Domain Type'})
-    domain_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                   '_aapi_repr_': 'Domain Name'})
-    username: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'Username'})
-    password: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'Password'})
-    api_token: str = attrs.field(kw_only=True, default=None, metadata={
-                                   '_aapi_repr_': 'API Token'})
-    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Connection Timeout'})
-
-
-@attrs.define
 class ConnectionProfileMatillion(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:Matillion', metadata={
@@ -799,6 +779,20 @@ class ConnectionProfileGCPDataproc(ConnectionProfile):
 
 
 @attrs.define
+class ConnectionProfileVMwareByBroadcom(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:VMware By Broadcom', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:VMware By Broadcom'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    username: str = attrs.field(kw_only=True, default=None, metadata={
+                                '_aapi_repr_': 'Username'})
+    password: str = attrs.field(kw_only=True, default=None, metadata={
+                                '_aapi_repr_': 'Password'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
 class ConnectionProfileAzureSynapse(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:Azure Synapse', metadata={
@@ -822,20 +816,6 @@ class ConnectionProfileAzureSynapse(ConnectionProfile):
                                         '_aapi_repr_': 'Synapse Resource'})
     synapse_url: str = attrs.field(kw_only=True, default=None, metadata={
                                    '_aapi_repr_': 'Synapse url'})
-    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Connection Timeout'})
-
-
-@attrs.define
-class ConnectionProfileVMwareByBroadcom(ConnectionProfile):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:VMware By Broadcom', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:VMware By Broadcom'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    username: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'Username'})
-    password: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'Password'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
 
@@ -1080,8 +1060,8 @@ class ConnectionProfileGitHubActions(ConnectionProfile):
                                      '_aapi_repr_': 'HTTP Codes'})
     rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
                                       '_aapi_repr_': 'Rerun Interval'})
-    attempts_rerun: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Attempts Rerun'})
+    rerun_attempts: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Attempts'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
 
@@ -1174,8 +1154,8 @@ class ConnectionProfileMicrosoftFabric(ConnectionProfile):
                                                           '_aapi_repr_': 'Specify Managed Identity Client ID'})
     managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
                                                   '_aapi_repr_': 'Managed Identity Client ID'})
-    azure_login_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                         '_aapi_repr_': 'Azure Login URL'})
+    login_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'Login URL'})
     fabric_url: str = attrs.field(kw_only=True, default=None, metadata={
                                     '_aapi_repr_': 'Fabric URL'})
     tenant_id: str = attrs.field(kw_only=True, default=None, metadata={
@@ -1190,8 +1170,8 @@ class ConnectionProfileMicrosoftFabric(ConnectionProfile):
                                      '_aapi_repr_': 'HTTP Codes'})
     rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
                                       '_aapi_repr_': 'Rerun Interval'})
-    attempt_reruns: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Attempt Reruns'})
+    rerun_attempts: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Attempts'})
 
 
 @attrs.define
@@ -1243,26 +1223,6 @@ class ConnectionProfileVeeamBackup(ConnectionProfile):
 
 
 @attrs.define
-class ConnectionProfileMicrosoftPowerBI(ConnectionProfile):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:Microsoft Power BI', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Microsoft Power BI'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    application_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Application ID'})
-    client_secret: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'Client Secret'})
-    user_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                 '_aapi_repr_': 'User Name'})
-    password: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'Password'})
-    resource_group: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Resource Group'})
-    api_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                   '_aapi_repr_': 'API URL'})
-
-
-@attrs.define
 class ConnectionProfileAzureBackup(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:Azure Backup', metadata={
@@ -1288,6 +1248,26 @@ class ConnectionProfileAzureBackup(ConnectionProfile):
                                      '_aapi_repr_': 'Client Secret'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
+class ConnectionProfileMicrosoftPowerBI(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:Microsoft Power BI', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Microsoft Power BI'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    application_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Application ID'})
+    client_secret: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'Client Secret'})
+    user_name: str = attrs.field(kw_only=True, default=None, metadata={
+                                 '_aapi_repr_': 'User Name'})
+    password: str = attrs.field(kw_only=True, default=None, metadata={
+                                '_aapi_repr_': 'Password'})
+    resource_group: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Resource Group'})
+    api_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'API URL'})
 
 
 @attrs.define
@@ -1349,32 +1329,6 @@ class ConnectionProfileMicrosoftPowerBISP(ConnectionProfile):
 
 
 @attrs.define
-class ConnectionProfileMicroFocusWindows(ConnectionProfile):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:Micro Focus Windows', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Micro Focus Windows'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    mfbsi_directory_path: str = attrs.field(kw_only=True, default=None, metadata={
-                                                '_aapi_repr_': 'MFBSI Directory Path'})
-    mfbsi_config_path: str = attrs.field(kw_only=True, default=None, metadata={
-                                             '_aapi_repr_': 'MFBSI Config Path'})
-    runtime_environment: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'Runtime Environment'})
-    additional_micro_focus_settings_script: str = attrs.field(
-        kw_only=True, default=None, metadata={'_aapi_repr_': 'Additional Micro Focus Settings Script'})
-    micro_focus_authentication: str = attrs.field(kw_only=True, default=None, metadata={
-                                                  '_aapi_repr_': 'Micro Focus Authentication'})
-    micro_focus_user_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'Micro Focus User ID'})
-    password: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'Password'})
-    run_as: str = attrs.field(kw_only=True, default=None, metadata={
-                              '_aapi_repr_': 'Run As'})
-    run_as_pass: str = attrs.field(kw_only=True, default=None, metadata={
-                                   '_aapi_repr_': 'RunAs-Pass'})
-
-
-@attrs.define
 class ConnectionProfileAwsDatabaseMigrationService(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:AWS Database Migration Service', metadata={
@@ -1398,6 +1352,32 @@ class ConnectionProfileAwsDatabaseMigrationService(ConnectionProfile):
                                            '_aapi_repr_': 'Assume Role Session'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
+class ConnectionProfileMicroFocusWindows(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:Micro Focus Windows', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Micro Focus Windows'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    mfbsi_directory_path: str = attrs.field(kw_only=True, default=None, metadata={
+                                                '_aapi_repr_': 'MFBSI Directory Path'})
+    mfbsi_config_path: str = attrs.field(kw_only=True, default=None, metadata={
+                                             '_aapi_repr_': 'MFBSI Config Path'})
+    runtime_environment: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Runtime Environment'})
+    additional_micro_focus_settings_script: str = attrs.field(
+        kw_only=True, default=None, metadata={'_aapi_repr_': 'Additional Micro Focus Settings Script'})
+    micro_focus_authentication: str = attrs.field(kw_only=True, default=None, metadata={
+                                                  '_aapi_repr_': 'Micro Focus Authentication'})
+    micro_focus_user_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Micro Focus User ID'})
+    password: str = attrs.field(kw_only=True, default=None, metadata={
+                                '_aapi_repr_': 'Password'})
+    run_as: str = attrs.field(kw_only=True, default=None, metadata={
+                              '_aapi_repr_': 'Run As'})
+    run_as_pass: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'RunAs-Pass'})
 
 
 @attrs.define
@@ -1662,6 +1642,28 @@ class ConnectionProfileAwsQuickSight(ConnectionProfile):
 
 
 @attrs.define
+class ConnectionProfileAtlassianJira(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:Atlassian Jira', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Atlassian Jira'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    jira_platform: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'Jira Platform'})
+    jira_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'Jira URL'})
+    atlassian_email: str = attrs.field(kw_only=True, default=None, metadata={
+                                       '_aapi_repr_': 'Atlassian Email'})
+    atlassian_token: str = attrs.field(kw_only=True, default=None, metadata={
+                                       '_aapi_repr_': 'Atlassian Token'})
+    jira_data_center_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                              '_aapi_repr_': 'Jira Data Center URL'})
+    jira_data_center_token: str = attrs.field(kw_only=True, default=None, metadata={
+                                              '_aapi_repr_': 'Jira Data Center Token'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
 class ConnectionProfileCircleCI(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:CircleCI', metadata={
@@ -1673,40 +1675,6 @@ class ConnectionProfileCircleCI(ConnectionProfile):
                                  '_aapi_repr_': 'API Key'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
-
-
-@attrs.define
-class ConnectionProfileAzureAppServicesWebJobs(ConnectionProfile):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:Azure App Services WebJobs', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Azure App Services WebJobs'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    subscription_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                       '_aapi_repr_': 'Subscription ID'})
-    authentication_type: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'Authentication Type'})
-    specify_managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                                          '_aapi_repr_': 'Specify Managed Identity Client ID'})
-    managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                                  '_aapi_repr_': 'Managed Identity Client ID'})
-    tenant_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                 '_aapi_repr_': 'Tenant ID'})
-    application_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Application ID'})
-    client_secret: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'Client Secret'})
-    login_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                   '_aapi_repr_': 'Login URL'})
-    management_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                        '_aapi_repr_': 'Management URL'})
-    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Connection Timeout'})
-    http_codes: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'HTTP Codes'})
-    rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Rerun Interval'})
-    attempt_reruns: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Attempt Reruns'})
 
 
 @attrs.define
@@ -1931,30 +1899,6 @@ class ConnectionProfileAlteryxTrifacta(ConnectionProfile):
 
 
 @attrs.define
-class ConnectionProfileIBMDataStageWindows(ConnectionProfile):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:IBM DataStage Windows', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:IBM DataStage Windows'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    authentication_method: str = attrs.field(kw_only=True, default=None, metadata={
-                                             '_aapi_repr_': 'Authentication Method'})
-    server_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                   '_aapi_repr_': 'Server Name'})
-    domain_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                   '_aapi_repr_': 'Domain Name'})
-    user_name: str = attrs.field(kw_only=True, default=None, metadata={
-                                 '_aapi_repr_': 'User Name'})
-    password: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'Password'})
-    authentication_file: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'Authentication File'})
-    empty: str = attrs.field(kw_only=True, default=None, metadata={
-                             '_aapi_repr_': 'Empty'})
-    d_s_j_o_b_path: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'DSJOB Path'})
-
-
-@attrs.define
 class ConnectionProfileAwsSQS(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:AWS SQS', metadata={
@@ -1978,6 +1922,30 @@ class ConnectionProfileAwsSQS(ConnectionProfile):
                                            '_aapi_repr_': 'Assume Role Session'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
+class ConnectionProfileIBMDataStageWindows(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:IBM DataStage Windows', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:IBM DataStage Windows'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    authentication_method: str = attrs.field(kw_only=True, default=None, metadata={
+                                             '_aapi_repr_': 'Authentication Method'})
+    server_name: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'Server Name'})
+    domain_name: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'Domain Name'})
+    user_name: str = attrs.field(kw_only=True, default=None, metadata={
+                                 '_aapi_repr_': 'User Name'})
+    password: str = attrs.field(kw_only=True, default=None, metadata={
+                                '_aapi_repr_': 'Password'})
+    authentication_file: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Authentication File'})
+    empty: str = attrs.field(kw_only=True, default=None, metadata={
+                             '_aapi_repr_': 'Empty'})
+    d_s_j_o_b_path: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'DSJOB Path'})
 
 
 @attrs.define
@@ -2319,6 +2287,30 @@ class ConnectionProfileAzureResourceManager(ConnectionProfile):
 
 
 @attrs.define
+class ConnectionProfileInformaticaCS(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:Informatica CS', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Informatica CS'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    login_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'Login URL'})
+    base_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'Base URL'})
+    username: str = attrs.field(kw_only=True, default=None, metadata={
+                                '_aapi_repr_': 'Username'})
+    password: str = attrs.field(kw_only=True, default=None, metadata={
+                                '_aapi_repr_': 'Password'})
+    http_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'HTTP Codes'})
+    rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Interval'})
+    attempt_reruns: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Attempt Reruns'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
 class ConnectionProfileAwsStepFunctions(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:AWS Step Functions', metadata={
@@ -2351,31 +2343,6 @@ class ConnectionProfileAwsStepFunctions(ConnectionProfile):
 
 
 @attrs.define
-class ConnectionProfileInformaticaCS(ConnectionProfile):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:Informatica CS', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Informatica CS'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    login_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                   '_aapi_repr_': 'Login URL'})
-    base_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                  '_aapi_repr_': 'Base URL'})
-    username: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'Username'})
-    password: str = attrs.field(kw_only=True, default=None, metadata={
-                                '_aapi_repr_': 'Password'})
-    http_codes: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'HTTP Codes'})
-    rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Rerun Interval'})
-    attempt_reruns: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Attempt Reruns'})
-    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Connection Timeout'})
-
-
-
-@attrs.define
 class ConnectionProfileTerraform(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:Terraform', metadata={
@@ -2385,22 +2352,6 @@ class ConnectionProfileTerraform(ConnectionProfile):
                                           '_aapi_repr_': 'Terraform Org Name'})
     token: str = attrs.field(kw_only=True, default=None, metadata={
                              '_aapi_repr_': 'Token'})
-    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Connection Timeout'})
-
-
-@attrs.define
-class ConnectionProfileGCPFunctions(ConnectionProfile):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:GCP Functions', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:GCP Functions'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    identity_type: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'Identity Type'})
-    gcp_api_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                         '_aapi_repr_': 'GCP API URL'})
-    service_account_key: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'Service Account Key'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
 
@@ -2430,35 +2381,17 @@ class ConnectionProfileAtlassianBitbucket(ConnectionProfile):
 
 
 @attrs.define
-class ConnectionProfileAzureLogicApps(ConnectionProfile):
+class ConnectionProfileGCPFunctions(ConnectionProfile):
 
-    _type: str = attrs.field(init=False, default='ConnectionProfile:Azure Logic Apps', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Azure Logic Apps'})
+    _type: str = attrs.field(init=False, default='ConnectionProfile:GCP Functions', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:GCP Functions'})
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    subscription_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                       '_aapi_repr_': 'Subscription ID'})
-    authentication_method: str = attrs.field(kw_only=True, default=None, metadata={
-                                             '_aapi_repr_': 'Authentication Method'})
-    specify_managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                                          '_aapi_repr_': 'Specify Managed Identity Client ID'})
-    managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                                  '_aapi_repr_': 'Managed Identity Client ID'})
-    resource_group: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Resource Group'})
-    tenant_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                 '_aapi_repr_': 'Tenant ID'})
-    application_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Application ID'})
-    client_secret: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'Client Secret'})
-    azure_login_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                         '_aapi_repr_': 'Azure Login URL'})
-    http_codes: str = attrs.field(kw_only=True, default=None, metadata={
-                                     '_aapi_repr_': 'HTTP Codes'})
-    rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Rerun Interval'})
-    attempt_reruns: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Attempt Reruns'})
+    identity_type: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'Identity Type'})
+    gcp_api_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                         '_aapi_repr_': 'GCP API URL'})
+    service_account_key: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Service Account Key'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
 
@@ -2510,6 +2443,28 @@ class ConnectionProfileOCIVM(ConnectionProfile):
 
 
 @attrs.define
+class ConnectionProfileAwsDataPipeline(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:AWS Data Pipeline', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:AWS Data Pipeline'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    data_pipeline_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Data Pipeline URL'})
+    aws_region: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'AWS Region'})
+    authentication: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Authentication'})
+    aws_access_key: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'AWS Access Key'})
+    aws_secret: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'AWS Secret'})
+    iam_role: str = attrs.field(kw_only=True, default=None, metadata={
+                                  '_aapi_repr_': 'IAM Role'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
 class ConnectionProfileOCIDataIntegration(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:OCI Data Integration', metadata={
@@ -2538,28 +2493,6 @@ class ConnectionProfileOCIDataIntegration(ConnectionProfile):
 
 
 @attrs.define
-class ConnectionProfileAwsDataPipeline(ConnectionProfile):
-
-    _type: str = attrs.field(init=False, default='ConnectionProfile:AWS Data Pipeline', metadata={
-                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:AWS Data Pipeline'})
-    object_name: str = attrs.field(metadata={'_aapi_name_': True})
-    data_pipeline_url: str = attrs.field(kw_only=True, default=None, metadata={
-                                           '_aapi_repr_': 'Data Pipeline URL'})
-    aws_region: str = attrs.field(kw_only=True, default=None, metadata={
-                                  '_aapi_repr_': 'AWS Region'})
-    authentication: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'Authentication'})
-    aws_access_key: str = attrs.field(kw_only=True, default=None, metadata={
-                                      '_aapi_repr_': 'AWS Access Key'})
-    aws_secret: str = attrs.field(kw_only=True, default=None, metadata={
-                                  '_aapi_repr_': 'AWS Secret'})
-    iam_role: str = attrs.field(kw_only=True, default=None, metadata={
-                                  '_aapi_repr_': 'IAM Role'})
-    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
-                                          '_aapi_repr_': 'Connection Timeout'})
-
-
-@attrs.define
 class ConnectionProfileGCPCloudRun(ConnectionProfile):
 
     _type: str = attrs.field(init=False, default='ConnectionProfile:GCP Cloud Run', metadata={
@@ -2571,5 +2504,99 @@ class ConnectionProfileGCPCloudRun(ConnectionProfile):
                                        '_aapi_repr_': 'Cloud Run URL'})
     service_account_key: str = attrs.field(kw_only=True, default=None, metadata={
                                            '_aapi_repr_': 'Service Account Key'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
+class ConnectionProfileVeritasNetBackup(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:Veritas NetBackup', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Veritas NetBackup'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    master_server_name: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Master Server Name'})
+    endpoint_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Endpoint URL'})
+    authentication_type: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Authentication Type'})
+    domain_type: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'Domain Type'})
+    domain_name: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'Domain Name'})
+    username: str = attrs.field(kw_only=True, default=None, metadata={
+                                '_aapi_repr_': 'Username'})
+    password: str = attrs.field(kw_only=True, default=None, metadata={
+                                '_aapi_repr_': 'Password'})
+    api_token: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'API Token'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
+class ConnectionProfileAzureAppServicesWebJobs(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:Azure App Services WebJobs', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Azure App Services WebJobs'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    subscription_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                       '_aapi_repr_': 'Subscription ID'})
+    authentication_type: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Authentication Type'})
+    specify_managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                                          '_aapi_repr_': 'Specify Managed Identity Client ID'})
+    managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                                  '_aapi_repr_': 'Managed Identity Client ID'})
+    tenant_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                 '_aapi_repr_': 'Tenant ID'})
+    application_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Application ID'})
+    client_secret: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'Client Secret'})
+    login_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'Login URL'})
+    management_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                        '_aapi_repr_': 'Management URL'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+    http_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'HTTP Codes'})
+    rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Interval'})
+    attempt_reruns: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Attempt Reruns'})
+
+
+@attrs.define
+class ConnectionProfileAzureLogicApps(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:Azure Logic Apps', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Azure Logic Apps'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    subscription_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                       '_aapi_repr_': 'Subscription ID'})
+    authentication_method: str = attrs.field(kw_only=True, default=None, metadata={
+                                             '_aapi_repr_': 'Authentication Method'})
+    specify_managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                                          '_aapi_repr_': 'Specify Managed Identity Client ID'})
+    managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                                  '_aapi_repr_': 'Managed Identity Client ID'})
+    resource_group: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Resource Group'})
+    tenant_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                 '_aapi_repr_': 'Tenant ID'})
+    application_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Application ID'})
+    client_secret: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'Client Secret'})
+    azure_login_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                         '_aapi_repr_': 'Azure Login URL'})
+    http_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'HTTP Codes'})
+    rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Interval'})
+    attempt_reruns: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Attempt Reruns'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
