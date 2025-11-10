@@ -9,5 +9,5 @@ sphinx
 nbsphinx
 myst-parser
 furo
-
+python-dateutil
 tox
