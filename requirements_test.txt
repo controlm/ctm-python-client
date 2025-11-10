@@ -4,3 +4,4 @@ keyring
 coverage
 graphviz
 cattrs
+python-dateutil
