@@ -494,14 +494,14 @@ class Workflow(BaseWorkflow):
                 "server": server,
                 "folder": folder,
                 "format": "json",
-                "useArrayFormat": "true"
+                ##"useArrayFormat": "true"
             }
 
             # Query the deployed folders and jobs
             raw_response = client.deploy_api.get_deployed_folders_new(**query_params)
 
             # Parse the raw response safely into a Python dictionary
-            folders_data = ast.literal_eval(raw_response)
+            folders_data = raw_response
 
             # Initialize an empty workflow with default settings
             workflow = Workflow(environment, WorkflowDefaults(run_as='default_user'))

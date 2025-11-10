@@ -75,15 +75,14 @@ class OnPremAAPIClient(AbstractAAPIClient):
     def authenticate(self):
         self.apiclient.configuration.host = self.endpoint
         self.apiclient.configuration.verify_ssl = False
-        self.apiclient.configuration.api_key_prefix['Authorization'] = 'Bearer'
-
+        self.apiclient.configuration.api_key_prefix['Bearer'] = 'Bearer'
         token = self.session_api.do_login(
             {
                 'username': self.credentials.get_username(),
                 'password': self.credentials.get_password()
             }
         ).token
-        self.apiclient.configuration.api_key['Authorization'] = token
+        self.apiclient.configuration.api_key['Bearer'] = token
 
 
 class SaasAAPIClient(AbstractAAPIClient):
