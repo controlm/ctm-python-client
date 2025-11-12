@@ -34,6 +34,10 @@ class AAPIObject:
         if attrs.has(self):
             for field in attrs.fields(self.__class__):
                 value = self.__getattribute__(field.name)
+                ## API serialization hook
+                if "_aapi_serialize" in field.metadata:
+                    value = field.metadata["_aapi_serialize"](value)
+
                 aapi_repr = field.metadata.get("_aapi_repr_")
 
                 if value in [None, [], {}]:
