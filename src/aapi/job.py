@@ -62,7 +62,8 @@ class Job(AAPIObject, AAPIJob):
             Days = "Days"
 
         times: int = attrs.field(kw_only=True, default=None, metadata={
-                                 '_aapi_repr_': 'Times'})
+                                 '_aapi_repr_': 'Times',
+                                 '_aapi_serialize': lambda v: str(v) if v is not None else None})
         every: int = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Every'})
         from_: From = attrs.field(kw_only=True, default=None, metadata={
