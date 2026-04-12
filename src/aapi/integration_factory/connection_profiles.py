@@ -1562,7 +1562,7 @@ class ConnectionProfileApacheKafkaViaConfluent(ConnectionProfile):
                                     '_aapi_repr_': 'API Key ID'})
     api_key_secret: str = attrs.field(kw_only=True, default=None, metadata={
                                         '_aapi_repr_': 'API Key Secret'})
-    o_auth_2.0_token_endpoint: str = attrs.field(kw_only=True, default=None, metadata={'_aapi_repr_': 'OAuth 2.0 Token Endpoint'})
+    o_auth_2_0_token_endpoint: str = attrs.field(kw_only=True, default=None, metadata={'_aapi_repr_': 'OAuth 2.0 Token Endpoint'})
     client_id: str = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Client ID'})
     client_secret: str = attrs.field(kw_only=True, default=None, metadata={
