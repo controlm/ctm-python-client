@@ -526,6 +526,8 @@ class JobApacheAirflow(Job):
                                   '_aapi_repr_': 'DAG Name'})
     d_a_g_run_id: str = attrs.field(kw_only=True, default=None, metadata={
                                     '_aapi_repr_': 'DAG Run ID'})
+    rerun_d_a_g_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun DAG ID'})
     parameters: str = attrs.field(kw_only=True, default=None, metadata={
                                   '_aapi_repr_': 'Parameters'})
     logical_date: str = attrs.field(kw_only=True, default=None, metadata={
@@ -796,6 +798,8 @@ class JobGCPComposer(Job):
                                   '_aapi_repr_': 'DAG Name'})
     d_a_g_run_id: str = attrs.field(kw_only=True, default=None, metadata={
                                     '_aapi_repr_': 'DAG Run ID'})
+    rerun_d_a_g_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun DAG ID'})
     parameters: str = attrs.field(kw_only=True, default=None, metadata={
                                   '_aapi_repr_': 'Parameters'})
     logical_date: str = attrs.field(kw_only=True, default=None, metadata={
@@ -1020,6 +1024,8 @@ class JobAwsMWAA(Job):
                                   '_aapi_repr_': 'DAG Name'})
     d_a_g_run_id: str = attrs.field(kw_only=True, default=None, metadata={
                                     '_aapi_repr_': 'DAG Run ID'})
+    rerun_d_a_g_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun DAG ID'})
     parameters: str = attrs.field(kw_only=True, default=None, metadata={
                                   '_aapi_repr_': 'Parameters'})
     logical_date: str = attrs.field(kw_only=True, default=None, metadata={
@@ -3729,3 +3735,39 @@ class JobGCPCloudRun(Job):
                                                '_aapi_repr_': 'Overrides Specification'})
     status_polling_frequency: str = attrs.field(kw_only=True, default=None, metadata={
                                                 '_aapi_repr_': 'Status Polling Frequency'})
+
+
+@attrs.define
+class JobAzureVirtualMachineScaleSets(Job):
+
+    _type: str = attrs.field(init=False, default='Job:Azure Virtual Machine Scale Sets', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:Azure Virtual Machine Scale Sets'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'ConnectionProfile'})
+    virtual_machine_scale_set_name: str = attrs.field(kw_only=True, default=None, metadata={
+                                                      '_aapi_repr_': 'Virtual Machine Scale Set Name'})
+    action: str = attrs.field(kw_only=True, default=None, metadata={
+                              '_aapi_repr_': 'Action'})
+    json_body: str = attrs.field(kw_only=True, default=None, metadata={
+                                 '_aapi_repr_': 'JSON Body'})
+    instance_ids: str = attrs.field(kw_only=True, default=None, metadata={
+                                    '_aapi_repr_': "Instance ID's"})
+    verification_polling_interval: str = attrs.field(kw_only=True, default=None, metadata={
+                                                     '_aapi_repr_': 'Verification Polling Interval'})
+    failure_tolerance: str = attrs.field(kw_only=True, default=None, metadata={
+                                         '_aapi_repr_': 'Failure Tolerance'})
+
+
+@attrs.define
+class JobSAPIntegrationSuite(Job):
+
+    _type: str = attrs.field(init=False, default='Job:SAP Integration Suite', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'Job:SAP Integration Suite'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    connection_profile: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'ConnectionProfile'})
+    status_polling_frequency: str = attrs.field(kw_only=True, default=None, metadata={
+                                                '_aapi_repr_': 'Status Polling Frequency'})
+    failure_tolerance: str = attrs.field(kw_only=True, default=None, metadata={
+                                         '_aapi_repr_': 'Failure Tolerance'})

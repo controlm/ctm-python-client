@@ -1054,16 +1054,18 @@ class ConnectionProfileAzureDataFactory(ConnectionProfile):
                                        '_aapi_repr_': 'Subscription ID'})
     identity_type: str = attrs.field(kw_only=True, default=None, metadata={
                                      '_aapi_repr_': 'Identity Type'})
-    specify_managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                                          '_aapi_repr_': 'Specify Managed Identity Client ID'})
-    managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                                  '_aapi_repr_': 'Managed Identity Client ID'})
     tenant_id: str = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Tenant ID'})
     application_id: str = attrs.field(kw_only=True, default=None, metadata={
                                       '_aapi_repr_': 'Application ID'})
     client_secret: str = attrs.field(kw_only=True, default=None, metadata={
                                      '_aapi_repr_': 'Client Secret'})
+    specify_managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                                          '_aapi_repr_': 'Specify Managed Identity Client ID'})
+    managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                                  '_aapi_repr_': 'Managed Identity Client ID'})
+    token_file_location: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Token File Location'})
     rest_login_url: str = attrs.field(kw_only=True, default=None, metadata={
                                          '_aapi_repr_': 'REST Login url'})
     management_url: str = attrs.field(kw_only=True, default=None, metadata={
@@ -1178,16 +1180,18 @@ class ConnectionProfileAzureDatabricks(ConnectionProfile):
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     authentication_method: str = attrs.field(kw_only=True, default=None, metadata={
                                              '_aapi_repr_': 'Authentication Method'})
-    specify_managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                                          '_aapi_repr_': 'Specify Managed Identity Client ID'})
-    managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
-                                                  '_aapi_repr_': 'Managed Identity Client ID'})
     tenant_id: str = attrs.field(kw_only=True, default=None, metadata={
                                  '_aapi_repr_': 'Tenant ID'})
     application_id: str = attrs.field(kw_only=True, default=None, metadata={
                                       '_aapi_repr_': 'Application ID'})
     client_secret: str = attrs.field(kw_only=True, default=None, metadata={
                                      '_aapi_repr_': 'Client Secret'})
+    specify_managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                                          '_aapi_repr_': 'Specify Managed Identity Client ID'})
+    managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                                  '_aapi_repr_': 'Managed Identity Client ID'})
+    token_file_location: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Token File Location'})
     azure_login_url: str = attrs.field(kw_only=True, default=None, metadata={
                                        '_aapi_repr_': 'Azure Login url'})
     databricks_url: str = attrs.field(kw_only=True, default=None, metadata={
@@ -1769,6 +1773,8 @@ class ConnectionProfileAnsibleAWX(ConnectionProfile):
     object_name: str = attrs.field(metadata={'_aapi_name_': True})
     ansible_url: str = attrs.field(kw_only=True, default=None, metadata={
                                      '_aapi_repr_': 'Ansible URL'})
+    ansible_url_api_path: str = attrs.field(kw_only=True, default=None, metadata={
+                                                '_aapi_repr_': 'Ansible URL API Path'})
     ansible_token: str = attrs.field(kw_only=True, default=None, metadata={
                                      '_aapi_repr_': 'Ansible Token'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
@@ -2110,8 +2116,18 @@ class ConnectionProfileAwsSageMaker(ConnectionProfile):
                                   '_aapi_repr_': 'AWS Secret'})
     iam_role: str = attrs.field(kw_only=True, default=None, metadata={
                                   '_aapi_repr_': 'IAM Role'})
+    assume_role_arn: str = attrs.field(kw_only=True, default=None, metadata={
+                                         '_aapi_repr_': 'Assume Role ARN'})
+    assume_role_session: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Assume Role Session'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
+    http_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'HTTP Codes'})
+    rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Interval'})
+    rerun_attempts: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Attempts'})
 
 
 @attrs.define
@@ -3026,5 +3042,77 @@ class ConnectionProfileGCPCloudRun(ConnectionProfile):
                                        '_aapi_repr_': 'Cloud Run URL'})
     service_account_key: str = attrs.field(kw_only=True, default=None, metadata={
                                            '_aapi_repr_': 'Service Account Key'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+
+
+@attrs.define
+class ConnectionProfileAzureVirtualMachineScaleSets(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:Azure Virtual Machine Scale Sets', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:Azure Virtual Machine Scale Sets'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    identity_type: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'Identity Type'})
+    specify_managed_identity_client_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                                          '_aapi_repr_': 'Specify Managed Identity Client ID'})
+    client_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                 '_aapi_repr_': 'Client ID'})
+    tenant_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                 '_aapi_repr_': 'Tenant ID'})
+    application_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Application ID'})
+    client_secret: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'Client Secret'})
+    azure_login_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                         '_aapi_repr_': 'Azure Login URL'})
+    virtual_machine_scale_set_url: str = attrs.field(
+        kw_only=True, default=None, metadata={'_aapi_repr_': 'Virtual Machine Scale Set URL'})
+    virtual_machine_scale_set_resource: str = attrs.field(kw_only=True, default=None, metadata={
+                                                          '_aapi_repr_': 'Virtual Machine Scale Set Resource'})
+    subscription_id: str = attrs.field(kw_only=True, default=None, metadata={
+                                       '_aapi_repr_': 'Subscription ID'})
+    resource_group: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Resource Group'})
+    token_file_location: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'Token File Location'})
+    connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
+                                          '_aapi_repr_': 'Connection Timeout'})
+    http_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'HTTP Codes'})
+    rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Interval'})
+    attempt_reruns: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Attempt Reruns'})
+    empty: str = attrs.field(kw_only=True, default=None, metadata={
+                             '_aapi_repr_': 'Empty'})
+
+
+@attrs.define
+class ConnectionProfileSAPIntegrationSuite(ConnectionProfile):
+
+    _type: str = attrs.field(init=False, default='ConnectionProfile:SAP Integration Suite', metadata={
+                             '_aapi_repr_': 'Type', '_type_aapi_': 'ConnectionProfile:SAP Integration Suite'})
+    object_name: str = attrs.field(metadata={'_aapi_name_': True})
+    action: str = attrs.field(kw_only=True, default=None, metadata={
+                              '_aapi_repr_': 'Action'})
+    authentication_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                            '_aapi_repr_': 'Authentication URL'})
+    integration_flow_client_id_: str = attrs.field(kw_only=True, default=None, metadata={
+                                                   '_aapi_repr_': 'Integration Flow Client ID '})
+    integration_flow_client_secret: str = attrs.field(kw_only=True, default=None, metadata={
+                                                      '_aapi_repr_': 'Integration Flow Client Secret'})
+    api_url: str = attrs.field(kw_only=True, default=None, metadata={
+                                   '_aapi_repr_': 'API URL'})
+    api_client_id_: str = attrs.field(kw_only=True, default=None, metadata={
+                                        '_aapi_repr_': 'API Client ID '})
+    api_client_secret: str = attrs.field(kw_only=True, default=None, metadata={
+                                           '_aapi_repr_': 'API Client Secret'})
+    http_codes: str = attrs.field(kw_only=True, default=None, metadata={
+                                     '_aapi_repr_': 'HTTP Codes'})
+    rerun_interval: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Rerun Interval'})
+    attempt_reruns: str = attrs.field(kw_only=True, default=None, metadata={
+                                      '_aapi_repr_': 'Attempt Reruns'})
     connection_timeout: str = attrs.field(kw_only=True, default=None, metadata={
                                           '_aapi_repr_': 'Connection Timeout'})
