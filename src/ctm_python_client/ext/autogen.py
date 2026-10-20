@@ -64,6 +64,15 @@ class AIPluginCustomDefinition:
     comments: typing.List[str]
 
 
+def normalize_default(default):
+    if not isinstance(default, str) or '\n' not in default:
+        return default
+    without_trailing_newlines = default.rstrip('\n')
+    if '\n' not in without_trailing_newlines and without_trailing_newlines.strip():
+        return without_trailing_newlines
+    return ''
+
+
 def create_ai_custom_definitions(ai_plugin: Plugin) -> typing.Tuple[AIPluginCustomDefinition, AIPluginCustomDefinition]:
     plugin_name = ai_plugin.job_name.split(':')[-1]
     plugin_cp_name = ai_plugin.cp_name.split(':')[-1]
@@ -92,7 +101,7 @@ def create_ai_custom_definitions(ai_plugin: Plugin) -> typing.Tuple[AIPluginCust
 
         domain_name = v.get('DomainName')
         if domain_name in ai_plugin.job_definition['Defaults']:
-            default = ai_plugin.job_definition['Defaults'][domain_name]
+            default = normalize_default(ai_plugin.job_definition['Defaults'][domain_name])
 
             job['optional_properties'].append((
                 domain_name.split(r'%%UCM-')[1].lower(),
@@ -115,7 +124,7 @@ def create_ai_custom_definitions(ai_plugin: Plugin) -> typing.Tuple[AIPluginCust
 
         domain_name = v.get('DomainName')
         if domain_name in ai_plugin.cp_definition['Defaults']:
-            default = ai_plugin.cp_definition['Defaults'][domain_name]
+            default = normalize_default(ai_plugin.cp_definition['Defaults'][domain_name])
 
             cp['optional_properties'].append((
                 domain_name.lower(),
