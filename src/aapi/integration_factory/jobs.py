@@ -1094,8 +1094,8 @@ class JobAzureVirtualMachineScaleSets(Job):
                                  '_aapi_repr_': 'JSON Body'})
     ai_json_body: str = attrs.field(kw_only=True, default=None, metadata={
                                      '_aapi_repr_': 'AI-JSON Body'})
-    instance_id's : str = attrs.field(kw_only = True,default = None,metadata = {'_aapi_repr_':'Instance ID's'})
-    ai_instance_id's : str = attrs.field(kw_only = True,default = None,metadata = {'_aapi_repr_':'AI-Instance ID's'})
+    instance_ids: str = attrs.field(kw_only=True, default=None, metadata={'_aapi_repr_': "Instance ID's"})
+    ai_instance_ids: str = attrs.field(kw_only=True, default=None, metadata={'_aapi_repr_': "AI-Instance ID's"})
     verification_polling_interval: str=attrs.field(kw_only=True, default=None, metadata={
                                                    '_aapi_repr_': 'Verification Polling Interval'})
     ai_verification_polling_interval: str=attrs.field(kw_only=True, default=None, metadata={
@@ -7322,7 +7322,7 @@ class JobTerraform(Job):
 
 
 @ attrs.define
-class JobApplicationIntegratorAISimplePlugin(JobApplicationIntegrator):
+class JobApplicationIntegratorAISimplePlugin(Job):
 
 
 
